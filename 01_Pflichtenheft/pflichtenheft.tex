@@ -1,0 +1,83 @@
+\documentclass[a4paper,twoside,BCOR=20mm]{scrreprt}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}	% german hyphenation, quotes, etc
+\usepackage[ngerman]{translator}
+\usepackage{amsmath}
+\usepackage{paralist}
+\usepackage{amsfonts}
+\usepackage{acronym}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{color}
+\usepackage{wrapfig} % wrap text around figures
+\usepackage{subfig} % align two pics beside each other
+\usepackage[table,xcdraw]{xcolor}
+\hypersetup{ 					% ‘texdoc hyperref‘ for options
+	pdftitle={PSE TECO: Pflichtenheft},
+	pdfauthor={Jean Baumgarten, Oliver Liu, Patrick Ries, Erik Ries, Thomas ???????},
+	bookmarks=true,
+}
+\title{Pflichtenheft: PaVoS}
+
+%Paket laden
+\usepackage[
+numberedsection,
+nonumberlist, %keine Seitenzahlen anzeigen
+acronym,      %ein Abkürzungsverzeichnis erstellen
+toc,          %Einträge im Inhaltsverzeichnis
+section]      %im Inhaltsverzeichnis auf section-Ebene erscheinen
+{glossaries}
+
+%Befehle für Abkürzungen
+\newacronym{KIT}{KIT}{Karlsruher Institut für Technologie}
+
+%Benutzerdefinierte Silbentrennungen
+\hyphenation{Ein-stel-lun-gen}
+
+% KIT layout
+
+\definecolor{orange}{rgb}{1,0.5,0}
+\definecolor{mintgreen}{RGB}{50,161,137}
+\definecolor{gray}{RGB}{120,120,120}
+
+\usepackage[color]{changebar}
+\cbcolor{gray}
+\changebarwidth 0.5pt
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+ \fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen 
+ 
+ \fancypagestyle{plain}{} %Kopf- und Fußzeile auf jeder Seite	 
+	\fancyhead[L]{Pflichtenheft}
+	\fancyhead[R]{\leftmark}
+	\rhead{\nouppercase{\leftmark}}
+	\renewcommand{\headrulewidth}{0.5pt}
+	\renewcommand{\headrule}{\hbox to\headwidth{%
+		\color{mintgreen}\leaders\hrule height \headrulewidth\hfill}}
+
+\raggedbottom
+
+	\renewcommand{\footrulewidth}{0.5pt}
+	\renewcommand{\footrule}{\hbox to\headwidth{%
+  		\color{mintgreen}\leaders\hrule height \headrulewidth\hfill}}				
+	\fancyfoot[LE,RO]{\thepage}
+
+
+\setcounter{tocdepth}{5}
+\makeglossaries
+\begin{document}
+	
+	\include{topics/00_deckblatt}
+
+	\tableofcontents
+	
+	\include{topics/01_zielbestimmung}
+
+\end{document}
