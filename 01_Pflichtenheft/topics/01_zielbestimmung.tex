@@ -1,2 +1,37 @@
 \chapter{Zielbestimmung}
-\section{Test}
+Das Produkt ermöglicht es seinen Nutzern, die Echtzeitdaten vieler Sensoren von unterschiedlichen Messgrößen sowie archivierte Daten abzurufen und darzustellen. Es bietet dem Nutzer hierfür eine moderne und intuitive webbasierte Bedienoberfläche. Weiterhin ermöglicht das Produkt dem Nutzer über eine öffentliche Schnittstelle auf die Daten direkt zuzugreifen. Unter anderem können diese Daten als Archivdatei exportiert werden. Durch die modulare Architektur unseres Produkts werden vielseitige Einsatzmöglichkeiten außerhalb der Luftqualitätsmessung eröffnet.
+\section{Musskriterien}
+\subsection{Backend (Server)}
+\begin{enumerate}[label=\textbf{MK\arabic{enumi}0}]
+	\setcounter{enumi}{99}
+	\item Es existiert eine öffentliche Schnittstelle um Sensordaten in Form eines Apache Kafka Streams an den Server zu binden
+	\item Eingeführte Sensordaten werden in einer Datenbank gesichert
+	\item Neue Sensordaten werden in Echtzeit an alle Instanzen des Webinterfaces weitergeleitet und dargestellt
+	\item Der Dienst ist logisch modular aufgebaut und erlaubt das Ergänzen und Ersetzen von einzelnen Modulen
+	\item Der Dienst verarbeitet Daten kontinuierlich im Hintergrund
+	\item Der Dienst unterstützt das Einpflegen von neuen Sensortypen
+\end{enumerate}
+\subsection{Frontend (Webinterface)}
+\begin{enumerate}[label=\textbf{MK\arabic{enumi}0}]
+	\setcounter{enumi}{199}
+	\item Nutzer können historische Daten über das Webinterface ansehen
+	\item Nutzer können Echtzeitdaten über das Webinterface ansehen
+	\item Nutzer können historische Daten über das Webinterface herunterladen
+	\item Nutzer können kürzlich beobachtete Daten als Wiederholung anzeigen lassen
+	\item Das Webinterface unterstützt die Darstellung der Sensordaten auf einer Weltkarte
+	\item Das Webinterface unterstützt die Darstellung von erweiterten Informationen bzgl. der Sensordaten in Form von Graphen
+	\item Die Standardsprache des Webinterfaces ist Englisch
+	\item Das Webinterface kann parallel von mehreren Nutzern aufgerufen und benutzt werden
+\end{enumerate}
+
+\section{Wunschkriterien}
+\subsection{Backend (Server)}
+\begin{enumerate}[label=\textbf{WK\arabic{enumi}0}]
+	
+\end{enumerate}
+\subsection{Frontend (Webinterface)}
+\begin{enumerate}[label=\textbf{WK\arabic{enumi}0}]
+	
+\end{enumerate}
+
+\section{Abgrenzungskriterien}

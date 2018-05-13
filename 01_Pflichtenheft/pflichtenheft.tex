@@ -3,7 +3,6 @@
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}	% german hyphenation, quotes, etc
 \usepackage[ngerman]{translator}
-\usepackage{amsmath}
 \usepackage{paralist}
 \usepackage{amsfonts}
 \usepackage{acronym}
@@ -18,6 +17,8 @@
 \usepackage{wrapfig} % wrap text around figures
 \usepackage{subfig} % align two pics beside each other
 \usepackage[table,xcdraw]{xcolor}
+\usepackage{enumitem} % für custom enumerations
+
 \hypersetup{ 					% ‘texdoc hyperref‘ for options
 	pdftitle={PSE TECO: Pflichtenheft},
 	pdfauthor={Jean Baumgarten, Oliver Liu, Patrick Ries, Erik Ries, Thomas ???????},
@@ -75,9 +76,16 @@ section]      %im Inhaltsverzeichnis auf section-Ebene erscheinen
 \begin{document}
 	
 	\include{topics/00_deckblatt}
-
 	\tableofcontents
-	
 	\include{topics/01_zielbestimmung}
+	\include{topics/02_produkteinsatz}
+	\include{topics/03_produktumgebung}
+	\include{topics/04_funktionale_anforderungen}
+	\include{topics/05_nichtfunktionale_anforderungen}
+	\include{topics/06_qualitaetssicherung}
+	\include{topics/07_systemmodelle}
+	\include{topics/08_entwicklungsumgebung}
+	\include{topics/09_benutzeroberflaeche}
+	\include{topics/10_anhang}
 
 \end{document}
