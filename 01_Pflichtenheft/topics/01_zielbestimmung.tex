@@ -1,5 +1,5 @@
 \chapter{Zielbestimmung}
-Das Produkt ermöglicht es seinen Nutzern, die Echtzeitdaten vieler Sensoren von unterschiedlichen Messgrößen sowie archivierte Daten abzurufen und darzustellen. Es bietet dem Nutzer hierfür eine moderne und intuitive webbasierte Bedienoberfläche. Weiterhin ermöglicht das Produkt dem Nutzer über eine öffentliche Schnittstelle auf die Daten direkt zuzugreifen. Unter anderem können diese Daten als Archivdatei exportiert werden. Durch die modulare Architektur unseres Produkts werden vielseitige Einsatzmöglichkeiten außerhalb der Luftqualitätsmessung eröffnet.
+Das Produkt ermöglicht es seinen Nutzern, Echtzeitdaten sowie archivierte Daten vieler Sensoren von unterschiedlichen Messgrößen abzurufen und darzustellen. Es bietet dem Nutzer hierfür eine moderne und intuitive webbasierte Bedienoberfläche. Weiterhin ermöglicht das Produkt dem Nutzer über eine öffentliche Schnittstelle den direkten Zugriff auf die Daten. Unter anderem können diese Daten als Archivdatei exportiert werden. Durch die modulare Architektur unseres Produkts werden vielseitige Einsatzmöglichkeiten außerhalb der Luftqualitätsmessung ermöglicht.
 \section{Musskriterien}
 \subsection{Backend (Server)}
 \begin{enumerate}[label=\textbf{MK\arabic{enumi}0}]
@@ -27,11 +27,66 @@ Das Produkt ermöglicht es seinen Nutzern, die Echtzeitdaten vieler Sensoren von
 \section{Wunschkriterien}
 \subsection{Backend (Server)}
 \begin{enumerate}[label=\textbf{WK\arabic{enumi}0}]
-	
+	\setcounter{enumi}{99}
+	\item In Kürze benötigte Daten werden vorausberechnet und vorgeladen
+	\item Der Server arbeitet problemlos mit unterschiedlich großen Datenmengen
+	\item Der Server arbeitet ähnlich schnell mit unterschiedlich großen Datenmengen
+	\item Der Server läuft auch nach kleinen Mengen von fehlerhaften Daten stabil
+	\item Der Server überarbeitet im Leerlauf fehlerhafte Daten aus der Datenbank
+	\item Der Server unterstützt mehrere Anzeigesprachen für das Webinterface
+	\item Der Server unterstützt das Hinzufügen von neuen Anzeigesprachen
+	\item Der Server unterstützt den Import von historischen Daten im NetCDF-Format und kann diese Daten problemlos verarbeiten
+	\item Der Server unterstützt das Filtern von ausgegebenen und angezeigten Daten
+	\item Der Server kann durch eine Admin-GUI gesteuert werden
+	\item Der Server gibt aussagekräftige Fehlermeldungen aus
 \end{enumerate}
 \subsection{Frontend (Webinterface)}
 \begin{enumerate}[label=\textbf{WK\arabic{enumi}0}]
+	\setcounter{enumi}{199}
+	% Funktionen
+	\item Die Karte ist zoombar
+	\item Die Genauigkeit der Darstellung von Clustern wird entsprechend der Zoom-Stufe angepasst
+	\item Cluster werden genau genug approximiert, sodass keine größeren Diskrepanzen auftreten
+	\item Cluster werden schnell genug approximiert, sodass keine größeren Wartezeiten auftreten
+	\item Verschiedene Sensordatentypen (Feinstaub, Wind, Temperatur, etc.) können an- bzw. ausgeschaltet werden
+	\item Die Daten eines Clusters können zusätzlich als Panel mit Wertetabellen und Graphen dargestellt werden
+	\item Die Erzeugung der grafischen Komponenten unterbricht den Arbeitsfluss nicht
+	\item Die Erzeugung der grafischen Komponenten erfolgt parallel zur Darstellung der Benutzeroberfläche selbst
+	\item Der Nutzer kann Standorte als Favoriten abspeichern
+	\item Der Nutzer kann Gebiete als Kombination von Clustern auswählen und diese als Favoriten abspeichern
+	\item Der Nutzer kann favorisierte Standorte/Gebiete auswählen um schnell und einfach die optimale Ansicht des gewählten Standortes/Gebiets dargestellt zu bekommen
+	\item Der Nutzer kann einzelne Sensoren/Cluster aus der Darstellung ausschließen
+	\item Der Nutzer kann favorisierte Standorte/Gebiete in einer grafischen Darstellung vergleichen
+	\item Der Nutzer kann fehleranfällige Sensoren melden
+	\item Dem Nutzer wird eine Warnung angezeigt, wenn das Abrufen von Sensordaten nicht möglich ist % fasst Störung Verbindung / Störung Server zusammen
+	\item Bei fehlenden Sensordaten wird ein Standardwert angezeigt
+	\item Bei fehlenden Sensordaten wird ein approximierter Wert anhand von Umgebungsinformationen ermittelt und angezeigt
+	\item Der Nutzer kann zwischen einer automatischen und einer manuellen Aktualisierung der Sensordaten wechseln
+	\item Der Nutzer kann die Aktualisierungsrate von Echtzeitdaten einstellen
+	\item Der Nutzer kann vorgefertigte Szenarien aus Archivdaten laden und darstellen lassen
+	\item Es kann zwischen mehreren Tabs gewechselt werden, um die Standardansicht oder geladene Szenarien darzustellen
+	\item Der Nutzer kann Sensordaten in vielen gebräuchlichen Formaten herunterladen
+	\item Der Nutzer kann Anzeigefilter einstellen
+	\item Der Nutzer kann Anzeigefilter als Favoriten speichern
+	\item Der Nutzer kann Benachrichtigungen mit Bedingungen einstellen
+	\item Benachrichtigungen melden dem Nutzer die aktuellen Daten, falls die Bedingungen erfüllt sind
+	\item Auf Graphen werden Bedingungen für Benachrichtigungen als Grenzwerte angezeigt
+	\item Der Nutzer kann Töne und Farben für Benachrichtigungen festlegen
+	\item Für standardisierte Displayauflösungen wird immer eine benutzerfreundliche Darstellung angeboten
+	\item Die Anwendung speichert automatisch die Einstellungen und Favoriten des Nutzers über Browsersessions hinweg (Cookies)
 	
 \end{enumerate}
 
 \section{Abgrenzungskriterien}
+\begin{enumerate}[label=\textbf{AK\arabic{enumi}0}]
+	\setcounter{enumi}{99}
+	\item Der Server speichert Sensordaten nicht auf unbegrenzte Zeit und in unbegrenzter Menge
+	\item Der Server speichert keine Daten von Nutzern und deren Aktivitäten/Interaktionen mit dem Webinterface
+	\item Der Datendurchsatz des Servers wird durch lokale Netzwerkgeschwindigkeiten beschränkt
+	\item Der Server ist nicht in der Lage, korrekte Vorhersagen zu erstellen
+	\item Der Server ist nicht in der Lage, Sensordaten von fehlerhaften Sensoren auszuwerten
+	\item Der Server ist nicht in der Lage, unbegrenzt viele Daten anzuzeigen und zu aktualisieren
+	\item Der Server ist nicht in der Lage, durch Störungseinflüsse veränderte Sensordaten zu erkennen
+	\item Der Server unterstützt keine weiteren Eingabeformate als Apache Kafka Streams (und, falls \textbf{WK1070} erfüllt ist, NetCDF-Dateien)
+	\item Der Server unterstützt nicht das manuelle Hinzufügen von neuen Sensordaten
+\end{enumerate}
