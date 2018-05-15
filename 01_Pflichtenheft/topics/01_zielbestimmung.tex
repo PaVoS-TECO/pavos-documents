@@ -17,7 +17,7 @@ Ein Hauptmerkmal unseres Produktes ist die Fähigkeit, zusätzlich zu Echtzeitda
 \begin{enumerate}[label=\textbf{MK\arabic{enumi}0}]
 	\setcounter{enumi}{199}
 	\item Das Webinterface unterstützt die rasterisierte Darstellung der Sensordaten auf einer Weltkarte in Form von vordefinierten Shapes
-	\item Das Webinterface unterstützt die Darstellung der auf Deutschland beschränkten Ansicht
+	\item Das Webinterface unterstützt die Darstellung einer auf Deutschland beschränkten Ansicht
 	\item Der Nutzer kann aktuelle und historische Sensordaten über das Webinterface darstellen lassen
 	\item Der Nutzer kann die Sensordaten über das Webinterface herunterladen
 	\item Der Nutzer kann kürzlich beobachtete Daten als Wiederholung anzeigen lassen
@@ -31,10 +31,9 @@ Ein Hauptmerkmal unseres Produktes ist die Fähigkeit, zusätzlich zu Echtzeitda
 \begin{enumerate}[label=\textbf{WK\arabic{enumi}0}]
 	\setcounter{enumi}{99}
 	\item Der Server skaliert mit unterschiedlich großen Datenmengen
-	\item Der Server läuft auch nach kleinen Mengen von fehlerhaften Daten stabil
+	\item Der Server läuft auch mit fehlerhaften Daten stabil
 	\item Der Server überarbeitet im Leerlauf fehlerhafte Daten aus der Datenbank
-	\item Der Server unterstützt das Hinzufügen und Auswählen von mehreren Anzeigesprachen für das Webinterface
-	\item Der Server unterstützt das Hinzufügen von neuen Anzeigesprachen
+	\item Der Server unterstützt das Hinzufügen von neuen Anzeigesprachen für das Webinterface
 	\item Der Server unterstützt den Import von historischen Daten im NetCDF-Format und kann diese Daten problemlos verarbeiten
 	\item Der Server unterstützt das Filtern von ausgegebenen und angezeigten Daten
 	\item Der Server kann durch eine Admin-GUI gesteuert werden
@@ -43,37 +42,38 @@ Ein Hauptmerkmal unseres Produktes ist die Fähigkeit, zusätzlich zu Echtzeitda
 \subsection{Frontend (Webinterface)}
 \begin{enumerate}[label=\textbf{WK\arabic{enumi}0}]
 	\setcounter{enumi}{199}
+	% Zoom / Darstellung
 	\item Der Nutzer kann die Karte in vordefinierten Detaillierungsgraden darstellen lassen
 	\item Die Genauigkeit der Darstellung von Clustern wird entsprechend der Zoom-Stufe angepasst
-	\item Cluster werden genau genug approximiert, sodass keine größeren Diskrepanzen auftreten
-	\item Cluster werden schnell genug approximiert, sodass keine größeren Wartezeiten auftreten
-	\item Verschiedene Sensordatentypen (Feinstaub, Wind, Temperatur, etc.) können an- bzw. ausgeschaltet werden
-	\item Die Daten eines Clusters können zusätzlich als Panel mit Wertetabellen und Graphen dargestellt werden
-	\item Die Erzeugung der grafischen Komponenten unterbricht den Arbeitsfluss nicht
-	\item Die Erzeugung der grafischen Komponenten erfolgt parallel zur Darstellung der Benutzeroberfläche selbst
+	\item Die Approximation von Clustern führt nicht zu größeren Diskrepanzen oder Wartezeiten
+	\item Die Erzeugung der grafischen Komponenten erfolgt zeitnah und parallel zur Darstellung der Benutzeroberfläche selbst
+	\item Der Nutzer kann verschiedene Sensordatentypen (Feinstaub, Wind, Temperatur, etc.) an- bzw. ausschalten
+	% Favoriten
 	\item Der Nutzer kann Standorte als Favoriten abspeichern
 	\item Der Nutzer kann Gebiete als Kombination von Clustern auswählen und diese als Favoriten abspeichern
 	\item Der Nutzer kann favorisierte Standorte/Gebiete auswählen um schnell und einfach die optimale Ansicht des gewählten Standortes/Gebiets dargestellt zu bekommen
-	\item Der Nutzer kann einzelne Sensoren/Cluster aus der Darstellung ausschließen
-	\item Der Nutzer kann favorisierte Standorte/Gebiete in einer grafischen Darstellung vergleichen
-	\item Der Nutzer kann fehleranfällige Sensoren melden
-	\item Dem Nutzer wird eine Warnung angezeigt, wenn das Abrufen von Sensordaten nicht möglich ist
-	\item Bei fehlenden Sensordaten wird ein Standardwert angezeigt
-	\item Bei fehlenden Sensordaten wird ein approximierter Wert anhand von Umgebungsinformationen ermittelt und angezeigt
-	\item Der Nutzer kann zwischen einer automatischen und einer manuellen Aktualisierung der Sensordaten wechseln
-	\item Der Nutzer kann die Aktualisierungsrate von Echtzeitdaten einstellen
-	\item Der Nutzer kann vorgefertigte Szenarien aus Archivdaten laden und darstellen lassen
+	\item Der Nutzer kann favorisierte Standorte/Gebiete in einer grafischen Darstellung vergleichen, z.B. nebeneinander als Split-Panel
 	\item Der Nutzer kann zwischen mehreren Ansichten wechseln, um die Standardansicht oder geladene Szenarien darzustellen
-	\item Der Nutzer kann Sensordaten in vielen gebräuchlichen Formaten herunterladen
+	\item Der Nutzer kann einzelne Sensoren/Cluster aus der Darstellung ausschließen
 	\item Der Nutzer kann Anzeigefilter einstellen
 	\item Der Nutzer kann Anzeigefilter als Favoriten speichern
-	\item Der Nutzer kann Benachrichtigungen mit Bedingungen einstellen
-	\item Benachrichtigungen melden dem Nutzer die aktuellen Daten, falls die Bedingungen erfüllt sind
+	% Fehler bei Sensoren
+	\item Der Nutzer kann fehleranfällige Sensoren melden
+	\item Dem Nutzer wird eine Warnung angezeigt, wenn das Abrufen von Sensordaten nicht möglich ist
+	\item Bei fehlenden Sensordaten kann ein Standardwert oder ein approximierter Wert anhand von Umgebungsinformationen ermittelt und angezeigt werden
+	% Aktualisierung
+	\item Der Nutzer kann zwischen einer automatischen und einer manuellen Aktualisierung von Echtzeitsensordaten wechseln
+	\item Der Nutzer kann die Aktualisierungsrate von Echtzeitdaten einstellen
+	% Laden
+	\item Der Nutzer kann Sensordaten in vielen gebräuchlichen Formaten herunterladen
+	% Benachrichtigungen
+	\item Der Nutzer kann Benachrichtigungen mit Bedingungen einstellen, die dem Nutzer die aktuellen Daten melden, falls die Bedingungen erfüllt sind
 	\item Auf Graphen werden Bedingungen für Benachrichtigungen als Grenzwerte angezeigt
 	\item Der Nutzer kann Töne und Farben für Benachrichtigungen festlegen
+	% Sonstiges
 	\item Für standardisierte Displayauflösungen wird immer eine benutzerfreundliche Darstellung angeboten
+	\item Der Nutzer kann eine Anzeigesprache auswählen
 	\item Die Anwendung speichert automatisch die Einstellungen und Favoriten des Nutzers über Browsersessions hinweg (Cookies)
-	
 \end{enumerate}
 
 \section{Abgrenzungskriterien}
