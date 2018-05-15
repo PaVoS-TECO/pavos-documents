@@ -417,7 +417,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "Backend aufrufen",
+											"text": "Frontend aufrufen",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -732,7 +732,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "Filter Verwalten",
+											"text": "Datenkarte anzeigen",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -800,7 +800,7 @@
 									"containerExtending": false,
 									"left": 476.5,
 									"top": 452.5,
-									"width": 136,
+									"width": 136.4326171875,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -1677,7 +1677,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "Import Hist. Daten",
+											"text": "Export der Daten",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -5261,7 +5261,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFjZJrQI1Oko/I="
 					},
-					"name": "Backend aufrufen",
+					"name": "Frontend aufrufen",
 					"ownedElements": [
 						{
 							"_type": "UMLInclude",
@@ -5317,7 +5317,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFjZJrQI1Oko/I="
 					},
-					"name": "Filter Verwalten",
+					"name": "Datenkarte anzeigen",
 					"ownedElements": [
 						{
 							"_type": "UMLInclude",
@@ -5458,7 +5458,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFjZJrQI1Oko/I="
 					},
-					"name": "Import Hist. Daten",
+					"name": "Export der Daten",
 					"ownedElements": [
 						{
 							"_type": "UMLExtend",
