@@ -1,24 +1,25 @@
 \chapter{Zielbestimmung}
-Das Produkt ermöglicht es seinen Nutzern, Echtzeitdaten sowie archivierte Daten vieler Sensoren von unterschiedlichen Messgrößen abzurufen und darzustellen. Es bietet dem Nutzer hierfür eine moderne und intuitive webbasierte Bedienoberfläche. Weiterhin ermöglicht das Produkt dem Nutzer über eine öffentliche Schnittstelle den direkten Zugriff auf die Daten. Unter anderem können diese Daten als Archivdatei exportiert werden. Durch die modulare Architektur unseres Produkts werden vielseitige Einsatzmöglichkeiten außerhalb der Luftqualitätsmessung ermöglicht.
+Das Produkt dient der Verarbeitung und Darstellung von Sensordatenstreams. Durch die übersichtliche Visualisierung der Daten auf einer Karte wird die schnelle Analyse von großen Datenmengen ermöglicht und der Zeitaufwand wird minimiert.\\
+Ein Hauptmerkmal unseres Produktes ist die Fähigkeit, zusätzlich zu Echtzeitdaten auch historische Datenbestände zu verarbeiten und zu exportieren.
 \section{Musskriterien}
 \subsection{Backend (Server)}
 \begin{enumerate}[label=\textbf{MK\arabic{enumi}0}]
 	\setcounter{enumi}{99}
-	\item Es existiert eine öffentliche Schnittstelle um Sensordaten in Form eines Apache Kafka Streams an den Server zu binden
-	\item Eingeführte Sensordaten werden in einer Datenbank gesichert
-	\item Neue Sensordaten werden in Echtzeit an alle Instanzen des Webinterfaces weitergeleitet und dargestellt
-	\item Der Dienst ist logisch modular aufgebaut und erlaubt das Ergänzen und Ersetzen von einzelnen Modulen
-	\item Der Dienst verarbeitet Daten kontinuierlich im Hintergrund
-	\item Der Dienst unterstützt das Einpflegen von neuen Sensortypen
+	\item Der Server kann Sensordaten empfangen
+	\item Eingeführte Sensordaten werden gesichert
+	\item Neue Sensordaten werden zeitnah an alle Instanzen des Webinterfaces weitergeleitet und dargestellt
+	\item Der Dienst ist logisch modular aufgebaut und erlaubt das Ergänzen und Ersetzen von einzelnen funktionalen Modulen, wie z.B. verschiedene Exportformate, Zwischenmodule
+	\item Der Server verarbeitet und speichert Daten für spätere Verwendung
+	\item Der Server kann vorverarbeitete und gespeicherte Daten abrufen
+	\item Der Server unterstützt skalar- und vektorwertige Sensortypen
 \end{enumerate}
 \subsection{Frontend (Webinterface)}
 \begin{enumerate}[label=\textbf{MK\arabic{enumi}0}]
 	\setcounter{enumi}{199}
-	\item Nutzer können historische Daten über das Webinterface ansehen
-	\item Nutzer können Echtzeitdaten über das Webinterface ansehen
-	\item Nutzer können historische Daten über das Webinterface herunterladen
-	\item Nutzer können kürzlich beobachtete Daten als Wiederholung anzeigen lassen
 	\item Das Webinterface unterstützt die Darstellung der Sensordaten auf einer Weltkarte
+	\item Der Nutzer kann aktuelle und historische Daten über das Webinterface darstellen lassen
+	\item Der Nutzer können historische Daten über das Webinterface herunterladen
+	\item Nutzer können kürzlich beobachtete Daten als Wiederholung anzeigen lassen
 	\item Das Webinterface unterstützt die Darstellung von erweiterten Informationen bzgl. der Sensordaten in Form von Graphen
 	\item Die Standardsprache des Webinterfaces ist Englisch
 	\item Das Webinterface kann parallel von mehreren Nutzern aufgerufen und benutzt werden
