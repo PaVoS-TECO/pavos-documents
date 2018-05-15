@@ -9000,6 +9000,41 @@
 				}
 			],
 			"visibility": "public"
+		},
+		{
+			"_type": "UMLActivity",
+			"_id": "AAAAAAFjZNomxl1aW/M=",
+			"_parent": {
+				"$ref": "AAAAAAFF+h6SjaM2Hec="
+			},
+			"name": "Activity1",
+			"ownedElements": [
+				{
+					"_type": "UMLActivityDiagram",
+					"_id": "AAAAAAFjZNomxl1bd74=",
+					"_parent": {
+						"$ref": "AAAAAAFjZNomxl1aW/M="
+					},
+					"name": "Aktivitätsdiagram",
+					"visible": true,
+					"defaultDiagram": false
+				}
+			],
+			"visibility": "public",
+			"isReentrant": true,
+			"isReadOnly": false,
+			"isSingleExecution": false,
+			"nodes": [
+				{
+					"_type": "UMLInitialNode",
+					"_id": "AAAAAAFjZNqdy11gpuc=",
+					"_parent": {
+						"$ref": "AAAAAAFjZNomxl1aW/M="
+					},
+					"name": "InitialNode1",
+					"visibility": "public"
+				}
+			]
 		}
 	]
 }
