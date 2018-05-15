@@ -1,4 +1,4 @@
-##### Das aktuelle Pflichtenheft ist [hier](https://github.com/olivermliu/pavos/blob/master/01_Pflichtenheft/pflichtenheft.pdf) zu finden
+#### Das aktuelle Pflichtenheft ist [hier](https://github.com/olivermliu/pavos/blob/master/01_Pflichtenheft/pflichtenheft.pdf) zu finden
 # PaVoS
 **PaVoS** (**P**rocessing **a**nd **V**isualization **o**f **S**ensordata Streams) is a program for processing sensordata supplied by an Apache Kafka Stream and simultaneous visualization of said data as a web service.
 
