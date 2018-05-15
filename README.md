@@ -7,7 +7,7 @@ The program and surrounding elements are written for the [TECO Research Group](t
 ## Authors
 The authors of this project are (alphabetically sorted):
 - [Erik Wessel](https://github.com/erikwessel)
-- Jean Baumgarten
+- [Jean Baumgarten](https://github.com/Jelumar)
 - [Oliver Liu](https://github.com/olivermliu)
 - [Patrick Ries](https://github.com/masterries)
 - [Thomas Frank](https://github.com/thomas475)
