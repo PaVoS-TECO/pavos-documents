@@ -38,7 +38,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFjZJrQI1Oko/I="
 					},
-					"name": "NutzerAnwendungsfall",
+					"name": "UseCaseDiagram1",
 					"visible": true,
 					"defaultDiagram": false,
 					"ownedViews": [
@@ -2690,7 +2690,7 @@
 									"containerExtending": false,
 									"left": 740.5,
 									"top": 516.5,
-									"width": 137,
+									"width": 137.86083984375,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -5585,7 +5585,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFjZK9ioljo3Vs="
 					},
-					"name": "AdminAnwendungsfall",
+					"name": "UseCaseDiagram2",
 					"visible": true,
 					"defaultDiagram": false,
 					"ownedViews": [
@@ -9015,7 +9015,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFjZNomxl1aW/M="
 					},
-					"name": "Aktivitätsdiagramm1",
+					"name": "ActivityDiagram1",
 					"visible": true,
 					"defaultDiagram": false,
 					"ownedViews": [
@@ -9034,7 +9034,7 @@
 							"showShadow": true,
 							"containerChangeable": false,
 							"containerExtending": false,
-							"left": 200,
+							"left": 192,
 							"top": 144,
 							"width": 769,
 							"height": 865,
@@ -13817,6 +13817,29 @@
 							"height": 51,
 							"autoResize": false,
 							"text": "Bereich ist hier ein Shape",
+							"wordWrap": true
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFjZY9NEhDula4=",
+							"_parent": {
+								"$ref": "AAAAAAFjZNomxl1bd74="
+							},
+							"visible": true,
+							"enabled": true,
+							"lineColor": "#000000",
+							"fillColor": "#ffffff",
+							"fontColor": "#000000",
+							"font": "Arial;13;0",
+							"showShadow": true,
+							"containerChangeable": false,
+							"containerExtending": false,
+							"left": 744,
+							"top": 640,
+							"width": 169,
+							"height": 90,
+							"autoResize": false,
+							"text": "Sollte eigentlich auch von jedem Ort aus möglich sein zum Ende zu kommen, da es keine Vorgabe gibt bis wo man hinmuss...",
 							"wordWrap": true
 						}
 					]
