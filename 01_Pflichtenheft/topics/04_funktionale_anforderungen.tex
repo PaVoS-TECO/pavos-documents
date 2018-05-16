@@ -1,24 +1,62 @@
 \chapter{Funktionale Anforderungen}
 \begin{enumerate}[label=\textbf{PF\arabic{enumi}0}]
 	\setcounter{enumi}{99}
-	\item \textbf{Sensordaten empfangen}\\
+	
+	\item \textbf{Englisch als Systemsprache}\\
+		Das System wird nur die Englische Sprache unterstützen und alles in Englisch anzeigen. 
+	
+	\item \textbf{Sensordaten empfangen} \label{A1}\\
 		Beim ersten öffnen der Server Admin GUI soll sich der Nutzer aufgefordert werden einen Kafka Daten stream mit Sensordaten einzufügen oder komprimierte Sensordaten zu importieren. Beim Einfügen oder importieren wird von dem Programm überprüft ob es sich für das Programm lesbare Formate handelt, wenn nicht gibt das Programm eine Fehlermeldung aus und schreibt den Grund in eine Logdatei.  
+		
 	\item \textbf{Sensordaten werden gesichert}\\
 		Die Sensordaten werden extrahiert und in mehre Streams aufgeteilt und gruppiert und in einem Datenerhaltungssystem gespeichert. Falls es bei diesem Prozess zu Fehlern kommt, wie dass die Gruppierung fehlschlägt oder kein gültiges Datenerhaltungssystem verfügbar ist, wird auch eine Fehlermeldung ausgegeben und in eine Logdatei geschrieben.
-	\item \textbf{Sensordaten werden verarbeitet}\\
-		Die Sensordaten werden, wenn sie verarbeitet sind (Link) werden an das Webinterfaces gesendet.
-	\item \textbf{Sensordaten werden dargestellt}\\
-		(Reihenfolge ändern!) 
-		Nach dem die Sensordaten empfangen wurden, werden sie auf dem Webinterfaces dargestellt.
-	\item \textbf{Mehrere Instanzen des Webinterface}\\
-	 	Mehre Instanzen des Webinterfaces werden aufrufbar sein, so dass mehre Nutzer gleichzeitig mit den Sensordaten arbeiten können.
+		
+	\item \textbf{Verarbeitung der Daten für Kartenansicht} \label{FAKarten}\\
+		Der Dienst verarbeitet so vor, dass sie für spätere Verwendungen genutzt werden wie die Weiterleitung an den Webinterface und auf einer gerasterten Karte angezeigt werden können.
+	
+	\item \textbf{Verarbeitung der Daten für Mittelwertberechnung} \label{FAMittel}\\
+		Der Dienst verarbeitet die Daten so vor, dass Mittelwerte berechnet werden von den Sensordaten um diese zur Analyse weiter an das Web-Interface zu geben.
+	
+	\item \textbf{Verarbeitung der Daten für Export}\\
+		Der Dienst verarbeitet die Daten so vor, dass sie komprimiert exportiert werden können aus dem dem Datenerhaltungssystem damit diese im Web-Interface downloadet werden können.
+	
+	\item \textbf{Kann gespeicherte Daten wieder abfragen}\\
+		Der Dienst kann die vorbearbeiteten Daten  \ref{FAKarten},\ref{FAMittel} jeder Zeit wieder aufrufen und weiterleiten an das Webinterface.
+		
+	\item \textbf{Daten werden an Webinterface gesendet} \label{FAWebsend}\\
+		Die Daten aus dem Datenerhaltungssystem und vom Kafka Stream können an das Webinterface gesendet werden.
+	 	
 	 \item \textbf{Hinzufügen weiter Module}\\
-	 Der Dienst ist so aufgebraucht, dass es dem Nutzer und Programmierer möglich sein wird, auf dem einzelnen Interface zuzugreifen und so neue Module für den Dienst zu entwickeln um das System zu erweitern. Ein Beispiel wäre neue Exportformate hinzuzufügen oder ein Modul zwischen Server-Dienst und Webinterfaces zu setzten. 
-	 \item \textbf{Verarbeitung der Daten für Kartenansicht}\\
-	 Der Dienst verarbeitet so, dass sie für spätere Verwendungen genutzt werden wie die Weiterleitung an den Webinterface und auf einer gerasterten Karte angezeigt werden können.
-	 \item \textbf{Verarbeitung der Daten für Mittelwertberechnung}\\
-	 Der Dienst verarbeitet die Daten so, dass Mittelwerte berechnet werden von den Sensordaten um diese zur Analyse weiter an das Web-Interface zu geben.
-	 \item \textbf{Verarbeitung der Daten für Export}\\
-	 Der Dienst verarbeitet die Daten so, dass sie komprimiert exportiert werden können aus dem dem Datenerhaltungssystem damit diese im Web-Interface downloadet werden können.
+		 Der Dienst ist so aufgebraucht, dass es dem Nutzer und Programmierer möglich sein wird, auf dem einzelnen Interface zuzugreifen und so neue Module für den Dienst zu entwickeln um das System zu erweitern. Ein Beispiel wäre neue Exportformate hinzuzufügen oder ein Modul zwischen Server-Dienst und Webinterfaces zu setzten. 
+	 
+	 \item \textbf{Der Dienst unterstützt skalar- und vektorwertige Sensortypen}
+	 	Der Dienst unterstützt beim Kafka Stream und beim Import von Sensor Daten nur Skalar Sensortypen und vekorwertige Sensortypen. Falls andere Sensortypen im Stream entdeckt werden, dann wird dem Nutzer eine Anleitung angezeigt wie er selbst ein neuen Sensortyp hinzufügen kann. 
+	 	
+	 \item \textbf{Sensordaten werden dargestellt}\\
+	 	Nach dem die Sensordaten \ref{FAWebsend} empfangen wurden auf dem Webinterface können sie auf dem Webinterface dargestellt werden
+	 
+	 \item \textbf{Darstellung der Daten}\\
+	 	Auf dem Webinterface kann man die Sensordaten in verschiedenen Rastern (Beispiel: Quadratenraster) auf einer Weltkarte darstellen mit vordefinierten Formen wie zum Beispiel: Quadrate oder Hexagone.
+	 
+	 \item \textbf{Darstellung nur auf Deutschland}\\
+	 	Auf dem Webinterface kann man das Land Deutschland anzeigen lassen und sonst keine anderen Länder. So ist die Ansicht nur auf Deutschland beschränkt.
+	 
+	 \item \textbf{Sensordaten anzeigen}\\
+		Auf dem Webinterface kann man aktuellsten Daten von Sensoren anzeigen lassen auf der Karte und auch ältere Daten von Sensoren anzeigen lassen auf der Karte.
+		
+	\item \textbf{Export von Daten}\\
+		Auf dem Webinterface kann man die aktuellen Daten und die historischen Daten exportieren in einem vordefinierten Format in Form einem Download. 
+		
+	\item \textbf{Wiederholung anzeigen}\\
+		Auf dem Webinterface kann man aktuelle und historische Daten mit Hilfe von einem Slider als Wiederholung anzeigen lassen.
+		
+	\item \textbf{Mehrere Instanzen des Webinterface}\\
+		Mehre Instanzen des Webinterfaces werden aufrufbar sein, so dass mehre Nutzer gleichzeitig mit den Sensordaten arbeiten können.
+		
+	\item \textbf{Detail Ansicht von Sensoren}\\
+		Auf dem Webinterface kann man von einzelnen Sensoren eine Detailansicht darstellen um so nähere Informationen über den Sensor zu erhalten. Es wird dann auch eine Möglichkeit geben genauere Statistiken von dem Sensor in Form von Graphen und Text anzuzeigen.
+	
+		
+	 
 	  
 \end{enumerate}
