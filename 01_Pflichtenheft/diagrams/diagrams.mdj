@@ -108,7 +108,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "Admin",
+											"text": "Nutzer",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -5084,7 +5084,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFjZJrQI1Oko/I="
 					},
-					"name": "Admin",
+					"name": "Nutzer",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -5964,7 +5964,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "Backend aufrufen",
+											"text": "Frontend aufrufen",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -6279,7 +6279,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "Filter Verwalten",
+											"text": "Datenkarte anzeigen",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -6347,7 +6347,7 @@
 									"containerExtending": false,
 									"left": 527.5,
 									"top": 404.5,
-									"width": 136,
+									"width": 136.4326171875,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -6594,7 +6594,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "Import Hist. Daten",
+											"text": "Export der Daten",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
