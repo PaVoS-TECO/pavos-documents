@@ -1,7 +1,24 @@
 \chapter{Funktionale Anforderungen}
-\begin{enumerate}[label=\textbf{FA\arabic{enumi}0}]
+\begin{enumerate}[label=\textbf{PF\arabic{enumi}0}]
 	\setcounter{enumi}{99}
-	\item \textbf{test}\\
-		testing test
-	\item asjdibas
+	\item \textbf{Sensordaten empfangen}\\
+		Beim ersten öffnen der Server Admin GUI soll sich der Nutzer aufgefordert werden einen Kafka Daten stream mit Sensordaten einzufügen oder komprimierte Sensordaten zu importieren. Beim Einfügen oder importieren wird von dem Programm überprüft ob es sich für das Programm lesbare Formate handelt, wenn nicht gibt das Programm eine Fehlermeldung aus und schreibt den Grund in eine Logdatei.  
+	\item \textbf{Sensordaten werden gesichert}\\
+		Die Sensordaten werden extrahiert und in mehre Streams aufgeteilt und gruppiert und in einem Datenerhaltungssystem gespeichert. Falls es bei diesem Prozess zu Fehlern kommt, wie dass die Gruppierung fehlschlägt oder kein gültiges Datenerhaltungssystem verfügbar ist, wird auch eine Fehlermeldung ausgegeben und in eine Logdatei geschrieben.
+	\item \textbf{Sensordaten werden verarbeitet}\\
+		Die Sensordaten werden, wenn sie verarbeitet sind (Link) werden an das Webinterfaces gesendet.
+	\item \textbf{Sensordaten werden dargestellt}\\
+		(Reihenfolge ändern!) 
+		Nach dem die Sensordaten empfangen wurden, werden sie auf dem Webinterfaces dargestellt.
+	\item \textbf{Mehrere Instanzen des Webinterface}\\
+	 	Mehre Instanzen des Webinterfaces werden aufrufbar sein, so dass mehre Nutzer gleichzeitig mit den Sensordaten arbeiten können.
+	 \item \textbf{Hinzufügen weiter Module}\\
+	 Der Dienst ist so aufgebraucht, dass es dem Nutzer und Programmierer möglich sein wird, auf dem einzelnen Interface zuzugreifen und so neue Module für den Dienst zu entwickeln um das System zu erweitern. Ein Beispiel wäre neue Exportformate hinzuzufügen oder ein Modul zwischen Server-Dienst und Webinterfaces zu setzten. 
+	 \item \textbf{Verarbeitung der Daten für Kartenansicht}\\
+	 Der Dienst verarbeitet so, dass sie für spätere Verwendungen genutzt werden wie die Weiterleitung an den Webinterface und auf einer gerasterten Karte angezeigt werden können.
+	 \item \textbf{Verarbeitung der Daten für Mittelwertberechnung}\\
+	 Der Dienst verarbeitet die Daten so, dass Mittelwerte berechnet werden von den Sensordaten um diese zur Analyse weiter an das Web-Interface zu geben.
+	 \item \textbf{Verarbeitung der Daten für Export}\\
+	 Der Dienst verarbeitet die Daten so, dass sie komprimiert exportiert werden können aus dem dem Datenerhaltungssystem damit diese im Web-Interface downloadet werden können.
+	  
 \end{enumerate}
