@@ -8,10 +8,10 @@
 		Das System wird nur die Englische Sprache unterstützen und alles in Englisch anzeigen. 
 	
 	\item \textbf{Sensordaten empfangen} \label{A1}\\
-		Beim ersten öffnen der Server Admin GUI soll sich der Nutzer aufgefordert werden einen Kafka Daten stream mit Sensordaten einzufügen oder komprimierte Sensordaten zu importieren. Beim Einfügen oder importieren wird von dem Programm überprüft ob es sich für das Programm lesbare Formate handelt, wenn nicht gibt das Programm eine Fehlermeldung aus und schreibt den Grund in eine Logdatei.  
+		Beim ersten öffnen der Server Admin GUI soll sich der Nutzer aufgefordert werden einen Kafka Daten stream mit Sensordaten einzufügen oder komprimierte Sensordaten zu importieren. Beim Einfügen oder importieren wird von dem Programm überprüft ob es sich für das Programm lesbare Formate handelt, %wenn nicht gibt das Programm eine Fehlermeldung aus und schreibt den Grund in eine Logdatei.  
 		
 	\item \textbf{Sensordaten werden gesichert}\\
-		Die Sensordaten werden extrahiert und in mehre Streams aufgeteilt und gruppiert und in einem Datenerhaltungssystem gespeichert. Falls es bei diesem Prozess zu Fehlern kommt, wie dass die Gruppierung fehlschlägt oder kein gültiges Datenerhaltungssystem verfügbar ist, wird auch eine Fehlermeldung ausgegeben und in eine Logdatei geschrieben.
+		Die Sensordaten werden extrahiert und in mehre Streams aufgeteilt und gruppiert und in einem Datenerhaltungssystem gespeichert. %Falls es bei diesem Prozess zu Fehlern kommt, wie dass die Gruppierung fehlschlägt oder kein gültiges Datenerhaltungssystem verfügbar ist, wird auch eine Fehlermeldung ausgegeben und in eine Logdatei geschrieben.
 		
 	\item \textbf{Verarbeitung der Daten für Kartenansicht} \label{FAKarten}\\
 		Der Dienst verarbeitet so vor, dass sie für spätere Verwendungen genutzt werden wie die Weiterleitung an den Webinterface und auf einer gerasterten Karte angezeigt werden können.
@@ -67,12 +67,19 @@
 	
 	\subsection{Server}
 	
+	\item \textbf{Der Dienst gibt Fehlermeldungen aus}\\
+	Der Dienst bei Fehlschlägen von Prozessen Fehlermeldungen aus und schreibt es in eine Log Datei. Beispiele dazu wären, dass beim Laden von Fehlerhaften Stream das Programm eine Fehlermeldung aus und schreibt den Grund in eine Logdatei oder alls beim sichern der Daten im Datenerhaltungsystem zu Fehlern kommt, wie dass die Gruppierung fehlschlägt oder kein gültiges Datenerhaltungssystem verfügbar ist, wird auch eine Fehlermeldung ausgegeben und in eine Logdatei geschrieben.
+	
 	\item \textbf{Der Dienst sucht nach Fehlerhaften Sensordateien}\\
 	Der Dienst überprüft im Datenerhaltungssystem ob Sensordaten Outlier sein können und gibt den Nutzer eine Meldung, was an den Daten ungewöhnlich ist und ihm die Möglichkeit diese zu löschen.
 	 
 	\item \textbf{Mehrere Sprachen}\\
 	Der Dienst kann mit mehren Sprachen außer Englisch umgehen und die Anzeigesprache kann auch entsprechen geändert werden. 
 	
+	
+	
+		
+	\subsection{Webinterface}
 	\item \textbf{Filtern von Daten}\\
 	Man kann auf der Admin GUI die Daten oder Streams filtern, damit nur bestimmte Daten weiter verarbeitet werden.
 	
@@ -81,9 +88,6 @@
 	
 	\item \textbf{Anpassung der Daten}\\
 	Bei gezoomter Ansicht werden die Daten automatisch angepasst und den Durchschnitt genommen um eine angenehme und richtige Darstellungen zu garantieren.
-	
-		
-	\subsection{Webinterface}
 \end{enumerate}
 	
 	 
