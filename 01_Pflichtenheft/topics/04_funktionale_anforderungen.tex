@@ -1,7 +1,9 @@
 \chapter{Funktionale Anforderungen}
 \begin{enumerate}[label=\textbf{PF\arabic{enumi}0}]
 	\setcounter{enumi}{99}
-	
+	\section{Pflicht Funktionale Anforderungen}
+	\subsection{Server}
+
 	\item \textbf{Englisch als Systemsprache}\\
 		Das System wird nur die Englische Sprache unterstützen und alles in Englisch anzeigen. 
 	
@@ -30,8 +32,10 @@
 		 Der Dienst ist so aufgebraucht, dass es dem Nutzer und Programmierer möglich sein wird, auf dem einzelnen Interface zuzugreifen und so neue Module für den Dienst zu entwickeln um das System zu erweitern. Ein Beispiel wäre neue Exportformate hinzuzufügen oder ein Modul zwischen Server-Dienst und Webinterfaces zu setzten. 
 	 
 	 \item \textbf{Der Dienst unterstützt skalar- und vektorwertige Sensortypen}
-	 	Der Dienst unterstützt beim Kafka Stream und beim Import von Sensor Daten nur Skalar Sensortypen und vekorwertige Sensortypen. Falls andere Sensortypen im Stream entdeckt werden, dann wird dem Nutzer eine Anleitung angezeigt wie er selbst ein neuen Sensortyp hinzufügen kann. 
-	 	
+	 	Der Dienst unterstützt beim Kafka Stream und beim Import von Sensor Daten nur Skalar Sensortypen und vekorwertige Sensortypen. Falls andere Sensortypen im Stream entdeckt werden, dann wird dem Nutzer eine Anleitung angezeigt wie er selbst ein neuen Sensortyp hinzufügen kann.
+ 
+	 \subsection{Webinterface}
+
 	 \item \textbf{Sensordaten werden dargestellt}\\
 	 	Nach dem die Sensordaten \ref{FAWebsend} empfangen wurden auf dem Webinterface können sie auf dem Webinterface dargestellt werden
 	 
@@ -56,7 +60,11 @@
 	\item \textbf{Detail Ansicht von Sensoren}\\
 		Auf dem Webinterface kann man von einzelnen Sensoren eine Detailansicht darstellen um so nähere Informationen über den Sensor zu erhalten. Es wird dann auch eine Möglichkeit geben genauere Statistiken von dem Sensor in Form von Graphen und Text anzuzeigen.
 	
-		
+	
+	\section{Wunsch Funktionale Anforderungen}
+	\subsection{Server}
+	\subsection{Webinterface}
+	
 	 
 	  
 \end{enumerate}
