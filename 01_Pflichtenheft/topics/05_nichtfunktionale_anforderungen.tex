@@ -2,11 +2,35 @@
 \begin{enumerate}[label=\textbf{NF\arabic{enumi}0}]
 	\setcounter{enumi}{99}
 	
+	\item \textbf{Verzögerung von neuen Daten}\\
+	Neue Echtzeitsensordaten werden innerhalb einer Minute verarbeitet und auf allen Instanzen der Webinterface angezeigt.
+	
+	\item \textbf{Parallele Zugriffe}\\
+	Das Webinterface muss von bis zu 100 Nutzern gleichzeitig bedient werden können.
+	
+	\item \textbf{Speicherung von Echtzeitsensordaten}\\
+	Echtzeitsensordaten werden bis zu einer Gesamtgröße von 10 GB oder maximal 24 Stunden in einem Datenerhaltungssystem gespeichert, je nachdem welcher Fall zuerst eintritt.
+	
 	\item \textbf{Skalierbarkeit}\\
-	Das System soll auch mit großen Mengen an Daten und Stream umgehen ohne spürbare Performance Probleme zu bekommen
+	Der Server startet automatisch neue Threads um Sensordaten und Anfragen des Webservers zu verarbeiten. Die maximale Anzahl an Threads beträgt $4 \cdot \textit{Anzahl CPU Kerne}$.
 	
 	\item \textbf{Stabilität}\\  
-	Das System lieft stabil und kann mindestens 1 Woche durchlaufen ohne abzustürzen.
+	Der Server muss im normalen Betrieb mindestens eine Woche ohne Absturz laufen. Fehler in den Eingabedaten, wie ungültige Werte oder Syntaxfehler führen nicht zu einem Absturz des Servers.
+	
+	\item \textbf{Reaktionszeit}\\
+	Das Webinterface muss innerhalb von zwei Sekunden auf Interaktionen des Nutzers reagieren. Falls der Webserver bis dahin nicht das erwünschte Ergebnis liefern kann, wird der Nutzer darauf hingewiesen. ($\to$ Kriterium?)
+	
+	\item \textbf{Ladezeiten der Darstellungselemente}\\
+	Ein ungecachter Zugriff auf das Webinterface lädt Darstellungselemente innerhalb von 8 Sekunden. Ein Zugriff auf das Webinterface mit gecachten Darstellungselementen darf nicht zu Ladezeiten über 4 Sekunden führen.
+	
+	\item \textbf{Clusterberechnung}\\
+	Die Approximation der Cluster darf nicht zu einer Abweichung von mehr als 5\% von Ergebnissen einer akkuraten Berechnung führen und darf insgesamt für bis zu 1000 sichtbare Cluster nicht mehr als 2 Sekunden dauern. Für mehr sichtbare Cluster steigt die Berechnungszeit proportional. % Oder man sagt: "Für eine größere Anzahl an sichtbaren Clustern können keine Leistungsgarantien gegeben werden."
+	
+	\item \textbf{Größenanpassung}\\
+	Das Webinterface soll \Gls{responsive_webdesign} umsetzen.
+	
+	\item \textbf{Aktualisierungsgeschwindigkeit}\\
+	Die Karte aktualisiert Echtzeitsensordaten alle 10 Sekunden. % Feature für Admin-GUI: Aktualisierungsrate (fest) einstellen
 
 \end{enumerate}
 	

@@ -12,6 +12,7 @@ Ein Hauptmerkmal unseres Produktes ist die Fähigkeit, zusätzlich zu Echtzeitda
 	\item Der Server verarbeitet und speichert Daten für spätere Verwendung
 	\item Der Server kann vorverarbeitete und gespeicherte Daten abrufen
 	\item Der Server unterstützt skalar- und vektorwertige Sensortypen
+	\item Der Server kann durch eine Admin-GUI gesteuert werden
 \end{enumerate}
 \subsection{Frontend (Webinterface)}
 \begin{enumerate}[label=\textbf{MK\arabic{enumi}0}]
@@ -30,14 +31,13 @@ Ein Hauptmerkmal unseres Produktes ist die Fähigkeit, zusätzlich zu Echtzeitda
 \subsection{Backend (Server)}
 \begin{enumerate}[label=\textbf{WK\arabic{enumi}0}]
 	\setcounter{enumi}{99}
-	\item Der Server skaliert mit unterschiedlich großen Datenmengen %Das ist für NF ?
-	\item Der Server läuft auch mit fehlerhaften Daten stabil %Das ist für NF?
+	\item Der Server skaliert mit unterschiedlich großen Datenmengen
+	\item Der Server läuft auch mit fehlerhaften Daten stabil
 	\item Der Server überarbeitet im Leerlauf fehlerhafte Daten aus der Datenbank
 	\item Der Server unterstützt das Hinzufügen von neuen Anzeigesprachen für das Webinterface
-	\item Der Server unterstützt den Import von historischen Daten im NetCDF-Format und kann diese Daten problemlos verarbeiten %Sollen wir ein Musskriterum machen (siehe Funktionalitäten)
+	\item \label{NetCDF_Import}Der Server unterstützt den Import von historischen Daten im NetCDF-Format und kann diese Daten problemlos verarbeiten
 	\item Der Server unterstützt das Filtern von ausgegebenen und angezeigten Daten
-	\item Der Server kann durch eine Admin-GUI gesteuert werden%??? soll das nicht pflicht sein? 
-	\item Der Server gibt aussagekräftige Fehlermeldungen aus %Würde ich auch pflichten ? 
+	\item Der Server gibt aussagekräftige Fehlermeldungen aus
 \end{enumerate}
 \subsection{Frontend (Webinterface)}
 \begin{enumerate}[label=\textbf{WK\arabic{enumi}0}]
@@ -45,8 +45,8 @@ Ein Hauptmerkmal unseres Produktes ist die Fähigkeit, zusätzlich zu Echtzeitda
 	% Zoom / Darstellung
 	\item Der Nutzer kann die Karte in vordefinierten Detaillierungsgraden darstellen lassen
 	\item Die Genauigkeit der Darstellung von Clustern wird entsprechend der Zoom-Stufe angepasst
-	\item Die Approximation von Clustern führt nicht zu größeren Diskrepanzen oder Wartezeiten %NF ?
-	\item Die Erzeugung der grafischen Komponenten erfolgt zeitnah und parallel zur Darstellung der  Benutzeroberfläche selbst %NF?
+	\item Die Approximation von Clustern führt nicht zu größeren Diskrepanzen oder Wartezeiten
+	\item Die Erzeugung der grafischen Komponenten erfolgt zeitnah und parallel zur Darstellung der  Benutzeroberfläche selbst
 	\item Der Nutzer kann verschiedene Sensordatentypen (Feinstaub, Wind, Temperatur, etc.) an- bzw. ausschalten
 	% Favoriten
 	\item Der Nutzer kann Standorte als Favoriten abspeichern
@@ -86,6 +86,6 @@ Ein Hauptmerkmal unseres Produktes ist die Fähigkeit, zusätzlich zu Echtzeitda
 	\item Der Server ist nicht in der Lage, Sensordaten von fehlerhaften Sensoren auszuwerten
 	\item Der Server ist nicht in der Lage, unbegrenzt viele Daten anzuzeigen und zu aktualisieren
 	\item Der Server ist nicht in der Lage, durch Störungseinflüsse veränderte Sensordaten zu erkennen
-	\item Der Server unterstützt keine weiteren Eingabeformate als Apache Kafka Streams (und, falls \textbf{WK1070} erfüllt ist, NetCDF-Dateien)
+	\item Der Server unterstützt keine weiteren Eingabeformate als Apache Kafka Streams (und, falls \ref{NetCDF_Import} erfüllt ist, NetCDF-Dateien)
 	\item Der Server unterstützt nicht das manuelle Hinzufügen von neuen Sensordaten
 \end{enumerate}
