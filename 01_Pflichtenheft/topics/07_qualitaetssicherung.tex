@@ -1,2 +1,114 @@
 \chapter{Qualitätssicherung}
-\section{Test}
+\section{Vorgehen bei der Qualitätssicherung}
+
+Wir streben an, bereits während der Implementierung die ersten Testfallszenarien zu schreiben, um Probleme später zu vermeiden. Die Testphase gliedert sich in mehrere Phasen, damit sowohl einzelne Komponenten als auch ihre Zusammenarbeit getrennt getestet werden können. Schlussendlich wird das Produkt als Ganzes im dafür vorgesehenen Einsatzbereich getestet.
+
+\subsection{Komponententests}
+In den Komponententests werden der Server und das Webinterface unabhängig voneinander getestet.
+
+\subsection{Integrationstests}
+In den Integrationstests wird die Kommunikation zwischen den Komponenten geprüft. Es wird darauf geachtet, dass die Funktion und Implementierung der Schnittstellen gesichert ist.
+
+\subsection{Systemtests}
+Die Software wird unter realen Bedingungen und in einer geeigneten Umgebung getestet.
+
+\section{Testszenarien}
+
+\subsection{Komponententests}
+\subsubsection{Server}
+\begin{enumerate}[label=\textbf{TK\arabic{enumi}0}]
+	\setcounter{enumi}{99}
+	
+	\item \textbf{Englisch als Systemsprache}\\
+	Der Administrator versucht eine andere Sprache zu verwenden. Der Server akzeptiert nur vordefinierte Sprachen und verweigert somit die Aktion. [PF1000]
+	
+	\item \textbf{Sensordaten empfangen}\\
+	Der Administrator öffnet zum ersten Mal die Admin-GUI. Daraufhin wählt er aus:
+	\begin{itemize}
+		\item Server mit einem Kafka Data-Stream verbinden.
+		\item Server aus einer Datei gesicherte Sensordaten lesen lassen.
+	\end{itemize}
+	Abschließend überprüft das Programm, ob die eingehenden Daten korrekt formatiert sind. [PF1010]
+	
+	\item \textbf{Sensordaten werden gesichert}\\
+	Der Administrator sichert Sensordaten in der Admin-GUI. Anschließend ruft der Administrator die Daten aus dem Datenerhaltungssystem wieder ab. [PF1020]
+	
+	\item \textbf{Hinzufügen weiterer Module}\\
+	Der Administrator hat ein Modul entwickelt, das
+	\begin{itemize}
+		\item ein neues Exportformat hinzufügt und dessen Import ermöglicht.
+		\item einen neuen Kommunikationsdienst zwischen Server und Webinterface bereitstellt.
+	\end{itemize}
+	Dieses Modul wird in den Server integriert. Abschließend ruft der Administrator
+	\begin{itemize}
+		\item exportierte Daten ab und importiert sie wieder über die Admin-GUI.
+		\item das Resultat des Kommunikationsdienstes ab und prüft dessen Korrektheit.
+	\end{itemize}
+	[PF1080]
+	
+	\item \textbf{Unterstützte Sensordatentypen}\\
+	Der Administrator legt Daten an das System an, die nicht skalar- bzw. vektorwertig sind. Anschließend erhält er eine Benachrichtigung, dass die Sensordatentypen nicht akzeptiert werden und er wird aufgefordert, neue Daten anzulegen. Hierzu wird ihm eine Anleitung dargestellt, die den Prozess anschaulich visualisiert. [PF1090]
+	
+\end{enumerate}
+
+\subsubsection{Webinterface}
+\begin{enumerate}[label=\textbf{TK\arabic{enumi}0}]
+	\setcounter{enumi}{199}
+	
+	\item \textbf{Eingrenzung des Darstellungsbereiches der Sensordaten}\\
+	Der Administrator legt korrekte Daten an das Webinterface an und ruft dieses in einem kompatiblen Browser auf. Beim ersten Besuch der Seite werden die Daten im Webinterface in einem Raster angezeigt, das sich aus vordefinierten Formen zusammensetzt. Mehrere vorausgewählte Sensordatentypen, die in einem Filter festgelegt sind, werden visualisiert. Weiterhin sind beim ersten Besuch der Seite der anzuzeigende Detaillierungsgrad, sowie das zu fokussierende Gebiet vordefiniert. Der Administrator
+	\begin{itemize}
+		\item wählt andere Formen aus
+		\item wählt einen anderen Filter für Sensordatentypen aus
+		\item wählt einen anderen Detaillierungsgrad aus
+		\item wählt ein anderes Gebiet aus (z.B. Deutschland)
+	\end{itemize}
+	, wobei alle Darstellungen korrekt die Daten widerspiegeln. [PF1110 \& PF1120]
+	
+	\item \textbf{Mehrfache Instanzen}\\
+	Der Administrator legt korrekte Daten an das Webinterface an und ruft dieses in einem kompatiblen Browser mehrfach auf. Die Anzahl der geöffneten Instanzen führt nicht zu fehlerhaften Darstellungen der Sensordaten und ist gut skalierbar. Der Administrator sieht unter gleichen Einstellungen der Instanzen keine unterschiedlichen Ergebnisse. [PF1160]
+	
+	\item \textbf{Änderung der Ansicht der Sensordatendarstellung}\\
+	Der Administrator legt korrekte Daten an das Webinterface an und ruft dieses in einem kompatiblen Browser auf. Anschließend wählt er eine der bereitgestellten Ansichten aus. Die zur Verfügung stehenden Ansichten enthalten Unteransichten wie:
+	\begin{itemize}
+		\item Kartenansicht
+		\item Graphenansicht
+		\item Textansicht
+	\end{itemize}
+	Eine Ansicht setzt sich immer aus mehreren Unteransichten zusammen und wird so angewandt, dass auch die Benutzeroberfläche weiterhin vollständig dargestellt ist. Beim ersten Besuch der Seite wird eine vordefinierte Ansicht gewählt. Die Ansicht wird dann in die ausgewählte Variante geändert, ohne die Darstellung einzelner Elemente zu verändern. [PF1170]
+	
+\end{enumerate}
+
+\subsection{Integrationstests}
+\subsubsection{Server}
+\begin{enumerate}[label=\textbf{TI\arabic{enumi}0}]
+	\setcounter{enumi}{99}
+	
+	\item \textbf{Verarbeitung der Daten}\\
+	Der Administrator legt korrekte Daten an das System an und ruft das Webinterface in einem kompatiblen Browser auf. Er lässt den Dienst auf diesen Daten arbeiten, sodass sie vor der Nutzung vorverarbeitet werden und
+	\begin{itemize}
+		\item sieht sich die Kartenansicht des Webinterfaces an, die die Daten im gewählten Raster korrekt anzeigt.
+		\item sieht sich die Darstellung der Bereiche ohne Messwerte an. Diese zeigen den korrekt errechneten Mittelwert an.
+		\item lädt sich die Daten über den korrespondierenden Menüpunkt des Webinterfaces herunter und überprüft dessen Korrektheit.
+	\end{itemize}
+	[PF1030, PF1040, PF1050 \& PF1060]
+	
+\end{enumerate}
+
+\subsubsection{Webinterface}
+\begin{enumerate}[label=\textbf{TI\arabic{enumi}0}]
+	\setcounter{enumi}{199}
+	
+	\item \textbf{Sensordatendarstellung}\\
+	Der Benutzer öffnet das Webinterface in einem kompatiblen Browser. Empfängt das Webinterface Daten vom Server, werden diese korrekt dargestellt. Der Benutzer kann zwischen
+	\begin{itemize}
+		\item aktuellen Sensordaten
+		\item historischen Sensordaten
+		\item zeitlichen Wiederholungen von Sensordaten mit Zeit-Kontrollregler
+	\end{itemize}
+	wählen. Abschließend lädt der Benutzer die Daten aus dem Webinterface in einem der gegebenen Formate herunter um sie dann  als Sensordaten-Datei wieder zu importieren und darstellen zu lassen. [PF1100, PF1130, PF1140 \& PF1150]
+	
+\end{enumerate}
+
+\subsection{Systemtests}
+Das System wird von uns unter realen Bedingungen mit weiterem Testen auf Vollständigkeit und Korrektheit überprüft. Es erfolgt ebenfalls eine Überprüfung der intuitiven Bedienbarkeit.
