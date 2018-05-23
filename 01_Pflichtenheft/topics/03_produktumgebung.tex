@@ -1,12 +1,13 @@
 \chapter{Produktumgebung}
-Das Produkt läuft mit Client-Server Architektur im "Thin Client" Konzept.
+Das Produkt ist intern in einer Master-Worker Rechnerarchitektur aufgebaut. Clients verbinden sich mit dem Server über einen Webbrowser.
 \section{Software}
 \subsection{Server}
 \begin{itemize}
-	\item Linux-Betriebssystem (min. Debian 8)
+	\item FROST-Server liefert Sensordaten
+	\item Kafka speichert und verteilt Sensordaten
+	\item Worker in einer Containerumgebung
 	\item Java-Anwendung mit Java 8
-	\item Java Web-Dienst mit Eclipse Jetty
-	\item Datenbank mit PostgreSQL
+	\item Apache Tomcat als Webserver
 \end{itemize}
 \subsection{Client}
 \begin{itemize}
@@ -15,7 +16,7 @@ Das Produkt läuft mit Client-Server Architektur im "Thin Client" Konzept.
 \section{Hardware}
 \subsection{Server}
 \begin{itemize}
-	\item Aus dem Internet erreichbarer, leistungsstarker Rechner
+	\item Containerumgebung (min. 1GB RAM, 10GB Festplattenspeicher, 2 CPU Kerne)
 \end{itemize}
 \subsection{Client}
 \begin{itemize}
