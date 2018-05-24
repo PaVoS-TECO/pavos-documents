@@ -3,11 +3,22 @@
 \begin{enumerate}[label=\textbf{PD\arabic{enumi}0}]
 	\setcounter{enumi}{99}
 	\item \textbf{Sensordaten}\\
-	Sowohl vorverarbeitete Sensordaten als auch Echtzeitsensordaten werden vom Server bis zu einer gewissen Menge gespeichert.
+	Apache Kafka speichert alle eintreffenden Sensordaten in einem persistenten Speicher.\\
+	Echtzeitsensordaten werden bis zu 1GB in dem Arbeitsspeicher gespeichert.
 \end{enumerate}
 \section{Webinterface}
 \begin{enumerate}[label=\textbf{PD\arabic{enumi}0}]
 	\setcounter{enumi}{199}
-	\item \textbf{Cookies}\\
-	Die vom Nutzer gesetzten Einstellungen (z.B. Zoom-Stufe, an- bzw. ausgeschaltete Sensordatentypen), Favoriten (z.B. Gebiete, Anzeigefilter) und Benachrichtigungen werden in Form von Cookies im Browser des Nutzers gespeichert.
+	\item \textbf{Benutzerdefinierte Einstellungen}\\
+	Die vom Nutzer im Webinterface gesetzten Einstellungen werden im Browser gespeichert. Diese Einstellungen sind:
+	\begin{itemize}
+		\item zuletzt beobachtete Ansicht
+		\item an- bzw. ausgeschaltete Sensordatentypen
+		\item ausgewähltes Cluster-Shape
+		\item favorisierte Cluster
+		\item favorisierte Gebiete
+		\item favorisierte Filter
+		\item eingerichtete Benachrichtigungen
+	\end{itemize}
+	Alle anderen Daten, die für eine korrekte Darstellung benötigt werden, werden nicht persistent gespeichert, sondern nach Bedarf generiert.
 \end{enumerate}

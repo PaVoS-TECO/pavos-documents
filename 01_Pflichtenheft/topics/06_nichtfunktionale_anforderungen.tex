@@ -2,35 +2,47 @@
 \begin{enumerate}[label=\textbf{NF\arabic{enumi}0}]
 	\setcounter{enumi}{99}
 	
+	\item \textbf{Anzeigesprache}\\
+	Die Standardanzeigesprache des Webinterfaces ist Englisch.
+	
+	\item \textbf{Parallele Zugriffe}\\
+	Das Webinterface muss von bis zu 100 Nutzern gleichzeitig bedient werden können. Alle folgenden Anforderungen gelten nur für bis zu 100 parallele Nutzer. Für mehr Nutzer sind keine Leistungsgarantien gegeben.
+	
+	\item \textbf{Sichtbare Cluster}\\
+	Das Webinterface muss bis zu 1000 Cluster gleichzeitig anzeigen können. Alle folgenden Anforderungen gelten nur für bis zu 1000 sichtbare Cluster. Für mehr Cluster sind keine Leistungsgarantien gegeben.
+	
 	\item \textbf{Verzögerung von neuen Daten}\\
 	Neue Echtzeitsensordaten werden innerhalb einer Minute verarbeitet und auf allen Instanzen der Webinterface angezeigt.
 	
-	\item \textbf{Parallele Zugriffe}\\
-	Das Webinterface muss von bis zu 100 Nutzern gleichzeitig bedient werden können.
+	\item \textbf{Verzögerung von historischen und archivierten Daten}\\
+	Historische und archivierte Daten, die eine große Datenmenge umfassen und/oder von einem persistenten Speicher geladen werden müssen, benötigen mehr Zeit zur Verarbeitung und Visualisierung. Für diese sind keine Leistungsgarantien gegeben.
 	
-	\item \textbf{Speicherung von Echtzeitsensordaten}\\
-	Echtzeitsensordaten werden bis zu einer Gesamtgröße von 10 GB oder maximal 24 Stunden in einem Datenerhaltungssystem gespeichert, je nachdem welcher Fall zuerst eintritt.
+	\item \textbf{Speicherung von kürzlichen Echtzeitsensordaten}\\
+	Kürzliche Echtzeitsensordaten werden bis zu einer Gesamtgröße von 1GB in dem Arbeitsspeicher gespeichert. Diese kürzlichen Daten können schneller abgerufen werden als ältere Daten und werden für die Wiederholungsansicht verwendet.
+	
+	\item \textbf{Speicherung von älteren Echtzeitsensordaten}\\
+	Alle an Apache Kafka angelegte Sensordaten werden von Apache Kafka in einem persistenten Speicher gespeichert. Die Größe des Speichers begrenzt die Menge der gespeicherten Daten.
 	
 	\item \textbf{Skalierbarkeit}\\
-	Der Server startet automatisch neue Threads um Sensordaten und Anfragen des Webservers zu verarbeiten. Die maximale Anzahl an Threads beträgt $4 \cdot \textit{Anzahl CPU Kerne}$.
+	Der Server startet automatisch neue Worker-Container um Sensordaten und Anfragen des Servers zu verarbeiten. Mindestens 10 Worker können je nach Bedarf gestartet und beendet werden.
 	
 	\item \textbf{Stabilität}\\  
-	Der Server muss im normalen Betrieb mindestens eine Woche ohne Absturz laufen. Fehler in den Eingabedaten, wie ungültige Werte oder Syntaxfehler führen nicht zu einem Absturz des Servers.
+	Der Server muss im normalen Betrieb problemlos mit unerwarteter Terminierung von einem oder mehreren Worker-Containern umgehen und innerhalb von fünf Minuten die ursprüngliche Rechenleistung wiederherstellen. Fehler in den Eingabedaten wie ungültige Werte oder Syntaxfehler führen nicht zu einem Absturz des Servers.
 	
 	\item \textbf{Reaktionszeit}\\
-	Das Webinterface muss innerhalb von zwei Sekunden auf Interaktionen des Nutzers reagieren. Falls der Webserver bis dahin nicht das erwünschte Ergebnis liefern kann, wird der Nutzer darauf hingewiesen. ($\to$ Kriterium?)
+	Das Webinterface muss innerhalb von zwei Sekunden auf Interaktionen des Nutzers reagieren. Falls der Webserver bis dahin nicht das erwünschte Ergebnis liefern kann, wird der Nutzer darauf hingewiesen.
 	
 	\item \textbf{Ladezeiten der Darstellungselemente}\\
-	Ein ungecachter Zugriff auf das Webinterface lädt Darstellungselemente innerhalb von 8 Sekunden. Ein Zugriff auf das Webinterface mit gecachten Darstellungselementen darf nicht zu Ladezeiten über 4 Sekunden führen.
+	Ein Zugriff auf das Webinterface lädt Darstellungselemente wie Cluster-Shapes, Graphen und Buttons innerhalb von 5 Sekunden.
 	
-	\item \textbf{Clusterberechnung}\\
-	Die Approximation der Cluster darf nicht zu einer Abweichung von mehr als 5\% von Ergebnissen einer akkuraten Berechnung führen und darf insgesamt für bis zu 1000 sichtbare Cluster nicht mehr als 2 Sekunden dauern. Für mehr sichtbare Cluster steigt die Berechnungszeit proportional. % Oder man sagt: "Für eine größere Anzahl an sichtbaren Clustern können keine Leistungsgarantien gegeben werden."
+	\item \textbf{Genauigkeit der Clusterberechnung}\\
+	Die Approximation der Daten in Clustern darf nicht zu einer Abweichung über 5\% von Ergebnissen einer akkuraten Berechnung führen.
 	
-	\item \textbf{Größenanpassung}\\
-	Das Webinterface soll \Gls{responsive_webdesign} umsetzen.
+	\item \textbf{Geschwindigkeit der Clusterberechnung}\\
+	Die Approximation der Daten in Clustern darf nicht mehr als 2 Sekunden dauern.
 	
 	\item \textbf{Aktualisierungsgeschwindigkeit}\\
-	Die Karte aktualisiert Echtzeitsensordaten alle 10 Sekunden. % Feature für Admin-GUI: Aktualisierungsrate (fest) einstellen
+	Die Karte aktualisiert Echtzeitsensordaten alle 10 Sekunden.
 
 \end{enumerate}
 	
