@@ -13,28 +13,29 @@
             \item Export anpassen
         \end{itemize}
         Nachdem der Nutzer auf das Webinterface zugreift, kann er sich die Karte anzeigen lassen. Diese visualisiert die Daten, welche 
-        vom Server bereitgestellt werden. Die Anzeige der Karte, sowie des gesamten Interfaces lässt sich an die Wünsche des Nutzers 
-        anpassen, beispielsweise durch die Einbeziehung von Graphen zur besseren Darstellung. Die Datenbestände lassen sich 
-        herunterladen und in das gewünschte Format exportieren. Durch Beschränkung der Datenmengen auf bestimmte Zeitintervalle, 
-        Datentypen und Wertebereiche kann der Export weiter angepasst werden.
+        vom Server durch KafkaStreams bereitgestellt werden. Diese können Echtzeit-, sowie historische Daten enthalten.  Der Server führt 
+        im Hintergrund Vorberechnungen zur schnelleren Visualisierung durch. Die Anzeige der Karte, sowie des gesamten Interfaces lässt sich 
+        an die Wünsche des Nutzers anpassen, beispielsweise durch die Einbeziehung von Graphen zur besseren Darstellung. Die 
+        Datenbestände lassen sich herunterladen und in das gewünschte Format exportieren. Durch Beschränkung der Datenmengen auf 
+        bestimmte Zeitintervalle, Datentypen und Wertebereiche kann der Export weiter angepasst werden.
         
     % Anwendungsfall Admin-GUI
-    \subsection{Bedienung der Admin-GUI}
+    \subsection{Bedienung der Konfigurations-GUI}
         \includegraphics[width=1\linewidth]{diagrams/UseCaseDiagram2.png}
         
-        Dieser Anwendungsfall beschreibt die Bedienung der Admin-GUI. Dem Admin stehen folgende Aktionen zur Verfügung:
+        Dieser Anwendungsfall beschreibt die Bedienung der Konfigurations-GUI. Dem Admin stehen folgende Aktionen zur Verfügung:
         \begin{itemize}
-            \item Authentifikation
-            \item Serverwartung
-            \item DataStreams importieren
-            \item Sensoren ignorieren
+            \item Server initialisieren
+            \item KafkaStreams verwalten
+            \item Datenbestand importieren
+            \item Server warten
         \end{itemize}
-        Um Zugriff auf die Funktionen des Admin-GUIs zu erhalten, muss sich der Admin zunächst authentifizieren. War dies erfolgreich, so 
-        kann der Server gewartet werden. Der Admin kann ihn starten sowie beenden um Analysen durchzuführen und eventuelle 
-        Fehler zu beheben. Weiterhin lassen sich DataStreams importieren, wodurch der Server diese verarbeiten und weiterverbreiten 
-        kann. Dadurch können auch historische Datenbestände in den Datensatz aufgenommen werden. Auch hat der Admin die 
-        Möglichkeit auszuwählen, welche Sensoren ignoriert werden, also wessen Daten nicht verbreitet und in den Datenbestand 
-        aufgenommen werden sollen.
+        Um den Server und damit die Applikation zu starten, greift der Nutzer auf die Konfigurations-GUI zu. Er initialisiert den gestartenen 
+        Server, indem ein KafkaStream, bzw. ein Datenbestand eingefügt wird, welcher in einen Stream umgewandelt wird. Dieser wird 
+        daraufhin überprüft. Gibt es keine Probleme, so können die Nutzer des Webinterfaces nun die Streams vom Server empfangen. Außerdem ist 
+        es nun möglich, die KafkaStreams auf dem Server zu verwalten. Man kann neue Streams hinzufügen, Vorhandene entfernen und 
+        enthaltene Sensoren und Sensorendaten anzeigen. Weiterhin lässt sich der Server durch die Konfigurations-GUI warten. Man kann ihn 
+        starten, sowie beenden um Analysen durchzuführen und eventuelle Fehler zu beheben.
         
 \section{Aktivitätsdiagramm}
     % Aktivitätsdiagramm
