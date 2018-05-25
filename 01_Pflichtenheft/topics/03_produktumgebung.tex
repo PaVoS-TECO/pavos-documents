@@ -1,4 +1,24 @@
 \chapter{Produktumgebung}
+Das Produkt ist intern in einer Master-Worker Rechnerarchitektur aufgebaut. Clients verbinden sich mit dem Server über einen Webbrowser.
 \section{Software}
-
+\subsection{Server}
+\begin{itemize}
+	\item FROST-Server liefert Sensordaten
+	\item Kafka speichert und verteilt Sensordaten
+	\item Docker für die Containerumgebung
+	\item Java-Anwendung mit Java 8
+	\item Apache Tomcat als Webserver
+\end{itemize}
+\subsection{Client}
+\begin{itemize}
+	\item Webbrowser, Referenzstandard Mozilla Firefox 57
+\end{itemize}
 \section{Hardware}
+\subsection{Server}
+\begin{itemize}
+	\item Containerumgebung (min. 1GB RAM, 10GB Festplattenspeicher, 2 CPU Kerne)
+\end{itemize}
+\subsection{Client}
+\begin{itemize}
+	\item Standardrechner mit genügend Leistung für Firefox (min. 512MB RAM, 512MB Festplattenspeicher, 1.5GHz CPU)
+\end{itemize}
