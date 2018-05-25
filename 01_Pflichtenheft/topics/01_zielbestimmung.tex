@@ -19,7 +19,7 @@ Ein Hauptmerkmal unseres Produktes ist die Fähigkeit, zusätzlich zu Echtzeitda
 \begin{enumerate}[label=\textbf{MK\arabic{enumi}0}]
 	\setcounter{enumi}{199}
 	\item Das Webinterface unterstützt die rasterisierte Darstellung der Sensordaten auf einer Weltkarte in Form von vordefinierten Shapes
-	\item Das Webinterface unterstützt die Darstellung einer auf Deutschland beschränkten Ansicht
+	\item Das Webinterface unterstützt die Darstellung einer auf Deutschland beschränkten Ansicht\item Der Nutzer kann die Karte in vordefinierten Detaillierungsgraden darstellen lassen
 	\item Der Nutzer kann aktuelle und historische Sensordaten über das Webinterface darstellen lassen
 	\item Der Nutzer kann die Sensordaten über das Webinterface herunterladen
 	\item Der Nutzer kann kürzlich beobachtete Daten als Wiederholung anzeigen lassen
@@ -37,41 +37,31 @@ Ein Hauptmerkmal unseres Produktes ist die Fähigkeit, zusätzlich zu Echtzeitda
 	\item Der Server überarbeitet im Leerlauf fehlerhafte Daten aus der Datenbank
 	\item Der Server unterstützt das Hinzufügen von neuen Anzeigesprachen für das Webinterface
 	\item \label{NetCDF_Import}Der Server unterstützt den Import von historischen Daten im NetCDF-Format und kann diese Daten problemlos verarbeiten
-	\item Der Server gibt aussagekräftige Fehlermeldungen aus
+	%\item Der Server gibt aussagekräftige Fehlermeldungen aus
 \end{enumerate}
 \subsection{Frontend (Webinterface)}
 \begin{enumerate}[label=\textbf{WK\arabic{enumi}0}]
 	\setcounter{enumi}{199}
 	% Zoom / Darstellung
-	\item Der Nutzer kann die Karte in vordefinierten Detaillierungsgraden darstellen lassen
-	\item Die Genauigkeit der Darstellung von Clustern wird entsprechend der Zoom-Stufe angepasst
+	\item Die Genauigkeit der Darstellung von Clustern wird entsprechend der Zoom-Stufe angepasst % MARKIERT
 	\item Die Approximation von Clustern führt nicht zu größeren Diskrepanzen oder Wartezeiten
-	\item Die Erzeugung der grafischen Komponenten erfolgt zeitnah und parallel zur Darstellung der  Benutzeroberfläche selbst
-	\item Der Nutzer kann verschiedene Sensordatentypen (Feinstaub, Wind, Temperatur, etc.) an- bzw. ausschalten
+	\item Der Nutzer kann verschiedene Sensordatentypen an- bzw. ausschalten
 	% Favoriten
-	\item Der Nutzer kann Standorte als Favoriten abspeichern
-	\item Der Nutzer kann Gebiete als Kombination von Clustern auswählen und diese als Favoriten abspeichern
-	\item Der Nutzer kann favorisierte Standorte/Gebiete auswählen um schnell und einfach die optimale Ansicht des gewählten Standortes/Gebiets dargestellt zu bekommen
-	\item Der Nutzer kann favorisierte Standorte/Gebiete in einer grafischen Darstellung vergleichen, z.B. nebeneinander als Split-Panel
-	\item Der Nutzer kann zwischen mehreren Ansichten wechseln, um die Standardansicht oder geladene Szenarien darzustellen
-	\item Der Nutzer kann einzelne Sensoren/Cluster aus der Darstellung ausschließen
-	\item Der Nutzer kann Anzeigefilter einstellen
-	\item Der Nutzer kann Anzeigefilter als Favoriten speichern
+	\item Der Nutzer kann seine Ansicht als Favoriten abspeichern
+	\item Der Nutzer kann favorisierte Ansichten wiederherstellen
+	% \item Der Nutzer kann einzelne Sensoren/Cluster aus der Darstellung ausschließen
 	% Fehler bei Sensoren
-	\item Der Nutzer kann fehleranfällige Sensoren melden
-	\item Dem Nutzer wird eine Warnung angezeigt, wenn das Abrufen von Sensordaten nicht möglich ist
-	\item Bei fehlenden Sensordaten kann ein Standardwert oder ein approximierter Wert anhand von Umgebungsinformationen ermittelt und angezeigt werden
+	\item Der Nutzer kann Sensoren melden
+	\item Dem Nutzer wird darauf hingewiesen, wenn das Abrufen von Sensordaten nicht möglich ist
+	\item Enthält ein Cluster keine Sensoren, wird der Cluster nicht angezeigt
 	% Aktualisierung
 	\item Der Nutzer kann zwischen einer automatischen und einer manuellen Aktualisierung von Echtzeitsensordaten wechseln
-	\item Der Nutzer kann die Aktualisierungsrate von Echtzeitdaten einstellen
-	% Laden
-	\item Der Nutzer kann Sensordaten in vielen gebräuchlichen Formaten herunterladen
 	% Benachrichtigungen
-	\item Der Nutzer kann Benachrichtigungen mit Bedingungen einstellen, die dem Nutzer die aktuellen Daten melden, falls die Bedingungen erfüllt sind
-	\item Auf Graphen werden Bedingungen für Benachrichtigungen als Grenzwerte angezeigt
-	\item Der Nutzer kann Töne und Farben für Benachrichtigungen festlegen
+	%\item Der Nutzer kann Benachrichtigungen mit Bedingungen einstellen, die dem Nutzer die aktuellen Daten melden, falls die Bedingungen erfüllt sind
+	%\item Auf Graphen werden Bedingungen für Benachrichtigungen als Grenzwerte angezeigt
+	%\item Der Nutzer kann Töne und Farben für Benachrichtigungen festlegen
 	% Sonstiges
-	\item Für die häufigsten Displayauflösungen wird immer eine benutzerfreundliche Darstellung angeboten % https://en.wikipedia.org/wiki/Display_resolution#Common_display_resolutions
+	%\item Für die häufigsten Displayauflösungen wird immer eine benutzerfreundliche Darstellung angeboten % https://en.wikipedia.org/wiki/Display_resolution#Common_display_resolutions
 	\item Der Nutzer kann eine Anzeigesprache auswählen
 	\item Die Anwendung speichert automatisch die Einstellungen und Favoriten des Nutzers über Browsersessions hinweg
 \end{enumerate}
