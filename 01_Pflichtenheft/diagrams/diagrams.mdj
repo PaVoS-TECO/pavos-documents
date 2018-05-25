@@ -33511,7 +33511,7 @@
 									"containerExtending": false,
 									"left": 745.5,
 									"top": 572.5,
-									"width": 200.72802734375,
+									"width": 200,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -41487,7 +41487,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "KafkaStream bereitstellen",
+											"text": "Stream bereitstellen",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -41555,7 +41555,7 @@
 									"containerExtending": false,
 									"left": 763.5,
 									"top": 484.5,
-									"width": 169.681640625,
+									"width": 168,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -44756,7 +44756,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFjlOwHqrKvVy0="
 					},
-					"name": "KafkaStream bereitstellen",
+					"name": "Stream bereitstellen",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
