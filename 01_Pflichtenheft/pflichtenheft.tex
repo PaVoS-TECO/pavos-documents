@@ -33,15 +33,8 @@ numberedsection,
 nonumberlist, %keine Seitenzahlen anzeigen
 acronym,      %ein Abkürzungsverzeichnis erstellen
 toc,          %Einträge im Inhaltsverzeichnis
-section,      %im Inhaltsverzeichnis auf section-Ebene erscheinen
-automake]       
+section]      %im Inhaltsverzeichnis auf section-Ebene erscheinen
 {glossaries}
-
-%Befehle für Abkürzungen
-\newacronym{KIT}{KIT}{Karlsruher Institut für Technologie}
-
-%Benutzerdefinierte Silbentrennungen
-\hyphenation{Ein-stel-lun-gen}
 
 % KIT layout
 
@@ -72,23 +65,22 @@ automake]
   		\color{mintgreen}\leaders\hrule height \headrulewidth\hfill}}				
 	\fancyfoot[LE,RO]{\thepage}
 
-
 \setcounter{tocdepth}{5}
 \makeglossaries
 \begin{document}
 	
-	\include{topics/00_deckblatt}
+	\include{./topics/00_deckblatt}
 	\tableofcontents
-	\include{topics/01_zielbestimmung}
-	\include{topics/02_produkteinsatz}
-	\include{topics/03_produktumgebung}
-	\include{topics/04_funktionale_anforderungen}
-	\include{topics/05_produktdaten}
-	\include{topics/06_nichtfunktionale_anforderungen}
-	\include{topics/07_qualitaetssicherung}
-	\include{topics/08_systemmodelle}
-	\include{topics/09_entwicklungsumgebung}
-	\include{topics/10_benutzeroberflaeche}
-	\include{topics/11_anhang}
+	\include{./topics/01_zielbestimmung}
+	\include{./topics/02_produkteinsatz}
+	\include{./topics/03_produktumgebung}
+	\include{./topics/04_funktionale_anforderungen}
+	\include{./topics/05_produktdaten}
+	\include{./topics/06_nichtfunktionale_anforderungen}
+	\include{./topics/07_qualitaetssicherung}
+	\include{./topics/08_systemmodelle}
+	\include{./topics/09_entwicklungsumgebung}
+	\include{./topics/10_benutzeroberflaeche}
+	\include{./topics/11_anhang}
 
 \end{document}
