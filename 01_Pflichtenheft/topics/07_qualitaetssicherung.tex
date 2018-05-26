@@ -1,114 +1,141 @@
 \chapter{Qualitätssicherung}
-\section{Vorgehen bei der Qualitätssicherung}
-
-Wir streben an, bereits während der Implementierung die ersten Testfallszenarien zu schreiben, um Probleme später zu vermeiden. Die Testphase gliedert sich in mehrere Phasen, damit sowohl einzelne Komponenten als auch ihre Zusammenarbeit getrennt getestet werden können. Schlussendlich wird das Produkt als Ganzes im dafür vorgesehenen Einsatzbereich getestet.
-
-\subsection{Komponententests}
-In den Komponententests werden der Server und das Webinterface unabhängig voneinander getestet.
-
-\subsection{Integrationstests}
-In den Integrationstests wird die Kommunikation zwischen den Komponenten geprüft. Es wird darauf geachtet, dass die Funktion und Implementierung der Schnittstellen gesichert ist.
-
-\subsection{Systemtests}
-Die Software wird unter realen Bedingungen und in einer geeigneten Umgebung getestet.
-
-\section{Testszenarien}
-
-\subsection{Komponententests}
-\subsubsection{Server}
-\begin{enumerate}[label=\textbf{TK\arabic{enumi}0}]
-	\setcounter{enumi}{99}
+	\label{ch:Qualitaetssicherung}
 	
-	\item \textbf{Englisch als Systemsprache}\\
-	Der Administrator versucht eine andere Sprache zu verwenden. Der Server akzeptiert nur vordefinierte Sprachen und verweigert somit die Aktion. [PF1000]
+	Für die Komponententests unseres Systems verwenden wir grundsätzlich JUnit. Für weiterführenden Tests werden im folgenden Abschnitt Szenarien beschrieben.
 	
-	\item \textbf{Sensordaten empfangen}\\
-	Der Administrator öffnet zum ersten Mal die Admin-GUI. Daraufhin wählt er aus:
-	\begin{itemize}
-		\item Server mit einem Kafka Data-Stream verbinden.
-		\item Server aus einer Datei gesicherte Sensordaten lesen lassen.
-	\end{itemize}
-	Abschließend überprüft das Programm, ob die eingehenden Daten korrekt formatiert sind. [PF1010]
+\section{Globale Testszenarien}
+	\label{ch:Qualitaetssicherung:sec:GlobaleTestszenarien}
 	
-	\item \textbf{Sensordaten werden gesichert}\\
-	Der Administrator sichert Sensordaten in der Admin-GUI. Anschließend ruft der Administrator die Daten aus dem Datenerhaltungssystem wieder ab. [PF1020]
-	
-	\item \textbf{Hinzufügen weiterer Module}\\
-	Der Administrator hat ein Modul entwickelt, das
-	\begin{itemize}
-		\item ein neues Exportformat hinzufügt und dessen Import ermöglicht.
-		\item einen neuen Kommunikationsdienst zwischen Server und Webinterface bereitstellt.
-	\end{itemize}
-	Dieses Modul wird in den Server integriert. Abschließend ruft der Administrator
-	\begin{itemize}
-		\item exportierte Daten ab und importiert sie wieder über die Admin-GUI.
-		\item das Resultat des Kommunikationsdienstes ab und prüft dessen Korrektheit.
-	\end{itemize}
-	[PF1080]
-	
-	\item \textbf{Unterstützte Sensordatentypen}\\
-	Der Administrator legt Daten an das System an, die nicht skalar- bzw. vektorwertig sind. Anschließend erhält er eine Benachrichtigung, dass die Sensordatentypen nicht akzeptiert werden und er wird aufgefordert, neue Daten anzulegen. Hierzu wird ihm eine Anleitung dargestellt, die den Prozess anschaulich visualisiert. [PF1090]
-	
-\end{enumerate}
-
-\subsubsection{Webinterface}
-\begin{enumerate}[label=\textbf{TK\arabic{enumi}0}]
-	\setcounter{enumi}{199}
-	
-	\item \textbf{Eingrenzung des Darstellungsbereiches der Sensordaten}\\
-	Der Administrator legt korrekte Daten an das Webinterface an und ruft dieses in einem kompatiblen Browser auf. Beim ersten Besuch der Seite werden die Daten im Webinterface in einem Raster angezeigt, das sich aus vordefinierten Formen zusammensetzt. Mehrere vorausgewählte Sensordatentypen, die in einem Filter festgelegt sind, werden visualisiert. Weiterhin sind beim ersten Besuch der Seite der anzuzeigende Detaillierungsgrad, sowie das zu fokussierende Gebiet vordefiniert. Der Administrator
-	\begin{itemize}
-		\item wählt andere Formen aus
-		\item wählt einen anderen Filter für Sensordatentypen aus
-		\item wählt einen anderen Detaillierungsgrad aus
-		\item wählt ein anderes Gebiet aus (z.B. Deutschland)
-	\end{itemize}
-	, wobei alle Darstellungen korrekt die Daten widerspiegeln. [PF1110 \& PF1120]
-	
-	\item \textbf{Mehrfache Instanzen}\\
-	Der Administrator legt korrekte Daten an das Webinterface an und ruft dieses in einem kompatiblen Browser mehrfach auf. Die Anzahl der geöffneten Instanzen führt nicht zu fehlerhaften Darstellungen der Sensordaten und ist gut skalierbar. Der Administrator sieht unter gleichen Einstellungen der Instanzen keine unterschiedlichen Ergebnisse. [PF1160]
-	
-	\item \textbf{Änderung der Ansicht der Sensordatendarstellung}\\
-	Der Administrator legt korrekte Daten an das Webinterface an und ruft dieses in einem kompatiblen Browser auf. Anschließend wählt er eine der bereitgestellten Ansichten aus. Die zur Verfügung stehenden Ansichten enthalten Unteransichten wie:
-	\begin{itemize}
-		\item Kartenansicht
-		\item Graphenansicht
-		\item Textansicht
-	\end{itemize}
-	Eine Ansicht setzt sich immer aus mehreren Unteransichten zusammen und wird so angewandt, dass auch die Benutzeroberfläche weiterhin vollständig dargestellt ist. Beim ersten Besuch der Seite wird eine vordefinierte Ansicht gewählt. Die Ansicht wird dann in die ausgewählte Variante geändert, ohne die Darstellung einzelner Elemente zu verändern. [PF1170]
-	
-\end{enumerate}
-
-\subsection{Integrationstests}
-\subsubsection{Server}
+\subsection{Server}
 \begin{enumerate}[label=\textbf{TI\arabic{enumi}0}]
 	\setcounter{enumi}{99}
 	
-	\item \textbf{Verarbeitung der Daten}\\
-	Der Administrator legt korrekte Daten an das System an und ruft das Webinterface in einem kompatiblen Browser auf. Er lässt den Dienst auf diesen Daten arbeiten, sodass sie vor der Nutzung vorverarbeitet werden und
-	\begin{itemize}
-		\item sieht sich die Kartenansicht des Webinterfaces an, die die Daten im gewählten Raster korrekt anzeigt.
-		\item sieht sich die Darstellung der Bereiche ohne Messwerte an. Diese zeigen den korrekt errechneten Mittelwert an.
-		\item lädt sich die Daten über den korrespondierenden Menüpunkt des Webinterfaces herunter und überprüft dessen Korrektheit.
-	\end{itemize}
-	[PF1030, PF1040, PF1050 \& PF1060]
-	
+	\item \textbf{Erstanwendung der Konfigurations-GUI mit Kafka Stream}\\
+		Die Konfigurations-GUI wurde noch nie gestartet und es steht ein Kafka Stream namens 'TestStream' bereit.\\
+		Der Nutzer startet die Konfigurations-GUI, woraufhin diese ihn auffordert, den hinzuzufügenden Kafka Stream auszuwählen.\par
+		
+		Der Nutzer schreibt 'TestStream' in das Feld des Popups und bestätigt.\\
+		Die Konfigurations-GUI akzeptiert den Stream und fügt ihn hinzu.
+	\item \textbf{Erstanwendung der Konfigurations-GUI ohne Kafka Stream}\\
+		Die Konfigurations-GUI wurde noch nie gestartet und es steht kein Kafka Stream bereit.\\
+		Der Nutzer startet die Konfigurations-GUI, woraufhin diese ihn auffordert, den hinzuzufügenden Kafka Stream auszuwählen.\par
+		
+		Der Nutzer schreibt 'TestStream' in das Feld des Popups und bestätigt.\\
+		Die Konfigurations-GUI akzeptiert den Stream nicht und fordert ihn erneut auf, den hinzuzufügenden Kafka Stream auszuwählen.
+	\item \textbf{Hinzufügen von zusätzlichen Streams zur Konfigurations-GUI mit Kafka Stream}\\
+		Die Konfigurations-GUI ist gestartet, es ist ein Kafka Stream namens 'TestStream' hinzugefügt worden und es steht ein Kafka Stream namens 'TestStream2' bereit.\\
+		Der Nutzer wählt die Option 'Stream hinzufügen', woraufhin die Konfigurations-GUI ihn auffordert, den hinzuzufügenden Kafka Stream auszuwählen.\par
+		
+		Der Nutzer schreibt 'TestStream2' in das Feld des Popups und bestätigt.\\
+		Die Konfigurations-GUI akzeptiert den Stream und fügt ihn hinzu.
+	\item \textbf{Hinzufügen von zusätzlichen Streams zur Konfigurations-GUI ohne Kafka Stream}\\
+		Die Konfigurations-GUI ist gestartet, es ist ein Kafka Stream namens 'TestStream' hinzugefügt worden und es steht kein Kafka Stream bereit.\\
+		Der Nutzer wählt die Option 'Stream hinzufügen', woraufhin die Konfigurations-GUI ihn auffordert, den hinzuzufügenden Kafka Stream auszuwählen.\par
+		
+		Der Nutzer schreibt 'TestStream' in das Feld des Popups und bestätigt.\\
+		Die Konfigurations-GUI akzeptiert den Stream nicht und fordert ihn erneut auf, den hinzuzufügenden Kafka Stream auszuwählen.
+	\item \textbf{Entfernen von Streams in der Konfigurations-GUI}\\
+		Die Konfigurations-GUI ist gestartet und es ist ein Kafka Stream namens 'TestStream' hinzugefügt worden.\\
+		Der Nutzer wählt die Option 'Stream entfernen', woraufhin die Konfigurations-GUI ihn auffordert, den zu entfernenden Kafka Stream auszuwählen.\par
+		
+		Der Nutzer schreibt 'TestStream' in das Feld des Popups und bestätigt.\\
+		Die Konfigurations-GUI entfernt den Stream.
+	\item \textbf{Export einer Archiv-Datei in der Konfigurations-GUI}\\
+		Die Konfigurations-GUI ist gestartet und es ist ein Kafka Stream namens 'TestStream' hinzugefügt worden.\\
+		Der Nutzer wählt die Option 'Export Stream', woraufhin die Konfigurations-GUI ihn auffordert, den Dateityp, das Verzeichnis und den Namen der zu exportierenden Archiv-Datei auszuwählen.\par
+		
+		Der Nutzer wählt das Format
+		\begin{itemize}
+		\item NetCDF
+		\item CSV
+		\end{itemize}
+		, wählt das Verzeichnis 'SensorExport' bzw. erstellt es, falls es noch nicht existiert, legt den Namen auf 'TestSensorExport' fest und bestätigt.\\
+		Die Konfigurations-GUI exportiert den Stream.
+	\item \textbf{Import einer Archiv-Datei in der Konfigurations-GUI}\\
+		Die Konfigurations-GUI ist gestartet, es ist ein Kafka Stream namens 'TestStream' hinzugefügt worden und es existiert eine importierbare Archiv-Datei im Verzeichnis 'SensorExport' mit dem Namen 'TestSensorExport'.\\
+		Der Nutzer wählt die Option 'Import Stream', woraufhin die Konfigurations-GUI ihn auffordert, die zu importierenden Archiv-Datei auszuwählen.\par
+		
+		Der Nutzer wählt die
+		\begin{itemize}
+		\item NetCDF
+		\item CSV
+		\end{itemize}
+		Datei und bestätigt.\\
+		Die Konfigurations-GUI importiert den Stream.
+	\item \textbf{Clusterform in der Konfigurations-GUI festlegen}\\
+		Die Konfigurations-GUI ist gestartet und es ist ein Kafka Stream namens 'TestStream' hinzugefügt worden.\\
+		Der Nutzer wählt die Option 'Select Clusterform', woraufhin die Konfigurations-GUI ihn auffordert, aus mehreren Möglichkeiten eine Form für die Cluster zu berechnen.\par
+		
+		Der Nutzer wählt die
+		\begin{itemize}
+		\item Quadrat
+		\item Hexagon
+		\end{itemize}
+		Form und bestätigt.\\
+		Die Konfigurations-GUI akzeptiert die neue Clusterform und berechnet Mittelwerte und Clusterpositionen neu.
+	\item \textbf{Clustergröße in der Konfigurations-GUI festlegen}\\
+		Die Konfigurations-GUI ist gestartet und es ist ein Kafka Stream namens 'TestStream' hinzugefügt worden.\\
+		Der Nutzer wählt die Option 'Change Clustersize', woraufhin die Konfigurations-GUI ihn auffordert, einen Wert innerhalb eines Bereiches einzutragen.\par
+		
+		Der Nutzer wählt die Größe '2' und bestätigt.\\
+		Die Konfigurations-GUI akzeptiert die neue Clusterform und berechnet Mittelwerte und Clusterpositionen neu.
+
 \end{enumerate}
 
-\subsubsection{Webinterface}
+\subsection{Webinterface}
 \begin{enumerate}[label=\textbf{TI\arabic{enumi}0}]
 	\setcounter{enumi}{199}
 	
-	\item \textbf{Sensordatendarstellung}\\
-	Der Benutzer öffnet das Webinterface in einem kompatiblen Browser. Empfängt das Webinterface Daten vom Server, werden diese korrekt dargestellt. Der Benutzer kann zwischen
-	\begin{itemize}
-		\item aktuellen Sensordaten
-		\item historischen Sensordaten
-		\item zeitlichen Wiederholungen von Sensordaten mit Zeit-Kontrollregler
-	\end{itemize}
-	wählen. Abschließend lädt der Benutzer die Daten aus dem Webinterface in einem der gegebenen Formate herunter um sie dann  als Sensordaten-Datei wieder zu importieren und darstellen zu lassen. [PF1100, PF1130, PF1140 \& PF1150]
-	
+	\item \textbf{Darstellung des berechneten Mittelwertes im Webinterface}\\
+		Das Webinterface ist gestartet und es ist ein Kafka Stream namens 'TestStream' hinzugefügt worden. Die Ansicht des Webinterfaces ist auf Karlsruhe in Deutschland fokussiert.\\
+		Der Nutzer wählt alle Skalierungsstufen der Karte in sich entfernender Reihenfolge aus, woraufhin die berechneten Mittelwerte auf der Karte als Farbe der Cluster zu sehen sind.\par
+	\item \textbf{Darstellung von Clustern ohne Sensoren im Webinterface}\\
+		Das Webinterface ist gestartet und es ist ein Kafka Stream namens 'TestStream' hinzugefügt worden. Die Ansicht des Webinterfaces ist auf Karlsruhe in Deutschland fokussiert. Es existiert ein Cluster ohne Sensoren in seinem Einflussgebiet, hier auch 'leerer Cluster' genannt.\\
+		Der Nutzer wählt alle Skalierungsstufen der Karte in sich entfernender Reihenfolge aus. Die Karte zeigt leere Cluster nicht an.\par
+	\item \textbf{Darstellung der tabellarischen Ansicht im Webinterface}\\
+		Das Webinterface ist gestartet, es ist ein Kafka Stream namens 'TestStream' hinzugefügt worden. Die Ansicht des Webinterfaces ist auf Karlsruhe in Deutschland fokussiert.\\
+		Der Nutzer wählt in der Ansicht den tabellarischen Modus.\\
+		Daraufhin stellt das Webinterface die Sensordaten in einer geordneten Tabelle dar.\par
+		
+		Der Nutzer selektiert dann den Parameter 'Name', woraufhin das Webinterface die Sensoren nach Namen alphabetisch sortiert.
+	\item \textbf{Benutzung mehrerer Webinterface-Instanzen}\\
+		Das Webinterface ist nicht geöffnet, es ist ein Kafka Stream namens 'TestStream' hinzugefügt worden und im Browser sind Daten des Webinterfaces gespeichert. Die Ansicht des Webinterfaces ist auf Karlsruhe in Deutschland fokussiert.\\
+		Der Nutzer öffnet das Webinterface für jede mögliche Ansicht einmal mehr in unterschiedlichen Tabs oder Fenstern des Browsers.\\
+		Das Webinterface lädt auf allen Instanzen zu Beginn die gleichen Ansichten.\par
+		
+		Anschließend wählt der Nutzer pro Instanz verschiedene Ansichten.\\
+		Das Webinterface stellt pro Instanz eine Ansicht dar. Die Ansichten der Instanzen werden nach der Auswahl gleichzeitig angezeigt.
+	\item \textbf{Auswahl eines Sensortyps im Webinterface}\\
+		Das Webinterface ist geöffnet und es ist ein Kafka Stream namens 'TestStream' hinzugefügt worden. Die Ansicht des Webinterfaces ist auf Karlsruhe in Deutschland fokussiert.\\
+		Der Nutzer wählt im Webinterface die darzustellenden Sensortypen aus. Er aktiviert nur den Sensortyp 'Feinstaub'.\\
+		Das Webinterface stellt daraufhin nur noch die Werte für 'Feinstaub'-Sensoren dar.\par
+	\item \textbf{Export einer Archiv-Datei aus dem Webinterface}\\
+		Das Webinterface ist geöffnet und es ist ein Kafka Stream namens 'TestStream' hinzugefügt worden.\\
+		Der Nutzer wählt die Option 'Export Sensordata' und wählt das Format 'NetCDF', woraufhin das Webinterface den browserspezifischen Download-Dialog öffnet.\\
+		Der Nutzer wählt das Verzeichnis 'SensorExport' bzw. erstellt es, falls es noch nicht existiert, legt den Namen auf 'TestSensorExport' fest und bestätigt.\par
+		
+		Der Nutzer wählt das Format
+		\begin{itemize}
+		\item NetCDF
+		\end{itemize}
+		, wählt das Verzeichnis 'SensorExport' bzw. erstellt es, falls es noch nicht existiert, legt den Namen auf 'TestSensorExport' fest und bestätigt.\\
+		Die Konfigurations-GUI exportiert den Stream.
+	\item \textbf{Wiederholungen im Webinterface anzeigen}\\
+		Das Webinterface ist geöffnet und es ist ein Kafka Stream namens 'TestStream' hinzugefügt worden.\\
+		Der Nutzer wählt im Webinterface eine Zeit aus oder verschiebt den Zeitregler 1 Minute zurück. \\
+		Das Webinterface stellt daraufhin eine Wiederholung der Sensordaten von der Ausgewählten Zeit bis zum aktuellen Zeitpunkt dar.\par
+		
+		Der Nutzer kann mit einem Klick auf den 'Pause' Knopf die Wiederholung anhalten. Drückt er anschließend wieder auf 'Play', läuft die Wiederholung weiter.
+	\item \textbf{Echtzeitdarstellung im Webinterface}\\
+		Das Webinterface ist geöffnet, es ist ein Kafka Stream namens 'TestStream' hinzugefügt worden und das Webinterface zeigt eine Wiederholung an.\\
+		Der Nutzer wählt 'Live' aus, woraufhin das Webinterface wieder die Echtzeitdaten darstellt und den Zeitregler wieder zurück auf 'Live' stellt.\par
+	\item \textbf{Detailansicht eines Sensors im Webinterface anzeigen}\\
+		Das Webinterface ist geöffnet und es ist ein Kafka Stream namens 'TestStream' hinzugefügt worden.\\
+		Der Nutzer wählt in der Ansicht einen Sensor aus.\\
+		Das Webinterface stellt daraufhin eine detaillierte Auflistung der Sensoreigenschaften dar.\par
+	\item \textbf{Melden eines Sensors im Webinterface}\\
+		Das Webinterface ist geöffnet und es ist ein Kafka Stream namens 'TestStream' hinzugefügt worden.\\
+		Der Nutzer wählt in der Ansicht einen Sensor aus und klickt auf die Schaltfläche 'Report Sensor'. Anschließend schreibt der Nutzer in das Feld 'Reason' den Grund des Meldens an. Hier ist dieser Grund 'TestReportReason'.\\
+		Das Webinterface zeigt dem Nutzer daraufhin an, dass die Meldung des Sensors erfolgt ist und speichert sie ab.\par
+		
 \end{enumerate}
-
-\subsection{Systemtests}
-Das System wird von uns unter realen Bedingungen mit weiterem Testen auf Vollständigkeit und Korrektheit überprüft. Es erfolgt ebenfalls eine Überprüfung der intuitiven Bedienbarkeit.
