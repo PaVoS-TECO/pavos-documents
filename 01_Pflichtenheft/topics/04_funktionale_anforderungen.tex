@@ -1,254 +1,234 @@
 \chapter{Funktionale Anforderungen}
 \begin{enumerate}[label=\textbf{PF\arabic{enumi}0}]
 	\setcounter{enumi}{99}
-	\section{Pflicht Funktionale Anforderungen}
+	\section{Pflichtanforderungen}
 	\subsection{Server}
 
-	\item \textbf{Initialisierendes Starten }\\
-		Beim ersten Aufruf wird der Nutzer aufgefordert, einen Kafka Stream in die  Admin-GUI einzufügen und dessen Gültigkeit wird überprüft. \ref{Gültig}\\
-		Vorbedingung: Programm wird gestartet.\\ 
-		Nachbedingung: Das Programm ist einsatzbereit.\\ 
-		Bei Scheitern: Kann das Programm nicht weiter genutzt werden und man wird aufgefordert einen Stream einzufügen.  
+	\item \textbf{Initialisierendes Starten}\\
+		Beim ersten Aufruf wird der Nutzer aufgefordert, einen Kafka-Stream in die Konfigurations-GUI einzufügen. Die Gültigkeit dieses Streams wird überprüft. [\ref{Gültig}]\\
+		\textbf{Vorbedingung:} Programm wird gestartet.\\
+		\textbf{Nachbedingung:} Das Programm ist einsatzbereit.\\
+		\textbf{Fehlerbedingung:} Das Programm kann nicht weiter genutzt werden. Der Nutzer wird erneut aufgefordert, einen Kafka-Stream einzufügen.
 	
-	\item \textbf{Kontrollieren der Gültigkeit des Streams} \label{Gültig}\\ 
-		Es wird eine Verbindung zu Kafka hergestellt und seine Struktur wird für das Programm überprüft.\\ 
-		Vorbedingung: Kafka-Stream wurde hinzugefügt \ref{Einfügen}\\ 
-		Nachbedingung: Der Kafka Stream wird vom akzeptiert.\\ 
-		Beim Scheitern: Der Benutzer wird aufgefordert einen anderen Kafka Stream einzufügen.
+	\item \textbf{Kontrollieren der Gültigkeit des Streams} \label{Gültig}\\
+		Es wird eine Verbindung zu Kafka hergestellt und die syntaktische Korrektheit des Streams wird überprüft.\\
+		\textbf{Vorbedingung:} Ein Kafka-Stream wurde hinzugefügt. [\ref{Einfügen}]\\
+		\textbf{Nachbedingung:} Der Kafka-Stream wird vom Server akzeptiert.\\
+		\textbf{Fehlerbedingung:} Der Kafka-Stream wird nicht vom Server akzeptiert. Der Nutzer wird erneut aufgefordert, einen Kafka-Stream einzufügen.
 	
-	\item \textbf{Einfügen eines Kafka Streams} \label{Einfügen}\\
-		Ein Kafka Stream kann in der Admin-GUI eingefügt werden und dessen Gültigkeit wird überprüft \ref{Gültig}\\ 
-		Vorbedingung: Das Programm ist gestartet\\ 
-		Nachbedingung: Der Kafka Stream wird dem Programm hinzugefügt.\\ 
-		Beim Scheitern: Der Kafka Stream wird nicht hinzugefügt und dem Nutzer wird die Möglichkeit geboten einen anderen Stream hinzufügen.
-	
-	\item \textbf{Entfernen von Stream}\\
-		Ein Kafka Stream kann mit Hilfe der Admin-GUI entfernt werden und falls der Initial-Stream entfernt wird, wird das Programm gestoppt.\\ 
-		Vorbedingung: Es sind Kafka Streams vorhanden\\ 
-		Nachbedingung: Der Kafka Stream dem Programm entfernt.\\ 
-		Beim Scheitern: Der Kafka Stream wird nicht entfernt.
+	\item \textbf{Einfügen eines Kafka-Streams} \label{Einfügen}\\
+		Ein Kafka-Stream kann in der Konfigurations-GUI eingefügt werden. Die Gültigkeit dieses Streams wird überprüft. [\ref{Gültig}]\\
+		\textbf{Vorbedingung:} Das Programm ist gestartet.\\
+		\textbf{Nachbedingung:} Der Kafka-Stream wird dem Programm hinzugefügt.\\
+		\textbf{Fehlerbedingung:} Der Kafka-Stream wird nicht hinzugefügt. Der Nutzer kann erneut einen Kafka-Stream einfügen.
 		
-	\item \textbf{Ein und Ausschalten des Programms}\\
-		Über die Admin-GUI kann das Programm gestoppt und gestartet werden.\\
-		Vorbedingung: Das Programm läuft\\  
-		Nachbedingung: Das Programm wird gestoppt oder gestartet.\\ 
-		Beim Scheitern: Nichts passiert und es wird eine Fehlermeldung ausgegeben.
+	\item \textbf{Entfernen eines Kafka-Streams}\\
+		Ein Kafka-Stream kann in der Konfigurations-GUI entfernt werden.\\
+		\textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden.\\
+		\textbf{Nachbedingung:} Der Kafka-Stream wird aus dem Programm entfernt. Falls der letzte Stream entfernt wird, stoppt das Programm.\\
+		\textbf{Fehlerbedingung:} Der Kafka-Stream wird nicht entfernt. Dem Nutzer wird darauf hingewiesen.
 		
-	\item \textbf{Importieren von NetCDF}\\
-		Eine \Gls{netcdf_glo} kann importiert werden und daraus wird ein Kafka Stream erstellt. Dieser wird dann automatisch hinzugefügt \ref{Einfügen}\\ 
-		Vorbedingung: Das Programm ist gestartet\\ 
-		Nachbedingung: Die Sensordaten werden verarbeitet. \\ 
-		Beim Scheitern: Nichts passiert und es wird eine Fehlermeldung ausgegeben. 
+		% Zu trivial
 		
-	\item \textbf{Importieren von JSON}\\
-		Eine JSON kann importiert werden und daraus wird ein Kafka Stream erstellt. Dieser wird dann automatisch hinzugefügt \ref{Einfügen}\\ 
-		Vorbedingung: Das Programm ist gestartet\\ 
-		Nachbedingung: Die Sensordaten werden verarbeitet. \\ 
-		Beim Scheitern: Nichts passiert und es wird eine Fehlermeldung ausgegeben. 	
+%	\item \textbf{Ein und Ausschalten des Programms}\\
+%		Über die Konfigurations-GUI kann das Programm gestoppt und gestartet werden.\\
+%		\textbf{Vorbedingung:} Das Programm läuft\\
+%		\textbf{Nachbedingung:} Das Programm wird gestoppt oder gestartet.\\
+%		\textbf{Fehlerbedingung:} Nichts passiert und es wird eine Fehlermeldung ausgegeben.
 		
-	\item \textbf{Gruppierung der Daten } \label{Group}\\ 
-		Die Sensordaten werden nach Vektor und Skalare Daten gruppiert.\\ 
-		Vorbedingung: Ein Kafka Stream vorhanden.\\ 
-		Nachbedingung: Die Sensordaten werden weiter verarbeitet. \\ 
-		Beim Scheitern: Es wird eine passende Fehlermeldung ausgegeben.	
+	\item \textbf{Importieren von NetCDF-Dateien}\\
+		Eine \gls{netcdf_glo}-Datei kann importiert werden, woraus ein Kafka-Stream erstellt wird. Dieser wird automatisch zum Programm hinzugefügt. [\ref{Einfügen}]\\
+		\textbf{Vorbedingung:} Das Programm ist gestartet.\\
+		\textbf{Nachbedingung:} Die Sensordaten werden verarbeitet.\\
+		\textbf{Fehlerbedingung:} Die Daten werden nicht importiert. Dem Nutzer wird eine Fehlermeldung angezeigt.
 		
-	\item \textbf{Berechnung des Mittelwerts}\label{Mittel}\\
-		Von den gruppierten Sensordaten werden Mittelwerte berechnet. \ref{Group}\\ 
-		Vorbedingung: Sensordaten sind gruppiert.\\ 
-		Nachbedingung: Die Mittelwerte können auf der View angezeigt werden \\ 
-		Beim Scheitern: Es wird eine passende Fehlermeldung ausgegeben.	
-	
+	\item \textbf{Importieren von CSV-Dateien}\\
+		Eine \gls{csv}-Datei kann importiert werden, woraus ein Kafka-Stream erstellt wird. Dieser wird automatisch zum Programm hinzugefügt. [\ref{Einfügen}]\\
+		\textbf{Vorbedingung:} Das Programm ist gestartet.\\
+		\textbf{Nachbedingung:} Die Sensordaten werden verarbeitet.\\
+		\textbf{Fehlerbedingung:} Die Daten werden nicht importiert. Dem Nutzer wird eine Fehlermeldung angezeigt.
 		
-	\item \textbf{Kafka Streams werden aufgeteilt }\\
-		Die Kafka Streams werden auf verschiedene Worker-Dienste aufgeteilt und dort verarbeitet zu werden \ref{Mittel} \\
-		Vorbedingung: Ein Kafka Stream vorhanden\\
-		Nachbedingung: Die Daten werden erfolgreich verarbeitet. \\ 
-		Beim Scheitern: Es wird eine passende Fehlermeldung ausgegeben. 
-	
-	\item \textbf{Clusterposition berechnen } \label{Kachel}\\
-		Aus den Sensordaten werden Cluster berechnet. \\
-		Vorbedingung: Mittelwert wurde berechnet\\
-		Nachbedingung: Diese Kacheln können in der View angezeigt werden \\ 
-		Beim Scheitern: Es wird eine passende Fehlermeldung ausgegeben. 
+	\item \textbf{Sensoren in Tabellenansicht}\\
+		Die einzelnen Sensoren eines Streams können in der Konfigurations-GUI in einer Tabelle anzeigt werden.\\
+		\textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden.\\
+		\textbf{Nachbedingung:} Die Sensoren werden in einer Tabelle angezeigt.\\
+		\textbf{Fehlerbedingung:} Dem Nutzer wird eine Fehlermeldung angezeigt.
 		
-	\item \textbf{Clustergröße berechnen } \\
-		Die Größe der Cluster kann in der Konfiguration-GUI eingestellt werden \\
-		Vorbedingung: Clusterposition wurde berechnet\\
-		Nachbedingung: Die Cluster werden angepasst \\ 
-		Beim Scheitern: Es wird eine passende Fehlermeldung ausgegeben. 
+	\item \textbf{Sensoren nach Parametern sortieren}\\
+		Der Nutzer kann die Sensoren in der Tabellenansicht nach ihren Parametern sortieren.\\
+		\textbf{Vorbedingung:} Es werden Sensoren in der Tabelle aufgelistet.\\
+		\textbf{Nachbedingung:} Die Sensoren werden nach dem ausgewählten Parameter sortiert.\\
+		\textbf{Fehlerbedingung:} Dem Nutzer wird eine Fehlermeldung angezeigt.
 		
-	\item \textbf{Clusterform auswählen  } \\
-		Die Form der Cluster kann in der Konfiguration-GUI eingestellt werden \\
-			Vorbedingung: Clusterposition wurde berechnet\\
-		Nachbedingung: Die Cluster werden angepasst \\ 
-		Beim Scheitern: Es wird eine passende Fehlermeldung ausgegeben.
-	
-	\item \textbf{Cluster werden an View gesendet } \label{send}\\
-		Die Cluster werden an die View gesendet um dort angezeigt zu werden \\
-		Vorbedingung: Clusterposition, Clustergröße und Clusterform wurde berechnet.\\
-		Nachbedingung: Die Cluster werden von der View entgegengenommen.  \\ 
-		Beim Scheitern: Es wird eine passende Fehlermeldung ausgegeben.
+	\item \textbf{Aufteilung der Daten} \label{Aufteilung}\\
+		Die Sensordaten werden in skalar- und vektorwertige Daten aufgeteilt.\\
+		\textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden.\\
+		\textbf{Nachbedingung:} Die Sensordaten werden weiterverarbeitet.\\
+		\textbf{Fehlerbedingung:} Die Daten werden nicht aufgeteilt. Im Fehlerprotokoll wird ein Fehler vermerkt.
 		
-	\item \textbf{Sensoren in Tabellenansicht} \\
-		Die einzelnen Sensoren werden in einer Tabelle anzeigt  \\
-		Vorbedingung: Kafka Stream vorhanden\\
-		Nachbedingung: Die Sensoren können angezeigt werden \\ 
-		Beim Scheitern: Es wird eine passende Fehlermeldung ausgegeben.
-	
-		\item \textbf{Sensoren sortieren nach ihren Parameter} \\
-		Man kann die Sensoren in der Tabellenansicht sortieren nach ihren Parameter\\
-		Vorbedingung: Sensordaten in der Tabelle vorhanden\\
-		Nachbedingung: Die Sensoren können angezeigt werden \\ 
-		Beim Scheitern: Es wird eine passende Fehlermeldung ausgegeben.
+	\item \textbf{Berechnung des Mittelwerts} \label{Mittel}\\
+		Von den aufgeteilten Sensordaten werden Mittelwerte berechnet. [\ref{Aufteilung}]\\
+		\textbf{Vorbedingung:} Sensordaten sind aufgeteilt.\\
+		\textbf{Nachbedingung:} Die Mittelwerte können an den Webdienst weitergeleitet werden.\\
+		\textbf{Fehlerbedingung:} Es werden keine Mittelwerte berechnet. Im Fehlerprotokoll wird ein Fehler vermerkt.
 		
-		%Statisitken 
-	\item \textbf{Intervallspeicherung der Daten der Sensoren} \label{zeitinter}\\
-		In einem fest definierbaren Intervall werden Daten für Sensoren in einem Datenerhaltungssystem gespeichert.  \\
-		Vorbedingung: Kafka Stream muss vorhanden sein\\
-		Nachbedingung: Die Daten werden für Statistiken weiterverarbeitet.  \\ 
-		Beim Scheitern: Es wird eine passende Fehlermeldung ausgegeben.
+	\item \textbf{Kafka-Streams werden aufgeteilt}\\
+		Die Kafka-Streams werden auf verschiedene Worker-Dienste aufgeteilt um dort weiterverarbeitet zu werden.\\
+		\textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden.\\
+		\textbf{Nachbedingung:} Die Daten sind erfolgreich aufgeteilt und werden verarbeitet.\\
+		\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt.
+		
+	\item \textbf{Clusterform auswählen}\\
+		Die Form der Cluster kann in der Konfigurations-GUI eingestellt werden. Die Standardform ist ein Rechteck.\\
+		\textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden.\\
+		\textbf{Nachbedingung:} Die Clusterform wird angepasst.\\
+		\textbf{Fehlerbedingung:} Dem Nutzer wird eine Fehlermeldung angezeigt.
+		
+	\item \textbf{Cluster berechnen} \label{Kachel}\\
+		Anhand der Form des Clusters werden die Cluster berechnet und an den Webdienst weitergeleitet.\\
+		\textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden.\\
+		\textbf{Nachbedingung:} Die Cluster werden an den Webdienst weitergeleitet.\\
+		\textbf{Fehlerbedingung:} Dem Nutzer wird eine Fehlermeldung angezeigt.
 	
-	\item \textbf{Berechnung von Zeitstatistiken für Sensoren } \label{single}\\
-		Aus der Intervallspeicherung \ref{zeitinter} einzelne Sensoren werden die Daten in eine Zeitstatistik umformatiert.\\
-		Vorbedingung: Intervallspeicherung vorhanden\\
-		Nachbedingung: Die Daten werden an die View weiter gegeben  \\ 
-		Beim Scheitern: Es wird eine passende Fehlermeldung ausgegeben.
+	\item \textbf{Cluster werden an den Webdienst gesendet} \label{send}\\
+		Die Cluster werden an den Webdienst gesendet um im Webinterface dargestellt zu werden.\\
+		\textbf{Vorbedingung:} Clusterposition, Clustergröße und Clusterform wurden berechnet.\\
+		\textbf{Nachbedingung:} Die Cluster werden vom Webdienst entgegengenommen.\\
+		\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt.
 	
-	\item \textbf{Berechnung von Zeitstatistiken für Cluster } \label{stat} \\
-		Aus den Zeitstatistiken der einzelne Sensoren \ref{zeitinter} werden in Cluster zusammen formatiert.\\
-		Vorbedingung: Intervallspeicherung vorhanden\\
-		Nachbedingung: Die Daten werden an die View weiter gegeben  \\ 
-		Beim Scheitern: Es wird eine passende Fehlermeldung ausgegeben.
+	\item \textbf{Export der Daten als NetCDF-Datei} \label{netcdf}\\
+		Die Sensordaten aus einem bestimmten zeitlichen Intervall können im NetCDF-Format exportiert werden.\\
+		\textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden.\\
+		\textbf{Nachbedingung:} Die Daten werden exportiert.\\
+		\textbf{Fehlerbedingung:} Dem Nutzer wird eine Fehlermeldung angezeigt.
 	
-		%%Export --- (21:04)
-	
-	\item \textbf{Export der Daten als NetCDF } \label{netcdf}\\
-		Die Sensordaten können in einem Zeitleichenintervall in dem Format NetCDF exportiert werden \\
-		Vorbedingung: Kafka Stream vorhanden \\
-		Nachbedingung: Die Daten werden exportiert \\ 
-		Beim Scheitern: Es wird eine passende Fehlermeldung ausgegeben.
-	
-	\item \textbf{Export der Daten als JSON } \label{json}\\
-		Die Sensordaten können in einem Zeitleichenintervall in dem Format JSON exportiert werden \\
-		Vorbedingung: Kafka Stream vorhanden \\
-		Nachbedingung: Die Daten werden exportiert \\ 
-		Beim Scheitern: Es wird eine passende Fehlermeldung ausgegeben.
+	\item \textbf{Export der Daten als CSV-Datei} \label{CSV}\\
+		Die Sensordaten aus einem bestimmten zeitlichen Intervall können im CSV-Format exportiert werden.\\
+		\textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden.\\
+		\textbf{Nachbedingung:} Die Daten werden exportiert.\\
+		\textbf{Fehlerbedingung:} Dem Nutzer wird eine Fehlermeldung angezeigt.
 		
 	%%Client Worker
 	
 %%%%%	\item \textbf{Daten werden an Webinterface gesendet} \label{FAWebsend}\\
-	%	Die Daten aus dem Datenerhaltungssystem und vom Kafka Stream können an das %Webinterface gesendet werden.
+	%	Die Daten aus dem Datenerhaltungssystem und vom Kafka-Stream können an das %Webinterface gesendet werden.
 	 	
 	% \item \textbf{Hinzufügen weiter Module}\\
 	%	 Der Dienst ist so aufgebraucht, dass es dem Nutzer und Programmierer möglich sein %wird, auf dem einzelnen Interface zuzugreifen und so neue Module für den Dienst zu entwickeln um das System zu erweitern. Ein Beispiel wäre neue Exportformate hinzuzufügen oder ein Modul zwischen Server-Dienst und Webinterfaces zu setzten. 
 	 
 %	 \item \textbf{Der Dienst unterstützt skalar- und vektorwertige Sensortypen}
-	% 	Der Dienst unterstützt beim Kafka Stream und beim Import von Sensor Daten nur Skalar Sensortypen und vekorwertige Sensortypen. Falls andere Sensortypen im Stream entdeckt werden, dann wird dem Nutzer eine Anleitung angezeigt wie er selbst ein neuen Sensortyp hinzufügen kann.
+	% 	Der Dienst unterstützt beim Kafka-Stream und beim Import von Sensor Daten nur Skalar Sensortypen und vekorwertige Sensortypen. Falls andere Sensortypen im Stream entdeckt werden, dann wird dem Nutzer eine Anleitung angezeigt wie er selbst ein neuen Sensortyp hinzufügen kann.
  
 	 \subsection{Webinterface}
+	 \setcounter{enumi}{199}
 	 
 	 \item \textbf{Mehrere Instanzen des Webinterface}\\
-		 Mehre Instanzen des Webinterfaces werden aufrufbar sein, so dass mehre Nutzer gleichzeitig mit den Sensordaten arbeiten können.
-		 Vorbedingung: Kafka Stream vorhanden\\
-		 Nachbedingung: View wird angezeigt\\ 
-	 	Beim Scheitern: Es wird eine Fehlermeldung in den Log geschrieben.
+		 Mehrere Instanzen des Webinterfaces können aufgerufen werden, sodass mehrere Nutzer gleichzeitig mit den Sensordaten arbeiten können.\\
+		 \textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden.\\
+		 \textbf{Nachbedingung:} Mehrere Instanzen des Webinterfaces sind geöffnet.\\
+	 	\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt. Dem Nutzer des Webinterfaces wird eine Fehlermeldung angezeigt.
 
-	 \item \textbf{Sensordaten werden auf der Karte dargestellt }\\
-	 	Nach dem die Daten an die View gesendet wurden \ref{send}, werden sie auf der Karte angezeigt.\\
-	 	Vorbedingung: Daten wurden an die View gesendet \\
-	 	Nachbedingung: Die Daten werden angezeigt \\ 
-	 	Beim Scheitern: Es wird eine Fehlermeldung in den Log geschrieben.
+	 \item \textbf{Sensordaten werden auf der Karte dargestellt}\\
+	 	Nachdem die Daten an den Webdienst gesendet wurden [\ref{send}], werden sie auf der Karte des Webinterfaces angezeigt.\\
+	 	\textbf{Vorbedingung:} Daten wurden an den Webdienst gesendet.\\
+	 	\textbf{Nachbedingung:} Die Daten werden im Webinterface angezeigt.\\
+	 	\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt. Dem Nutzer des Webinterfaces wird eine Fehlermeldung angezeigt.
+	 	
+	\item \textbf{Echtzeitdaten}\\
+		Der Nutzer kann sich die Echtzeitdaten für einen Cluster oder Sensor anzeigen lassen\\
+		\textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden.\\
+		\textbf{Nachbedingung:} Die Echtzeitdaten werden angezeigt.\\
+		\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt.
 	 
-	 \item \textbf{Verschiedene Sensor darstellen}\\
-	 	Man kann die dargestellten Sensoren einteilen von deren Typ.
-	 	Vorbedingung: Es werden Sensordaten angezeigt\\
-	 	Nachbedingung: Die Einteilung wird angezeigt \\ 
-	 	Beim Scheitern: Es wird eine Fehlermeldung in den Log geschrieben.
+	 \item \textbf{Verschiedene Sensortypen darstellen}\\
+	 	Die Darstellung wird in unterschiedliche Sensortypen aufgeteilt.\\
+	 	\textbf{Vorbedingung:} Es werden Sensordaten angezeigt.\\
+	 	\textbf{Nachbedingung:} Es werden Sensordaten zum Sensortyp angezeigt.\\
+	 	\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt.
 	 
-	 \item \textbf{Verschiedene Cluster}\\
-	 	Man kann die Karte in verschiedene Cluster einteilen.
-	 	Vorbedingung: Es werden Sensordaten angezeigt\\
-	 	Nachbedingung: Die Einteilung wird angezeigt \\ 
-	 	Beim Scheitern: Es wird eine Fehlermeldung in den Log geschrieben.
+	 \item \textbf{Verschiedene Clusterformen}\\
+	 	Der Nutzer kann die Karte in unterschiedliche Clusterformen einteilen.\\
+	 	\textbf{Vorbedingung:} Es werden Sensordaten angezeigt.\\
+	 	\textbf{Nachbedingung:} Die Einteilung in eine Clusterform wird angezeigt.\\
+	 	\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt.
 		
 	\item \textbf{Export von Daten}\\
-		Man kann die Daten auf der View exportieren in Json und netCDF \ref{netcdf} \ref{json}	\\
-		Vorbedingung: Kafka Stream vorhanden \\
-		Nachbedingung: Die Daten werden exportiert \\ 
-		Beim Scheitern: Es wird eine passende Fehlermeldung ausgegeben.
+		Der Nutzer kann die Daten im CSV oder NetCDF-Format exportieren.[\ref{netcdf}] [\ref{CSV}]\\
+		\textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden.\\
+		\textbf{Nachbedingung:} Die Daten werden exportiert.\\
+		\textbf{Fehlerbedingung:} Dem Nutzer wird eine Fehlermeldung angezeigt.
 		
-	\item \textbf{Wiederholung anzeigen}\\
-		Auf der View kann man Daten mit Hilfe von einem Slider als Wiederholung anzeigen lassen.\\
-		Vorbedingung: Daten wurden an die View gesendet\\
-		Nachbedingung: Die Wiederholung wird angezeigt.\\ 
-		Beim Scheitern: Es wird eine Fehlermeldung in den Log geschrieben.
+	\item \textbf{Wiederholung anzeigen} \label{wiederhol}\\
+		Auf dem Webinterface kann man Daten mithilfe eines Buttons als Wiederholung anzeigen lassen.\\
+		\textbf{Vorbedingung:} Es werden Sensordaten angezeigt.\\
+		\textbf{Nachbedingung:} Die Wiederholung wird angezeigt.\\
+		\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt. Dem Nutzer des Webinterfaces wird eine Fehlermeldung angezeigt.
 		
 
-	\item \textbf{Detail Ansicht von Sensoren}\\
-		Auf der View kann man von einzelnen Sensoren eine Detailansicht darstellen um so nähere Informationen über den Sensor zu erhalten. \ref{single}
-		Vorbedingung: Kafka Stream vorhanden \\
-		Nachbedingung: Die Details werden angezeigt \\ 
-		Beim Scheitern: Es wird eine Fehlermeldung in den Log geschrieben.
+	\item \textbf{Detailansicht von Sensoren}\\
+		Auf dem Webinterface kann man von einzelnen Sensoren eine Detailansicht ansehen um so nähere Informationen über den Sensor zu erhalten. [\ref{single}]\\
+		\textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden.\\
+		\textbf{Nachbedingung:} Die Detailansicht wird angezeigt.\\
+		\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt. Dem Nutzer des Webinterfaces wird eine Fehlermeldung angezeigt.
 		
-	\item \textbf{Statisten anzeigen}\\
-		Auf der View kann man sich vorberechnen Statistiken anzeigen lassen \ref{single}\ref{stat}
-		Vorbedingung: Kafka Stream vorhanden \\
-		Nachbedingung: Die Statistiken werden angezeigt \\ 
-		Beim Scheitern: Es wird eine Fehlermeldung in den Log geschrieben.
-		
-	\item \textbf{Echtzeitdaten}\\
-		Es besteht immer die Möglichkeit sich die Echtzeitdaten für ein Cluster oder Sensor anzeigen zu lassen
-		Vorbedingung: Kafka Stream vorhanden \\
-		Nachbedingung: Die Echtzeitdaten werden angezeigt\\ 
-		Beim Scheitern: Es wird eine Fehlermeldung in den Log geschrieben.
-		
+	\item \textbf{Statistiken anzeigen}\\
+		Auf dem Webinterface kann man sich vorberechnete Statistiken anzeigen lassen [\ref{single}] [\ref{stat}]\\
+		\textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden.\\
+		\textbf{Nachbedingung:} Die Statistiken werden angezeigt.\\
+		\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt.
+				
 	\item \textbf{Zoomen in die Karte}\\
-		Auf der angezeigten Karte kann man rein und raus zoomen und die Cluster werden entsprechend angepasst
-		Vorbedingung: Karte wird angezeigt. \\
-		Nachbedingung: Die Daten werden angezeigt.\\ 
-		Beim Scheitern: Es wird eine Fehlermeldung in den Log geschrieben.
-		
+		Auf der Karte kann gezoomt werden. Die Cluster werden entsprechend angepasst.\\
+		\textbf{Vorbedingung:} Die Karte wird angezeigt.\\
+		\textbf{Nachbedingung:} Die gezoomte Ansicht wird angezeigt.\\
+		\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt.
 		
 \end{enumerate}
 
 \begin{enumerate}[label=\textbf{WF\arabic{enumi}0}]
 	\setcounter{enumi}{99}
-	\section{Wunsch Funktionale Anforderungen}
+	\section{Wunschanforderungen}
 	
 	\subsection{Server}
 	
-
-	
-	\item \textbf{Der Dienst sucht nach Fehlerhaften Sensordateien}\\
-	Der Dienst überprüft im Datenerhaltungssystem ob Sensordaten Outlier sein können und gibt den Nutzer eine Meldung, was an den Daten ungewöhnlich ist.
-	Vorbedingung: Kafka Stream vorhanden \\
-	Nachbedingung: Fehlerhafte Daten werden angezeigt.\\ 
-	 
-	\item \textbf{Mehrere Sprachen}\\
-	Die Anzeigesprache kann in mehre Sprachen geändert werden.
-	Vorbedingung: Programm gestartet. \\
-	Nachbedingung: Sprache wird umgesetzt\\ 
-	
-	
-	
+	\item \textbf{Suche nach fehlerhaften Sensordaten}\\
+	Der Dienst überprüft im Datenerhaltungssystem ob Sensordaten Outlier sein können.\\
+	\textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden\\
+	\textbf{Nachbedingung:} Im Fehlerprotokoll wird ein Hinweis vermerkt. Fehlerhafte Daten werden angezeigt.\\
 		
 	\subsection{Webinterface}
-	\item \textbf{Favoriten}\\
-		Man kann Elemente auf der View favorisieren um somit schneller zu denen gelangen bei späteren einsehen \\
-		Vorbedingung: Favoriten Symbol muss vorhanden sein \\
-		Nachbedingung: Favorit wird gespeichert\\ 
+	\setcounter{enumi}{199}
 	
-	\item \textbf{Mehre Ansichten}\\
-		Man kann 2 Karten mit verschiedenen Datensätzen neben einander setzten um diese zu vergleichen \\
-		Vorbedingung: Kafka Stream muss vorhanden sein\\
-		Nachbedingung: Parallele Ansicht\\ 
+	%Überarbeiten der Favoriten
+	\item \textbf{Favoriten}\\
+		Der Nutzer kann seine Ansicht favorisieren um später schnell auf die Ansicht zu wechseln.\\
+		\textbf{Vorbedingung:} Die Karte wird angezeigt.\\
+		\textbf{Nachbedingung:} Der Favorit wird gespeichert.\\
+		\textbf{Fehlerbedingung:} Der Favorit wird nicht gespeichert. Dem Nutzer wird eine Fehlermeldung angezeigt.
+	
+	\item \textbf{Sensoren melden}\\
+		Der Nutzer kann einzelne Sensoren auf dem Webinterface melden. Dazu muss ein Grund angeben werden.\\
+		\textbf{Vorbedingung:} Der Nutzer hat einen Sensor selektiert.\\
+		\textbf{Nachbedingung:} Im Fehlerprotokoll wird ein Hinweis vermerkt.\\
+		
+	\item \textbf{Leere Cluster}\\
+		Falls ein Cluster keine Daten enthält wird ein leeres Cluster angezeigt.\\
+		\textbf{Vorbedingung:} Die Karte wird angezeigt.\\
+		\textbf{Nachbedingung:} Es wird ein leeres Cluster angezeigt.\\
+		
+	\item \textbf{Wiederholung pausieren}\\
+		Der Nutzer kann die Wiederholung pausieren und wieder fortsetzen. [\ref{wiederhol}]\\
+		\textbf{Vorbedingung:} Die Wiederholung wird angezeigt.\\
+		\textbf{Nachbedingung:} Die Wiederholung wird pausiert/fortgesetzt.\\
 	
 	\item \textbf{Eigene Filter}\\
-		Man kann eigene Filter erstellen um seine Analyse genauer durch zu führen\\
-		Vorbedingung: Kafka Stream muss vorhanden sein\\
-		Nachbedingung: Filter-Ansicht\\ 
+		Der Nutzer kann eigene Filter erstellen.\\
+		\textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden.\\
+		\textbf{Nachbedingung:} Filteransicht.\\
+		
+	\item \textbf{Mehrere Sprachen}\\
+		Die Anzeigesprache kann in mehrere Sprachen geändert werden.\\
+		\textbf{Vorbedingung:} Das Programm ist gestartet.\\
+		\textbf{Nachbedingung:} Sprache wird geändert.\\
 
 \end{enumerate}
-	
-	 
-	  
