@@ -3,7 +3,7 @@
 \begin{enumerate}[label=\textbf{PD\arabic{enumi}0}]
 	\setcounter{enumi}{99}
 	\item \textbf{Sensordaten}\\
-	Apache Kafka speichert alle eintreffenden Sensordaten in einem persistenten Speicher.\\
+	\gls{apache_kafka} speichert alle eintreffenden Sensordaten in einem persistenten Speicher.\\
 	Echtzeitsensordaten werden bis zu 1GB in dem Arbeitsspeicher gespeichert.
 \end{enumerate}
 \section{Webinterface}
@@ -15,9 +15,9 @@
 		\item Zoomstufe
 		\item Lokalität
 		\item Clustergruppe
-		\item Clustershape
-		\item Sensortyp
-		\item an- bzw. ausgeschaltete Sensordatentypen
+		\item \gls{cluster_shape}
+		\item \gls{sensortyp}
+		\item an- bzw. ausgeschaltete Sensortypen
 	\end{itemize}
 	Alle anderen Daten, die für eine korrekte Darstellung benötigt werden, werden nicht persistent gespeichert, sondern nach Bedarf generiert.
 \end{enumerate}

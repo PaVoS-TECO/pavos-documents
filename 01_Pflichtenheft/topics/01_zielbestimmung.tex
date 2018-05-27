@@ -5,20 +5,20 @@ Ein Hauptmerkmal unseres Produktes ist die Fähigkeit, zusätzlich zu Echtzeitda
 \subsection{Backend (Server)}
 \begin{enumerate}[label=\textbf{MK\arabic{enumi}0}]
 	\setcounter{enumi}{99}
-	\item Der Server kann Sensordaten empfangen
+	\item Der \gls{server} kann Sensordaten empfangen
 	\item Eingeführte Sensordaten werden gesichert
-	\item Neue Sensordaten werden zeitnah an alle Instanzen des Webinterfaces weitergeleitet und dargestellt
+	\item Neue Sensordaten werden zeitnah an alle Instanzen des \glsdisp{webinterface}{Webinterfaces} weitergeleitet und dargestellt
 	\item Der Dienst ist logisch modular aufgebaut und erlaubt das Ergänzen und Ersetzen von einzelnen funktionalen Modulen, wie z.B. verschiedene Exportformate, Zwischenmodule
 	\item Der Server verarbeitet und speichert Daten für spätere Verwendung
 	\item Der Server kann vorverarbeitete und gespeicherte Daten abrufen
-	\item Der Server unterstützt skalar- und vektorwertige Sensortypen
-	\item Der Server kann durch eine Admin-GUI gesteuert werden
-	\item Der Server unterstützt das Filtern von ausgegebenen und angezeigten Daten
+	\item Der Server unterstützt skalar- und vektorwertige \glsdisp{sensortyp}{Sensortypen}
+	\item Der Server kann durch eine Konfigurations-GUI gesteuert werden
+	\item Der Server unterstützt das \glsdisp{filter}{Filtern} von ausgegebenen und angezeigten Daten
 \end{enumerate}
 \subsection{Frontend (Webinterface)}
 \begin{enumerate}[label=\textbf{MK\arabic{enumi}0}]
 	\setcounter{enumi}{199}
-	\item Das Webinterface unterstützt die rasterisierte Darstellung der Sensordaten auf einer Weltkarte in Form von vordefinierten Shapes
+	\item Das \gls{webinterface} unterstützt die \glsdisp{raster}{rasterisierte} Darstellung der Sensordaten auf einer Weltkarte in Form von vordefinierten \glsdisp{cluster_shape}{Clustershapes}
 	\item Das Webinterface unterstützt die Darstellung einer auf Deutschland beschränkten Ansicht
 	\item Der Nutzer kann die Karte in vordefinierten Detaillierungsgraden darstellen lassen
 	\item Der Nutzer kann aktuelle und historische Sensordaten über das Webinterface darstellen lassen
@@ -37,22 +37,22 @@ Ein Hauptmerkmal unseres Produktes ist die Fähigkeit, zusätzlich zu Echtzeitda
 	\item Der Server läuft auch mit fehlerhaften Daten stabil
 	\item Der Server überarbeitet im Leerlauf fehlerhafte Daten aus der Datenbank
 	\item Der Server unterstützt das Hinzufügen von neuen Anzeigesprachen für das Webinterface
-	\item \label{NetCDF_Import}Der Server unterstützt den Import von historischen Daten im NetCDF-Format und kann diese Daten problemlos verarbeiten
+	\item \label{NetCDF_Import}Der Server unterstützt den Import von historischen Daten im \gls{netcdf_glo}-Format und kann diese Daten problemlos verarbeiten
 	%\item Der Server gibt aussagekräftige Fehlermeldungen aus
 \end{enumerate}
 \subsection{Frontend (Webinterface)}
 \begin{enumerate}[label=\textbf{WK\arabic{enumi}0}]
 	\setcounter{enumi}{199}
 	% Zoom / Darstellung
-	\item Die Genauigkeit der Darstellung von Clustern wird entsprechend der Zoom-Stufe angepasst % MARKIERT
+	\item Die Genauigkeit der Darstellung von \glsdisp{cluster}{Clustern} wird entsprechend der Zoom-Stufe angepasst % MARKIERT
 	\item Die Approximation von Clustern führt nicht zu größeren Diskrepanzen oder Wartezeiten
-	\item Der Nutzer kann verschiedene Sensordatentypen an- bzw. ausschalten
+	\item Der Nutzer kann verschiedene \glsdisp{sensortyp}{Sensortypen} an- bzw. ausschalten
 	% Favoriten
 	\item Der Nutzer kann seine Ansicht als Favoriten abspeichern
 	\item Der Nutzer kann favorisierte Ansichten wiederherstellen
 	% \item Der Nutzer kann einzelne Sensoren/Cluster aus der Darstellung ausschließen
 	% Fehler bei Sensoren
-	\item Der Nutzer kann Sensoren melden
+	\item Der Nutzer kann \glsdisp{sensor}{Sensoren} melden
 	\item Dem Nutzer wird darauf hingewiesen, wenn das Abrufen von Sensordaten nicht möglich ist
 	\item Enthält ein Cluster keine Sensoren, wird der Cluster nicht angezeigt
 	% Aktualisierung
@@ -70,13 +70,13 @@ Ein Hauptmerkmal unseres Produktes ist die Fähigkeit, zusätzlich zu Echtzeitda
 \section{Abgrenzungskriterien}
 \begin{enumerate}[label=\textbf{AK\arabic{enumi}0}]
 	\setcounter{enumi}{99}
-	\item Der Server speichert Sensordaten nicht auf unbegrenzte Zeit und in unbegrenzter Menge
-	\item Der Server speichert keine Daten von Nutzern und deren Aktivitäten/Interaktionen mit dem Webinterface
+	\item Der \gls{server} speichert Sensordaten nicht auf unbegrenzte Zeit und in unbegrenzter Menge
+	\item Der Server speichert keine Daten von Nutzern und deren Aktivitäten/Interaktionen mit dem \gls{webinterface}
 	\item Der Datendurchsatz des Servers wird durch lokale Netzwerkgeschwindigkeiten beschränkt
 	\item Der Server ist nicht in der Lage, korrekte Vorhersagen zu erstellen
-	\item Der Server ist nicht in der Lage, Sensordaten von fehlerhaften Sensoren auszuwerten
+	\item Der Server ist nicht in der Lage, Sensordaten von fehlerhaften \glsdisp{sensor}{Sensoren} auszuwerten
 	\item Der Server ist nicht in der Lage, unbegrenzt viele Daten anzuzeigen und zu aktualisieren
 	\item Der Server ist nicht in der Lage, durch Störungseinflüsse veränderte Sensordaten zu erkennen
-	\item Der Server unterstützt keine weiteren Eingabeformate als Apache Kafka Streams (und, falls \ref{NetCDF_Import} erfüllt ist, NetCDF-Dateien)
+	\item Der Server unterstützt keine weiteren Eingabeformate als \gls{apache_kafka}-Streams (und, falls \ref{NetCDF_Import} erfüllt ist, \gls{netcdf_glo}-Dateien)
 	\item Der Server unterstützt nicht das manuelle Hinzufügen von neuen Sensordaten
 \end{enumerate}

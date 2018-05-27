@@ -1,10 +1,10 @@
 \chapter{Produktumgebung}
-Das Produkt ist intern in einer Master-Worker Rechnerarchitektur aufgebaut. Clients verbinden sich mit dem Server über einen Webbrowser.
+Das Produkt ist intern in einer \glsdisp{master_worker}{Master-Worker} Rechnerarchitektur aufgebaut. \glsdisp{client}{Clients} verbinden sich mit dem \gls{server} über einen Webbrowser.
 \section{Software}
 \subsection{Server}
 \begin{itemize}
-	\item FROST-Server liefert Sensordaten
-	\item Kafka speichert und verteilt Sensordaten
+	\item \gls{frost_server} liefert Sensordaten
+	\item \gls{apache_kafka} speichert und verteilt Sensordaten
 	\item Docker für die Containerumgebung
 	\item Java-Anwendung mit Java 8
 	\item Apache Tomcat als Webserver

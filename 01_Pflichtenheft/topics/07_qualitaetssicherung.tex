@@ -11,7 +11,7 @@
 	\setcounter{enumi}{99}
 	
 	\item \textbf{Erstanwendung der Konfigurations-GUI mit Kafka Stream}\\
-		Die Konfigurations-GUI wurde noch nie gestartet und es steht ein Kafka Stream namens 'TestStream' bereit.\\
+		Die Konfigurations-GUI wurde noch nie gestartet und es steht ein \glsdisp{apache_kafka}{Kafka} \glsdisp{datenstrom}{Stream} namens 'TestStream' bereit.\\
 		Der Nutzer startet die Konfigurations-GUI, woraufhin diese ihn auffordert, den hinzuzufügenden Kafka Stream auszuwählen.\par
 		
 		Der Nutzer schreibt 'TestStream' in das Feld des Popups und bestätigt.\\
@@ -46,8 +46,8 @@
 		
 		Der Nutzer wählt das Format
 		\begin{itemize}
-		\item NetCDF
-		\item CSV
+		\item \gls{netcdf_glo}
+		\item \gls{csv}
 		\end{itemize}
 		, wählt das Verzeichnis 'SensorExport' bzw. erstellt es, falls es noch nicht existiert, legt den Namen auf 'TestSensorExport' fest und bestätigt.\\
 		Die Konfigurations-GUI exportiert den Stream.
@@ -62,9 +62,9 @@
 		\end{itemize}
 		Datei und bestätigt.\\
 		Die Konfigurations-GUI importiert den Stream.
-	\item \textbf{Clusterform in der Konfigurations-GUI festlegen}\\
+	\item \textbf{\glsdisp{cluster_shape}{Clusterform} in der Konfigurations-GUI festlegen}\\
 		Die Konfigurations-GUI ist gestartet und es ist ein Kafka Stream namens 'TestStream' hinzugefügt worden.\\
-		Der Nutzer wählt die Option 'Select Clusterform', woraufhin die Konfigurations-GUI ihn auffordert, aus mehreren Möglichkeiten eine Form für die Cluster zu berechnen.\par
+		Der Nutzer wählt die Option 'Select Clusterform', woraufhin die Konfigurations-GUI ihn auffordert, aus mehreren Möglichkeiten eine Form für die \gls{cluster} zu berechnen.\par
 		
 		Der Nutzer wählt die
 		\begin{itemize}
@@ -81,10 +81,10 @@
 	\setcounter{enumi}{199}
 	
 	\item \textbf{Darstellung des berechneten Mittelwertes im Webinterface}\\
-		Das Webinterface ist gestartet und es ist ein Kafka Stream namens 'TestStream' hinzugefügt worden. Die Ansicht des Webinterfaces ist auf Karlsruhe in Deutschland fokussiert.\\
+		Das \gls{webinterface} ist gestartet und es ist ein Kafka Stream namens 'TestStream' hinzugefügt worden. Die Ansicht des Webinterfaces ist auf Karlsruhe in Deutschland fokussiert.\\
 		Der Nutzer wählt alle Skalierungsstufen der Karte in sich entfernender Reihenfolge aus, woraufhin die berechneten Mittelwerte auf der Karte als Farbe der Cluster zu sehen sind.\par
 	\item \textbf{Darstellung von Clustern ohne Sensoren im Webinterface}\\
-		Das Webinterface ist gestartet und es ist ein Kafka Stream namens 'TestStream' hinzugefügt worden. Die Ansicht des Webinterfaces ist auf Karlsruhe in Deutschland fokussiert. Es existiert ein Cluster ohne Sensoren in seinem Einflussgebiet, hier auch 'leerer Cluster' genannt.\\
+		Das Webinterface ist gestartet und es ist ein Kafka Stream namens 'TestStream' hinzugefügt worden. Die Ansicht des Webinterfaces ist auf Karlsruhe in Deutschland fokussiert. Es existiert ein Cluster ohne \glsdisp{sensor}{Sensoren} in seinem Einflussgebiet, hier auch 'leerer Cluster' genannt.\\
 		Der Nutzer wählt alle Skalierungsstufen der Karte in sich entfernender Reihenfolge aus. Die Karte zeigt leere Cluster nicht an.\par
 	\item \textbf{Darstellung der tabellarischen Ansicht im Webinterface}\\
 		Das Webinterface ist gestartet, es ist ein Kafka Stream namens 'TestStream' hinzugefügt worden. Die Ansicht des Webinterfaces ist auf Karlsruhe in Deutschland fokussiert.\\
@@ -101,7 +101,7 @@
 		Das Webinterface stellt pro Instanz eine Ansicht dar. Die Ansichten der Instanzen werden nach der Auswahl gleichzeitig angezeigt.
 	\item \textbf{Auswahl eines Sensortyps im Webinterface}\\
 		Das Webinterface ist geöffnet und es ist ein Kafka Stream namens 'TestStream' hinzugefügt worden. Die Ansicht des Webinterfaces ist auf Karlsruhe in Deutschland fokussiert.\\
-		Der Nutzer wählt im Webinterface die darzustellenden Sensortypen aus. Er aktiviert nur den Sensortyp 'Feinstaub'.\\
+		Der Nutzer wählt im Webinterface die darzustellenden \glsdisp{sensortyp}{Sensortypen} aus. Er aktiviert nur den Sensortyp 'Feinstaub'.\\
 		Das Webinterface stellt daraufhin nur noch die Werte für 'Feinstaub'-Sensoren dar.\par
 	\item \textbf{Export einer Archiv-Datei aus dem Webinterface}\\
 		Das Webinterface ist geöffnet und es ist ein Kafka Stream namens 'TestStream' hinzugefügt worden.\\

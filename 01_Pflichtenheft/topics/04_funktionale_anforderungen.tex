@@ -5,7 +5,7 @@
 	\subsection{Server}
 
 	\item \textbf{Initialisierendes Starten}\\
-		Beim ersten Aufruf wird der Nutzer aufgefordert, einen Kafka-Stream in die Konfigurations-GUI einzufügen. Die Gültigkeit dieses Streams wird überprüft. [\ref{Gültig}]\\
+		Beim ersten Aufruf wird der Nutzer aufgefordert, einen \glsdisp{apache_kafka}{Kafka}-\glsdisp{datenstrom}{Stream} in die Konfigurations-GUI einzufügen. Die Gültigkeit dieses Streams wird überprüft. [\ref{Gültig}]\\
 		\textbf{Vorbedingung:} Programm wird gestartet.\\
 		\textbf{Nachbedingung:} Das Programm ist einsatzbereit.\\
 		\textbf{Fehlerbedingung:} Das Programm kann nicht weiter genutzt werden. Der Nutzer wird erneut aufgefordert, einen Kafka-Stream einzufügen.
@@ -13,7 +13,7 @@
 	\item \textbf{Kontrollieren der Gültigkeit des Streams} \label{Gültig}\\
 		Es wird eine Verbindung zu Kafka hergestellt und die syntaktische Korrektheit des Streams wird überprüft.\\
 		\textbf{Vorbedingung:} Ein Kafka-Stream wurde hinzugefügt. [\ref{Einfügen}]\\
-		\textbf{Nachbedingung:} Der Kafka-Stream wird vom Server akzeptiert.\\
+		\textbf{Nachbedingung:} Der Kafka-Stream wird vom \gls{server} akzeptiert.\\
 		\textbf{Fehlerbedingung:} Der Kafka-Stream wird nicht vom Server akzeptiert. Der Nutzer wird erneut aufgefordert, einen Kafka-Stream einzufügen.
 	
 	\item \textbf{Einfügen eines Kafka-Streams} \label{Einfügen}\\
@@ -49,7 +49,7 @@
 		\textbf{Fehlerbedingung:} Die Daten werden nicht importiert. Dem Nutzer wird eine Fehlermeldung angezeigt.
 		
 	\item \textbf{Sensoren in Tabellenansicht}\\
-		Die einzelnen Sensoren eines Streams können in der Konfigurations-GUI in einer Tabelle anzeigt werden.\\
+		Die einzelnen \glsdisp{sensor}{Sensoren} eines Streams können in der Konfigurations-GUI in einer Tabelle anzeigt werden.\\
 		\textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden.\\
 		\textbf{Nachbedingung:} Die Sensoren werden in einer Tabelle angezeigt.\\
 		\textbf{Fehlerbedingung:} Dem Nutzer wird eine Fehlermeldung angezeigt.
@@ -78,10 +78,10 @@
 		\textbf{Nachbedingung:} Die Daten sind erfolgreich aufgeteilt und werden verarbeitet.\\
 		\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt.
 		
-	\item \textbf{Clusterform auswählen}\\
-		Die Form der Cluster kann in der Konfigurations-GUI eingestellt werden. Die Standardform ist ein Rechteck.\\
+	\item \textbf{\gls{cluster_shape} auswählen}\\
+		Die Form der \gls{cluster} kann in der Konfigurations-GUI eingestellt werden. Die Standardform ist ein Rechteck.\\
 		\textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden.\\
-		\textbf{Nachbedingung:} Die Clusterform wird angepasst.\\
+		\textbf{Nachbedingung:} Das Clustershape wird angepasst.\\
 		\textbf{Fehlerbedingung:} Dem Nutzer wird eine Fehlermeldung angezeigt.
 		
 	\item \textbf{Cluster berechnen} \label{Kachel}\\
@@ -97,13 +97,13 @@
 		\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt.
 	
 	\item \textbf{Export der Daten als NetCDF-Datei} \label{netcdf}\\
-		Die Sensordaten aus einem bestimmten zeitlichen Intervall können im NetCDF-Format exportiert werden.\\
+		Die Sensordaten aus einem bestimmten zeitlichen Intervall können im \gls{netcdf_glo}-Format exportiert werden.\\
 		\textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden.\\
 		\textbf{Nachbedingung:} Die Daten werden exportiert.\\
 		\textbf{Fehlerbedingung:} Dem Nutzer wird eine Fehlermeldung angezeigt.
 	
 	\item \textbf{Export der Daten als CSV-Datei} \label{CSV}\\
-		Die Sensordaten aus einem bestimmten zeitlichen Intervall können im CSV-Format exportiert werden.\\
+		Die Sensordaten aus einem bestimmten zeitlichen Intervall können im \gls{csv}-Format exportiert werden.\\
 		\textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden.\\
 		\textbf{Nachbedingung:} Die Daten werden exportiert.\\
 		\textbf{Fehlerbedingung:} Dem Nutzer wird eine Fehlermeldung angezeigt.
@@ -122,8 +122,8 @@
 	 \subsection{Webinterface}
 	 \setcounter{enumi}{199}
 	 
-	 \item \textbf{Mehrere Instanzen des Webinterface}\\
-		 Mehrere Instanzen des Webinterfaces können aufgerufen werden, sodass mehrere Nutzer gleichzeitig mit den Sensordaten arbeiten können.\\
+	 \item \textbf{Mehrere Instanzen des Webinterfaces}\\
+		 Mehrere Instanzen des \glsdisp{webinterface}{Webinterfaces} können aufgerufen werden, sodass mehrere Nutzer gleichzeitig mit den Sensordaten arbeiten können.\\
 		 \textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden.\\
 		 \textbf{Nachbedingung:} Mehrere Instanzen des Webinterfaces sind geöffnet.\\
 	 	\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt. Dem Nutzer des Webinterfaces wird eine Fehlermeldung angezeigt.
@@ -135,13 +135,13 @@
 	 	\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt. Dem Nutzer des Webinterfaces wird eine Fehlermeldung angezeigt.
 	 	
 	\item \textbf{Echtzeitdaten}\\
-		Der Nutzer kann sich die Echtzeitdaten für einen Cluster oder Sensor anzeigen lassen\\
+		Der Nutzer kann sich die Echtzeitdaten für einen Cluster oder Sensor anzeigen lassen.\\
 		\textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden.\\
 		\textbf{Nachbedingung:} Die Echtzeitdaten werden angezeigt.\\
 		\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt.
 	 
 	 \item \textbf{Verschiedene Sensortypen darstellen}\\
-	 	Die Darstellung wird in unterschiedliche Sensortypen aufgeteilt.\\
+	 	Die Darstellung wird in unterschiedliche \glsdisp{sensortyp}{Sensortypen} aufgeteilt.\\
 	 	\textbf{Vorbedingung:} Es werden Sensordaten angezeigt.\\
 	 	\textbf{Nachbedingung:} Es werden Sensordaten zum Sensortyp angezeigt.\\
 	 	\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt.
@@ -163,7 +163,6 @@
 		\textbf{Vorbedingung:} Es werden Sensordaten angezeigt.\\
 		\textbf{Nachbedingung:} Die Wiederholung wird angezeigt.\\
 		\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt. Dem Nutzer des Webinterfaces wird eine Fehlermeldung angezeigt.
-		
 
 	\item \textbf{Detailansicht von Sensoren}\\
 		Auf dem Webinterface kann man von einzelnen Sensoren eine Detailansicht ansehen um so nähere Informationen über den Sensor zu erhalten. [\ref{single}]\\
@@ -172,7 +171,7 @@
 		\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt. Dem Nutzer des Webinterfaces wird eine Fehlermeldung angezeigt.
 		
 	\item \textbf{Statistiken anzeigen}\\
-		Auf dem Webinterface kann man sich vorberechnete Statistiken anzeigen lassen [\ref{single}] [\ref{stat}]\\
+		Auf dem Webinterface kann man sich vorberechnete Statistiken anzeigen lassen. [\ref{single}] [\ref{stat}]\\
 		\textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden.\\
 		\textbf{Nachbedingung:} Die Statistiken werden angezeigt.\\
 		\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt.
@@ -192,7 +191,7 @@
 	\subsection{Server}
 	
 	\item \textbf{Suche nach fehlerhaften Sensordaten}\\
-	Der Dienst überprüft im Datenerhaltungssystem ob Sensordaten Outlier sein können.\\
+	Der Dienst überprüft im Datenerhaltungssystem ob Sensordaten \gls{outlier} sein können.\\
 	\textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden\\
 	\textbf{Nachbedingung:} Im Fehlerprotokoll wird ein Hinweis vermerkt. Fehlerhafte Daten werden angezeigt.\\
 	\textbf{Fehlerbedingung:} Nichts passiert.
@@ -217,7 +216,7 @@
 		Falls ein Cluster keine Daten enthält wird ein leeres Cluster angezeigt.\\
 		\textbf{Vorbedingung:} Die Karte wird angezeigt.\\
 		\textbf{Nachbedingung:} Es wird ein leeres Cluster angezeigt.\\
-		\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt, aber auf dem Webinterface wird kein Fehler angezeigt.
+		\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt.
 		
 	\item \textbf{Wiederholung pausieren}\\
 		Der Nutzer kann die Wiederholung pausieren und wieder fortsetzen. [\ref{wiederhol}]\\
@@ -226,7 +225,7 @@
 		\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt.
 	
 	\item \textbf{Eigene Filter}\\
-		Der Nutzer kann eigene Filter erstellen.\\
+		Der Nutzer kann eigene \gls{filter} erstellen.\\
 		\textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden.\\
 		\textbf{Nachbedingung:} Filteransicht.\\
 		\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt. Dem Nutzer des Webinterfaces wird eine Fehlermeldung angezeigt.
