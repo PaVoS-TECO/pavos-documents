@@ -195,6 +195,7 @@
 	Der Dienst überprüft im Datenerhaltungssystem ob Sensordaten Outlier sein können.\\
 	\textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden\\
 	\textbf{Nachbedingung:} Im Fehlerprotokoll wird ein Hinweis vermerkt. Fehlerhafte Daten werden angezeigt.\\
+	\textbf{Fehlerbedingung:} Nichts passiert.
 		
 	\subsection{Webinterface}
 	\setcounter{enumi}{199}
@@ -210,25 +211,30 @@
 		Der Nutzer kann einzelne Sensoren auf dem Webinterface melden. Dazu muss ein Grund angeben werden.\\
 		\textbf{Vorbedingung:} Der Nutzer hat einen Sensor selektiert.\\
 		\textbf{Nachbedingung:} Im Fehlerprotokoll wird ein Hinweis vermerkt.\\
+		\textbf{Fehlerbedingung:} Nichts passiert.
 		
 	\item \textbf{Leere Cluster}\\
 		Falls ein Cluster keine Daten enthält wird ein leeres Cluster angezeigt.\\
 		\textbf{Vorbedingung:} Die Karte wird angezeigt.\\
 		\textbf{Nachbedingung:} Es wird ein leeres Cluster angezeigt.\\
+		\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt, aber auf dem Webinterface wird kein Fehler angezeigt.
 		
 	\item \textbf{Wiederholung pausieren}\\
 		Der Nutzer kann die Wiederholung pausieren und wieder fortsetzen. [\ref{wiederhol}]\\
 		\textbf{Vorbedingung:} Die Wiederholung wird angezeigt.\\
 		\textbf{Nachbedingung:} Die Wiederholung wird pausiert/fortgesetzt.\\
+		\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt.
 	
 	\item \textbf{Eigene Filter}\\
 		Der Nutzer kann eigene Filter erstellen.\\
 		\textbf{Vorbedingung:} Es ist mindestens ein Kafka-Stream vorhanden.\\
 		\textbf{Nachbedingung:} Filteransicht.\\
+		\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt. Dem Nutzer des Webinterfaces wird eine Fehlermeldung angezeigt.
 		
 	\item \textbf{Mehrere Sprachen}\\
 		Die Anzeigesprache kann in mehrere Sprachen geändert werden.\\
 		\textbf{Vorbedingung:} Das Programm ist gestartet.\\
 		\textbf{Nachbedingung:} Sprache wird geändert.\\
+		\textbf{Fehlerbedingung:} Im Fehlerprotokoll wird ein Fehler vermerkt. Dem Nutzer des Webinterfaces wird eine 		Fehlermeldung angezeigt.
 
 \end{enumerate}
