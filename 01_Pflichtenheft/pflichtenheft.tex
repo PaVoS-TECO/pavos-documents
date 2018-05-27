@@ -20,7 +20,8 @@
 \usepackage{enumitem} % für custom enumerations
 \usepackage{float} % for better graphics placement
 \usepackage{svg} % for scalable vector-graphics (see inkscape)
-\setsvg{inkscape=inkscape -z -D,svgpath=images/} % use dir 'images/' to search for svg files
+\setsvg{inkscapeexe=inkscape, inkscapeopt=-z -D} % set inkscape options
+\svgpath{images/} % use dir 'images/' to search for svg files
 
 \renewcaptionname{ngerman}{\figurename}{Abb.} % replace "Abbildung" with "Abb." for all captions for graphics
 
