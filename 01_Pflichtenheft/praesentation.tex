@@ -7,20 +7,25 @@
 \svgpath{images/} % use dir 'images/' to search for svg files
 \setbeamertemplate{caption}{\raggedright\insertcaption\par}
 
+
 \title{PaVoS}
 \subtitle{Processing and Visualization of Sensordata}
-\author{Jean Baumgarten\\Oliver Liu\\Patrick Ries\\Erik Wessel\\Thomas Frank}
+\author[ ]{Jean Baumgarten\\Thomas Frank\\Oliver Liu\\Patrick Ries\\Erik Wessel}
 
 
 \begin{document}
 	
 \frame{\titlepage}
 
+\section{Logo}
+
 \begin{frame}
 	\frametitle{PaVoS-Logo}
 	\centering
 	\includegraphics{images/PaVoSLogo-Erweitert}
 \end{frame}
+
+\section{Konfigurations-GUI}
 
 \begin{frame}
 	\frametitle{Konfigurations-GUI}
@@ -31,6 +36,9 @@
 		\caption{Demo!}
 	\end{figure}
 \end{frame}
+
+\section{Webinterface}
+\subsection{Weltansicht}
 
 \begin{frame}
 	\frametitle{Webinterface}
@@ -106,6 +114,8 @@
 	\includegraphics[width=\linewidth]{gui/frontend/FrontGUIWorldWithExportForm}
 \end{frame}
 
+\subsection{Deutschlandansicht}
+
 \begin{frame}
 	\frametitle{Webinterface}
 	\framesubtitle{Deutschlandansicht}
@@ -135,11 +145,52 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Webinterface}
-\framesubtitle{Zeitregler, -wähler und Live/Loop-Button}
-\centering
-\includegraphics[width=0.8\linewidth]{gui/frontend/FrontGUITimeSlider}\\[1cm]
-\includegraphics[width=0.5\linewidth]{gui/frontend/FrontGUITimeSetter}
+	\frametitle{Webinterface}
+	\framesubtitle{Zeitregler, -wähler und Live/Loop-Button}
+	\centering
+	\includegraphics[width=0.8\linewidth]{gui/frontend/FrontGUITimeSlider}\\[1cm]
+	\includegraphics[width=0.5\linewidth]{gui/frontend/FrontGUITimeSetter}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Webinterface}
+	\framesubtitle{Deutschlandansicht mit ausgewähltem Cluster und Sensor}
+	\centering
+	\includegraphics[width=\linewidth]{gui/frontend/FrontGUIGermanyWithShapeSelection}
+\end{frame}
+
+\section{Systemmodelle}
+
+\begin{frame}
+	\frametitle{Anwendungsfalldiagramm 1}
+	\framesubtitle{Bedienung des Webinterface}
+	\centering
+	\includegraphics[width=\linewidth]{diagrams/UseCaseDiagram1}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Anwendungsfalldiagramm 2}
+	\framesubtitle{Bedienung der Konfigurations-GUI}
+	\centering
+	\includegraphics[width=0.8\linewidth]{diagrams/UseCaseDiagram2}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Aktivitätsdiagramm}
+	\centering
+	\includegraphics[height=0.85\textheight]{diagrams/ActivityDiagram1}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Aktivitätsdiagramm}
+	\centering
+	\includegraphics[width=\linewidth]{diagrams/ActivityDiagram1Top}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Aktivitätsdiagramm}
+	\centering
+	\includegraphics[width=\linewidth]{diagrams/ActivityDiagram1Bottom}
 \end{frame}
 
 \end{document}
