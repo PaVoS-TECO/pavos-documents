@@ -19798,6 +19798,7 @@
 												"$ref": "AAAAAAFkJ71y/CLjooo="
 											},
 											"name": "path",
+											"documentation": "Is the FilePath of the File to Import.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -19814,6 +19815,7 @@
 												"$ref": "AAAAAAFkJ71y/CLjooo="
 											},
 											"name": "froster",
+											"documentation": "Is the FrostSender instance that will be used to send the files data to the Frost-Server.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -19914,6 +19916,7 @@
 												"$ref": "AAAAAAFkJ741AjWVBCw="
 											},
 											"name": "json",
+											"documentation": "Represents a single ObservedProperty.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -20009,6 +20012,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFkSwObOerrdp0="
 											},
+											"documentation": "An instance of an implementation of the FileReaderStrategy interface.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -20027,6 +20031,7 @@
 												"$ref": "AAAAAAFkSwObOerrdp0="
 											},
 											"name": "extension",
+											"documentation": "is the FileExtension for which a FileReaderStrategy has to be generated.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -20127,6 +20132,7 @@
 												"$ref": "AAAAAAFkSwb/gO/JsVQ="
 											},
 											"name": "path",
+											"documentation": "Is the FilePath of the File to Import.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -20143,6 +20149,7 @@
 												"$ref": "AAAAAAFkSwb/gO/JsVQ="
 											},
 											"name": "froster",
+											"documentation": "Is the FrostSender instance that will be used to send the files data to the Frost-Server.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -20209,6 +20216,7 @@
 												"$ref": "AAAAAAFkSwfduPC56zY="
 											},
 											"name": "path",
+											"documentation": "Is the FilePath of the File to Import.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -20225,6 +20233,7 @@
 												"$ref": "AAAAAAFkSwfduPC56zY="
 											},
 											"name": "froster",
+											"documentation": "Is the FrostSender instance that will be used to send the files data to the Frost-Server.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -20306,6 +20315,7 @@
 												"$ref": "AAAAAAFkSwfQ5/BmHEA="
 											},
 											"name": "path",
+											"documentation": "Is the FilePath of the File to Import.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -20322,6 +20332,7 @@
 												"$ref": "AAAAAAFkSwfQ5/BmHEA="
 											},
 											"name": "froster",
+											"documentation": "Is the FrostSender instance that will be used to send the files data to the Frost-Server.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -52926,6 +52937,7 @@
 												"$ref": "AAAAAAFkRjcu5FvkpRk="
 											},
 											"name": "req",
+											"documentation": "Is the HttpServletRequest.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -52942,6 +52954,7 @@
 												"$ref": "AAAAAAFkRjcu5FvkpRk="
 											},
 											"name": "res",
+											"documentation": "Is the HttpServletResponse.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -53077,6 +53090,7 @@
 												"$ref": "AAAAAAFkRiQKOyN45xM="
 											},
 											"name": "req",
+											"documentation": "Is the HttpServletRequest.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -53093,6 +53107,7 @@
 												"$ref": "AAAAAAFkRiQKOyN45xM="
 											},
 											"name": "res",
+											"documentation": "Is the HttpServletResponse.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -53228,6 +53243,7 @@
 												"$ref": "AAAAAAFkRjcJtlqNMcU="
 											},
 											"name": "req",
+											"documentation": "Is the HttpServletRequest.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -53244,6 +53260,7 @@
 												"$ref": "AAAAAAFkRjcJtlqNMcU="
 											},
 											"name": "res",
+											"documentation": "Is the HttpServletResponse.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -53332,6 +53349,7 @@
 												"$ref": "AAAAAAFkQw8XRsBzd7k="
 											},
 											"name": "req",
+											"documentation": "Is the HttpServletRequest.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -53348,6 +53366,7 @@
 												"$ref": "AAAAAAFkQw8XRsBzd7k="
 											},
 											"name": "res",
+											"documentation": "Is the HttpServletResponse.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -53413,6 +53432,7 @@
 												"$ref": "AAAAAAFkR7xzXUwbP8U="
 											},
 											"name": "req",
+											"documentation": "Is the HttpServletRequest.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -53429,6 +53449,7 @@
 												"$ref": "AAAAAAFkR7xzXUwbP8U="
 											},
 											"name": "res",
+											"documentation": "Is the HttpServletResponse.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -53713,6 +53734,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFkRfI5snMzLRI="
 											},
+											"documentation": "The FilePath of the File for the Download.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -53745,6 +53767,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFkRfJ1QnTsm+I="
 											},
+											"documentation": "A boolean whether the file is downloadable or not.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -53901,6 +53924,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFkRXT1G3qT6+s="
 											},
+											"documentation": "The FilePath of the File for the Download.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -53934,6 +53958,7 @@
 												"$ref": "AAAAAAFkRXu3nZv++Xc="
 											},
 											"name": "path",
+											"documentation": "Is the FilePath to be set.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -53966,6 +53991,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFkRXVPGnyVozA="
 											},
+											"documentation": "A boolean whether the file is downloadable or not.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -54151,6 +54177,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFkQjIp1XJ6Jm4="
 											},
+											"documentation": "The FileExtension for the File to export.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -54185,6 +54212,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFkQjGWgHGzDwM="
 											},
+											"documentation": "The TimeFrame of the Data to be exported.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -54217,6 +54245,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFkQjdHKH6kUVg="
 											},
+											"documentation": "The ObservedProperties that should be used for the export.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -54250,6 +54279,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFkQjJ6ZnNBjGw="
 											},
+											"documentation": "The Clusters that should be taken in the Export.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -54283,6 +54313,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFkQjjFpoIPWWY="
 											},
+											"documentation": "The SensorIDs of the Data that should be exported.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -54405,6 +54436,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFkRg0FM4onOBg="
 											},
+											"documentation": "Is the DownloadID for the started Export.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -54486,6 +54518,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFkRouPv5qeftA="
 											},
+											"documentation": "Is the DownloadID for the started Export.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -54827,6 +54860,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFkJ3oCX+85cHM="
 											},
+											"documentation": "Is a new instance of an implementation of a FilWriterStrategy.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -54947,6 +54981,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFkQqD7XppWte8="
 											},
+											"documentation": "Is a KStream of the Data that should be exported.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -55045,6 +55080,7 @@
 												"$ref": "AAAAAAFkJ3QfXOus9ZU="
 											},
 											"name": "stream",
+											"documentation": "is the KStream, that should be exported to a File.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -55061,6 +55097,7 @@
 												"$ref": "AAAAAAFkJ3QfXOus9ZU="
 											},
 											"name": "path",
+											"documentation": "Is the FilePath, where the new File should be created.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -55204,6 +55241,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFkJ3irre0hwh8="
 											},
+											"documentation": "Is an Array of the possible FileExtensions for an Export.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -55240,6 +55278,7 @@
 												"$ref": "AAAAAAFkJ3jYte26i+c="
 											},
 											"name": "extension",
+											"documentation": "Is the FileExtension for which a new instance of an Implementation of the FileWriterStrategy is wanted.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -55257,6 +55296,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFkJ3jYte26i+c="
 											},
+											"documentation": "Is the instance of the implementation of a FileWriterStrategy.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -55351,6 +55391,7 @@
 												"$ref": "AAAAAAFkJ3ZvcOw67Ys="
 											},
 											"name": "stream",
+											"documentation": "is the KStream, that should be exported to a File.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -55367,6 +55408,7 @@
 												"$ref": "AAAAAAFkJ3ZvcOw67Ys="
 											},
 											"name": "path",
+											"documentation": "Is the FilePath, where the new File should be created.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -55432,6 +55474,7 @@
 												"$ref": "AAAAAAFkJ3a7YOxQeBc="
 											},
 											"name": "stream",
+											"documentation": "is the KStream, that should be exported to a File.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
@@ -55448,6 +55491,7 @@
 												"$ref": "AAAAAAFkJ3a7YOxQeBc="
 											},
 											"name": "path",
+											"documentation": "Is the FilePath, where the new File should be created.",
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
