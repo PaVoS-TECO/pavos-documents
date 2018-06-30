@@ -4547,9 +4547,9 @@
 										"$ref": "AAAAAAFkUdHlSqkhcE0="
 									},
 									"font": "Arial;13;0",
-									"left": 1000,
+									"left": 999,
 									"top": 960,
-									"width": 19.5126953125,
+									"width": 20,
 									"height": 13,
 									"alpha": -1.0636979458919655,
 									"distance": 20.591260281974,
@@ -4816,7 +4816,7 @@
 										"$ref": "AAAAAAFkRrDp9BjISpg="
 									},
 									"name": "summarize",
-									"documentation": "This method takes data of a certain TimeUnit and summarizes it into the next higher TimeUnit. The summarized date is then saved back into the StorageSolution.",
+									"documentation": "This method takes data of a certain TimeUnit and summarizes it into the next higher TimeUnit. The summarized data is then saved back into the StorageSolution. The original data of the lower TimeUnit is then deleted from the database.",
 									"parameters": [
 										{
 											"_type": "UMLParameter",
