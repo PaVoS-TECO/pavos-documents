@@ -2713,9 +2713,9 @@
 											"font": "Arial;13;0",
 											"left": 1760,
 											"top": -1120,
-											"width": 155.5556640625,
+											"width": 210.24072265625,
 											"height": 13,
-											"text": "(from DataTransferControl)"
+											"text": "(from Serialization & Deserialization)"
 										},
 										{
 											"_type": "LabelView",
@@ -2995,9 +2995,9 @@
 											"font": "Arial;13;0",
 											"left": 4821,
 											"top": 277,
-											"width": 155.5556640625,
+											"width": 210.24072265625,
 											"height": 13,
-											"text": "(from DataTransferControl)"
+											"text": "(from Serialization & Deserialization)"
 										},
 										{
 											"_type": "LabelView",
@@ -3270,9 +3270,9 @@
 											"font": "Arial;13;0",
 											"left": 1664,
 											"top": -1712,
-											"width": 155.5556640625,
+											"width": 210.24072265625,
 											"height": 13,
-											"text": "(from DataTransferControl)"
+											"text": "(from Serialization & Deserialization)"
 										},
 										{
 											"_type": "LabelView",
@@ -3520,9 +3520,9 @@
 											"font": "Arial;13;0",
 											"left": 1888,
 											"top": -1296,
-											"width": 155.5556640625,
+											"width": 210.24072265625,
 											"height": 13,
-											"text": "(from DataTransferControl)"
+											"text": "(from Serialization & Deserialization)"
 										},
 										{
 											"_type": "LabelView",
@@ -6837,7 +6837,248 @@
 							"_parent": {
 								"$ref": "AAAAAAFkTLSD4w8axew="
 							},
-							"name": "Serialization & Deserialization"
+							"name": "Serialization & Deserialization",
+							"ownedElements": [
+								{
+									"_type": "UMLClass",
+									"_id": "AAAAAAFkHSi7v1ScFfs=",
+									"_parent": {
+										"$ref": "AAAAAAFkTLgeuxlfFBg="
+									},
+									"name": "KafkaObservationData",
+									"ownedElements": [
+										{
+											"_type": "UMLInterfaceRealization",
+											"_id": "AAAAAAFkHTKmuoo2QCc=",
+											"_parent": {
+												"$ref": "AAAAAAFkHSi7v1ScFfs="
+											},
+											"source": {
+												"$ref": "AAAAAAFkHSi7v1ScFfs="
+											},
+											"target": {
+												"$ref": "AAAAAAFkHS/1bn3Kzcg="
+											},
+											"stereotype": "implements"
+										}
+									],
+									"documentation": "Ein serialisierbares Objekt, das die observierten Daten aus Kafka enthält.",
+									"attributes": [
+										{
+											"_type": "UMLAttribute",
+											"_id": "AAAAAAFkHTOVDozUMrA=",
+											"_parent": {
+												"$ref": "AAAAAAFkHSi7v1ScFfs="
+											},
+											"name": "serialVersionUID",
+											"documentation": "Der Unique-Identifier dieses Objektes.",
+											"visibility": "private",
+											"isStatic": true,
+											"type": "long",
+											"isID": true
+										},
+										{
+											"_type": "UMLAttribute",
+											"_id": "AAAAAAFkHTTPZY1quwI=",
+											"_parent": {
+												"$ref": "AAAAAAFkHSi7v1ScFfs="
+											},
+											"name": "observationDate",
+											"documentation": "Das Datum der Observation.",
+											"type": ""
+										},
+										{
+											"_type": "UMLAttribute",
+											"_id": "AAAAAAFkHTTXv44AWc0=",
+											"_parent": {
+												"$ref": "AAAAAAFkHSi7v1ScFfs="
+											},
+											"name": "locationName",
+											"documentation": "Der Name des Ortes der Observation.",
+											"type": ""
+										},
+										{
+											"_type": "UMLAttribute",
+											"_id": "AAAAAAFkHTTgMY6Wvc4=",
+											"_parent": {
+												"$ref": "AAAAAAFkHSi7v1ScFfs="
+											},
+											"name": "locationElevation",
+											"documentation": "Die Höhe des Ortes der Observation über dem Meeresspiegel.",
+											"type": ""
+										},
+										{
+											"_type": "UMLAttribute",
+											"_id": "AAAAAAFkHTTo248sqgw=",
+											"_parent": {
+												"$ref": "AAAAAAFkHSi7v1ScFfs="
+											},
+											"name": "locationID",
+											"documentation": "Der Identifier des Ortes der Observation.",
+											"type": ""
+										},
+										{
+											"_type": "UMLAttribute",
+											"_id": "AAAAAAFkHTl4tZkhBDQ=",
+											"_parent": {
+												"$ref": "AAAAAAFkHSi7v1ScFfs="
+											},
+											"name": "observedProperty",
+											"documentation": "Die beobachtete Eigenschaft.",
+											"type": ""
+										}
+									]
+								},
+								{
+									"_type": "UMLClass",
+									"_id": "AAAAAAFkHUGIxK/xUuI=",
+									"_parent": {
+										"$ref": "AAAAAAFkTLgeuxlfFBg="
+									},
+									"name": "ObservationDataDeserializer",
+									"ownedElements": [
+										{
+											"_type": "UMLInterfaceRealization",
+											"_id": "AAAAAAFkHUMq2LnRBlM=",
+											"_parent": {
+												"$ref": "AAAAAAFkHUGIxK/xUuI="
+											},
+											"name": "Deserializer<KafkaObservationData>",
+											"source": {
+												"$ref": "AAAAAAFkHUGIxK/xUuI="
+											},
+											"target": {
+												"$ref": "AAAAAAFkHUITC7IGWtM="
+											},
+											"stereotype": "implements"
+										}
+									],
+									"documentation": "Deserialisiert KafkaObservationData-Objekte.",
+									"attributes": [
+										{
+											"_type": "UMLAttribute",
+											"_id": "AAAAAAFkHUQBor1sG78=",
+											"_parent": {
+												"$ref": "AAAAAAFkHUGIxK/xUuI="
+											},
+											"name": "logger",
+											"documentation": "Dokumentiert die Deserialisierung der Objekte.",
+											"visibility": "private",
+											"isStatic": true,
+											"type": "Logger"
+										}
+									],
+									"operations": [
+										{
+											"_type": "UMLOperation",
+											"_id": "AAAAAAFkHURZgr7vVkk=",
+											"_parent": {
+												"$ref": "AAAAAAFkHUGIxK/xUuI="
+											},
+											"name": "configure",
+											"documentation": "Konfiguriert den Deserialisierer.",
+											"parameters": [
+												{
+													"_type": "UMLParameter",
+													"_id": "AAAAAAFkHUSsbL+ra5g=",
+													"_parent": {
+														"$ref": "AAAAAAFkHURZgr7vVkk="
+													},
+													"name": "configs",
+													"documentation": "Die Konfigurationen.",
+													"type": "Map<String, ?>"
+												},
+												{
+													"_type": "UMLParameter",
+													"_id": "AAAAAAFkHUVwtcJM0os=",
+													"_parent": {
+														"$ref": "AAAAAAFkHURZgr7vVkk="
+													},
+													"name": "isKey",
+													"documentation": "Ein Wert, der aussagt, ob ein Schlüssel oder ein Wert konfiguriert werden soll.",
+													"type": "boolean"
+												}
+											]
+										},
+										{
+											"_type": "UMLOperation",
+											"_id": "AAAAAAFkHUdyh8ykOtA=",
+											"_parent": {
+												"$ref": "AAAAAAFkHUGIxK/xUuI="
+											},
+											"name": "deserialize",
+											"documentation": "Deserialisiert ein Objekt.",
+											"parameters": [
+												{
+													"_type": "UMLParameter",
+													"_id": "AAAAAAFkTHIs3AdgrOg=",
+													"_parent": {
+														"$ref": "AAAAAAFkHUdyh8ykOtA="
+													},
+													"name": "topics",
+													"documentation": "Kafka-Topics die abboniert werden sollen.",
+													"type": {
+														"$ref": "AAAAAAFkQWP9JrHg5mM="
+													}
+												},
+												{
+													"_type": "UMLParameter",
+													"_id": "AAAAAAFkHUf3Qc08v2Y=",
+													"_parent": {
+														"$ref": "AAAAAAFkHUdyh8ykOtA="
+													},
+													"name": "data",
+													"documentation": "Das sind die serialisierten Bytes.",
+													"type": "byte",
+													"multiplicity": "0..*"
+												},
+												{
+													"_type": "UMLParameter",
+													"_id": "AAAAAAFkHUiW7M4rZyE=",
+													"_parent": {
+														"$ref": "AAAAAAFkHUdyh8ykOtA="
+													},
+													"name": "kod",
+													"documentation": "Ein serialisierbares Objekt, das die observierten Daten aus Kafka enthält.",
+													"type": {
+														"$ref": "AAAAAAFkHSi7v1ScFfs="
+													},
+													"direction": "return"
+												}
+											]
+										},
+										{
+											"_type": "UMLOperation",
+											"_id": "AAAAAAFkHUjXx869ytU=",
+											"_parent": {
+												"$ref": "AAAAAAFkHUGIxK/xUuI="
+											},
+											"name": "close",
+											"documentation": "Schließt dieses Objekt."
+										}
+									]
+								},
+								{
+									"_type": "UMLInterface",
+									"_id": "AAAAAAFkHS/1bn3Kzcg=",
+									"_parent": {
+										"$ref": "AAAAAAFkTLgeuxlfFBg="
+									},
+									"name": "java.io.Serializable",
+									"documentation": "Die Schnittstelle, die unsere Objekte serialisierbar macht.",
+									"stereotype": ""
+								},
+								{
+									"_type": "UMLInterface",
+									"_id": "AAAAAAFkHUITC7IGWtM=",
+									"_parent": {
+										"$ref": "AAAAAAFkTLgeuxlfFBg="
+									},
+									"name": "org.apache.kafka.common.serialization.Deserializer",
+									"documentation": "Die Schnittstelle, die wir benötigen um unser Objekt aus Kafka heraus zu deserialisieren.",
+									"stereotype": ""
+								}
+							]
 						},
 						{
 							"_type": "UMLClass",
@@ -7166,19 +7407,6 @@
 										}
 									},
 									"stereotype": "run task on consumer"
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAFkHVM85wkaZXw=",
-									"_parent": {
-										"$ref": "AAAAAAFkE7oa+UTa17I="
-									},
-									"source": {
-										"$ref": "AAAAAAFkE7oa+UTa17I="
-									},
-									"target": {
-										"$ref": "AAAAAAFkE7oa+UTa17I="
-									}
 								}
 							],
 							"documentation": "Die Kontroll-Einheit, die der Erstellung und Entfernung von KafkaConsumern überwacht, sowie die Aufträge weiterleitet.",
@@ -7240,225 +7468,6 @@
 											}
 										}
 									]
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAFkHSi7v1ScFfs=",
-							"_parent": {
-								"$ref": "AAAAAAFkTLSD4w8axew="
-							},
-							"name": "KafkaObservationData",
-							"ownedElements": [
-								{
-									"_type": "UMLInterfaceRealization",
-									"_id": "AAAAAAFkHTKmuoo2QCc=",
-									"_parent": {
-										"$ref": "AAAAAAFkHSi7v1ScFfs="
-									},
-									"source": {
-										"$ref": "AAAAAAFkHSi7v1ScFfs="
-									},
-									"target": {
-										"$ref": "AAAAAAFkHS/1bn3Kzcg="
-									},
-									"stereotype": "implements"
-								}
-							],
-							"documentation": "Ein serialisierbares Objekt, das die observierten Daten aus Kafka enthält.",
-							"attributes": [
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAFkHTOVDozUMrA=",
-									"_parent": {
-										"$ref": "AAAAAAFkHSi7v1ScFfs="
-									},
-									"name": "serialVersionUID",
-									"documentation": "Der Unique-Identifier dieses Objektes.",
-									"visibility": "private",
-									"isStatic": true,
-									"type": "long",
-									"isID": true
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAFkHTTPZY1quwI=",
-									"_parent": {
-										"$ref": "AAAAAAFkHSi7v1ScFfs="
-									},
-									"name": "observationDate",
-									"documentation": "Das Datum der Observation.",
-									"type": ""
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAFkHTTXv44AWc0=",
-									"_parent": {
-										"$ref": "AAAAAAFkHSi7v1ScFfs="
-									},
-									"name": "locationName",
-									"documentation": "Der Name des Ortes der Observation.",
-									"type": ""
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAFkHTTgMY6Wvc4=",
-									"_parent": {
-										"$ref": "AAAAAAFkHSi7v1ScFfs="
-									},
-									"name": "locationElevation",
-									"documentation": "Die Höhe des Ortes der Observation über dem Meeresspiegel.",
-									"type": ""
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAFkHTTo248sqgw=",
-									"_parent": {
-										"$ref": "AAAAAAFkHSi7v1ScFfs="
-									},
-									"name": "locationID",
-									"documentation": "Der Identifier des Ortes der Observation.",
-									"type": ""
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAFkHTl4tZkhBDQ=",
-									"_parent": {
-										"$ref": "AAAAAAFkHSi7v1ScFfs="
-									},
-									"name": "observedProperty",
-									"documentation": "Die beobachtete Eigenschaft.",
-									"type": ""
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAFkHUGIxK/xUuI=",
-							"_parent": {
-								"$ref": "AAAAAAFkTLSD4w8axew="
-							},
-							"name": "ObservationDataDeserializer",
-							"ownedElements": [
-								{
-									"_type": "UMLInterfaceRealization",
-									"_id": "AAAAAAFkHUMq2LnRBlM=",
-									"_parent": {
-										"$ref": "AAAAAAFkHUGIxK/xUuI="
-									},
-									"name": "Deserializer<KafkaObservationData>",
-									"source": {
-										"$ref": "AAAAAAFkHUGIxK/xUuI="
-									},
-									"target": {
-										"$ref": "AAAAAAFkHUITC7IGWtM="
-									},
-									"stereotype": "implements"
-								}
-							],
-							"documentation": "Deserialisiert KafkaObservationData-Objekte.",
-							"attributes": [
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAFkHUQBor1sG78=",
-									"_parent": {
-										"$ref": "AAAAAAFkHUGIxK/xUuI="
-									},
-									"name": "logger",
-									"documentation": "Dokumentiert die Deserialisierung der Objekte.",
-									"visibility": "private",
-									"isStatic": true,
-									"type": "Logger"
-								}
-							],
-							"operations": [
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAFkHURZgr7vVkk=",
-									"_parent": {
-										"$ref": "AAAAAAFkHUGIxK/xUuI="
-									},
-									"name": "configure",
-									"documentation": "Konfiguriert den Deserialisierer.",
-									"parameters": [
-										{
-											"_type": "UMLParameter",
-											"_id": "AAAAAAFkHUSsbL+ra5g=",
-											"_parent": {
-												"$ref": "AAAAAAFkHURZgr7vVkk="
-											},
-											"name": "configs",
-											"documentation": "Die Konfigurationen.",
-											"type": "Map<String, ?>"
-										},
-										{
-											"_type": "UMLParameter",
-											"_id": "AAAAAAFkHUVwtcJM0os=",
-											"_parent": {
-												"$ref": "AAAAAAFkHURZgr7vVkk="
-											},
-											"name": "isKey",
-											"documentation": "Ein Wert, der aussagt, ob ein Schlüssel oder ein Wert konfiguriert werden soll.",
-											"type": "boolean"
-										}
-									]
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAFkHUdyh8ykOtA=",
-									"_parent": {
-										"$ref": "AAAAAAFkHUGIxK/xUuI="
-									},
-									"name": "deserialize",
-									"documentation": "Deserialisiert ein Objekt.",
-									"parameters": [
-										{
-											"_type": "UMLParameter",
-											"_id": "AAAAAAFkTHIs3AdgrOg=",
-											"_parent": {
-												"$ref": "AAAAAAFkHUdyh8ykOtA="
-											},
-											"name": "topics",
-											"documentation": "Kafka-Topics die abboniert werden sollen.",
-											"type": {
-												"$ref": "AAAAAAFkQWP9JrHg5mM="
-											}
-										},
-										{
-											"_type": "UMLParameter",
-											"_id": "AAAAAAFkHUf3Qc08v2Y=",
-											"_parent": {
-												"$ref": "AAAAAAFkHUdyh8ykOtA="
-											},
-											"name": "data",
-											"documentation": "Das sind die serialisierten Bytes.",
-											"type": "byte",
-											"multiplicity": "0..*"
-										},
-										{
-											"_type": "UMLParameter",
-											"_id": "AAAAAAFkHUiW7M4rZyE=",
-											"_parent": {
-												"$ref": "AAAAAAFkHUdyh8ykOtA="
-											},
-											"name": "kod",
-											"documentation": "Ein serialisierbares Objekt, das die observierten Daten aus Kafka enthält.",
-											"type": {
-												"$ref": "AAAAAAFkHSi7v1ScFfs="
-											},
-											"direction": "return"
-										}
-									]
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAFkHUjXx869ytU=",
-									"_parent": {
-										"$ref": "AAAAAAFkHUGIxK/xUuI="
-									},
-									"name": "close",
-									"documentation": "Schließt dieses Objekt."
 								}
 							]
 						},
@@ -7849,26 +7858,6 @@
 							},
 							"name": "ConsumerRecords<String, KafkaObservationData>",
 							"documentation": "Mehrere Daten-Aufzeichnungen aus Kafka."
-						},
-						{
-							"_type": "UMLInterface",
-							"_id": "AAAAAAFkHS/1bn3Kzcg=",
-							"_parent": {
-								"$ref": "AAAAAAFkTLSD4w8axew="
-							},
-							"name": "java.io.Serializable",
-							"documentation": "Die Schnittstelle, die unsere Objekte serialisierbar macht.",
-							"stereotype": ""
-						},
-						{
-							"_type": "UMLInterface",
-							"_id": "AAAAAAFkHUITC7IGWtM=",
-							"_parent": {
-								"$ref": "AAAAAAFkTLSD4w8axew="
-							},
-							"name": "org.apache.kafka.common.serialization.Deserializer",
-							"documentation": "Die Schnittstelle, die wir benötigen um unser Objekt aus Kafka heraus zu deserialisieren.",
-							"stereotype": ""
 						},
 						{
 							"_type": "UMLDataType",
@@ -14105,6 +14094,14 @@
 					}
 				}
 			]
+		},
+		{
+			"_type": "UMLModel",
+			"_id": "AAAAAAFkUXN4/BUpcgU=",
+			"_parent": {
+				"$ref": "AAAAAAFF+h6SjaM2Hec="
+			},
+			"name": "Model1"
 		}
 	]
 }
