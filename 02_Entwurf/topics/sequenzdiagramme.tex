@@ -75,11 +75,11 @@ Nachdem alle beobachteten Eigenschaften hinzugefügt wurden senden wir die Daten
 \newpage
 
 \section{View}
-Ein Beispiel für den Ablauf einer Aktion der View.
+In diesem Funktionsbeispiel der View, wird einem \texttt{MapLayer} einer \texttt{AbstractMap} zunächst ein \texttt{Grid} zugeordnet durch die Methode \texttt{setGrid}. Dann folgt das eigentliche Anzeigen des layers durch die \texttt{displayLayer} Methode. Diese ruft zunächst \texttt{getGrid} um auf die darin enthaltenen \texttt{Cluster} zugreifen zu können durch \texttt{getClusters}. Nun iteriert man über diese und führt für jedes \texttt{Cluster} die Operation \texttt{getTile} aus. Damit hat man Zugriff auf das ihnen zugeordnete \texttt{Tile}. Dies bildet eine graphische Representation und durch die Methode \texttt{display} lässt es sich auf der Karte darstellen. Durch das iterieren über alle \texttt{Cluster} und ihre Visualisierung ergibt sich am ende ein Raster, also die visuelle Representation des \texttt{Grid}.
 \begin{figure}[!hbp]
 	\centering
 	\includegraphics[width=\linewidth]{images/view/ViewSequenceDiagram.png}
-	\caption{Sequenzdiagramm View}
+	\caption{Sequenzdiagramm View: Anzeigen eines Maplayers}
 \end{figure}
 \newpage
 
