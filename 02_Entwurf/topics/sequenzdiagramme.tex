@@ -52,7 +52,7 @@ If we want to end the transferring of data, we have to call the wakeup method of
 	\caption{Sequenzdiagramm Graphite}
 \end{figure}
 \newpage
-Here the data that we want to send to Graphite is given to us directly. To do the job, the GraphiteSender gathers properties from the GraphiteConfig, that are needed for transferring data to Graphite. Afterwards, we start a loop. In this loop the GraphiteSender adds every observed property to the list of data to send to Graphite. The GraphiteSender does this by converting the data to metrics and then documenting the results. After adding all observed properties, we can finally sent the data to Graphite.
+Here the data that we want to send to Graphite is given to us directly. To do the job, the GraphiteSender gathers properties from the GraphiteConfig, that are needed for transferring data to Graphite. Afterwards, we start a loop. In this loop the GraphiteSender adds every observed property to the list of data to send to Graphite. The GraphiteSender does this by converting the data to metrics and then documenting the results. After adding all observed properties, we can finally send the data to Graphite.
 \begin{figure}[!hbp]
 	\centering
 	\includegraphics[width=\linewidth]{images/graphite/GraphiteSenderSequenceDiagram.png}
