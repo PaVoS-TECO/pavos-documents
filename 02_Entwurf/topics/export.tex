@@ -47,8 +47,11 @@
 \vskip .1in
 \vskip .1in
 \subsection{\label{Export.FileWriterStrategy}Interface FileWriterStrategy}{
-\hypertarget{Export.FileWriterStrategy}{}\vskip .1in 
-Interface for the FileWriterStrategy classes. Realization of a Strategy to be able to swap out the way a File has to be saved.\vskip .1in 
+\hypertarget{Export.FileWriterStrategy}{}\vskip .1in
+Interface for the FileWriterStrategy classes. Realization of a Strategy to be able to swap out the way a File has to be saved.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/export/classes/FileWriterStrategy}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface FileWriterStrategy
@@ -63,7 +66,7 @@ public interface FileWriterStrategy
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{saveToFile(KStream, FilePath)}
 \hypertarget{Export.FileWriterStrategy.saveToFile(KStream, FilePath)}{{\bf  saveToFile}\\}
 \begin{lstlisting}[frame=none]
@@ -89,8 +92,11 @@ Creates a File as specified by the FilePath and saves the Data from the provided
 }
 }
 \subsection{\label{Export.AbstractExporter}Class AbstractExporter}{
-\hypertarget{Export.AbstractExporter}{}\vskip .1in 
-Abstract Exporter of Data to a File.\vskip .1in 
+\hypertarget{Export.AbstractExporter}{}\vskip .1in
+Abstract Exporter of Data to a File.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/export/classes/AbstractExporter}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class AbstractExporter
@@ -119,7 +125,7 @@ public class AbstractExporter
 \label{Export.AbstractExporter.properties}\hypertarget{Export.AbstractExporter.properties}{\texttt{public ExportProperties\ {\bf  properties}}
 }
 \begin{itemize}
-\item{\vskip -.9ex 
+\item{\vskip -.9ex
 Contains the Properties of an Export Request.}
 \end{itemize}
 }
@@ -128,7 +134,7 @@ Contains the Properties of an Export Request.}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{AbstractExporter()}
 \hypertarget{Export.AbstractExporter()}{{\bf  AbstractExporter}\\}
 \begin{lstlisting}[frame=none]
@@ -146,7 +152,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{createFile()}
 \hypertarget{Export.AbstractExporter.createFile()}{{\bf  createFile}\\}
 \begin{lstlisting}[frame=none]
@@ -159,7 +165,7 @@ Generates the File with the desired Data.
 }
 \end{itemize}
 }%end item
-\item{ 
+\item{
 \index{createFileInformation()}
 \hypertarget{Export.AbstractExporter.createFileInformation()}{{\bf  createFileInformation}\\}
 \begin{lstlisting}[frame=none]
@@ -170,8 +176,8 @@ public DownloadID createFileInformation()\end{lstlisting} %end signature
 
 Creates Information for that Export. These Information will be used to identifie a File for the WebGUI, that gets the created DownloadID.
 }
-\item{{\bf  Returns} -- 
-Is the DownloadID for the started Export. 
+\item{{\bf  Returns} --
+Is the DownloadID for the started Export.
 }%end item
 \end{itemize}
 }%end item
@@ -179,8 +185,11 @@ Is the DownloadID for the started Export.
 }
 }
 \subsection{\label{Export.CSVWriterStrategy}Class CSVWriterStrategy}{
-\hypertarget{Export.CSVWriterStrategy}{}\vskip .1in 
-Implementation of the FileWriterStrategy interface for CSV files.\vskip .1in 
+\hypertarget{Export.CSVWriterStrategy}{}\vskip .1in
+Implementation of the FileWriterStrategy interface for CSV files.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/export/classes/CSVWriterStrategy}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class CSVWriterStrategy
@@ -199,7 +208,7 @@ public class CSVWriterStrategy
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{CSVWriterStrategy()}
 \hypertarget{Export.CSVWriterStrategy()}{{\bf  CSVWriterStrategy}\\}
 \begin{lstlisting}[frame=none]
@@ -217,7 +226,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{saveToFile(KStream, FilePath)}
 \hypertarget{Export.CSVWriterStrategy.saveToFile(KStream, FilePath)}{{\bf  saveToFile}\\}
 \begin{lstlisting}[frame=none]
@@ -239,7 +248,7 @@ Creates a File as specified by the FilePath and saves the Data from the provided
 }%end item
 \end{itemize}
 }%end item
-\item{ 
+\item{
 \index{saveToFile(KStream, FilePath)}
 \hypertarget{Export.CSVWriterStrategy.saveToFile(KStream, FilePath)}{{\bf  saveToFile}\\}
 \begin{lstlisting}[frame=none]
@@ -265,8 +274,11 @@ Creates a File as specified by the FilePath and saves the Data from the provided
 }
 }
 \subsection{\label{Export.ExportProperties}Class ExportProperties}{
-\hypertarget{Export.ExportProperties}{}\vskip .1in 
-Contains the Properties of an Export Request.\vskip .1in 
+\hypertarget{Export.ExportProperties}{}\vskip .1in
+Contains the Properties of an Export Request.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/export/classes/ExportProperties}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class ExportProperties
@@ -288,7 +300,7 @@ public class ExportProperties
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{ExportProperties()}
 \hypertarget{Export.ExportProperties()}{{\bf  ExportProperties}\\}
 \begin{lstlisting}[frame=none]
@@ -306,7 +318,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{getClusters()}
 \hypertarget{Export.ExportProperties.getClusters()}{{\bf  getClusters}\\}
 \begin{lstlisting}[frame=none]
@@ -317,12 +329,12 @@ public java.util.Set getClusters()\end{lstlisting} %end signature
 
 Get the ClusterIDs that should be exported. Always only exports a Groupd of Sensors or a Group of Clusters. The other Option is Empty.
 }
-\item{{\bf  Returns} -- 
-The Clusters that should be taken in the Export. 
+\item{{\bf  Returns} --
+The Clusters that should be taken in the Export.
 }%end item
 \end{itemize}
 }%end item
-\item{ 
+\item{
 \index{getFileExtension()}
 \hypertarget{Export.ExportProperties.getFileExtension()}{{\bf  getFileExtension}\\}
 \begin{lstlisting}[frame=none]
@@ -333,12 +345,12 @@ public FileExtension getFileExtension()\end{lstlisting} %end signature
 
 Get the FileExtension for the Export File.
 }
-\item{{\bf  Returns} -- 
-The FileExtension for the File to export. 
+\item{{\bf  Returns} --
+The FileExtension for the File to export.
 }%end item
 \end{itemize}
 }%end item
-\item{ 
+\item{
 \index{getObservedProperties()}
 \hypertarget{Export.ExportProperties.getObservedProperties()}{{\bf  getObservedProperties}\\}
 \begin{lstlisting}[frame=none]
@@ -349,12 +361,12 @@ public java.util.Set getObservedProperties()\end{lstlisting} %end signature
 
 Get the ObsorvedProperties that should be exported.
 }
-\item{{\bf  Returns} -- 
-The ObservedProperties that should be used for the export. 
+\item{{\bf  Returns} --
+The ObservedProperties that should be used for the export.
 }%end item
 \end{itemize}
 }%end item
-\item{ 
+\item{
 \index{getSensorIDs()}
 \hypertarget{Export.ExportProperties.getSensorIDs()}{{\bf  getSensorIDs}\\}
 \begin{lstlisting}[frame=none]
@@ -365,12 +377,12 @@ public java.util.Set getSensorIDs()\end{lstlisting} %end signature
 
 Get the SensorIDs that should be exported. Always only exports a Groupd of Sensors or a Group of Clusters. The other Option is Empty.
 }
-\item{{\bf  Returns} -- 
-The SensorIDs of the Data that should be exported. 
+\item{{\bf  Returns} --
+The SensorIDs of the Data that should be exported.
 }%end item
 \end{itemize}
 }%end item
-\item{ 
+\item{
 \index{getTimeFrame()}
 \hypertarget{Export.ExportProperties.getTimeFrame()}{{\bf  getTimeFrame}\\}
 \begin{lstlisting}[frame=none]
@@ -381,8 +393,8 @@ public TimeFrame getTimeFrame()\end{lstlisting} %end signature
 
 Get the TimeFrame of the Data that should be exported.
 }
-\item{{\bf  Returns} -- 
-The TimeFrame of the Data to be exported. 
+\item{{\bf  Returns} --
+The TimeFrame of the Data to be exported.
 }%end item
 \end{itemize}
 }%end item
@@ -390,8 +402,11 @@ The TimeFrame of the Data to be exported.
 }
 }
 \subsection{\label{Export.ExportStreamGenerator}Class ExportStreamGenerator}{
-\hypertarget{Export.ExportStreamGenerator}{}\vskip .1in 
-Generates a Stream for the Export by asking for one at the PaVoS Core and Subscribing to it.\vskip .1in 
+\hypertarget{Export.ExportStreamGenerator}{}\vskip .1in
+Generates a Stream for the Export by asking for one at the PaVoS Core and Subscribing to it.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/export/classes/ExportStreamGenerator}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class ExportStreamGenerator
@@ -418,7 +433,7 @@ public class ExportStreamGenerator
 \label{Export.ExportStreamGenerator.properties}\hypertarget{Export.ExportStreamGenerator.properties}{\texttt{public ExportProperties\ {\bf  properties}}
 }
 \begin{itemize}
-\item{\vskip -.9ex 
+\item{\vskip -.9ex
 Contains the Properties of an Export Request.}
 \end{itemize}
 }
@@ -427,7 +442,7 @@ Contains the Properties of an Export Request.}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{ExportStreamGenerator()}
 \hypertarget{Export.ExportStreamGenerator()}{{\bf  ExportStreamGenerator}\\}
 \begin{lstlisting}[frame=none]
@@ -445,7 +460,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{createExportStream()}
 \hypertarget{Export.ExportStreamGenerator.createExportStream()}{{\bf  createExportStream}\\}
 \begin{lstlisting}[frame=none]
@@ -456,8 +471,8 @@ public KStream createExportStream()\end{lstlisting} %end signature
 
 Asks for a KafkaStream and subscribes to it. Then gives it through to the needed part for the export.
 }
-\item{{\bf  Returns} -- 
-Is a KStream of the Data that should be exported. 
+\item{{\bf  Returns} --
+Is a KStream of the Data that should be exported.
 }%end item
 \end{itemize}
 }%end item
@@ -465,8 +480,11 @@ Is a KStream of the Data that should be exported.
 }
 }
 \subsection{\label{Export.FileExporter}Class FileExporter}{
-\hypertarget{Export.FileExporter}{}\vskip .1in 
-Exporter of Data from Kafka to a File.\vskip .1in 
+\hypertarget{Export.FileExporter}{}\vskip .1in
+Exporter of Data from Kafka to a File.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/export/classes/FileExporter}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class FileExporter
@@ -485,7 +503,7 @@ public class FileExporter
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{FileExporter()}
 \hypertarget{Export.FileExporter()}{{\bf  FileExporter}\\}
 \begin{lstlisting}[frame=none]
@@ -503,7 +521,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{createFile()}
 \hypertarget{Export.FileExporter.createFile()}{{\bf  createFile}\\}
 \begin{lstlisting}[frame=none]
@@ -516,7 +534,7 @@ Generates the File with the desired Data.
 }
 \end{itemize}
 }%end item
-\item{ 
+\item{
 \index{createFileInformation()}
 \hypertarget{Export.FileExporter.createFileInformation()}{{\bf  createFileInformation}\\}
 \begin{lstlisting}[frame=none]
@@ -527,37 +545,40 @@ public DownloadID createFileInformation()\end{lstlisting} %end signature
 
 Creates Information for that Export. These Information will be used to identifie a File for the WebGUI, that gets the created DownloadID.
 }
-\item{{\bf  Returns} -- 
-Is the DownloadID for the started Export. 
+\item{{\bf  Returns} --
+Is the DownloadID for the started Export.
 }%end item
 \end{itemize}
 }%end item
 \end{itemize}
 }
 \subsubsection{Members inherited from class AbstractExporter }{
-\texttt{Export.AbstractExporter} {\small 
+\texttt{Export.AbstractExporter} {\small
 \refdefined{Export.AbstractExporter}}
-{\small 
+{\small
 
 \vskip -2em
 \begin{itemize}
-\item{\vskip -1.5ex 
+\item{\vskip -1.5ex
 \texttt{public void {\bf  createFile}()
 }%end signature
 }%end item
-\item{\vskip -1.5ex 
+\item{\vskip -1.5ex
 \texttt{public DownloadID {\bf  createFileInformation}()
 }%end signature
 }%end item
-\item{\vskip -1.5ex 
+\item{\vskip -1.5ex
 \texttt{public {\bf  properties}}%end signature
 }%end item
 \end{itemize}
 }
 }
 \subsection{\label{Export.FileExtension}Class FileExtension}{
-\hypertarget{Export.FileExtension}{}\vskip .1in 
-Represents the FileExtension of a File. Is used to match the right FileFormat for an export or import.\vskip .1in 
+\hypertarget{Export.FileExtension}{}\vskip .1in
+Represents the FileExtension of a File. Is used to match the right FileFormat for an export or import.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/export/classes/FileExtension}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class FileExtension
@@ -570,7 +591,7 @@ public class FileExtension
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{FileExtension()}
 \hypertarget{Export.FileExtension()}{{\bf  FileExtension}\\}
 \begin{lstlisting}[frame=none]
@@ -587,8 +608,11 @@ Default constructor
 }
 }
 \subsection{\label{Export.FileType}Class FileType}{
-\hypertarget{Export.FileType}{}\vskip .1in 
-Is used to store a FileExtension information and give the right FileWriter for this FileExtension.\vskip .1in 
+\hypertarget{Export.FileType}{}\vskip .1in
+Is used to store a FileExtension information and give the right FileWriter for this FileExtension.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/export/classes/FileType}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class FileType
@@ -615,7 +639,7 @@ public class FileType
 \label{Export.FileType.extension}\hypertarget{Export.FileType.extension}{\texttt{public FileExtension\ {\bf  extension}}
 }
 \begin{itemize}
-\item{\vskip -.9ex 
+\item{\vskip -.9ex
 The FileExtension is defining the FileType.}
 \end{itemize}
 }
@@ -624,7 +648,7 @@ The FileExtension is defining the FileType.}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{FileType()}
 \hypertarget{Export.FileType()}{{\bf  FileType}\\}
 \begin{lstlisting}[frame=none]
@@ -642,7 +666,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{getFileWriter()}
 \hypertarget{Export.FileType.getFileWriter()}{{\bf  getFileWriter}\\}
 \begin{lstlisting}[frame=none]
@@ -653,8 +677,8 @@ public FileWriterStrategy getFileWriter()\end{lstlisting} %end signature
 
 Gives an instance of the implemented FileWriter that is associated with this FileType, thus this FileExtension. To do so it uses the static method getFileWriterForFileExtension from the FileTypesUtility class.
 }
-\item{{\bf  Returns} -- 
-Is a new instance of an implementation of a FilWriterStrategy. 
+\item{{\bf  Returns} --
+Is a new instance of an implementation of a FilWriterStrategy.
 }%end item
 \end{itemize}
 }%end item
@@ -662,8 +686,11 @@ Is a new instance of an implementation of a FilWriterStrategy.
 }
 }
 \subsection{\label{Export.FileTypesUtility}Class FileTypesUtility}{
-\hypertarget{Export.FileTypesUtility}{}\vskip .1in 
-Utility class that provides static methods to get all supported FileExtensions and one to get a new Instance of the FileWriter associated with a given FileExtension. If a new FileWriter is added to PaVoS, this class needs some changed to be able to return the new FileWriter.\vskip .1in 
+\hypertarget{Export.FileTypesUtility}{}\vskip .1in
+Utility class that provides static methods to get all supported FileExtensions and one to get a new Instance of the FileWriter associated with a given FileExtension. If a new FileWriter is added to PaVoS, this class needs some changed to be able to return the new FileWriter.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/export/classes/FileTypesUtility}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class FileTypesUtility
@@ -682,7 +709,7 @@ public class FileTypesUtility
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{FileTypesUtility()}
 \hypertarget{Export.FileTypesUtility()}{{\bf  FileTypesUtility}\\}
 \begin{lstlisting}[frame=none]
@@ -700,7 +727,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{getAllPossibleFileExtensions()}
 \hypertarget{Export.FileTypesUtility.getAllPossibleFileExtensions()}{{\bf  getAllPossibleFileExtensions}\\}
 \begin{lstlisting}[frame=none]
@@ -711,12 +738,12 @@ public static java.util.Set getAllPossibleFileExtensions()\end{lstlisting} %end 
 
 Gives all supported FileExtensions in an ArrayList.
 }
-\item{{\bf  Returns} -- 
-Is an Array of the possible FileExtensions for an Export. 
+\item{{\bf  Returns} --
+Is an Array of the possible FileExtensions for an Export.
 }%end item
 \end{itemize}
 }%end item
-\item{ 
+\item{
 \index{getFileWriterForFileExtension(FileExtension)}
 \hypertarget{Export.FileTypesUtility.getFileWriterForFileExtension(Export.FileExtension)}{{\bf  getFileWriterForFileExtension}\\}
 \begin{lstlisting}[frame=none]
@@ -734,8 +761,8 @@ Gives a new Instance of the FileWriter associated witha given FileExtension.
 \texttt{extension} -- Is the FileExtension for which a new instance of an Implementation of the FileWriterStrategy is wanted.}
   \end{itemize}
 }%end item
-\item{{\bf  Returns} -- 
-Is the instance of the implementation of a FileWriterStrategy. 
+\item{{\bf  Returns} --
+Is the instance of the implementation of a FileWriterStrategy.
 }%end item
 \end{itemize}
 }%end item
@@ -743,8 +770,11 @@ Is the instance of the implementation of a FileWriterStrategy.
 }
 }
 \subsection{\label{Export.NetCDFWriterStrategy}Class NetCDFWriterStrategy}{
-\hypertarget{Export.NetCDFWriterStrategy}{}\vskip .1in 
-Implementation of the FileWriterStrategy interface for NetCDF files.\vskip .1in 
+\hypertarget{Export.NetCDFWriterStrategy}{}\vskip .1in
+Implementation of the FileWriterStrategy interface for NetCDF files.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/export/classes/NetCDFWriterStrategy}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class NetCDFWriterStrategy
@@ -763,7 +793,7 @@ public class NetCDFWriterStrategy
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{NetCDFWriterStrategy()}
 \hypertarget{Export.NetCDFWriterStrategy()}{{\bf  NetCDFWriterStrategy}\\}
 \begin{lstlisting}[frame=none]
@@ -781,7 +811,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{saveToFile(KStream, FilePath)}
 \hypertarget{Export.NetCDFWriterStrategy.saveToFile(KStream, FilePath)}{{\bf  saveToFile}\\}
 \begin{lstlisting}[frame=none]
@@ -803,7 +833,7 @@ Creates a File as specified by the FilePath and saves the Data from the provided
 }%end item
 \end{itemize}
 }%end item
-\item{ 
+\item{
 \index{saveToFile(KStream, FilePath)}
 \hypertarget{Export.NetCDFWriterStrategy.saveToFile(KStream, FilePath)}{{\bf  saveToFile}\\}
 \begin{lstlisting}[frame=none]
@@ -841,8 +871,11 @@ Creates a File as specified by the FilePath and saves the Data from the provided
 \vskip .1in
 \vskip .1in
 \subsection{\label{Download.AlterableDownloadState}Class AlterableDownloadState}{
-\hypertarget{Download.AlterableDownloadState}{}\vskip .1in 
-Verifies for the State of a Download. Can also change it.\vskip .1in 
+\hypertarget{Download.AlterableDownloadState}{}\vskip .1in
+Verifies for the State of a Download. Can also change it.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/export/classes/AlterableDownloadState}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class AlterableDownloadState
@@ -864,7 +897,7 @@ public class AlterableDownloadState
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{AlterableDownloadState()}
 \hypertarget{Download.AlterableDownloadState()}{{\bf  AlterableDownloadState}\\}
 \begin{lstlisting}[frame=none]
@@ -882,7 +915,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{getFilePath()}
 \hypertarget{Download.AlterableDownloadState.getFilePath()}{{\bf  getFilePath}\\}
 \begin{lstlisting}[frame=none]
@@ -893,12 +926,12 @@ public FilePath getFilePath()\end{lstlisting} %end signature
 
 Gives the FilePath associated with this DownloadID.
 }
-\item{{\bf  Returns} -- 
-The FilePath of the File for the Download. 
+\item{{\bf  Returns} --
+The FilePath of the File for the Download.
 }%end item
 \end{itemize}
 }%end item
-\item{ 
+\item{
 \index{isFileReadyForDownload()}
 \hypertarget{Download.AlterableDownloadState.isFileReadyForDownload()}{{\bf  isFileReadyForDownload}\\}
 \begin{lstlisting}[frame=none]
@@ -909,12 +942,12 @@ public boolean isFileReadyForDownload()\end{lstlisting} %end signature
 
 Checks if a File is Ready to be downloaded.
 }
-\item{{\bf  Returns} -- 
-A boolean whether the file is downloadable or not. 
+\item{{\bf  Returns} --
+A boolean whether the file is downloadable or not.
 }%end item
 \end{itemize}
 }%end item
-\item{ 
+\item{
 \index{savePersistent()}
 \hypertarget{Download.AlterableDownloadState.savePersistent()}{{\bf  savePersistent}\\}
 \begin{lstlisting}[frame=none]
@@ -927,7 +960,7 @@ Save the changed Data persistently.
 }
 \end{itemize}
 }%end item
-\item{ 
+\item{
 \index{setFilePath(void)}
 \hypertarget{Download.AlterableDownloadState.setFilePath(void)}{{\bf  setFilePath}\\}
 \begin{lstlisting}[frame=none]
@@ -947,7 +980,7 @@ Defines the FilePath for the DownloadID.
 }%end item
 \end{itemize}
 }%end item
-\item{ 
+\item{
 \index{setFileReadyForDownload()}
 \hypertarget{Download.AlterableDownloadState.setFileReadyForDownload()}{{\bf  setFileReadyForDownload}\\}
 \begin{lstlisting}[frame=none]
@@ -963,20 +996,20 @@ Validate, that the File is ready to be downloaded.
 \end{itemize}
 }
 \subsubsection{Members inherited from class DownloadState }{
-\texttt{Download.DownloadState} {\small 
+\texttt{Download.DownloadState} {\small
 \refdefined{Download.DownloadState}}
-{\small 
+{\small
 
 \vskip -2em
 \begin{itemize}
-\item{\vskip -1.5ex 
+\item{\vskip -1.5ex
 \texttt{public {\bf  downloadID}}%end signature
 }%end item
-\item{\vskip -1.5ex 
+\item{\vskip -1.5ex
 \texttt{public FilePath {\bf  getFilePath}()
 }%end signature
 }%end item
-\item{\vskip -1.5ex 
+\item{\vskip -1.5ex
 \texttt{public boolean {\bf  isFileReadyForDownload}()
 }%end signature
 }%end item
@@ -984,8 +1017,11 @@ Validate, that the File is ready to be downloaded.
 }
 }
 \subsection{\label{Download.DownloadID}Class DownloadID}{
-\hypertarget{Download.DownloadID}{}\vskip .1in 
-Is an Identifier for a specific Download, so that the right file can be fount for a requeststed Download.\vskip .1in 
+\hypertarget{Download.DownloadID}{}\vskip .1in
+Is an Identifier for a specific Download, so that the right file can be fount for a requeststed Download.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/export/classes/DownloadID}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class DownloadID
@@ -998,7 +1034,7 @@ public class DownloadID
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{DownloadID()}
 \hypertarget{Download.DownloadID()}{{\bf  DownloadID}\\}
 \begin{lstlisting}[frame=none]
@@ -1015,8 +1051,11 @@ Default constructor
 }
 }
 \subsection{\label{Download.DownloadState}Class DownloadState}{
-\hypertarget{Download.DownloadState}{}\vskip .1in 
-Verifies for the State of a Download.\vskip .1in 
+\hypertarget{Download.DownloadState}{}\vskip .1in
+Verifies for the State of a Download.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/export/classes/DownloadState}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class DownloadState
@@ -1045,7 +1084,7 @@ public class DownloadState
 \label{Download.DownloadState.downloadID}\hypertarget{Download.DownloadState.downloadID}{\texttt{public DownloadID\ {\bf  downloadID}}
 }
 \begin{itemize}
-\item{\vskip -.9ex 
+\item{\vskip -.9ex
 Is an Identifier for a specific Download.}
 \end{itemize}
 }
@@ -1054,7 +1093,7 @@ Is an Identifier for a specific Download.}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{DownloadState()}
 \hypertarget{Download.DownloadState()}{{\bf  DownloadState}\\}
 \begin{lstlisting}[frame=none]
@@ -1072,7 +1111,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{getFilePath()}
 \hypertarget{Download.DownloadState.getFilePath()}{{\bf  getFilePath}\\}
 \begin{lstlisting}[frame=none]
@@ -1083,12 +1122,12 @@ public FilePath getFilePath()\end{lstlisting} %end signature
 
 Gives the FilePath associated with this DownloadID.
 }
-\item{{\bf  Returns} -- 
-The FilePath of the File for the Download. 
+\item{{\bf  Returns} --
+The FilePath of the File for the Download.
 }%end item
 \end{itemize}
 }%end item
-\item{ 
+\item{
 \index{isFileReadyForDownload()}
 \hypertarget{Download.DownloadState.isFileReadyForDownload()}{{\bf  isFileReadyForDownload}\\}
 \begin{lstlisting}[frame=none]
@@ -1099,8 +1138,8 @@ public boolean isFileReadyForDownload()\end{lstlisting} %end signature
 
 Checks if a File is Ready to be downloaded.
 }
-\item{{\bf  Returns} -- 
-A boolean whether the file is downloadable or not. 
+\item{{\bf  Returns} --
+A boolean whether the file is downloadable or not.
 }%end item
 \end{itemize}
 }%end item
@@ -1122,8 +1161,11 @@ A boolean whether the file is downloadable or not.
 \vskip .1in
 \vskip .1in
 \subsection{\label{ExportDownloadCommunication.DownloadServlet}Class DownloadServlet}{
-\hypertarget{ExportDownloadCommunication.DownloadServlet}{}\vskip .1in 
-Servlet to let the WebGUI download a finished Export.\vskip .1in 
+\hypertarget{ExportDownloadCommunication.DownloadServlet}{}\vskip .1in
+Servlet to let the WebGUI download a finished Export.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/export/classes/DownloadServlet}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class DownloadServlet
@@ -1150,7 +1192,7 @@ public class DownloadServlet
 \label{ExportDownloadCommunication.DownloadServlet.downloadID}\hypertarget{ExportDownloadCommunication.DownloadServlet.downloadID}{\texttt{public DownloadID\ {\bf  downloadID}}
 }
 \begin{itemize}
-\item{\vskip -.9ex 
+\item{\vskip -.9ex
 Is an Identifier for a specific Download.}
 \end{itemize}
 }
@@ -1159,7 +1201,7 @@ Is an Identifier for a specific Download.}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{DownloadServlet()}
 \hypertarget{ExportDownloadCommunication.DownloadServlet()}{{\bf  DownloadServlet}\\}
 \begin{lstlisting}[frame=none]
@@ -1177,7 +1219,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{doGet(HttpServletRequest, HttpServletResponse)}
 \hypertarget{ExportDownloadCommunication.DownloadServlet.doGet(HttpServletRequest, HttpServletResponse)}{{\bf  doGet}\\}
 \begin{lstlisting}[frame=none]
@@ -1202,13 +1244,13 @@ Handles a GET request by sending the desired File to the WebGUI.
 \end{itemize}
 }
 \subsubsection{Members inherited from class HttpServlet }{
-\texttt{ExportDownloadCommunication.HttpServlet} {\small 
+\texttt{ExportDownloadCommunication.HttpServlet} {\small
 \refdefined{ExportDownloadCommunication.HttpServlet}}
-{\small 
+{\small
 
 \vskip -2em
 \begin{itemize}
-\item{\vskip -1.5ex 
+\item{\vskip -1.5ex
 \texttt{public void {\bf  doGet}(\texttt{HttpServletRequest} {\bf  req},
 \texttt{HttpServletResponse} {\bf  res})
 }%end signature
@@ -1217,8 +1259,11 @@ Handles a GET request by sending the desired File to the WebGUI.
 }
 }
 \subsection{\label{ExportDownloadCommunication.ExportServlet}Class ExportServlet}{
-\hypertarget{ExportDownloadCommunication.ExportServlet}{}\vskip .1in 
-HttpServlet to get a Dataexport request from the WebGUI.\vskip .1in 
+\hypertarget{ExportDownloadCommunication.ExportServlet}{}\vskip .1in
+HttpServlet to get a Dataexport request from the WebGUI.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/export/classes/ExportServlet}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class ExportServlet
@@ -1245,7 +1290,7 @@ public class ExportServlet
 \label{ExportDownloadCommunication.ExportServlet.properties}\hypertarget{ExportDownloadCommunication.ExportServlet.properties}{\texttt{public ExportProperties\ {\bf  properties}}
 }
 \begin{itemize}
-\item{\vskip -.9ex 
+\item{\vskip -.9ex
 Contains the Properties of an Export Request.}
 \end{itemize}
 }
@@ -1254,7 +1299,7 @@ Contains the Properties of an Export Request.}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{ExportServlet()}
 \hypertarget{ExportDownloadCommunication.ExportServlet()}{{\bf  ExportServlet}\\}
 \begin{lstlisting}[frame=none]
@@ -1272,7 +1317,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{doGet(HttpServletRequest, HttpServletResponse)}
 \hypertarget{ExportDownloadCommunication.ExportServlet.doGet(HttpServletRequest, HttpServletResponse)}{{\bf  doGet}\\}
 \begin{lstlisting}[frame=none]
@@ -1297,13 +1342,13 @@ Handles a GET request by starting the export of the desired Data. At the same ti
 \end{itemize}
 }
 \subsubsection{Members inherited from class HttpServlet }{
-\texttt{ExportDownloadCommunication.HttpServlet} {\small 
+\texttt{ExportDownloadCommunication.HttpServlet} {\small
 \refdefined{ExportDownloadCommunication.HttpServlet}}
-{\small 
+{\small
 
 \vskip -2em
 \begin{itemize}
-\item{\vskip -1.5ex 
+\item{\vskip -1.5ex
 \texttt{public void {\bf  doGet}(\texttt{HttpServletRequest} {\bf  req},
 \texttt{HttpServletResponse} {\bf  res})
 }%end signature
@@ -1312,8 +1357,11 @@ Handles a GET request by starting the export of the desired Data. At the same ti
 }
 }
 \subsection{\label{ExportDownloadCommunication.FileExtensionServlet}Class FileExtensionServlet}{
-\hypertarget{ExportDownloadCommunication.FileExtensionServlet}{}\vskip .1in 
-Servlet, to let the WebGUI ask for the available FileExtensions for the Export.\vskip .1in 
+\hypertarget{ExportDownloadCommunication.FileExtensionServlet}{}\vskip .1in
+Servlet, to let the WebGUI ask for the available FileExtensions for the Export.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/export/classes/FileExtensionServlet}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class FileExtensionServlet
@@ -1331,7 +1379,7 @@ public class FileExtensionServlet
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{FileExtensionServlet()}
 \hypertarget{ExportDownloadCommunication.FileExtensionServlet()}{{\bf  FileExtensionServlet}\\}
 \begin{lstlisting}[frame=none]
@@ -1349,7 +1397,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{doGet(HttpServletRequest, HttpServletResponse)}
 \hypertarget{ExportDownloadCommunication.FileExtensionServlet.doGet(HttpServletRequest, HttpServletResponse)}{{\bf  doGet}\\}
 \begin{lstlisting}[frame=none]
@@ -1374,13 +1422,13 @@ Handles a GET request by sending Information about the available FileExtensions.
 \end{itemize}
 }
 \subsubsection{Members inherited from class HttpServlet }{
-\texttt{ExportDownloadCommunication.HttpServlet} {\small 
+\texttt{ExportDownloadCommunication.HttpServlet} {\small
 \refdefined{ExportDownloadCommunication.HttpServlet}}
-{\small 
+{\small
 
 \vskip -2em
 \begin{itemize}
-\item{\vskip -1.5ex 
+\item{\vskip -1.5ex
 \texttt{public void {\bf  doGet}(\texttt{HttpServletRequest} {\bf  req},
 \texttt{HttpServletResponse} {\bf  res})
 }%end signature
@@ -1389,8 +1437,11 @@ Handles a GET request by sending Information about the available FileExtensions.
 }
 }
 \subsection{\label{ExportDownloadCommunication.HttpServlet}Class HttpServlet}{
-\hypertarget{ExportDownloadCommunication.HttpServlet}{}\vskip .1in 
-Provides an abstract class to be subclassed to create an HTTP servlet suitable for a Web site. (javax.servlet.http.HttpServlet)\vskip .1in 
+\hypertarget{ExportDownloadCommunication.HttpServlet}{}\vskip .1in
+Provides an abstract class to be subclassed to create an HTTP servlet suitable for a Web site. (javax.servlet.http.HttpServlet)\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/export/classes/HttpServlet}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class HttpServlet
@@ -1409,7 +1460,7 @@ public class HttpServlet
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{HttpServlet()}
 \hypertarget{ExportDownloadCommunication.HttpServlet()}{{\bf  HttpServlet}\\}
 \begin{lstlisting}[frame=none]
@@ -1427,7 +1478,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{doGet(HttpServletRequest, HttpServletResponse)}
 \hypertarget{ExportDownloadCommunication.HttpServlet.doGet(HttpServletRequest, HttpServletResponse)}{{\bf  doGet}\\}
 \begin{lstlisting}[frame=none]
@@ -1453,8 +1504,11 @@ Called by the server (via the service method) to allow a servlet to handle a GET
 }
 }
 \subsection{\label{ExportDownloadCommunication.StatusServlet}Class StatusServlet}{
-\hypertarget{ExportDownloadCommunication.StatusServlet}{}\vskip .1in 
-Servlet to let the WebGUI check if a Download is ready.\vskip .1in 
+\hypertarget{ExportDownloadCommunication.StatusServlet}{}\vskip .1in
+Servlet to let the WebGUI check if a Download is ready.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/export/classes/StatusServlet}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class StatusServlet
@@ -1481,7 +1535,7 @@ public class StatusServlet
 \label{ExportDownloadCommunication.StatusServlet.downloadID}\hypertarget{ExportDownloadCommunication.StatusServlet.downloadID}{\texttt{public DownloadID\ {\bf  downloadID}}
 }
 \begin{itemize}
-\item{\vskip -.9ex 
+\item{\vskip -.9ex
 Is an Identifier for a specific Download.}
 \end{itemize}
 }
@@ -1490,7 +1544,7 @@ Is an Identifier for a specific Download.}
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{StatusServlet()}
 \hypertarget{ExportDownloadCommunication.StatusServlet()}{{\bf  StatusServlet}\\}
 \begin{lstlisting}[frame=none]
@@ -1508,7 +1562,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{doGet(HttpServletRequest, HttpServletResponse)}
 \hypertarget{ExportDownloadCommunication.StatusServlet.doGet(HttpServletRequest, HttpServletResponse)}{{\bf  doGet}\\}
 \begin{lstlisting}[frame=none]
@@ -1533,13 +1587,13 @@ Handles a GET request by checking the availability of the desired download.
 \end{itemize}
 }
 \subsubsection{Members inherited from class HttpServlet }{
-\texttt{ExportDownloadCommunication.HttpServlet} {\small 
+\texttt{ExportDownloadCommunication.HttpServlet} {\small
 \refdefined{ExportDownloadCommunication.HttpServlet}}
-{\small 
+{\small
 
 \vskip -2em
 \begin{itemize}
-\item{\vskip -1.5ex 
+\item{\vskip -1.5ex
 \texttt{public void {\bf  doGet}(\texttt{HttpServletRequest} {\bf  req},
 \texttt{HttpServletResponse} {\bf  res})
 }%end signature

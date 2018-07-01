@@ -33,8 +33,11 @@
 \vskip .1in
 \vskip .1in
 \subsection{\label{Import.FileReaderStrategy}Interface FileReaderStrategy}{
-\hypertarget{Import.FileReaderStrategy}{}\vskip .1in 
-Interface for the FileReaderStrategy classes. Realization of a Strategy to be able to swap out the way a File has to be read.\vskip .1in 
+\hypertarget{Import.FileReaderStrategy}{}\vskip .1in
+Interface for the FileReaderStrategy classes. Realization of a Strategy to be able to swap out the way a File has to be read.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/import/classes/FileReaderStrategy}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public interface FileReaderStrategy
@@ -49,7 +52,7 @@ public interface FileReaderStrategy
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{sendFileData(FilePath, FrostSender)}
 \hypertarget{Import.FileReaderStrategy.sendFileData(FilePath, Import.FrostSender)}{{\bf  sendFileData}\\}
 \begin{lstlisting}[frame=none]
@@ -75,8 +78,11 @@ Reades from a File as specified by the FilePath and sends the information in it 
 }
 }
 \subsection{\label{Import.CSVReaderStrategy}Class CSVReaderStrategy}{
-\hypertarget{Import.CSVReaderStrategy}{}\vskip .1in 
-Implementation of the FileReaderStrategy interface for CSV files.\vskip .1in 
+\hypertarget{Import.CSVReaderStrategy}{}\vskip .1in
+Implementation of the FileReaderStrategy interface for CSV files.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/import/classes/CSVReaderStrategy}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class CSVReaderStrategy
@@ -95,7 +101,7 @@ public class CSVReaderStrategy
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{CSVReaderStrategy()}
 \hypertarget{Import.CSVReaderStrategy()}{{\bf  CSVReaderStrategy}\\}
 \begin{lstlisting}[frame=none]
@@ -113,7 +119,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{sendFileData(FilePath, FrostSender)}
 \hypertarget{Import.CSVReaderStrategy.sendFileData(FilePath, Import.FrostSender)}{{\bf  sendFileData}\\}
 \begin{lstlisting}[frame=none]
@@ -135,7 +141,7 @@ Reades from a File as specified by the FilePath and sends the information in it 
 }%end item
 \end{itemize}
 }%end item
-\item{ 
+\item{
 \index{sendFileData(FilePath, FrostSender)}
 \hypertarget{Import.CSVReaderStrategy.sendFileData(FilePath, Import.FrostSender)}{{\bf  sendFileData}\\}
 \begin{lstlisting}[frame=none]
@@ -161,8 +167,11 @@ Reades from a File as specified by the FilePath and sends the information in it 
 }
 }
 \subsection{\label{Import.DataImporter}Class DataImporter}{
-\hypertarget{Import.DataImporter}{}\vskip .1in 
-Importer for data that should be added to PaVoS. Import takes place for files in a specified folder of the server.\vskip .1in 
+\hypertarget{Import.DataImporter}{}\vskip .1in
+Importer for data that should be added to PaVoS. Import takes place for files in a specified folder of the server.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/import/classes/DataImporter}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class DataImporter
@@ -180,7 +189,7 @@ public class DataImporter
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{DataImporter()}
 \hypertarget{Import.DataImporter()}{{\bf  DataImporter}\\}
 \begin{lstlisting}[frame=none]
@@ -198,7 +207,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{startImportingFileData()}
 \hypertarget{Import.DataImporter.startImportingFileData()}{{\bf  startImportingFileData}\\}
 \begin{lstlisting}[frame=none]
@@ -215,8 +224,11 @@ Checks for files in the specified import folder and opens a new thread for each 
 }
 }
 \subsection{\label{Import.FileImporter}Class FileImporter}{
-\hypertarget{Import.FileImporter}{}\vskip .1in 
-Importer for the Data contained in a File. Takes the Data and sends them to the FROST-Server.\vskip .1in 
+\hypertarget{Import.FileImporter}{}\vskip .1in
+Importer for the Data contained in a File. Takes the Data and sends them to the FROST-Server.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/import/classes/FileImporter}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class FileImporter
@@ -234,7 +246,7 @@ public class FileImporter
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{FileImporter()}
 \hypertarget{Import.FileImporter()}{{\bf  FileImporter}\\}
 \begin{lstlisting}[frame=none]
@@ -252,7 +264,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{addFileData(FilePath, FrostSender)}
 \hypertarget{Import.FileImporter.addFileData(FilePath, Import.FrostSender)}{{\bf  addFileData}\\}
 \begin{lstlisting}[frame=none]
@@ -278,8 +290,11 @@ Adds the Data of a File at a specified FilePath to the FROST-Server. To do so, t
 }
 }
 \subsection{\label{Import.FrostSender}Class FrostSender}{
-\hypertarget{Import.FrostSender}{}\vskip .1in 
-sends Data to the FROST-Server.\vskip .1in 
+\hypertarget{Import.FrostSender}{}\vskip .1in
+sends Data to the FROST-Server.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/import/classes/FrostSender}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class FrostSender
@@ -297,7 +312,7 @@ public class FrostSender
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{FrostSender()}
 \hypertarget{Import.FrostSender()}{{\bf  FrostSender}\\}
 \begin{lstlisting}[frame=none]
@@ -315,7 +330,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{sendToFrostServer(JsonObject)}
 \hypertarget{Import.FrostSender.sendToFrostServer(JsonObject)}{{\bf  sendToFrostServer}\\}
 \begin{lstlisting}[frame=none]
@@ -339,8 +354,11 @@ Sends the given JsonObject to the FROST-Server.
 }
 }
 \subsection{\label{Import.NetCDFReaderStrategy}Class NetCDFReaderStrategy}{
-\hypertarget{Import.NetCDFReaderStrategy}{}\vskip .1in 
-Implementation of the FileReaderStrategy interface for NetCDF files.\vskip .1in 
+\hypertarget{Import.NetCDFReaderStrategy}{}\vskip .1in
+Implementation of the FileReaderStrategy interface for NetCDF files.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/import/classes/NetCDFReaderStrategy}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class NetCDFReaderStrategy
@@ -359,7 +377,7 @@ public class NetCDFReaderStrategy
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{NetCDFReaderStrategy()}
 \hypertarget{Import.NetCDFReaderStrategy()}{{\bf  NetCDFReaderStrategy}\\}
 \begin{lstlisting}[frame=none]
@@ -377,7 +395,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{sendFileData(FilePath, FrostSender)}
 \hypertarget{Import.NetCDFReaderStrategy.sendFileData(FilePath, Import.FrostSender)}{{\bf  sendFileData}\\}
 \begin{lstlisting}[frame=none]
@@ -399,7 +417,7 @@ Reades from a File as specified by the FilePath and sends the information in it 
 }%end item
 \end{itemize}
 }%end item
-\item{ 
+\item{
 \index{sendFileData(FilePath, FrostSender)}
 \hypertarget{Import.NetCDFReaderStrategy.sendFileData(FilePath, Import.FrostSender)}{{\bf  sendFileData}\\}
 \begin{lstlisting}[frame=none]
@@ -425,8 +443,11 @@ Reades from a File as specified by the FilePath and sends the information in it 
 }
 }
 \subsection{\label{Import.ReaderType}Class ReaderType}{
-\hypertarget{Import.ReaderType}{}\vskip .1in 
+\hypertarget{Import.ReaderType}{}\vskip .1in
 Is like a chooser for the right FileReaderStrategy. If a new Strategy is added, this class needs some changes to use the new Strategy.\vskip .1in 
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/import/classes/ReaderType}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class ReaderType
@@ -444,7 +465,7 @@ public class ReaderType
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{ReaderType()}
 \hypertarget{Import.ReaderType()}{{\bf  ReaderType}\\}
 \begin{lstlisting}[frame=none]
@@ -462,7 +483,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{getFileReaderForFileExtension(FileExtension)}
 \hypertarget{Import.ReaderType.getFileReaderForFileExtension(FileExtension)}{{\bf  getFileReaderForFileExtension}\\}
 \begin{lstlisting}[frame=none]
@@ -480,8 +501,8 @@ Gives a new Instance of a FileReaderStrategy for the specified FileExtension.
 \texttt{extension} -- is the FileExtension for which a FileReaderStrategy has to be generated.}
   \end{itemize}
 }%end item
-\item{{\bf  Returns} -- 
-An instance of an implementation of the FileReaderStrategy interface. 
+\item{{\bf  Returns} --
+An instance of an implementation of the FileReaderStrategy interface.
 }%end item
 \end{itemize}
 }%end item
