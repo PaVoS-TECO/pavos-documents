@@ -45,27 +45,27 @@ In diesem Fall wurde als Beispiel eine \texttt{CSVReaderStrategy} genommen. Dies
 
 \section{Graphite}
 Der Benutzer wählt im Webinterface die Daten aus, die er erhalten will.
-Dann erhält das Servlet den Auftrag und leitet dem GraphDataTransferController die Informationen über die Daten weiter, die übertragen werden sollen.
-Der GraphDataTransferController erstellt daraufhin einen neuen KafkaToGraphiteConsumer, der ebenfalls diese Informationen erhält und einen GraphiteSender generiert.
-Dann wird die Methode run() des KafkaToGraphiteConsumers ausgeführt.
-Er ruft dann verschiedene Eigenschaften über die GraphiteConfig ab, die benötigt werden um mit Kafka zu kommunizieren.
-Weiterhin erzeugt er einen KafkaConsumer, der dann Kafka-Topics abonniert.
+Dann erhält das \texttt{Servlet} den Auftrag und leitet dem \texttt{GraphDataTransferController} die Informationen über die Daten weiter, die übertragen werden sollen.
+Der \texttt{GraphDataTransferController} erstellt daraufhin einen neuen \texttt{KafkaToGraphiteConsumer}, der ebenfalls diese Informationen erhält und einen \texttt{GraphiteSender} generiert.
+Dann wird die Methode \texttt{run} des \texttt{KafkaToGraphiteConsumers} ausgeführt.
+Er ruft dann verschiedene Eigenschaften über die \texttt{GraphiteConfig} ab, die benötigt werden um mit Kafka zu kommunizieren.
+Weiterhin erzeugt er einen \texttt{KafkaConsumer}, der dann Kafka-Topics abonniert.
 Dann prüfen wir ob wir von vorne beginnen wollen.
-Danach betreten wir eine Schleife. Hier rufen wir Daten von Kafka ab und speichern sie in einem ConsumerRecords Objekt.
+Danach betreten wir eine Schleife. Hier rufen wir Daten von Kafka ab und speichern sie in einem \texttt{ConsumerRecords} Objekt.
 Schlussendlich überprüfen wir, ob die abgerufenen Daten neue Daten enthalten.
-Falls ja, senden wir unsere Daten mit Hilfe des GraphiteSender, den wir vorher generiert hatten.
-Wenn wir nun die Übertragung der Daten stoppen möchten, müssen wir den KafkaConsumer aufwecken. Dies stoppt die Schleife.
+Falls ja, senden wir unsere Daten mit Hilfe des \texttt{GraphiteSender}, den wir vorher generiert hatten.
+Wenn wir nun die Übertragung der Daten stoppen möchten, müssen wir den \texttt{KafkaConsumer} aufwecken. Dies stoppt die Schleife.
 \begin{figure}[!hbp]
 	\centering
 	\includegraphics[width=\linewidth]{images/graphite/graphiteMainSequenceDiagram_small.png}
 	\caption{Sequenzdiagramm Graphite}
 \end{figure}
 \newpage
-Hier werden die Daten die an Graphite gesendet werden sollen direkt an den GraphiteSender weitergegeben.
-Um seine Arbeit zu tun, ruft der GraphiteSender Eigenschaften der GraphiteConfig ab, die notwendig sind, um Daten zu Graphite zu übertragen.
-Danach betreten wir die Schleife
-In dieser Schleife, fügt der GraphiteSender jede beobachtete Eigenschaft zur Liste der Daten hinzu, die an Graphite gesendet werden sollen.
-Der GraphiteSender tut dies, indem er die Daten zuerst in Metriken konvertiert und dann die Resultate dokumentiert.
+Hier werden die Daten die an Graphite gesendet werden sollen direkt an den \texttt{GraphiteSender} weitergegeben.
+Um seine Arbeit zu tun, ruft der \texttt{GraphiteSender} Eigenschaften der \texttt{GraphiteConfig} ab, die notwendig sind, um Daten zu Graphite zu übertragen.
+Danach betreten wir die Schleife.
+In dieser Schleife, fügt der \texttt{GraphiteSender} jede beobachtete Eigenschaft zur Liste der Daten hinzu, die an Graphite gesendet werden sollen.
+Der \texttt{GraphiteSender} tut dies, indem er die Daten zuerst in Metriken konvertiert und dann die Resultate dokumentiert.
 Nachdem alle beobachteten Eigenschaften hinzugefügt wurden senden wir die Daten an Graphite.
 \begin{figure}[!hbp]
 	\centering
