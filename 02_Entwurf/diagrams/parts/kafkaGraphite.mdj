@@ -7885,7 +7885,7 @@
 								"$ref": "AAAAAAFkS4lpYGKxRe4="
 							},
 							"name": "Seq-Main",
-							"documentation": "The user selects data to be requested through the use of the webinterface. Then the Servlet receives that request and tells us, what data we have to transfer. This information is passed on to the GraphDataTransferController, which in return passes it to a newly created KafkaToGraphiteConsumer. This also creates us a GraphiteSender automatically in the constructor. This KafkaToGraphiteConsumer is then run on the information. It gathers different properties that are needed for transfering data from Kafka from the GraphiteConfig and creates a KafkaConsumer to subscribe to Kafka. We then check whether we want to seek to the beginning . After that, we enter a loop. Here we start polling data from Kafka and storing them in a ConsumerRecords object. Finally, we check if there was any new information in the polled data. If there was, we send the data by using our GraphiteSender.\nIf we want to end the transferring of data, we have to call the wakeup method of our KafkaToGraphiteConsumer.",
+							"documentation": "Der Benutzer wählt im Webinterface die Daten aus, die er erhalten will.\nDann erhält das Servlet den Auftrag und leitet dem GraphDataTransferController die Informationen über die Daten weiter, die übertragen werden sollen.\nDer GraphDataTransferController erstellt daraufhin einen neuen KafkaToGraphiteConsumer, der ebenfalls diese Informationen erhält und einen GraphiteSender generiert.\nDann wird die Methode run() des KafkaToGraphiteConsumers ausgeführt.\nEr ruft dann verschiedene Eigenschaften über die GraphiteConfig ab, die benötigt werden um mit Kafka zu kommunizieren.\nWeiterhin erzeugt er einen KafkaConsumer, der dann Kafka-Topics abboniert.\nDann prüfen wir ob wir von vorne beginnen wollen.\nDanach betreten wir eine Schleife. Hier rufen wir Daten von Kafka ab und speichern sie in einem ConsumerRecords Objekt.\nSchlussendlich überprüfen wir, ob die abgerufenen Daten neue Daten enthalten.\nFalls ja, senden wir unsere Daten mit Hilfe des GraphiteSender, den wir vorher generiert hatten.\nWenn wir nun die Übertragung der Daten stoppen möchten, müssen wir den KafkaConsumer aufwecken. Dies stoppt die Schleife.",
 							"ownedViews": [
 								{
 									"_type": "UMLFrameView",
@@ -8664,7 +8664,7 @@
 													"top": 47,
 													"width": 379.1669921875,
 													"height": 13,
-													"text": "consumer"
+													"text": "consumer: KafkaConsumer"
 												},
 												{
 													"_type": "LabelView",
@@ -12148,7 +12148,7 @@
 								"$ref": "AAAAAAFkS4lpYGKxRe4="
 							},
 							"name": "if (startFromBeginning)",
-							"documentation": "Checks if we want to start from the beginning.",
+							"documentation": "Prüft, ob wir von vorne beginnen wollen.",
 							"interactionOperator": "seq",
 							"operands": [
 								{
@@ -12168,7 +12168,7 @@
 								"$ref": "AAAAAAFkS4lpYGKxRe4="
 							},
 							"name": "LOOP",
-							"documentation": "Repeats and polls new data every time. This data is then sent to Graphite.",
+							"documentation": "Ruft wiederholt Daten von Kafka ab und sendet neue an Graphite.",
 							"interactionOperator": "seq",
 							"operands": [
 								{
@@ -12188,7 +12188,7 @@
 								"$ref": "AAAAAAFkS4lpYGKxRe4="
 							},
 							"name": "if (!records.isEmpty())",
-							"documentation": "If there is any new data in the polled data, send it to Graphite.",
+							"documentation": "Wenn neue Daten enthalten sind, werden sie an Graphite gesendet.",
 							"interactionOperator": "seq",
 							"operands": [
 								{
@@ -12274,7 +12274,9 @@
 						"$ref": "AAAAAAFkS4lpYGKwK5Y="
 					},
 					"name": "Role7",
-					"type": ""
+					"type": {
+						"$ref": "AAAAAAFkE5wNzwN72Js="
+					}
 				},
 				{
 					"_type": "UMLAttribute",
@@ -12323,7 +12325,7 @@
 								"$ref": "AAAAAAFkS8yTjKkjXAI="
 							},
 							"name": "Seq-GraphiteSender",
-							"documentation": "Here the data that we want to send to Graphite is given to us directly. To do the job, the GraphiteSender gathers properties from the GraphiteConfig, that are needed for transferring data to Graphite. Afterwards, we start a loop. In this loop the GraphiteSender adds every observed property to the list of data to send to Graphite. The GraphiteSender does this by converting the data to metrics and then documenting the results. After adding all observed properties, we can finally sent the data to Graphite.",
+							"documentation": "Hier werden die Daten die an Graphite gesendet werden sollen direkt an den GraphiteSender weitergegeben.\nUm seine Arbeit zu tun, ruft der GraphiteSender Eigenschaften der GraphiteConfig ab, die notwendig sind, um Daten zu Graphite zu übertragen.\nDanach betreten wir die Schleife\nIn dieser Schleife, fügt der GraphiteSender jede beobachtete Eigenschaft zur Liste der Daten hinzu, die an Graphite gesendet werden sollen.\nDer GraphiteSender tut dies, indem er die Daten zuerst in Metriken konvertiert und dann die Resultate dokumentiert.\nNachdem alle beobachteten Eigenschaften hinzugefügt wurden senden wir die Daten an Graphite.",
 							"ownedViews": [
 								{
 									"_type": "UMLFrameView",
@@ -14048,7 +14050,7 @@
 								"$ref": "AAAAAAFkS8yTjKkjXAI="
 							},
 							"name": "LOOP",
-							"documentation": "This loop repeats for every observed property that we wish to transfer to Graphite.",
+							"documentation": "Diese Schleife wiederholt sich für jede beobachtet Eigenschaft, die an Graphite gesendet werden soll.",
 							"interactionOperator": "seq",
 							"operands": [
 								{
@@ -14086,24 +14088,6 @@
 					"type": {
 						"$ref": "AAAAAAFkE6ifNw1Bcu0="
 					}
-				}
-			]
-		},
-		{
-			"_type": "UMLModel",
-			"_id": "AAAAAAFkVjeM+KElIig=",
-			"_parent": {
-				"$ref": "AAAAAAFF+h6SjaM2Hec="
-			},
-			"name": "Model1",
-			"ownedElements": [
-				{
-					"_type": "UMLClassDiagram",
-					"_id": "AAAAAAFkVjeM+KEm9p4=",
-					"_parent": {
-						"$ref": "AAAAAAFkVjeM+KElIig="
-					},
-					"name": "ClassDiagram1"
 				}
 			]
 		}
