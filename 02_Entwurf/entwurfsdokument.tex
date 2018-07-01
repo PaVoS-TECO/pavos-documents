@@ -20,10 +20,20 @@
 \usepackage{enumitem} % für custom enumerations
 \usepackage{float} % for better graphics placement
 \usepackage{svg} % for scalable vector-graphics (see inkscape)
+\usepackage{ifthen} % used for texdoclet
+\usepackage{listings} % used for texdoclet
+\usepackage{shorttoc}
+\usepackage{geometry} % for page margins
+
+\geometry{left=2.2cm,right=2.2cm}
+
 \setsvg{inkscapeexe=inkscape, inkscapeopt=-z -D} % set inkscape options
 \svgpath{images/} % use dir 'images/' to search for svg files
 
 \renewcaptionname{ngerman}{\figurename}{Abb.} % replace "Abbildung" with "Abb." for all captions for graphics
+%\addto\captionsngerman{
+%	\renewcommand{\contentsname}{Inhaltsverzeichnis - Langversion}
+%}
 
 \hypersetup{ 					% ‘texdoc hyperref‘ for options
 	pdftitle={PSE TECO: Entwurfsdokument},
@@ -41,8 +51,35 @@ toc,          %Einträge im Inhaltsverzeichnis
 section]      %im Inhaltsverzeichnis auf section-Ebene erscheinen
 {glossaries}
 
-% KIT layout
+% Von TeXDoclet
+\newcommand{\refdefined}[1]{
+	\expandafter\ifx\csname r@#1\endcsname\relax
+	\relax\else
+	{$($in \ref{#1}, page \pageref{#1}$)$}\fi}
 
+\newcommand{\entityintro}[3]{%
+	\hbox to \hsize{%
+		\vbox{%
+			\hbox to .2in{}%
+		}%
+		{\bf  #1}%
+		\dotfill\pageref{#2}%
+	}
+	\makebox[\hsize]{%
+		\parbox{.4in}{}%
+		\parbox[l]{5in}{%
+			\vspace{1mm}%
+			#3%
+			\vspace{1mm}%
+		}%
+	}%
+}
+
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\textbf}
+
+\lstset{language=Java,breaklines=true}
+
+% KIT layout
 \definecolor{orange}{rgb}{1,0.5,0}
 \definecolor{mintgreen}{RGB}{50,161,137}
 \definecolor{gray}{RGB}{120,120,120}
@@ -70,11 +107,21 @@ section]      %im Inhaltsverzeichnis auf section-Ebene erscheinen
   		\color{mintgreen}\leaders\hrule height \headrulewidth\hfill}}				
 	\fancyfoot[LE,RO]{\thepage}
 
-\setcounter{tocdepth}{5}
 \makeglossaries
 \begin{document}
 	% NOTE: Do not number topics for the Entwurfsdokument
 	\include{./topics/deckblatt}
+	%\shorttoc{Inhaltsverzeichnis - Übersicht}{1}
+	\setcounter{tocdepth}{2}
 	\tableofcontents
+	\include{./topics/einleitung}
+	\include{./topics/sequenzdiagramme}
+	\include{./topics/bridge}
+	%\include{./topics/core}
+	\include{./topics/import}
+	\include{./topics/database}
+	%\include{./topics/graphite}
+	%\include{./topics/view}
+	\include{./topics/export}
 
 \end{document}
