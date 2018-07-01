@@ -1,12 +1,13 @@
 \chapter{Einleitung}
-Dieses Dokument soll einen Überblick über alle Klassen des PaVoS-Projektes geben. Dabei sind mehrere größere Teile entstanden.\\
-Die zentralen Elemente sin dabei:
+
+Dieses Dokument ist das Ergebnis der Entwurfsphase und soll einen Überblick über den Entwurf aller Teilelemente des PaVoS-Projektes geben. Diese sind im Rahmen der im Pflichtenheft definierten Anforderungen entstanden. Dabei urde eine Packethierarchie und dazugehörende Klassen und Schnittstellen erzeugt, die wiederum einen Rahmen für die kommende Implementierungsphase bilden. Das gesamtprojekt wurde dazu in verschiedene einzelne Elemente aufgeteilt.\\\\
+Die zentralen Elemente sind dabei:
 \begin{enumerate}
 	\item \textbf{Die Bridge} vom Frost-Server zu Kafka.
 	\item \textbf{Der Kern}, der direkt mit Kafka und den Streams arbeitet.
 	\item \textbf{Die Webansicht} für den Nutzer im Browser.
 \end{enumerate}
-Dazu gibt es noch verschidene Elemente die zwischen diesen Erstgenannten arbeiten, oder den Datenaustausch dieser übernehmen. Das sind folgende Elemente:
+Dazu gibt es noch verschiedene Elemente die zwischen diesen Erstgenannten arbeiten, oder den Datenaustausch dieser übernehmen. Das sind folgende Elemente:
 \begin{enumerate}
 	\item \textbf{Der Import} dient dazu Datenbestände in PaVoS einzuschleusen.
 	\item \textbf{Die DatabaseConnection} dient dazu Daten aus Kafka für die Karte der Webansicht bereitzustellen.
