@@ -60,6 +60,15 @@ Here the data that we want to send to Graphite is given to us directly. To do th
 \end{figure}
 \newpage
 
+\section{View}
+Ein Beispiel für den Ablauf einer Aktion der View.
+\begin{figure}[!hbp]
+	\centering
+	\includegraphics[width=\linewidth]{images/export/DownloadSequenceDiagram.png}
+	\caption{Ein Sequenzdiagramm der View}
+\end{figure}
+\newpage
+
 \section{Export}
 Der Export wird in der WebGUI von einem Nutzer angefragt. Die Daten für diesen Export werden an das \texttt{ExportServlet} übertragen, das den tatsächlich Export der Daten in eine Datei verwaltet. Ist diese Datei einmal erstellt, kann diese von dem Nutzer heruntergeladen werden. Dazu mehr in der folgenden Abbildung über den Download. Dieses Sequenzdiagram zeigt wie der Export der Daten in eine Datei durchgeführt wird.\\\\
 Sobald ein Export angestoßen wird, startet das \texttt{ExportServlet} und die Methode \texttt{doGet} wird ausgeführt. Darin werden zuerst die \texttt{ExportProperties} aus der Datei ausgelesen und zu einem Objekt zusammengestellt, das unter anderem eine \texttt{FileExtension} enthält. Danach wird ein \texttt{FileExporter} konstruiert, der in zwei Schritten vorgehen wird, um die Daten zu exportieren.\\\\
