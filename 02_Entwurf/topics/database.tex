@@ -38,8 +38,11 @@
 \vskip .1in
 \vskip .1in
 \subsection{\label{DatabaseConnection.ClusterID}Class ClusterID}{
-\hypertarget{DatabaseConnection.ClusterID}{}\vskip .1in 
-This class describes a unique identification of a cluster via longitude and latitude.\vskip .1in 
+\hypertarget{DatabaseConnection.ClusterID}{}\vskip .1in
+This class describes a unique identification of a cluster via longitude and latitude.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/database/classes/ClusterID}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class ClusterID
@@ -52,7 +55,7 @@ public class ClusterID
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{ClusterID()}
 \hypertarget{DatabaseConnection.ClusterID()}{{\bf  ClusterID}\\}
 \begin{lstlisting}[frame=none]
@@ -69,8 +72,11 @@ Default constructor
 }
 }
 \subsection{\label{DatabaseConnection.DataMaintainer}Class DataMaintainer}{
-\hypertarget{DatabaseConnection.DataMaintainer}{}\vskip .1in 
-This class maintains the sensordata in the StorageSolution.\vskip .1in 
+\hypertarget{DatabaseConnection.DataMaintainer}{}\vskip .1in
+This class maintains the sensordata in the StorageSolution.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/database/classes/DataMaintainer}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class DataMaintainer
@@ -88,7 +94,7 @@ public class DataMaintainer
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{DataMaintainer()}
 \hypertarget{DatabaseConnection.DataMaintainer()}{{\bf  DataMaintainer}\\}
 \begin{lstlisting}[frame=none]
@@ -106,7 +112,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{summarize(TimeUnit)}
 \hypertarget{DatabaseConnection.DataMaintainer.summarize(TimeUnit)}{{\bf  summarize}\\}
 \begin{lstlisting}[frame=none]
@@ -130,8 +136,11 @@ This method takes data of a certain TimeUnit and summarizes it into the next hig
 }
 }
 \subsection{\label{DatabaseConnection.Facade}Class Facade}{
-\hypertarget{DatabaseConnection.Facade}{}\vskip .1in 
-A facade to simplify access to a StorageSolution, such as a database. Through the methods, data can be inserted into the StorageSolution and certain information about its content requested.\vskip .1in 
+\hypertarget{DatabaseConnection.Facade}{}\vskip .1in
+A facade to simplify access to a StorageSolution, such as a database. Through the methods, data can be inserted into the StorageSolution and certain information about its content requested.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/database/classes/Facade}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class Facade
@@ -151,7 +160,7 @@ public class Facade
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{Facade()}
 \hypertarget{DatabaseConnection.Facade()}{{\bf  Facade}\\}
 \begin{lstlisting}[frame=none]
@@ -169,7 +178,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{getGrid(ClusterID\lbrack \rbrack , ZoomLevel, Time)}
 \hypertarget{DatabaseConnection.Facade.getGrid(DatabaseConnection.ClusterID[], DatabaseConnection.ZoomLevel, Time)}{{\bf  getGrid}\\}
 \begin{lstlisting}[frame=none]
@@ -191,12 +200,12 @@ Returns an appropriate grid of clusters in the requested grid section for the sp
 \texttt{time} -- The point in time.}
   \end{itemize}
 }%end item
-\item{{\bf  Returns} -- 
-A grid with the computed data. 
+\item{{\bf  Returns} --
+A grid with the computed data.
 }%end item
 \end{itemize}
 }%end item
-\item{ 
+\item{
 \index{getSensors(ObservationType, ClusterID)}
 \hypertarget{DatabaseConnection.Facade.getSensors(ObservationType, DatabaseConnection.ClusterID)}{{\bf  getSensors}\\}
 \begin{lstlisting}[frame=none]
@@ -216,12 +225,12 @@ Fetches all sensors from the given cluster that observe the given ObservedProper
 \texttt{id} -- The ID of the cluster.}
   \end{itemize}
 }%end item
-\item{{\bf  Returns} -- 
-An array of sensors. 
+\item{{\bf  Returns} --
+An array of sensors.
 }%end item
 \end{itemize}
 }%end item
-\item{ 
+\item{
 \index{subscribeToZoomLevelStream(KStream)}
 \hypertarget{DatabaseConnection.Facade.subscribeToZoomLevelStream(KStream)}{{\bf  subscribeToZoomLevelStream}\\}
 \begin{lstlisting}[frame=none]
@@ -245,8 +254,11 @@ Subscribes to the given KafkaStream, which contains ZoomLevel-specific data and 
 }
 }
 \subsection{\label{DatabaseConnection.GridDataServlet}Class GridDataServlet}{
-\hypertarget{DatabaseConnection.GridDataServlet}{}\vskip .1in 
-An HTTPServlet for requesting Grid data.\vskip .1in 
+\hypertarget{DatabaseConnection.GridDataServlet}{}\vskip .1in
+An HTTPServlet for requesting Grid data.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/database/classes/GridDataServlet}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class GridDataServlet
@@ -264,7 +276,7 @@ public class GridDataServlet
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{GridDataServlet()}
 \hypertarget{DatabaseConnection.GridDataServlet()}{{\bf  GridDataServlet}\\}
 \begin{lstlisting}[frame=none]
@@ -282,7 +294,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{doGet(HttpServletRequest, HttpServletResponse)}
 \hypertarget{DatabaseConnection.GridDataServlet.doGet(HttpServletRequest, HttpServletResponse)}{{\bf  doGet}\\}
 \begin{lstlisting}[frame=none]
@@ -307,13 +319,13 @@ This method calls the getGrid method of the Facade to get a Grid of clusters at 
 \end{itemize}
 }
 \subsubsection{Members inherited from class HttpServlet }{
-\texttt{DatabaseConnection.HttpServlet} {\small 
+\texttt{DatabaseConnection.HttpServlet} {\small
 \refdefined{DatabaseConnection.HttpServlet}}
-{\small 
+{\small
 
 \vskip -2em
 \begin{itemize}
-\item{\vskip -1.5ex 
+\item{\vskip -1.5ex
 \texttt{public void {\bf  doGet}(\texttt{HttpServletRequest} {\bf  req},
 \texttt{HttpServletResponse} {\bf  res})
 }%end signature
@@ -322,8 +334,11 @@ This method calls the getGrid method of the Facade to get a Grid of clusters at 
 }
 }
 \subsection{\label{DatabaseConnection.HttpServlet}Class HttpServlet}{
-\hypertarget{DatabaseConnection.HttpServlet}{}\vskip .1in 
-An abstract HTTPServlet.\vskip .1in 
+\hypertarget{DatabaseConnection.HttpServlet}{}\vskip .1in
+An abstract HTTPServlet.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/database/classes/HttpServlet}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class HttpServlet
@@ -342,7 +357,7 @@ public class HttpServlet
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{HttpServlet()}
 \hypertarget{DatabaseConnection.HttpServlet()}{{\bf  HttpServlet}\\}
 \begin{lstlisting}[frame=none]
@@ -360,7 +375,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{doGet(HttpServletRequest, HttpServletResponse)}
 \hypertarget{DatabaseConnection.HttpServlet.doGet(HttpServletRequest, HttpServletResponse)}{{\bf  doGet}\\}
 \begin{lstlisting}[frame=none]
@@ -386,8 +401,11 @@ Called by the server (via the service method) to allow a servlet to handle a GET
 }
 }
 \subsection{\label{DatabaseConnection.KafkaToStorageProcessor}Class KafkaToStorageProcessor}{
-\hypertarget{DatabaseConnection.KafkaToStorageProcessor}{}\vskip .1in 
-This class converts KafkaStream records to data that can be inserted into the StorageSolution.\vskip .1in 
+\hypertarget{DatabaseConnection.KafkaToStorageProcessor}{}\vskip .1in
+This class converts KafkaStream records to data that can be inserted into the StorageSolution.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/database/classes/KafkaToStorageProcessor}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class KafkaToStorageProcessor
@@ -405,7 +423,7 @@ public class KafkaToStorageProcessor
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{KafkaToStorageProcessor()}
 \hypertarget{DatabaseConnection.KafkaToStorageProcessor()}{{\bf  KafkaToStorageProcessor}\\}
 \begin{lstlisting}[frame=none]
@@ -423,7 +441,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{subscribe(KStream)}
 \hypertarget{DatabaseConnection.KafkaToStorageProcessor.subscribe(KStream)}{{\bf  subscribe}\\}
 \begin{lstlisting}[frame=none]
@@ -447,8 +465,11 @@ Subscribes to the given KafkaStream and converts the data to the appropriate for
 }
 }
 \subsection{\label{DatabaseConnection.Maintainer}Class Maintainer}{
-\hypertarget{DatabaseConnection.Maintainer}{}\vskip .1in 
-An abstract class describing a Maintainer, which performs maintenance on certain data in the StorageSolution.\vskip .1in 
+\hypertarget{DatabaseConnection.Maintainer}{}\vskip .1in
+An abstract class describing a Maintainer, which performs maintenance on certain data in the StorageSolution.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/database/classes/Maintainer}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class Maintainer
@@ -462,7 +483,7 @@ public class Maintainer
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{Maintainer()}
 \hypertarget{DatabaseConnection.Maintainer()}{{\bf  Maintainer}\\}
 \begin{lstlisting}[frame=none]
@@ -479,8 +500,11 @@ Default constructor
 }
 }
 \subsection{\label{DatabaseConnection.MaintenanceManager}Class MaintenanceManager}{
-\hypertarget{DatabaseConnection.MaintenanceManager}{}\vskip .1in 
-This class manages the way the methods of Maintainers are called to make sure the StorageSolution content is maintained.\vskip .1in 
+\hypertarget{DatabaseConnection.MaintenanceManager}{}\vskip .1in
+This class manages the way the methods of Maintainers are called to make sure the StorageSolution content is maintained.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/database/classes/MaintenanceManager}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class MaintenanceManager
@@ -498,7 +522,7 @@ public class MaintenanceManager
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{MaintenanceManager()}
 \hypertarget{DatabaseConnection.MaintenanceManager()}{{\bf  MaintenanceManager}\\}
 \begin{lstlisting}[frame=none]
@@ -516,7 +540,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{startMaintenance()}
 \hypertarget{DatabaseConnection.MaintenanceManager.startMaintenance()}{{\bf  startMaintenance}\\}
 \begin{lstlisting}[frame=none]
@@ -533,8 +557,11 @@ This method should be called as soon as the database is started. Through calls t
 }
 }
 \subsection{\label{DatabaseConnection.SensorListServlet}Class SensorListServlet}{
-\hypertarget{DatabaseConnection.SensorListServlet}{}\vskip .1in 
-An HTTPServlet for requesting a list of sensors.\vskip .1in 
+\hypertarget{DatabaseConnection.SensorListServlet}{}\vskip .1in
+An HTTPServlet for requesting a list of sensors.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/database/classes/SensorListServlet}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class SensorListServlet
@@ -552,7 +579,7 @@ public class SensorListServlet
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{SensorListServlet()}
 \hypertarget{DatabaseConnection.SensorListServlet()}{{\bf  SensorListServlet}\\}
 \begin{lstlisting}[frame=none]
@@ -570,7 +597,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{doGet(HttpServletRequest, HttpServletResponse)}
 \hypertarget{DatabaseConnection.SensorListServlet.doGet(HttpServletRequest, HttpServletResponse)}{{\bf  doGet}\\}
 \begin{lstlisting}[frame=none]
@@ -595,13 +622,13 @@ This method calls the getSensors method of the Facade to get a list of Sensors t
 \end{itemize}
 }
 \subsubsection{Members inherited from class HttpServlet }{
-\texttt{DatabaseConnection.HttpServlet} {\small 
+\texttt{DatabaseConnection.HttpServlet} {\small
 \refdefined{DatabaseConnection.HttpServlet}}
-{\small 
+{\small
 
 \vskip -2em
 \begin{itemize}
-\item{\vskip -1.5ex 
+\item{\vskip -1.5ex
 \texttt{public void {\bf  doGet}(\texttt{HttpServletRequest} {\bf  req},
 \texttt{HttpServletResponse} {\bf  res})
 }%end signature
@@ -610,8 +637,11 @@ This method calls the getSensors method of the Facade to get a list of Sensors t
 }
 }
 \subsection{\label{DatabaseConnection.SensorMaintainer}Class SensorMaintainer}{
-\hypertarget{DatabaseConnection.SensorMaintainer}{}\vskip .1in 
-This class maintains the list of sensors saved in the StorageSolution.\vskip .1in 
+\hypertarget{DatabaseConnection.SensorMaintainer}{}\vskip .1in
+This class maintains the list of sensors saved in the StorageSolution.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/database/classes/SensorMaintainer}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class SensorMaintainer
@@ -629,7 +659,7 @@ public class SensorMaintainer
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{SensorMaintainer()}
 \hypertarget{DatabaseConnection.SensorMaintainer()}{{\bf  SensorMaintainer}\\}
 \begin{lstlisting}[frame=none]
@@ -647,7 +677,7 @@ Default constructor
 \subsubsection{Methods}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{checkSensorsOfCluster(ClusterID)}
 \hypertarget{DatabaseConnection.SensorMaintainer.checkSensorsOfCluster(DatabaseConnection.ClusterID)}{{\bf  checkSensorsOfCluster}\\}
 \begin{lstlisting}[frame=none]
@@ -671,8 +701,11 @@ This method checks if the sensors registered to the given cluster are up to date
 }
 }
 \subsection{\label{DatabaseConnection.ZoomLevel}Class ZoomLevel}{
-\hypertarget{DatabaseConnection.ZoomLevel}{}\vskip .1in 
-This class describes a zoom level for the map.\vskip .1in 
+\hypertarget{DatabaseConnection.ZoomLevel}{}\vskip .1in
+This class describes a zoom level for the map.\vskip .1in
+\begin{figure}[!hbp]
+	\centering\includegraphics[width=0.5\linewidth]{images/database/classes/ZoomLevel}
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class ZoomLevel
@@ -685,7 +718,7 @@ public class ZoomLevel
 \subsubsection{Constructors}{
 \vskip -2em
 \begin{itemize}
-\item{ 
+\item{
 \index{ZoomLevel()}
 \hypertarget{DatabaseConnection.ZoomLevel()}{{\bf  ZoomLevel}\\}
 \begin{lstlisting}[frame=none]
