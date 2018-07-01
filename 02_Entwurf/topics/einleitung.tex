@@ -1,1 +1,18 @@
 \chapter{Einleitung}
+Dieses Dokument soll einen Überblick über alle Klassen des PaVoS-Projektes geben. Dabei sind mehrere größere Teile entstanden.\\
+Die zentralen Elemente sin dabei:
+\begin{enumerate}
+	\item \textbf{Die Bridge} vom Frost-Server zu Kafka.
+	\item \textbf{Der Kern}, der direkt mit Kafka und den Streams arbeitet.
+	\item \textbf{Die Webansicht} für den Nutzer im Browser.
+\end{enumerate}
+Dazu gibt es noch verschidene Elemente die zwischen diesen Erstgenannten arbeiten, oder den Datenaustausch dieser übernehmen. Das sind folgende Elemente:
+\begin{enumerate}
+	\item \textbf{Der Import} dient dazu Datenbestände in PaVoS einzuschleusen.
+	\item \textbf{Die DatabaseConnection} dient dazu Daten aus Kafka für die Karte der Webansicht bereitzustellen.
+	\item \textbf{Der DataTransferControl} dient dazu Daten aus Kafka für die Grafiken der Webansicht bereitzustellen.
+	\item \textbf{Der Export} dient dazu Daten aus Kafka in Dateien zu schreiben und diese der Webansicht zuzusenden.
+\end{enumerate}
+Jedes dieser Elemente stellt ein oder mehrere Packages dar.\\\\
+Als Entwurfsumgebung wurde StarUML verwendet. Die Entwicklung soll für alle Serverseitigen Elemente in Java erfolgen während bei der Webansicht auch Javascript zum Einsatz kommen wird.\\\\
+Der Entwurf besteht aus insgesamt 118 Klassen und 10 Schnittstellen. Diese werden alle in diesem Dokument im Detail behandelt aber auch in mithilfe der Klassendiagramme und einzelner Sequenzdiagramme in ihrem Kontext dargestellt und deren Funktionsweise erläutert.
