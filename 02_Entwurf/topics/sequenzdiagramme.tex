@@ -27,7 +27,10 @@ Core
 \newpage
 
 \section{Import}
-Import
+Bei dem Import wird zuerst in dem Importordner nach Dateien gesucht und danach für jede vorhandene Datei ein separater Importprozess gestartet. Das folgende Sequenzdiagram stellt diesen Vorgang dar. Hier wird ausschließlich der Import behandelt, wer diesen Anstößt soll nicht Teil des Diagrams sein. \texttt{External} soll hier das Element darstellen, das den Import aufruft. Dazu wird ein \texttt{DataImporter} erstellt und seine Methode \texttt{startImportingFileData} aufgerufen, womit der Importvorgang startet.\\\\
+Für jede Datei in dem Importordner wird nun ein \texttt{FrostSender} und einen \texttt{FilePath} der zum Pfad der Datei passt. Ist dies geschehen wird der \texttt{FileImporter} für diese Datei erschaffen und mit \texttt{addFileData} gestartet. Dazu wird der Pfad und der \texttt{FrostSender} mitübergeben. Aus dem Pfad wird jetzt eine \texttt{FileExtension} generiert, die dazu genutzt wird über den \texttt{ReaderType} eine Instanz einer Implementierung der \texttt{FileReaderStrategy} zu erhalten. Ist die \texttt{FileExtension} nicht bekannt würde es hier zu einer Exception kommen und der Import für diese Datei beendet.\\\\
+In diesem Fall wurde als Beispiel eine \texttt{CSVReaderStrategy} genommen. Diese übernimmt den tatsächlichen Import der Daten aus der Datei zum FROST-Server vor. Dazu werden nach und nach einzelne Datensätze aus der Datei ausgelesen und über den \texttt{FrostSender} an den Server gesendet.
+
 \begin{figure}[!hbp]
 	\centering
 	\includegraphics[width=\linewidth]{images/import/ImportSequenceDiagram.png}
