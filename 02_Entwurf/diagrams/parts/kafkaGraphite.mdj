@@ -393,7 +393,7 @@
 											"width": 385.37890625,
 											"height": 13,
 											"underline": true,
-											"text": "+getGraphiteHostName(): null",
+											"text": "+getGraphiteHostName(): String",
 											"horizontalAlignment": 0
 										},
 										{
@@ -835,7 +835,7 @@
 											"top": 336,
 											"width": 450.734375,
 											"height": 13,
-											"text": "+startDataTransfer(topics: Collection, UIDS: Collection)",
+											"text": "+startDataTransfer(topics: Collection<String>, UIDS: Collection<String>)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -852,7 +852,7 @@
 											"top": 351,
 											"width": 450.734375,
 											"height": 13,
-											"text": "+stopDataTransfer(UIDS: Collection)",
+											"text": "+stopDataTransfer(UIDS: Collection<String>)",
 											"horizontalAlignment": 0
 										}
 									],
@@ -1868,7 +1868,7 @@
 											"top": 785,
 											"width": 325.5458984375,
 											"height": 13,
-											"text": "+subscribe(topics: Collection)",
+											"text": "+subscribe(topics: Collection<String>)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3235,7 +3235,7 @@
 											"top": 1489,
 											"width": 349.00048828125,
 											"height": 13,
-											"text": "-logger",
+											"text": "-logger: Logger",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3252,7 +3252,7 @@
 											"top": 1504,
 											"width": 349.00048828125,
 											"height": 13,
-											"text": "-topics",
+											"text": "-topics: Collection<String>",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3286,7 +3286,7 @@
 											"top": 1534,
 											"width": 349.00048828125,
 											"height": 13,
-											"text": "-consumer: KafkaConsumer<String, KafkaObservationData>",
+											"text": "-consumer: KafkaConsumer",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3662,7 +3662,7 @@
 											"width": 385.37890625,
 											"height": 13,
 											"underline": true,
-											"text": "+getKafkaHostName(): null",
+											"text": "+getKafkaHostName(): String",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3680,7 +3680,7 @@
 											"width": 385.37890625,
 											"height": 13,
 											"underline": true,
-											"text": "+getStartFromBeginning(): null",
+											"text": "+getStartFromBeginning(): boolean",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3698,7 +3698,7 @@
 											"width": 385.37890625,
 											"height": 13,
 											"underline": true,
-											"text": "-getEnvironmentVariable(name, defaultValue): null",
+											"text": "-getEnvironmentVariable(name: String, defaultValue: String)",
 											"horizontalAlignment": 0
 										}
 									],
@@ -4005,7 +4005,7 @@
 											"top": 1512,
 											"width": 438.953125,
 											"height": 13,
-											"text": "+send(records: ConsumerRecords)",
+											"text": "+send(records: ConsumerRecords<String, KafkaObservationData>)",
 											"horizontalAlignment": 0
 										}
 									],
@@ -5001,7 +5001,7 @@
 											"top": 447,
 											"width": 658.22021484375,
 											"height": 13,
-											"text": "-addFloatMetric(record: ConsumerRecord<String, KafkaObservationData>, list: PyList, name, value)",
+											"text": "-addFloatMetric(record: ConsumerRecord<String, KafkaObservationData>, list: PyList, name: String, value: String)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -5358,7 +5358,7 @@
 											"top": 1204,
 											"width": 454.87939453125,
 											"height": 13,
-											"text": "+deserialize(topics: Collection, data: byte[0..*]): KafkaObservationData",
+											"text": "+deserialize(topics: Collection<String>, data: byte[0..*]): KafkaObservationData",
 											"horizontalAlignment": 0
 										},
 										{
@@ -5576,7 +5576,7 @@
 											"top": 1301,
 											"width": 167,
 											"height": 13,
-											"text": "+observationDate",
+											"text": "+observationDate: String",
 											"horizontalAlignment": 0
 										},
 										{
@@ -5593,7 +5593,7 @@
 											"top": 1316,
 											"width": 167,
 											"height": 13,
-											"text": "+locationName",
+											"text": "+locationName: String",
 											"horizontalAlignment": 0
 										},
 										{
@@ -5610,7 +5610,7 @@
 											"top": 1331,
 											"width": 167,
 											"height": 13,
-											"text": "+locationElevation",
+											"text": "+locationElevation: String",
 											"horizontalAlignment": 0
 										},
 										{
@@ -5627,7 +5627,7 @@
 											"top": 1346,
 											"width": 167,
 											"height": 13,
-											"text": "+locationID",
+											"text": "+locationID: String",
 											"horizontalAlignment": 0
 										},
 										{
@@ -5644,7 +5644,7 @@
 											"top": 1361,
 											"width": 167,
 											"height": 13,
-											"text": "+observedProperty",
+											"text": "+observedProperty: String",
 											"horizontalAlignment": 0
 										}
 									],
@@ -6290,7 +6290,7 @@
 											"top": 1742,
 											"width": 658.22021484375,
 											"height": 13,
-											"text": "-addFloatMetric(record: ConsumerRecord<String, KafkaObservationData>, list: PyList, name, value)",
+											"text": "-addFloatMetric(record: ConsumerRecord<String, KafkaObservationData>, list: PyList, name: String, value: String)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -6507,7 +6507,7 @@
 											"width": 385.37890625,
 											"height": 13,
 											"underline": true,
-											"text": "+getGraphiteHostName(): null",
+											"text": "+getGraphiteHostName(): String",
 											"horizontalAlignment": 0
 										},
 										{
@@ -6610,7 +6610,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFkTLSD4w8axew="
 							},
-							"name": "Kafka"
+							"name": "Kafka",
+							"documentation": "Kafka controls how data is sent throughout the system."
 						},
 						{
 							"_type": "UMLPackage",
@@ -6618,7 +6619,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFkTLSD4w8axew="
 							},
-							"name": "Graphite"
+							"name": "Graphite",
+							"documentation": "Graphite controls the visualization of observed properties via graphs."
 						},
 						{
 							"_type": "UMLClass",
@@ -6646,9 +6648,7 @@
 											},
 											"name": "topics",
 											"documentation": "Kafka-Topics that should be subscribed",
-											"type": {
-												"$ref": "AAAAAAFkQWP9JrHg5mM="
-											}
+											"type": "Collection<String>"
 										}
 									]
 								},
@@ -6810,9 +6810,7 @@
 											},
 											"name": "topics",
 											"documentation": "Kafka-Topics that should be subscribed",
-											"type": {
-												"$ref": "AAAAAAFkQWP9JrHg5mM="
-											}
+											"type": "Collection<String>"
 										},
 										{
 											"_type": "UMLParameter",
@@ -6822,9 +6820,7 @@
 											},
 											"name": "UIDS",
 											"documentation": "The unique identifiers, that tell us which data should be transfered. Everything else will be ignored.",
-											"type": {
-												"$ref": "AAAAAAFkQWP9JrHg5mM="
-											}
+											"type": "Collection<String>"
 										}
 									]
 								},
@@ -6845,9 +6841,7 @@
 											},
 											"name": "UIDS",
 											"documentation": "The unique identifiers, that tell us which data should no longer be transfered. Everything else will be ignored.",
-											"type": {
-												"$ref": "AAAAAAFkQWP9JrHg5mM="
-											}
+											"type": "Collection<String>"
 										}
 									]
 								}
@@ -6889,7 +6883,7 @@
 									"name": "logger",
 									"documentation": "Documents the activity of the Consumer",
 									"visibility": "private",
-									"type": ""
+									"type": "Logger"
 								},
 								{
 									"_type": "UMLAttribute",
@@ -6900,7 +6894,7 @@
 									"name": "topics",
 									"documentation": "Kafka-Topics that should be subscribed",
 									"visibility": "private",
-									"type": ""
+									"type": "Collection<String>"
 								},
 								{
 									"_type": "UMLAttribute",
@@ -6923,7 +6917,7 @@
 									"documentation": "The KafkaConsumer that consumes the data from Kafka",
 									"visibility": "private",
 									"type": {
-										"$ref": "AAAAAAFkPJY+IONXHWA="
+										"$ref": "AAAAAAFkE5wNzwN72Js="
 									}
 								},
 								{
@@ -7014,7 +7008,7 @@
 											},
 											"name": "kafkaHostName",
 											"documentation": "The host-name of Kafka",
-											"type": "",
+											"type": "String",
 											"direction": "return"
 										}
 									]
@@ -7037,7 +7031,7 @@
 											},
 											"name": "startFromBeginning",
 											"documentation": "Tells us whether a start from the beginning is required",
-											"type": "",
+											"type": "boolean",
 											"direction": "return"
 										}
 									]
@@ -7061,7 +7055,7 @@
 											},
 											"name": "name",
 											"documentation": "The name of the environment-variable",
-											"type": ""
+											"type": "String"
 										},
 										{
 											"_type": "UMLParameter",
@@ -7071,18 +7065,7 @@
 											},
 											"name": "defaultValue",
 											"documentation": "The default-value of the environment-variable",
-											"type": ""
-										},
-										{
-											"_type": "UMLParameter",
-											"_id": "AAAAAAFkRu9GH5Pff/Y=",
-											"_parent": {
-												"$ref": "AAAAAAFkRu7FVZPV96M="
-											},
-											"name": "environmentVariable",
-											"documentation": "The value of the environment-variable",
-											"type": "",
-											"direction": "return"
+											"type": "String"
 										}
 									]
 								}
@@ -7127,9 +7110,7 @@
 											},
 											"name": "records",
 											"documentation": "Multiple records of data from Kafka",
-											"type": {
-												"$ref": "AAAAAAFkPKiNtSWSsvA="
-											}
+											"type": "ConsumerRecords<String, KafkaObservationData>"
 										}
 									]
 								}
@@ -7332,9 +7313,7 @@
 													},
 													"name": "topics",
 													"documentation": "Kafka-Topics that should be subscribed",
-													"type": {
-														"$ref": "AAAAAAFkQWP9JrHg5mM="
-													}
+													"type": "Collection<String>"
 												},
 												{
 													"_type": "UMLParameter",
@@ -7419,7 +7398,7 @@
 											},
 											"name": "observationDate",
 											"documentation": "The date of the observation",
-											"type": ""
+											"type": "String"
 										},
 										{
 											"_type": "UMLAttribute",
@@ -7429,7 +7408,7 @@
 											},
 											"name": "locationName",
 											"documentation": "The name of the observations location",
-											"type": ""
+											"type": "String"
 										},
 										{
 											"_type": "UMLAttribute",
@@ -7439,7 +7418,7 @@
 											},
 											"name": "locationElevation",
 											"documentation": "The height of the observations location",
-											"type": ""
+											"type": "String"
 										},
 										{
 											"_type": "UMLAttribute",
@@ -7449,7 +7428,7 @@
 											},
 											"name": "locationID",
 											"documentation": "The id of the observations location",
-											"type": ""
+											"type": "String"
 										},
 										{
 											"_type": "UMLAttribute",
@@ -7459,7 +7438,7 @@
 											},
 											"name": "observedProperty",
 											"documentation": "The observed property",
-											"type": ""
+											"type": "String"
 										}
 									]
 								},
@@ -7473,7 +7452,8 @@
 									"documentation": "The Interface we need to serialize our objects.",
 									"stereotype": ""
 								}
-							]
+							],
+							"documentation": "The Serialization & Deserialization package controls the conversion from String into objects and vice versa."
 						},
 						{
 							"_type": "UMLClass",
@@ -7766,7 +7746,7 @@
 											},
 											"name": "name",
 											"documentation": "The name of the observed property",
-											"type": ""
+											"type": "String"
 										},
 										{
 											"_type": "UMLParameter",
@@ -7776,7 +7756,7 @@
 											},
 											"name": "value",
 											"documentation": "The value the sensor registrated to the specified property",
-											"type": ""
+											"type": "String"
 										}
 									]
 								},
@@ -7847,7 +7827,7 @@
 											},
 											"name": "graphiteHostName",
 											"documentation": "The Graphite-host-name",
-											"type": "",
+											"type": "String",
 											"direction": "return"
 										}
 									]
@@ -7877,7 +7857,8 @@
 								}
 							]
 						}
-					]
+					],
+					"documentation": "The DataTransferControl package controls data transfer from Kafka to other specified components. In this case, the focus is on getting the data to Graphite."
 				}
 			]
 		},
@@ -7904,6 +7885,7 @@
 								"$ref": "AAAAAAFkS4lpYGKxRe4="
 							},
 							"name": "Seq-Main",
+							"documentation": "The user selects data to be requested through the use of the webinterface. Then the Servlet receives that request and tells us, what data we have to transfer. This information is passed on to the GraphDataTransferController, which in return passes it to a newly created KafkaToGraphiteConsumer. This also creates us a GraphiteSender automatically in the constructor. This KafkaToGraphiteConsumer is then run on the information. It gathers different properties that are needed for transfering data from Kafka from the GraphiteConfig and creates a KafkaConsumer to subscribe to Kafka. We then check whether we want to seek to the beginning . After that, we enter a loop. Here we start polling data from Kafka and storing them in a ConsumerRecords object. Finally, we check if there was any new information in the polled data. If there was, we send the data by using our GraphiteSender.\nIf we want to end the transferring of data, we have to call the wakeup method of our KafkaToGraphiteConsumer.",
 							"ownedViews": [
 								{
 									"_type": "UMLFrameView",
@@ -7943,7 +7925,7 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"width": 2953,
+									"width": 2457,
 									"height": 1049,
 									"nameLabel": {
 										"$ref": "AAAAAAFkS4lpYGK0jqI="
@@ -8098,7 +8080,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 516,
+													"left": 436,
 													"height": 13
 												},
 												{
@@ -8108,7 +8090,7 @@
 														"$ref": "AAAAAAFkS5DCqW+uUFc="
 													},
 													"font": "Arial;13;1",
-													"left": 573,
+													"left": 533,
 													"top": 47,
 													"width": 250.55078125,
 													"height": 13,
@@ -8122,7 +8104,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 516,
+													"left": 436,
 													"width": 106.20263671875,
 													"height": 13,
 													"text": "(from Interaction1)"
@@ -8135,13 +8117,13 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": 516,
+													"left": 436,
 													"height": 13,
 													"horizontalAlignment": 1
 												}
 											],
 											"font": "Arial;13;0",
-											"left": 568,
+											"left": 528,
 											"top": 40,
 											"width": 260.55078125,
 											"height": 40,
@@ -8168,14 +8150,14 @@
 												"$ref": "AAAAAAFkS5DCqW+sCTQ="
 											},
 											"font": "Arial;13;0",
-											"left": 698,
+											"left": 658,
 											"top": 80,
 											"width": 1,
 											"height": 967
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 568,
+									"left": 528,
 									"top": 40,
 									"width": 260.55078125,
 									"height": 1007,
@@ -8549,7 +8531,7 @@
 												"$ref": "AAAAAAFkS5Faum/OqnE="
 											},
 											"font": "Arial;13;0",
-											"left": 208,
+											"left": 188,
 											"top": 112,
 											"width": 461.2080078125,
 											"height": 13,
@@ -8559,7 +8541,7 @@
 												"$ref": "AAAAAAFkS5Faum/PaUs="
 											},
 											"edgePosition": 1,
-											"text": "2 : startDataTransfer(topics: Collection, UIDS: Collection)"
+											"text": "2 : startDataTransfer(topics: Collection<String>, UIDS: Collection<String>)"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -8572,7 +8554,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 438,
+											"left": 418,
 											"top": 97,
 											"height": 13,
 											"alpha": 1.5707963267948966,
@@ -8593,7 +8575,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 438,
+											"left": 418,
 											"top": 132,
 											"height": 13,
 											"alpha": -1.5707963267948966,
@@ -8613,7 +8595,7 @@
 												"$ref": "AAAAAAFkS5Faum/OqnE="
 											},
 											"font": "Arial;13;0",
-											"left": 691,
+											"left": 651,
 											"top": 128,
 											"width": 14,
 											"height": 849
@@ -8626,7 +8608,7 @@
 									"tail": {
 										"$ref": "AAAAAAFkS4yls2jSZZQ="
 									},
-									"points": "186:128;691:128",
+									"points": "186:128;651:128",
 									"nameLabel": {
 										"$ref": "AAAAAAFkS5Faum/QKNI="
 									},
@@ -8682,7 +8664,7 @@
 													"top": 47,
 													"width": 379.1669921875,
 													"height": 13,
-													"text": "consumer: KafkaConsumer<String, KafkaObservationData>"
+													"text": "consumer"
 												},
 												{
 													"_type": "LabelView",
@@ -8776,7 +8758,7 @@
 												"$ref": "AAAAAAFkS5tYlYucvVM="
 											},
 											"font": "Arial;13;0",
-											"left": 710,
+											"left": 690,
 											"top": 184,
 											"width": 117.7744140625,
 											"height": 13,
@@ -8798,7 +8780,7 @@
 												"$ref": "AAAAAAFkS5tYlYucvVM="
 											},
 											"font": "Arial;13;0",
-											"left": 743,
+											"left": 723,
 											"top": 169,
 											"width": 50.5908203125,
 											"height": 13,
@@ -8821,7 +8803,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 768,
+											"left": 748,
 											"top": 204,
 											"height": 13,
 											"alpha": -1.5707963267948966,
@@ -8855,7 +8837,7 @@
 									"tail": {
 										"$ref": "AAAAAAFkS5DCqW+zou0="
 									},
-									"points": "704:200;832:200",
+									"points": "664:200;832:200",
 									"nameLabel": {
 										"$ref": "AAAAAAFkS5tYlYueARo="
 									},
@@ -9002,7 +8984,7 @@
 												"$ref": "AAAAAAFkS5+znKICxj4="
 											},
 											"font": "Arial;13;0",
-											"left": 795,
+											"left": 775,
 											"top": 224,
 											"width": 78.04443359375,
 											"height": 13,
@@ -9025,7 +9007,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 834,
+											"left": 814,
 											"top": 209,
 											"height": 13,
 											"alpha": 1.5707963267948966,
@@ -9046,7 +9028,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 834,
+											"left": 814,
 											"top": 244,
 											"height": 13,
 											"alpha": -1.5707963267948966,
@@ -9079,7 +9061,7 @@
 									"tail": {
 										"$ref": "AAAAAAFkS5DCqW+zou0="
 									},
-									"points": "704:240;965:240",
+									"points": "664:240;965:240",
 									"nameLabel": {
 										"$ref": "AAAAAAFkS5+znKIEv/w="
 									},
@@ -9345,7 +9327,7 @@
 												"$ref": "AAAAAAFkS9NlgqpasiI="
 											},
 											"edgePosition": 1,
-											"text": "8 : getEnvironmentVariable(name, defaultValue)"
+											"text": "8 : getEnvironmentVariable(name: String, defaultValue: String)"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -10008,7 +9990,7 @@
 												"$ref": "AAAAAAFkS6yc1KXqNMw="
 											},
 											"edgePosition": 1,
-											"text": "12 : subscribe(topics: Collection)"
+											"text": "12 : subscribe(topics: Collection<String>)"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -10346,7 +10328,7 @@
 												"$ref": "AAAAAAFkS9TEPaqAJm8="
 											},
 											"edgePosition": 1,
-											"text": "14 : getEnvironmentVariable(name, defaultValue)"
+											"text": "14 : getEnvironmentVariable(name: String, defaultValue: String)"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -11217,7 +11199,7 @@
 												"$ref": "AAAAAAFkS8LEZ6gox7w="
 											},
 											"edgePosition": 1,
-											"text": "20 : send(records: ConsumerRecords)"
+											"text": "20 : send(records: ConsumerRecords<String, KafkaObservationData>)"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -11362,7 +11344,7 @@
 												"$ref": "AAAAAAFkS8d/36hxBgU="
 											},
 											"font": "Arial;13;0",
-											"left": 303,
+											"left": 283,
 											"top": 880,
 											"width": 278.41455078125,
 											"height": 13,
@@ -11372,7 +11354,7 @@
 												"$ref": "AAAAAAFkS8d/4Khya+c="
 											},
 											"edgePosition": 1,
-											"text": "21 : stopDataTransfer(UIDS: Collection)"
+											"text": "21 : stopDataTransfer(UIDS: Collection<String>)"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -11385,7 +11367,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 442,
+											"left": 422,
 											"top": 865,
 											"height": 13,
 											"alpha": 1.5707963267948966,
@@ -11406,7 +11388,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 442,
+											"left": 422,
 											"top": 900,
 											"height": 13,
 											"alpha": -1.5707963267948966,
@@ -11426,7 +11408,7 @@
 												"$ref": "AAAAAAFkS8d/36hxBgU="
 											},
 											"font": "Arial;13;0",
-											"left": 698,
+											"left": 658,
 											"top": 896,
 											"width": 14,
 											"height": 73
@@ -11439,7 +11421,7 @@
 									"tail": {
 										"$ref": "AAAAAAFkS4yls2jSZZQ="
 									},
-									"points": "186:896;698:896",
+									"points": "186:896;658:896",
 									"nameLabel": {
 										"$ref": "AAAAAAFkS8d/4KhzIVg="
 									},
@@ -11473,7 +11455,7 @@
 												"$ref": "AAAAAAFkS8g7RKinIWA="
 											},
 											"font": "Arial;13;0",
-											"left": 799,
+											"left": 779,
 											"top": 888,
 											"width": 85.2744140625,
 											"height": 13,
@@ -11496,7 +11478,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 841,
+											"left": 821,
 											"top": 873,
 											"height": 13,
 											"alpha": 1.5707963267948966,
@@ -11517,7 +11499,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 841,
+											"left": 821,
 											"top": 908,
 											"height": 13,
 											"alpha": -1.5707963267948966,
@@ -11550,7 +11532,7 @@
 									"tail": {
 										"$ref": "AAAAAAFkS5DCqW+zou0="
 									},
-									"points": "711:904;972:904",
+									"points": "671:904;972:904",
 									"nameLabel": {
 										"$ref": "AAAAAAFkS8g7RKipvb4="
 									},
@@ -12166,6 +12148,7 @@
 								"$ref": "AAAAAAFkS4lpYGKxRe4="
 							},
 							"name": "if (startFromBeginning)",
+							"documentation": "Checks if we want to start from the beginning.",
 							"interactionOperator": "seq",
 							"operands": [
 								{
@@ -12185,6 +12168,7 @@
 								"$ref": "AAAAAAFkS4lpYGKxRe4="
 							},
 							"name": "LOOP",
+							"documentation": "Repeats and polls new data every time. This data is then sent to Graphite.",
 							"interactionOperator": "seq",
 							"operands": [
 								{
@@ -12204,6 +12188,7 @@
 								"$ref": "AAAAAAFkS4lpYGKxRe4="
 							},
 							"name": "if (!records.isEmpty())",
+							"documentation": "If there is any new data in the polled data, send it to Graphite.",
 							"interactionOperator": "seq",
 							"operands": [
 								{
@@ -12289,9 +12274,7 @@
 						"$ref": "AAAAAAFkS4lpYGKwK5Y="
 					},
 					"name": "Role7",
-					"type": {
-						"$ref": "AAAAAAFkPJY+IONXHWA="
-					}
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -12340,6 +12323,7 @@
 								"$ref": "AAAAAAFkS8yTjKkjXAI="
 							},
 							"name": "Seq-GraphiteSender",
+							"documentation": "Here the data that we want to send to Graphite is given to us directly. To do the job, the GraphiteSender gathers properties from the GraphiteConfig, that are needed for transferring data to Graphite. Afterwards, we start a loop. In this loop the GraphiteSender adds every observed property to the list of data to send to Graphite. The GraphiteSender does this by converting the data to metrics and then documenting the results. After adding all observed properties, we can finally sent the data to Graphite.",
 							"ownedViews": [
 								{
 									"_type": "UMLFrameView",
@@ -12381,8 +12365,8 @@
 									"font": "Arial;13;0",
 									"left": 5,
 									"top": 5,
-									"width": 1292,
-									"height": 924,
+									"width": 1188,
+									"height": 620,
 									"nameLabel": {
 										"$ref": "AAAAAAFkS8yTjKkmor0="
 									},
@@ -12491,14 +12475,14 @@
 											"left": 462,
 											"top": 80,
 											"width": 1,
-											"height": 849
+											"height": 545
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 352,
 									"top": 40,
 									"width": 220.82080078125,
-									"height": 889,
+									"height": 585,
 									"nameCompartment": {
 										"$ref": "AAAAAAFkS81QnKlKOKQ="
 									},
@@ -12551,7 +12535,7 @@
 												"$ref": "AAAAAAFkS8/n9qnMfKA="
 											},
 											"edgePosition": 1,
-											"text": "1 : send(records: ConsumerRecords)"
+											"text": "1 : send(records: ConsumerRecords<String, KafkaObservationData>)"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -12733,14 +12717,14 @@
 											"left": 713,
 											"top": 80,
 											"width": 1,
-											"height": 849
+											"height": 545
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 632,
 									"top": 40,
 									"width": 161.5400390625,
-									"height": 889,
+									"height": 585,
 									"nameCompartment": {
 										"$ref": "AAAAAAFkS9EYbano87k="
 									},
@@ -12889,7 +12873,7 @@
 												"$ref": "AAAAAAFkS9KAQKo5Ow8="
 											},
 											"edgePosition": 1,
-											"text": "3 : getEnvironmentVariable(name, defaultValue)"
+											"text": "3 : getEnvironmentVariable(name: String, defaultValue: String)"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -13223,7 +13207,7 @@
 												"$ref": "AAAAAAFkS9X59arKAYQ="
 											},
 											"edgePosition": 1,
-											"text": "6 : getEnvironmentVariable(name, defaultValue)"
+											"text": "6 : getEnvironmentVariable(name: String, defaultValue: String)"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -13488,7 +13472,7 @@
 													"font": "Arial;13;0",
 													"left": 336,
 													"top": 351,
-													"width": 937,
+													"width": 841,
 													"height": 43,
 													"guardLabel": {
 														"$ref": "AAAAAAFkS9af/6r45zA="
@@ -13498,14 +13482,14 @@
 											"font": "Arial;13;0",
 											"left": 336,
 											"top": 351,
-											"width": 937,
+											"width": 841,
 											"height": 43
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 336,
 									"top": 328,
-									"width": 937,
+									"width": 841,
 									"height": 241,
 									"nameLabel": {
 										"$ref": "AAAAAAFkS9af3KrpVuE="
@@ -13658,7 +13642,7 @@
 												"$ref": "AAAAAAFkS9dv/6scIvQ="
 											},
 											"edgePosition": 1,
-											"text": "9 : addFloatMetric(record: ConsumerRecord<String, KafkaObservationData>, list: PyList, name, value)"
+											"text": "9 : addFloatMetric(record: ConsumerRecord<String, KafkaObservationData>, list: PyList, name: String, value: String)"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -14064,6 +14048,7 @@
 								"$ref": "AAAAAAFkS8yTjKkjXAI="
 							},
 							"name": "LOOP",
+							"documentation": "This loop repeats for every observed property that we wish to transfer to Graphite.",
 							"interactionOperator": "seq",
 							"operands": [
 								{
@@ -14101,6 +14086,24 @@
 					"type": {
 						"$ref": "AAAAAAFkE6ifNw1Bcu0="
 					}
+				}
+			]
+		},
+		{
+			"_type": "UMLModel",
+			"_id": "AAAAAAFkVjeM+KElIig=",
+			"_parent": {
+				"$ref": "AAAAAAFF+h6SjaM2Hec="
+			},
+			"name": "Model1",
+			"ownedElements": [
+				{
+					"_type": "UMLClassDiagram",
+					"_id": "AAAAAAFkVjeM+KEm9p4=",
+					"_parent": {
+						"$ref": "AAAAAAFkVjeM+KElIig="
+					},
+					"name": "ClassDiagram1"
 				}
 			]
 		}
