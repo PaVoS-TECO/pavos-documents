@@ -57,11 +57,12 @@ Default constructor
 \end{itemize}
 }
 }
+\newpage
 \subsection{\label{DatabaseConnection.DataMaintainer}Class DataMaintainer}{
 \hypertarget{DatabaseConnection.DataMaintainer}{}\vskip .1in
 This class maintains the sensordata in the StorageSolution.\vskip .1in
 \begin{figure}[!hbp]
-	\centering\includegraphics[width=0.4\linewidth]{images/database/classes/DataMaintainer}
+	\centering\includegraphics[width=0.3\linewidth]{images/database/classes/DataMaintainer}
 \end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
@@ -239,6 +240,7 @@ Subscribes to the given KafkaStream, which contains ZoomLevel-specific data and 
 \end{itemize}
 }
 }
+\newpage
 \subsection{\label{DatabaseConnection.GridDataServlet}Class GridDataServlet}{
 \hypertarget{DatabaseConnection.GridDataServlet}{}\vskip .1in
 An HTTPServlet for requesting Grid data.\vskip .1in
@@ -390,7 +392,7 @@ Called by the server (via the service method) to allow a servlet to handle a GET
 \hypertarget{DatabaseConnection.KafkaToStorageProcessor}{}\vskip .1in
 This class converts KafkaStream records to data that can be inserted into the StorageSolution.\vskip .1in
 \begin{figure}[!hbp]
-	\centering\includegraphics[width=0.5\linewidth]{images/database/classes/KafkaToStorageProcessor}
+	\centering\includegraphics[width=0.3\linewidth]{images/database/classes/KafkaToStorageProcessor}
 \end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
@@ -454,7 +456,7 @@ Subscribes to the given KafkaStream and converts the data to the appropriate for
 \hypertarget{DatabaseConnection.Maintainer}{}\vskip .1in
 An abstract class describing a Maintainer, which performs maintenance on certain data in the StorageSolution.\vskip .1in
 \begin{figure}[!hbp]
-	\centering\includegraphics[width=0.4\linewidth]{images/database/classes/Maintainer}
+	\centering\includegraphics[width=0.25\linewidth]{images/database/classes/Maintainer}
 \end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
@@ -489,7 +491,7 @@ Default constructor
 \hypertarget{DatabaseConnection.MaintenanceManager}{}\vskip .1in
 This class manages the way the methods of Maintainers are called to make sure the StorageSolution content is maintained.\vskip .1in
 \begin{figure}[!hbp]
-	\centering\includegraphics[width=0.4\linewidth]{images/database/classes/MaintenanceManager}
+	\centering\includegraphics[width=0.25\linewidth]{images/database/classes/MaintenanceManager}
 \end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
@@ -690,7 +692,7 @@ This method checks if the sensors registered to the given cluster are up to date
 \hypertarget{DatabaseConnection.ZoomLevel}{}\vskip .1in
 This class describes a zoom level for the map.\vskip .1in
 \begin{figure}[!hbp]
-	\centering\includegraphics[width=0.2\linewidth]{images/database/classes/ZoomLevel}
+	\centering\includegraphics[width=0.15\linewidth]{images/database/classes/ZoomLevel}
 \end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
