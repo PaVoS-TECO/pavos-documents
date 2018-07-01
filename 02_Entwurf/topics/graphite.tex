@@ -54,6 +54,9 @@ Default constructor
 \subsection{\label{DataTransferControl.Config}Class Config}{
 \hypertarget{DataTransferControl.Config}{}\vskip .1in 
 The specified configuration-object that stores all needed configurations for the connection from Kafka to another specified component\vskip .1in 
+\begin{figure}[!htp]
+	\centering\includegraphics[width=0.4\linewidth]{images/graphite/classes/ClassConfig}
+\end{figure} 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class Config
@@ -129,6 +132,9 @@ Tells us whether a start from the beginning is required
 \subsection{\label{DataTransferControl.Consumer}Class Consumer}{
 \hypertarget{DataTransferControl.Consumer}{}\vskip .1in 
 Consumes data from Kafka\vskip .1in 
+\begin{figure}[!htp]
+	\centering\includegraphics[width=0.3\linewidth]{images/graphite/classes/ClassConsumer}
+\end{figure} 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class Consumer
@@ -198,6 +204,9 @@ Stops the transferring-process
 \subsection{\label{DataTransferControl.ConsumerRecord}Class ConsumerRecord}{
 \hypertarget{DataTransferControl.ConsumerRecord}{}\vskip .1in 
 One single record of data from Kafka\vskip .1in 
+\begin{figure}[!htp]
+	\centering\includegraphics[width=0.2\linewidth]{images/graphite/classes/ClassConsumerRecord}
+\end{figure} 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class ConsumerRecord
@@ -229,6 +238,9 @@ Default constructor
 \subsection{\label{DataTransferControl.ConsumerRecords}Class ConsumerRecords}{
 \hypertarget{DataTransferControl.ConsumerRecords}{}\vskip .1in 
 Multiple records of data from Kafka\vskip .1in 
+\begin{figure}[!htp]
+	\centering\includegraphics[width=0.2\linewidth]{images/graphite/classes/ClassConsumerRecords}
+\end{figure} 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class ConsumerRecords
@@ -260,6 +272,9 @@ Default constructor
 \subsection{\label{DataTransferControl.GraphDataTransferController}Class GraphDataTransferController}{
 \hypertarget{DataTransferControl.GraphDataTransferController}{}\vskip .1in 
 The Control-Unit in charge of creating and destroying KafkaToGraphiteConsumer as well as passing on the users request.\vskip .1in 
+\begin{figure}[!htp]
+	\centering\includegraphics[width=0.6\linewidth]{images/graphite/classes/ClassGraphDataTransferController}
+\end{figure} 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class GraphDataTransferController
@@ -344,6 +359,9 @@ Stoppt den Datentransfer.
 \subsection{\label{DataTransferControl.GraphiteConfig}Class GraphiteConfig}{
 \hypertarget{DataTransferControl.GraphiteConfig}{}\vskip .1in 
 The specified configuration-object that stores all needed configurations for the connection from Kafka to Graphite\vskip .1in 
+\begin{figure}[!htp]
+	\centering\includegraphics[width=0.25\linewidth]{images/graphite/classes/ClassGraphiteConfig}
+\end{figure} 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class GraphiteConfig
@@ -435,6 +453,9 @@ The port of the Graphite-connection
 \subsection{\label{DataTransferControl.GraphiteSender}Class GraphiteSender}{
 \hypertarget{DataTransferControl.GraphiteSender}{}\vskip .1in 
 Reformats the data and sends it to Graphite\vskip .1in 
+\begin{figure}[!htp]
+	\centering\includegraphics[width=0.8\linewidth]{images/graphite/classes/ClassGraphiteSender}
+\end{figure} 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class GraphiteSender
@@ -479,6 +500,9 @@ Default constructor
 \subsection{\label{DataTransferControl.KafkaConsumer}Class KafkaConsumer}{
 \hypertarget{DataTransferControl.KafkaConsumer}{}\vskip .1in 
 The Kafka Consumer is described in Apache-Kafka and will only be included in this diagram for a better understanding of the required functionality.\vskip .1in 
+\begin{figure}[!htp]
+	\centering\includegraphics[width=0.4\linewidth]{images/graphite/classes/ClassKafkaConsumer}
+\end{figure} 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class KafkaConsumer
@@ -610,6 +634,9 @@ Wakes up the KafkaConsumer, which then stops any current requests. Useful to lim
 \subsection{\label{DataTransferControl.KafkaToGraphiteConsumer}Class KafkaToGraphiteConsumer}{
 \hypertarget{DataTransferControl.KafkaToGraphiteConsumer}{}\vskip .1in 
 Receives the data from Kafka and sends it to Graphite\vskip .1in 
+\begin{figure}[!htp]
+	\centering\includegraphics[width=0.3\linewidth]{images/graphite/classes/ClassKafkaToGraphiteConsumer}
+\end{figure} 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class KafkaToGraphiteConsumer
@@ -695,6 +722,9 @@ Starts the process
 \subsection{\label{DataTransferControl.Properties}Class Properties}{
 \hypertarget{DataTransferControl.Properties}{}\vskip .1in 
 The Properties of the KafkaConsumer, using Java.Util.Properties\vskip .1in 
+\begin{figure}[!htp]
+	\centering\includegraphics[width=0.25\linewidth]{images/graphite/classes/ClassProperties}
+\end{figure} 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class Properties
@@ -726,6 +756,9 @@ Default constructor
 \subsection{\label{DataTransferControl.Sender}Class Sender}{
 \hypertarget{DataTransferControl.Sender}{}\vskip .1in 
 Reformats the data and sends it to another component\vskip .1in 
+\begin{figure}[!htp]
+	\centering\includegraphics[width=0.6\linewidth]{images/graphite/classes/ClassSender}
+\end{figure} 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class Sender
@@ -785,9 +818,12 @@ Sends the resulting data to the specified component
 \end{itemize}
 }
 }
-\subsection{\label{DataTransferControl.Servet}Class Servet}{
+\subsection{\label{DataTransferControl.Servet}Class Servlet}{
 \hypertarget{DataTransferControl.Servet}{}\vskip .1in 
-A Servlet, which accepts the user-requests from the webinterface and passes them on to the responsible structures\vskip .1in 
+A Servlet, which accepts the user-requests from the webinterface and passes them on to the responsible structures\vskip .1in
+\begin{figure}[!htp]
+	\centering\includegraphics[width=0.5\linewidth]{images/graphite/classes/ClassServlet}
+\end{figure} 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class Servet
@@ -862,6 +898,9 @@ Receives the information of the data, that will be send back
 \subsection{\label{DataTransferControl.SerializationDeserialization.KafkaObservationData}Class KafkaObservationData}{
 \hypertarget{DataTransferControl.SerializationDeserialization.KafkaObservationData}{}\vskip .1in 
 A serializable object that contains the observed data from kafka\vskip .1in 
+\begin{figure}[!htp]
+	\centering\includegraphics[width=0.3\linewidth]{images/graphite/classes/ClassKafkaObservationData}
+\end{figure} 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class KafkaObservationData
@@ -951,6 +990,9 @@ Default constructor
 \subsection{\label{DataTransferControl.SerializationDeserialization.ObservationDataDeserializer}Class ObservationDataDeserializer}{
 \hypertarget{DataTransferControl.SerializationDeserialization.ObservationDataDeserializer}{}\vskip .1in 
 Deserializes KafkaObservationData objects\vskip .1in 
+\begin{figure}[!htp]
+	\centering\includegraphics[width=0.65\linewidth]{images/graphite/classes/ClassObservationDataDeserializer}
+\end{figure} 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class ObservationDataDeserializer

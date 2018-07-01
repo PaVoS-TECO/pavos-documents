@@ -4699,7 +4699,7 @@
 											"top": 87,
 											"width": 352.97412109375,
 											"height": 13,
-											"text": "Servet"
+											"text": "Servlet"
 										},
 										{
 											"_type": "LabelView",
@@ -7140,7 +7140,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFkTLSD4w8axew="
 							},
-							"name": "Servet",
+							"name": "Servlet",
 							"ownedElements": [
 								{
 									"_type": "UMLAssociation",
@@ -7978,7 +7978,7 @@
 													"top": 60,
 													"width": 110.42626953125,
 													"height": 13,
-													"text": "main: Servet"
+													"text": "main: Servlet"
 												},
 												{
 													"_type": "LabelView",
