@@ -191,7 +191,7 @@
 											"top": 1118,
 											"width": 1143,
 											"height": 13,
-											"text": "Serialization & Deserialization"
+											"text": "SerializationDeserialization"
 										},
 										{
 											"_type": "LabelView",
@@ -2601,7 +2601,7 @@
 											"top": 384,
 											"width": 210.24072265625,
 											"height": 13,
-											"text": "(from Serialization & Deserialization)"
+											"text": "(from SerializationDeserialization)"
 										},
 										{
 											"_type": "LabelView",
@@ -5129,7 +5129,7 @@
 											"top": 926,
 											"width": 184.9453125,
 											"height": 13,
-											"text": "Serialization & Deserialization"
+											"text": "SerializationDeserialization"
 										},
 										{
 											"_type": "LabelView",
@@ -5248,7 +5248,7 @@
 											"top": -472,
 											"width": 210.24072265625,
 											"height": 13,
-											"text": "(from Serialization & Deserialization)"
+											"text": "(from SerializationDeserialization)"
 										},
 										{
 											"_type": "LabelView",
@@ -5500,7 +5500,7 @@
 											"top": -216,
 											"width": 210.24072265625,
 											"height": 13,
-											"text": "(from Serialization & Deserialization)"
+											"text": "(from SerializationDeserialization)"
 										},
 										{
 											"_type": "LabelView",
@@ -5785,7 +5785,7 @@
 											"top": 1333,
 											"width": 210.24072265625,
 											"height": 13,
-											"text": "(from Serialization & Deserialization)"
+											"text": "(from SerializationDeserialization)"
 										},
 										{
 											"_type": "LabelView",
@@ -7213,7 +7213,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFkTLSD4w8axew="
 							},
-							"name": "Serialization & Deserialization",
+							"name": "SerializationDeserialization",
 							"ownedElements": [
 								{
 									"_type": "UMLInterface",
