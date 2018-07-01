@@ -1,6 +1,7 @@
 \chapter{Core}
-\begin{figure}[!hbp]
-	\centering\includegraphics[width=0.8\linewidth]{images/core/CoreClassDiagram}
+\begin{figure}[!htp]
+	\centering\includegraphics[width=\linewidth]{images/core/CoreClassDiagram}
+	\caption{Klassendiagramm Core}
 \end{figure}
 \section{Package CommandRequestPattern}{
 \label{CommandRequestPattern}\hypertarget{CommandRequestPattern}{}
@@ -22,7 +23,7 @@
 \subsection{\label{CommandRequestPattern.RequestCommand}Interface RequestCommand}{
 \hypertarget{CommandRequestPattern.RequestCommand}{}\vskip .1in 
 All CommandsRequest implements this Interface. CommandRequest are sendet form the View to request something out of the System.\vskip .1in
-\begin{figure}[!hbp]
+\begin{figure}[!htp]
 	\centering\includegraphics[width=0.2\linewidth]{images/core/classes/RequestCommand}
 \end{figure} 
 \subsubsection{Declaration}{
@@ -72,8 +73,8 @@ This Method Return the Requested Object
 \subsection{\label{CommandRequestPattern.StreamProcessingStrategy}Interface StreamProcessingStrategy}{
 \hypertarget{CommandRequestPattern.StreamProcessingStrategy}{}\vskip .1in 
 This Class is a Interface for the Stream Builder Applications which genereates an Output topic to provides data transformations. The ProcessingApplication will use Kafka DSL API to process the data.\vskip .1in 
-\begin{figure}[!hbp]
-	\centering\includegraphics[width=0.2\linewidth]{images/core/classes/StreamProcessingStrategy}
+\begin{figure}[!htp]
+	\centering\includegraphics[width=0.3\linewidth]{images/core/classes/StreamProcessingStrategy}
 \end{figure} 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
@@ -143,7 +144,7 @@ true if the Kafka Stream Started false otherwise
 \subsection{\label{CommandRequestPattern.GetClusterCommand}Class GetClusterCommand}{
 \hypertarget{CommandRequestPattern.GetClusterCommand}{}\vskip .1in 
 This Command request a Cluster in the System.\vskip .1in 
-\begin{figure}[!hbp]
+\begin{figure}[!htp]
 	\centering\includegraphics[width=0.2\linewidth]{images/core/classes/GetClusterCommand}
 \end{figure} 
 \subsubsection{Declaration}{
@@ -214,7 +215,7 @@ This Method Return the Requested Cluster as a KStream
 \subsection{\label{CommandRequestPattern.GetSensorCommand}Class GetSensorCommand}{
 \hypertarget{CommandRequestPattern.GetSensorCommand}{}\vskip .1in 
 This Command request a Sensor in the System.\vskip .1in 
-\begin{figure}[!hbp]
+\begin{figure}[!htp]
 	\centering\includegraphics[width=0.2\linewidth]{images/core/classes/GetSensorCommand}
 \end{figure}
 \subsubsection{Declaration}{
@@ -285,9 +286,9 @@ This Method Return the Requested Sensor as a KStream
 \subsection{\label{CommandRequestPattern.GetTileCommand}Class GetTileCommand}{
 \hypertarget{CommandRequestPattern.GetTileCommand}{}\vskip .1in 
 This Command request a Tile in the System.\vskip .1in 
-\begin{figure}[!hbp]
+\begin{figure}[!htp]
 	\centering\includegraphics[width=0.2\linewidth]{images/core/classes/GetTileCommand}
-\end{figure} 
+\end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
 public class GetTileCommand
@@ -356,7 +357,7 @@ This Method Return the Requested Tile as a KStream
 \subsection{\label{CommandRequestPattern.Replier}Class Replier}{
 \hypertarget{CommandRequestPattern.Replier}{}\vskip .1in 
 This Class handels the Requests and Replies to them\vskip .1in
-\begin{figure}[!hbp]
+\begin{figure}[!htp]
 	\centering\includegraphics[width=0.8\linewidth]{images/core/classes/Replier}
 \end{figure}
 \subsubsection{Declaration}{
@@ -445,8 +446,8 @@ This Methode triggers something in the System waht has to be done
 \subsection{\label{CommandRequestPattern.Requestor}Class Requestor}{
 \hypertarget{CommandRequestPattern.Requestor}{}\vskip .1in 
 The Implemente this class and request something to the System and a Replier answer to it.\vskip .1in 
-\begin{figure}[!hbp]
-	\centering\includegraphics[width=0.8\linewidth]{images/core/classes/Requestor}
+\begin{figure}[!htp]
+	\centering\includegraphics[width=0.9\linewidth]{images/core/classes/Requestor}
 \end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
@@ -560,7 +561,7 @@ true if the RequestCommand got send and false otherwise
 \subsection{\label{ConfigGUI.DeleteFrame}Class DeleteFrame}{
 \hypertarget{ConfigGUI.DeleteFrame}{}\vskip .1in 
 This Frame is the Delete Frame, where you delete Topics out of the Programm\vskip .1in 
-\begin{figure}[!hbp]
+\begin{figure}[!htp]
 	\centering\includegraphics[width=0.2\linewidth]{images/core/classes/DeleteFrame}
 \end{figure}
 \subsubsection{Declaration}{
@@ -594,7 +595,7 @@ Default constructor
 \subsection{\label{ConfigGUI.JFrame}Class JFrame}{
 \hypertarget{ConfigGUI.JFrame}{}\vskip .1in 
 This is the Basic Interface from Java for building a Frame.\vskip .1in 
-\begin{figure}[!hbp]
+\begin{figure}[!htp]
 	\centering\includegraphics[width=0.2\linewidth]{images/core/classes/JFrame}
 \end{figure}
 \subsubsection{Declaration}{
@@ -629,8 +630,8 @@ Default constructor
 \subsection{\label{ConfigGUI.MainFrame}Class MainFrame}{
 \hypertarget{ConfigGUI.MainFrame}{}\vskip .1in 
 This Class holds the main functionality of the PaVoS program. It starts/stops the whole System and manages the export/import.\vskip .1in 
-\begin{figure}[!hbp]
-	\centering\includegraphics[width=0.4\linewidth]{images/core/classes/MainFrame}
+\begin{figure}[!htp]
+	\centering\includegraphics[width=0.35\linewidth]{images/core/classes/MainFrame}
 \end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
@@ -664,7 +665,7 @@ Default constructor
 \hypertarget{ConfigGUI.SensorFrame}{}\vskip .1in 
 This Frame hold the data of all possible Sensors in the System.\vskip .1in 
 
-\begin{figure}[!hbp]
+\begin{figure}[!htp]
 	\centering\includegraphics[width=0.2\linewidth]{images/core/classes/SensorFrame}
 \end{figure}
 
@@ -716,8 +717,8 @@ Default constructor
 \subsection{\label{Controller.ClusterProcessStrategy}Class ClusterProcessStrategy}{
 \hypertarget{Controller.ClusterProcessStrategy}{}\vskip .1in 
 This Class is for the generation of the Clusters for the View. It Generates a Cluster Outputtopic\vskip .1in 
-\begin{figure}[!hbp]
-	\centering\includegraphics[width=0.4\linewidth]{images/core/classes/ClusterProcessStrategy}
+\begin{figure}[!htp]
+	\centering\includegraphics[width=0.3\linewidth]{images/core/classes/ClusterProcessStrategy}
 \end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
@@ -810,8 +811,8 @@ true if the Kafka Stream Started, false otherwise
 \subsection{\label{Controller.CombinerProcessStrategy}Class CombinerProcessStrategy}{
 \hypertarget{Controller.CombinerProcessStrategy}{}\vskip .1in 
 This Class does combinate the Clusters to bigger Cluster for the Different Zoom Levels\vskip .1in 
-\begin{figure}[!hbp]
-	\centering\includegraphics[width=0.2\linewidth]{images/core/classes/CombinerProcessStrategy}
+\begin{figure}[!htp]
+	\centering\includegraphics[width=0.3\linewidth]{images/core/classes/CombinerProcessStrategy}
 \end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
@@ -904,8 +905,8 @@ true if the Kafka Stream Started false otherwise
 \subsection{\label{Controller.Controller}Class Controller}{
 \hypertarget{Controller.Controller}{}\vskip .1in 
 This Class is the ControllerClass which manages the Requests and start new TopologyBuilders to start new Processing Application.\vskip .1in 
-\begin{figure}[!hbp]
-	\centering\includegraphics[width=0.5\linewidth]{images/core/classes/Controller}
+\begin{figure}[!htp]
+	\centering\includegraphics[width=0.9\linewidth]{images/core/classes/Controller}
 \end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
@@ -1076,7 +1077,7 @@ This Method process the single Reuqest form the View
 \subsection{\label{Controller.ExportProcessStrategy}Class ExportProcessStrategy}{
 \hypertarget{Controller.ExportProcessStrategy}{}\vskip .1in 
 This Class is for The Processing of the Export Stream and it generates a Output Stream\vskip .1in
-\begin{figure}[!hbp]
+\begin{figure}[!htp]
 	\centering\includegraphics[width=0.4\linewidth]{images/core/classes/ExportProcessStrategy}
 \end{figure} 
 \subsubsection{Declaration}{
@@ -1191,8 +1192,8 @@ true if the Kafka Stream Started false otherwise
 \subsection{\label{Controller.GraphiteProcessStrategy}Class GraphiteProcessStrategy}{
 \hypertarget{Controller.GraphiteProcessStrategy}{}\vskip .1in 
 This Class is for The Processing of the Data for Graphite, to represente the Sensors. It Generates a Graphite Output Stream\vskip .1in 
-\begin{figure}[!hbp]
-	\centering\includegraphics[width=0.2\linewidth]{images/core/classes/GraphiteProcessStrategy}
+\begin{figure}[!htp]
+	\centering\includegraphics[width=0.3\linewidth]{images/core/classes/GraphiteProcessStrategy}
 \end{figure} 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
@@ -1285,8 +1286,8 @@ true if the Kafka Stream Started false otherwise
 \subsection{\label{Controller.TopologyBuilder}Class TopologyBuilder}{
 \hypertarget{Controller.TopologyBuilder}{}\vskip .1in 
 A component that is used to build a ProcessorTopology. A topology contains an acyclic graph of sources, processors, and sinks. A source is a node in the graph that consumes one or more Kafka topics and forwards them to its child nodes. A processor is a node in the graph that receives input records from upstream nodes, processes that records, and optionally forwarding new records to one or all of its children. Finally, a sink is a node in the graph that receives records from upstream nodes and writes them to a Kafka topic. This builder allows you to construct an acyclic graph of these nodes, and the builder is then passed into a new KafkaStreams instance that will then begin consuming, processing, and producing records\vskip .1in 
-\begin{figure}[!hbp]
-	\centering\includegraphics[width=0.4\linewidth]{images/core/classes/TopologyBuilder}
+\begin{figure}[!htp]
+	\centering\includegraphics[width=0.7\linewidth]{images/core/classes/TopologyBuilder}
 \end{figure}
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
@@ -1399,8 +1400,8 @@ Add a new source that consumes from topics matching the given pattern and forwar
 \subsection{\label{Controller.UncaughtExceptionHandler}Class UncaughtExceptionHandler}{
 \hypertarget{Controller.UncaughtExceptionHandler}{}\vskip .1in 
 To catch any unexpected exceptions, you can set before you start the application. This handler is called whenever a stream thread is terminated by an unexpected exception.\vskip .1in
-\begin{figure}[!hbp]
-	\centering\includegraphics[width=0.2\linewidth]{images/core/classes/UncaughtExceptionHandler}
+\begin{figure}[!htp]
+	\centering\includegraphics[width=0.3\linewidth]{images/core/classes/UncaughtExceptionHandler}
 \end{figure} 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
@@ -1472,8 +1473,8 @@ String with the error Message
 \subsection{\label{Properties.PropertiesFileInterface}Interface PropertiesFileInterface}{
 \hypertarget{Properties.PropertiesFileInterface}{}\vskip .1in 
 The Properties Interface is a special form of associative memory in which key-value pairs are always of type string. Since the entries can be stored in a file and read out again, hardwired character strings can be externalized from the program text so that the values ​​can be easily changed without retranslation.\vskip .1in 
-\begin{figure}[!hbp]
-	\centering\includegraphics[width=0.4\linewidth]{images/core/classes/PropertiesFileInterface}
+\begin{figure}[!htp]
+	\centering\includegraphics[width=0.6\linewidth]{images/core/classes/PropertiesFileInterface}
 \end{figure} 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
@@ -1568,8 +1569,8 @@ true when the file got saved, false otherwise
 \subsection{\label{Properties.PropertiesFile}Class PropertiesFile}{
 \hypertarget{Properties.PropertiesFile}{}\vskip .1in 
 The Properties class is a special form of associative memory in which key-value pairs are always of type string. Since the entries can be stored in a file and read out again, hardwired character strings can be externalized from the program text so that the values ​​can be easily changed without retranslation.\vskip .1in 
-\begin{figure}[!hbp]
-	\centering\includegraphics[width=0.4\linewidth]{images/core/classes/PropertiesFile}
+\begin{figure}[!htp]
+	\centering\includegraphics[width=0.6\linewidth]{images/core/classes/PropertiesFile}
 \end{figure} 
 \subsubsection{Declaration}{
 \begin{lstlisting}[frame=none]
