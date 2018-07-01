@@ -114,9 +114,6 @@
 							],
 							"containedViews": [
 								{
-									"$ref": "AAAAAAFkQ0A5Zd2UJF8="
-								},
-								{
 									"$ref": "AAAAAAFkQ0AUiNzXKzg="
 								},
 								{
@@ -374,9 +371,6 @@
 									"$ref": "AAAAAAFkQU27fhlSTLQ="
 								},
 								{
-									"$ref": "AAAAAAFkQYeyzR0ly8E="
-								},
-								{
 									"$ref": "AAAAAAFkQZLeQyBwh2Y="
 								},
 								{
@@ -506,7 +500,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 414,
+									"left": 406,
 									"top": 220,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -527,7 +521,7 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 429,
+									"left": 421,
 									"top": 220,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -548,7 +542,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 385,
+									"left": 377,
 									"top": 221,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -566,7 +560,7 @@
 							"tail": {
 								"$ref": "AAAAAAFkQYMnuByFFrQ="
 							},
-							"points": "400:150;400:304",
+							"points": "392:150;392:304",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFkQYlhhR4EEWQ="
@@ -5130,9 +5124,9 @@
 											"font": "Arial;13;0",
 											"left": 780.20361328125,
 											"top": 832,
-											"width": 144.47900390625,
+											"width": 188.56982421875,
 											"height": 13,
-											"text": "(from Controller)"
+											"text": "(from CommandRequestPattern)"
 										},
 										{
 											"_type": "LabelView",
@@ -6583,239 +6577,6 @@
 							}
 						},
 						{
-							"_type": "UMLClassView",
-							"_id": "AAAAAAFkQYeyzR0ly8E=",
-							"_parent": {
-								"$ref": "AAAAAAFF+qBtyKM79qY="
-							},
-							"model": {
-								"$ref": "AAAAAAFkQYeyzR0jevc="
-							},
-							"subViews": [
-								{
-									"_type": "UMLNameCompartmentView",
-									"_id": "AAAAAAFkQYeyzR0meY4=",
-									"_parent": {
-										"$ref": "AAAAAAFkQYeyzR0ly8E="
-									},
-									"model": {
-										"$ref": "AAAAAAFkQYeyzR0jevc="
-									},
-									"subViews": [
-										{
-											"_type": "LabelView",
-											"_id": "AAAAAAFkQYeyzR0n+XI=",
-											"_parent": {
-												"$ref": "AAAAAAFkQYeyzR0meY4="
-											},
-											"visible": false,
-											"font": "Arial;13;0",
-											"left": 1162.4775390625,
-											"top": 166,
-											"height": 13
-										},
-										{
-											"_type": "LabelView",
-											"_id": "AAAAAAFkQYeyzR0oQpE=",
-											"_parent": {
-												"$ref": "AAAAAAFkQYeyzR0meY4="
-											},
-											"font": "Arial;13;1",
-											"left": 693,
-											"top": 55,
-											"width": 175.95068359375,
-											"height": 13,
-											"text": "SomeOtherProcessStrategy"
-										},
-										{
-											"_type": "LabelView",
-											"_id": "AAAAAAFkQYeyzR0pgQM=",
-											"_parent": {
-												"$ref": "AAAAAAFkQYeyzR0meY4="
-											},
-											"visible": false,
-											"font": "Arial;13;0",
-											"left": 1162.4775390625,
-											"top": 166,
-											"width": 144.47900390625,
-											"height": 13,
-											"text": "(from Controller)"
-										},
-										{
-											"_type": "LabelView",
-											"_id": "AAAAAAFkQYeyzR0qg7s=",
-											"_parent": {
-												"$ref": "AAAAAAFkQYeyzR0meY4="
-											},
-											"visible": false,
-											"font": "Arial;13;0",
-											"left": 1162.4775390625,
-											"top": 166,
-											"height": 13,
-											"horizontalAlignment": 1
-										}
-									],
-									"font": "Arial;13;0",
-									"left": 688,
-									"top": 48,
-									"width": 185.95068359375,
-									"height": 25,
-									"stereotypeLabel": {
-										"$ref": "AAAAAAFkQYeyzR0n+XI="
-									},
-									"nameLabel": {
-										"$ref": "AAAAAAFkQYeyzR0oQpE="
-									},
-									"namespaceLabel": {
-										"$ref": "AAAAAAFkQYeyzR0pgQM="
-									},
-									"propertyLabel": {
-										"$ref": "AAAAAAFkQYeyzR0qg7s="
-									}
-								},
-								{
-									"_type": "UMLAttributeCompartmentView",
-									"_id": "AAAAAAFkQYeyzR0r8HA=",
-									"_parent": {
-										"$ref": "AAAAAAFkQYeyzR0ly8E="
-									},
-									"model": {
-										"$ref": "AAAAAAFkQYeyzR0jevc="
-									},
-									"font": "Arial;13;0",
-									"left": 688,
-									"top": 73,
-									"width": 185.95068359375,
-									"height": 10
-								},
-								{
-									"_type": "UMLOperationCompartmentView",
-									"_id": "AAAAAAFkQYeyzR0sdKg=",
-									"_parent": {
-										"$ref": "AAAAAAFkQYeyzR0ly8E="
-									},
-									"model": {
-										"$ref": "AAAAAAFkQYeyzR0jevc="
-									},
-									"subViews": [
-										{
-											"_type": "UMLOperationView",
-											"_id": "AAAAAAFkQYfpfh1QRYk=",
-											"_parent": {
-												"$ref": "AAAAAAFkQYeyzR0sdKg="
-											},
-											"model": {
-												"$ref": "AAAAAAFkQYfpZh1Nhyw="
-											},
-											"font": "Arial;13;0",
-											"left": 693,
-											"top": 88,
-											"width": 175.95068359375,
-											"height": 13,
-											"text": "+kafkaStreamStart(): boolean",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLOperationView",
-											"_id": "AAAAAAFkQYgO0x1Zsik=",
-											"_parent": {
-												"$ref": "AAAAAAFkQYeyzR0sdKg="
-											},
-											"model": {
-												"$ref": "AAAAAAFkQYgOuh1We+k="
-											},
-											"font": "Arial;13;0",
-											"left": 693,
-											"top": 103,
-											"width": 175.95068359375,
-											"height": 13,
-											"text": "+kafkaStreamClose(): boolean",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLOperationView",
-											"_id": "AAAAAAFkQYgkER1if4E=",
-											"_parent": {
-												"$ref": "AAAAAAFkQYeyzR0sdKg="
-											},
-											"model": {
-												"$ref": "AAAAAAFkQYgj+h1fqsA="
-											},
-											"font": "Arial;13;0",
-											"left": 693,
-											"top": 118,
-											"width": 175.95068359375,
-											"height": 13,
-											"text": "+apply(): boolean",
-											"horizontalAlignment": 0
-										}
-									],
-									"font": "Arial;13;0",
-									"left": 688,
-									"top": 83,
-									"width": 185.95068359375,
-									"height": 53
-								},
-								{
-									"_type": "UMLReceptionCompartmentView",
-									"_id": "AAAAAAFkQYeyzh0t2GA=",
-									"_parent": {
-										"$ref": "AAAAAAFkQYeyzR0ly8E="
-									},
-									"model": {
-										"$ref": "AAAAAAFkQYeyzR0jevc="
-									},
-									"visible": false,
-									"font": "Arial;13;0",
-									"left": 12605.23876953125,
-									"top": 9615,
-									"width": 10,
-									"height": 10
-								},
-								{
-									"_type": "UMLTemplateParameterCompartmentView",
-									"_id": "AAAAAAFkQYeyzh0ulc0=",
-									"_parent": {
-										"$ref": "AAAAAAFkQYeyzR0ly8E="
-									},
-									"model": {
-										"$ref": "AAAAAAFkQYeyzR0jevc="
-									},
-									"visible": false,
-									"font": "Arial;13;0",
-									"left": 12605.23876953125,
-									"top": 9615,
-									"width": 10,
-									"height": 10
-								}
-							],
-							"containerView": {
-								"$ref": "AAAAAAFkS5rfj3uHfPg="
-							},
-							"font": "Arial;13;0",
-							"containerChangeable": true,
-							"left": 688,
-							"top": 48,
-							"width": 185.95068359375,
-							"height": 88,
-							"autoResize": true,
-							"nameCompartment": {
-								"$ref": "AAAAAAFkQYeyzR0meY4="
-							},
-							"attributeCompartment": {
-								"$ref": "AAAAAAFkQYeyzR0r8HA="
-							},
-							"operationCompartment": {
-								"$ref": "AAAAAAFkQYeyzR0sdKg="
-							},
-							"receptionCompartment": {
-								"$ref": "AAAAAAFkQYeyzh0t2GA="
-							},
-							"templateParameterCompartment": {
-								"$ref": "AAAAAAFkQYeyzh0ulc0="
-							}
-						},
-						{
 							"_type": "UMLGeneralizationView",
 							"_id": "AAAAAAFkS61SI0UQd7g=",
 							"_parent": {
@@ -6836,7 +6597,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 486,
+									"left": 482,
 									"top": 249,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -6857,7 +6618,7 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 486,
+									"left": 482,
 									"top": 264,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -6878,7 +6639,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 487,
+									"left": 483,
 									"top": 219,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -6896,7 +6657,7 @@
 							"tail": {
 								"$ref": "AAAAAAFkR7US4A/cwfw="
 							},
-							"points": "574:148;574:240;400:240;400:304",
+							"points": "574:148;574:240;392:240;392:304",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFkS61SI0URxxE="
@@ -6929,7 +6690,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 414,
+									"left": 406,
 									"top": 233,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -6950,7 +6711,7 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 429,
+									"left": 421,
 									"top": 233,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -6971,7 +6732,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 385,
+									"left": 377,
 									"top": 234,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -6989,7 +6750,7 @@
 							"tail": {
 								"$ref": "AAAAAAFkQYT3QBzMYj4="
 							},
-							"points": "832:240;400:240;400:304",
+							"points": "832:240;392:240;392:304",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFkS64DwkwDLn4="
@@ -6999,99 +6760,6 @@
 							},
 							"propertyLabel": {
 								"$ref": "AAAAAAFkS64DwkwFMEE="
-							}
-						},
-						{
-							"_type": "UMLGeneralizationView",
-							"_id": "AAAAAAFkS66XOVJQbdM=",
-							"_parent": {
-								"$ref": "AAAAAAFF+qBtyKM79qY="
-							},
-							"model": {
-								"$ref": "AAAAAAFkS66XOVJOL94="
-							},
-							"subViews": [
-								{
-									"_type": "EdgeLabelView",
-									"_id": "AAAAAAFkS66XOVJRsFo=",
-									"_parent": {
-										"$ref": "AAAAAAFkS66XOVJQbdM="
-									},
-									"model": {
-										"$ref": "AAAAAAFkS66XOVJOL94="
-									},
-									"visible": false,
-									"font": "Arial;13;0",
-									"left": 586,
-									"top": 249,
-									"height": 13,
-									"alpha": 1.5707963267948966,
-									"distance": 15,
-									"hostEdge": {
-										"$ref": "AAAAAAFkS66XOVJQbdM="
-									},
-									"edgePosition": 1
-								},
-								{
-									"_type": "EdgeLabelView",
-									"_id": "AAAAAAFkS66XOVJShTE=",
-									"_parent": {
-										"$ref": "AAAAAAFkS66XOVJQbdM="
-									},
-									"model": {
-										"$ref": "AAAAAAFkS66XOVJOL94="
-									},
-									"visible": null,
-									"font": "Arial;13;0",
-									"left": 586,
-									"top": 264,
-									"height": 13,
-									"alpha": 1.5707963267948966,
-									"distance": 30,
-									"hostEdge": {
-										"$ref": "AAAAAAFkS66XOVJQbdM="
-									},
-									"edgePosition": 1
-								},
-								{
-									"_type": "EdgeLabelView",
-									"_id": "AAAAAAFkS66XOVJT8Ek=",
-									"_parent": {
-										"$ref": "AAAAAAFkS66XOVJQbdM="
-									},
-									"model": {
-										"$ref": "AAAAAAFkS66XOVJOL94="
-									},
-									"visible": false,
-									"font": "Arial;13;0",
-									"left": 587,
-									"top": 219,
-									"height": 13,
-									"alpha": -1.5707963267948966,
-									"distance": 15,
-									"hostEdge": {
-										"$ref": "AAAAAAFkS66XOVJQbdM="
-									},
-									"edgePosition": 1
-								}
-							],
-							"font": "Arial;13;0",
-							"head": {
-								"$ref": "AAAAAAFkQUSKnBkNzQc="
-							},
-							"tail": {
-								"$ref": "AAAAAAFkQYeyzR0ly8E="
-							},
-							"points": "774:135;774:240;400:240;400:304",
-							"showVisibility": true,
-							"nameLabel": {
-								"$ref": "AAAAAAFkS66XOVJRsFo="
-							},
-							"stereotypeLabel": {
-								"$ref": "AAAAAAFkS66XOVJShTE="
-							},
-							"propertyLabel": {
-								"$ref": "AAAAAAFkS66XOVJT8Ek="
 							}
 						},
 						{
@@ -7115,7 +6783,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 251,
+									"left": 247,
 									"top": 219,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -7136,7 +6804,7 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 251,
+									"left": 247,
 									"top": 204,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -7157,7 +6825,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 251,
+									"left": 247,
 									"top": 249,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -7175,7 +6843,7 @@
 							"tail": {
 								"$ref": "AAAAAAFkQX43yxvQ86k="
 							},
-							"points": "102:135;102:240;400:240;400:304",
+							"points": "102:135;102:240;392:240;392:304",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFkS68ba1k5Eec="
@@ -8373,222 +8041,6 @@
 						},
 						{
 							"_type": "UMLClassView",
-							"_id": "AAAAAAFkQ0A5Zd2UJF8=",
-							"_parent": {
-								"$ref": "AAAAAAFF+qBtyKM79qY="
-							},
-							"model": {
-								"$ref": "AAAAAAFkQ0A5ZN2SN7E="
-							},
-							"subViews": [
-								{
-									"_type": "UMLNameCompartmentView",
-									"_id": "AAAAAAFkQ0A5Zd2VWW8=",
-									"_parent": {
-										"$ref": "AAAAAAFkQ0A5Zd2UJF8="
-									},
-									"model": {
-										"$ref": "AAAAAAFkQ0A5ZN2SN7E="
-									},
-									"subViews": [
-										{
-											"_type": "LabelView",
-											"_id": "AAAAAAFkQ0A5Zd2WD5k=",
-											"_parent": {
-												"$ref": "AAAAAAFkQ0A5Zd2VWW8="
-											},
-											"visible": false,
-											"font": "Arial;13;0",
-											"left": 1504,
-											"top": -80,
-											"height": 13
-										},
-										{
-											"_type": "LabelView",
-											"_id": "AAAAAAFkQ0A5Zd2XD50=",
-											"_parent": {
-												"$ref": "AAAAAAFkQ0A5Zd2VWW8="
-											},
-											"font": "Arial;13;1",
-											"left": 1605,
-											"top": 63,
-											"width": 116.29541015625,
-											"height": 13,
-											"text": "OtherCommands..."
-										},
-										{
-											"_type": "LabelView",
-											"_id": "AAAAAAFkQ0A5Zd2Y2l0=",
-											"_parent": {
-												"$ref": "AAAAAAFkQ0A5Zd2VWW8="
-											},
-											"visible": false,
-											"font": "Arial;13;0",
-											"left": 1504,
-											"top": -80,
-											"width": 188.56982421875,
-											"height": 13,
-											"text": "(from CommandRequestPattern)"
-										},
-										{
-											"_type": "LabelView",
-											"_id": "AAAAAAFkQ0A5Zd2ZM6Q=",
-											"_parent": {
-												"$ref": "AAAAAAFkQ0A5Zd2VWW8="
-											},
-											"visible": false,
-											"font": "Arial;13;0",
-											"left": 1504,
-											"top": -80,
-											"height": 13,
-											"horizontalAlignment": 1
-										}
-									],
-									"font": "Arial;13;0",
-									"left": 1600,
-									"top": 56,
-									"width": 126.29541015625,
-									"height": 25,
-									"stereotypeLabel": {
-										"$ref": "AAAAAAFkQ0A5Zd2WD5k="
-									},
-									"nameLabel": {
-										"$ref": "AAAAAAFkQ0A5Zd2XD50="
-									},
-									"namespaceLabel": {
-										"$ref": "AAAAAAFkQ0A5Zd2Y2l0="
-									},
-									"propertyLabel": {
-										"$ref": "AAAAAAFkQ0A5Zd2ZM6Q="
-									}
-								},
-								{
-									"_type": "UMLAttributeCompartmentView",
-									"_id": "AAAAAAFkQ0A5Zd2a28U=",
-									"_parent": {
-										"$ref": "AAAAAAFkQ0A5Zd2UJF8="
-									},
-									"model": {
-										"$ref": "AAAAAAFkQ0A5ZN2SN7E="
-									},
-									"font": "Arial;13;0",
-									"left": 1600,
-									"top": 81,
-									"width": 126.29541015625,
-									"height": 10
-								},
-								{
-									"_type": "UMLOperationCompartmentView",
-									"_id": "AAAAAAFkQ0A5Zd2bvcc=",
-									"_parent": {
-										"$ref": "AAAAAAFkQ0A5Zd2UJF8="
-									},
-									"model": {
-										"$ref": "AAAAAAFkQ0A5ZN2SN7E="
-									},
-									"subViews": [
-										{
-											"_type": "UMLOperationView",
-											"_id": "AAAAAAFkQ0GD0Ogd9xg=",
-											"_parent": {
-												"$ref": "AAAAAAFkQ0A5Zd2bvcc="
-											},
-											"model": {
-												"$ref": "AAAAAAFkQ0GDnugFMgc="
-											},
-											"font": "Arial;13;0",
-											"left": 1605,
-											"top": 96,
-											"width": 116.29541015625,
-											"height": 13,
-											"text": "+execute()",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLOperationView",
-											"_id": "AAAAAAFkQ0IYDu09hcc=",
-											"_parent": {
-												"$ref": "AAAAAAFkQ0A5Zd2bvcc="
-											},
-											"model": {
-												"$ref": "AAAAAAFkQ0IX2u0lO8g="
-											},
-											"font": "Arial;13;0",
-											"left": 1605,
-											"top": 111,
-											"width": 116.29541015625,
-											"height": 13,
-											"text": "+getObject()",
-											"horizontalAlignment": 0
-										}
-									],
-									"font": "Arial;13;0",
-									"left": 1600,
-									"top": 91,
-									"width": 126.29541015625,
-									"height": 38
-								},
-								{
-									"_type": "UMLReceptionCompartmentView",
-									"_id": "AAAAAAFkQ0A5Zd2cyf4=",
-									"_parent": {
-										"$ref": "AAAAAAFkQ0A5Zd2UJF8="
-									},
-									"model": {
-										"$ref": "AAAAAAFkQ0A5ZN2SN7E="
-									},
-									"visible": false,
-									"font": "Arial;13;0",
-									"left": 1104,
-									"top": 8,
-									"width": 10,
-									"height": 10
-								},
-								{
-									"_type": "UMLTemplateParameterCompartmentView",
-									"_id": "AAAAAAFkQ0A5Zd2dJrk=",
-									"_parent": {
-										"$ref": "AAAAAAFkQ0A5Zd2UJF8="
-									},
-									"model": {
-										"$ref": "AAAAAAFkQ0A5ZN2SN7E="
-									},
-									"visible": false,
-									"font": "Arial;13;0",
-									"left": 1104,
-									"top": 8,
-									"width": 10,
-									"height": 10
-								}
-							],
-							"containerView": {
-								"$ref": "AAAAAAFkS9Pa/Lbgblg="
-							},
-							"font": "Arial;13;0",
-							"containerChangeable": true,
-							"left": 1600,
-							"top": 56,
-							"width": 126.29541015625,
-							"height": 73,
-							"autoResize": true,
-							"nameCompartment": {
-								"$ref": "AAAAAAFkQ0A5Zd2VWW8="
-							},
-							"attributeCompartment": {
-								"$ref": "AAAAAAFkQ0A5Zd2a28U="
-							},
-							"operationCompartment": {
-								"$ref": "AAAAAAFkQ0A5Zd2bvcc="
-							},
-							"receptionCompartment": {
-								"$ref": "AAAAAAFkQ0A5Zd2cyf4="
-							},
-							"templateParameterCompartment": {
-								"$ref": "AAAAAAFkQ0A5Zd2dJrk="
-							}
-						},
-						{
-							"_type": "UMLClassView",
 							"_id": "AAAAAAFkQ0AUiNzXKzg=",
 							"_parent": {
 								"$ref": "AAAAAAFF+qBtyKM79qY="
@@ -9730,99 +9182,6 @@
 							},
 							"propertyLabel": {
 								"$ref": "AAAAAAFkS+GwYu7NzEA="
-							}
-						},
-						{
-							"_type": "UMLGeneralizationView",
-							"_id": "AAAAAAFkS+H/NPIKPCI=",
-							"_parent": {
-								"$ref": "AAAAAAFF+qBtyKM79qY="
-							},
-							"model": {
-								"$ref": "AAAAAAFkS+H/NPIIs3A="
-							},
-							"subViews": [
-								{
-									"_type": "EdgeLabelView",
-									"_id": "AAAAAAFkS+H/NfIL/mY=",
-									"_parent": {
-										"$ref": "AAAAAAFkS+H/NPIKPCI="
-									},
-									"model": {
-										"$ref": "AAAAAAFkS+H/NPIIs3A="
-									},
-									"visible": false,
-									"font": "Arial;13;0",
-									"left": 1495,
-									"top": 185,
-									"height": 13,
-									"alpha": 1.5707963267948966,
-									"distance": 15,
-									"hostEdge": {
-										"$ref": "AAAAAAFkS+H/NPIKPCI="
-									},
-									"edgePosition": 1
-								},
-								{
-									"_type": "EdgeLabelView",
-									"_id": "AAAAAAFkS+H/NfIMCTA=",
-									"_parent": {
-										"$ref": "AAAAAAFkS+H/NPIKPCI="
-									},
-									"model": {
-										"$ref": "AAAAAAFkS+H/NPIIs3A="
-									},
-									"visible": null,
-									"font": "Arial;13;0",
-									"left": 1495,
-									"top": 200,
-									"height": 13,
-									"alpha": 1.5707963267948966,
-									"distance": 30,
-									"hostEdge": {
-										"$ref": "AAAAAAFkS+H/NPIKPCI="
-									},
-									"edgePosition": 1
-								},
-								{
-									"_type": "EdgeLabelView",
-									"_id": "AAAAAAFkS+H/NfINQpQ=",
-									"_parent": {
-										"$ref": "AAAAAAFkS+H/NPIKPCI="
-									},
-									"model": {
-										"$ref": "AAAAAAFkS+H/NPIIs3A="
-									},
-									"visible": false,
-									"font": "Arial;13;0",
-									"left": 1496,
-									"top": 155,
-									"height": 13,
-									"alpha": -1.5707963267948966,
-									"distance": 15,
-									"hostEdge": {
-										"$ref": "AAAAAAFkS+H/NPIKPCI="
-									},
-									"edgePosition": 1
-								}
-							],
-							"font": "Arial;13;0",
-							"head": {
-								"$ref": "AAAAAAFkQa+dUSEDYUo="
-							},
-							"tail": {
-								"$ref": "AAAAAAFkQ0A5Zd2UJF8="
-							},
-							"points": "1657:128;1657:176;1336:176;1336:224",
-							"showVisibility": true,
-							"nameLabel": {
-								"$ref": "AAAAAAFkS+H/NfIL/mY="
-							},
-							"stereotypeLabel": {
-								"$ref": "AAAAAAFkS+H/NfIMCTA="
-							},
-							"propertyLabel": {
-								"$ref": "AAAAAAFkS+H/NfINQpQ="
 							}
 						},
 						{
@@ -11185,127 +10544,6 @@
 					"name": "Controller",
 					"ownedElements": [
 						{
-							"_type": "UMLInterface",
-							"_id": "AAAAAAFkQUSKmRkLcAY=",
-							"_parent": {
-								"$ref": "AAAAAAFkS5rfjnuFX3I="
-							},
-							"name": "StreamProcessingStrategy",
-							"ownedElements": [
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAFkQV51lxnR0xQ=",
-									"_parent": {
-										"$ref": "AAAAAAFkQUSKmRkLcAY="
-									},
-									"name": "<<throws>>",
-									"source": {
-										"$ref": "AAAAAAFkQUSKmRkLcAY="
-									},
-									"target": {
-										"$ref": "AAAAAAFkQU27fRlQPgg="
-									},
-									"visibility": "package"
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAFkQdFxzCKvSpQ=",
-									"_parent": {
-										"$ref": "AAAAAAFkQUSKmRkLcAY="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAFkQdFxzSKwi7Q=",
-										"_parent": {
-											"$ref": "AAAAAAFkQdFxzCKvSpQ="
-										},
-										"reference": {
-											"$ref": "AAAAAAFkQUSKmRkLcAY="
-										},
-										"multiplicity": "1"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAFkQdFxzSKxgOc=",
-										"_parent": {
-											"$ref": "AAAAAAFkQdFxzCKvSpQ="
-										},
-										"reference": {
-											"$ref": "AAAAAAFkQZLeQiBuMsc="
-										},
-										"aggregation": "shared",
-										"multiplicity": "1..*"
-									}
-								}
-							],
-							"documentation": "This Class is a Interface for the Stream Builder Applications which genereates an Output topic to provides data transformations. \nThe ProcessingApplication will use Kafka DSL API to process the data.",
-							"operations": [
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAFkQUe+iRlGCOE=",
-									"_parent": {
-										"$ref": "AAAAAAFkQUSKmRkLcAY="
-									},
-									"name": "kafkaStreamStart",
-									"documentation": "This Method is used to explicitly start the Kafka Stream thread. So that theProcessing need to get started. ",
-									"parameters": [
-										{
-											"_type": "UMLParameter",
-											"_id": "AAAAAAFkQUoOGBlNB1I=",
-											"_parent": {
-												"$ref": "AAAAAAFkQUe+iRlGCOE="
-											},
-											"documentation": "true if the Kafka Stream Started  false otherwise\n",
-											"type": "boolean",
-											"direction": "return"
-										}
-									]
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAFkQWFl+ho/hI0=",
-									"_parent": {
-										"$ref": "AAAAAAFkQUSKmRkLcAY="
-									},
-									"name": "kafkaStreamClose",
-									"documentation": "This Method is used to explicitly close the Kafka Stream thread. So that the Processing stops. ",
-									"parameters": [
-										{
-											"_type": "UMLParameter",
-											"_id": "AAAAAAFkQWF/3xpGoko=",
-											"_parent": {
-												"$ref": "AAAAAAFkQWFl+ho/hI0="
-											},
-											"documentation": "true if the Kafka Stream closed, false otherwise\n",
-											"type": "boolean",
-											"direction": "return"
-										}
-									]
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAFkQWiZExpLJJA=",
-									"_parent": {
-										"$ref": "AAAAAAFkQUSKmRkLcAY="
-									},
-									"name": "apply",
-									"documentation": "This Methode definite the Process of the Application. What Application does specificly. ",
-									"parameters": [
-										{
-											"_type": "UMLParameter",
-											"_id": "AAAAAAFkQWi9KBpT8rE=",
-											"_parent": {
-												"$ref": "AAAAAAFkQWiZExpLJJA="
-											},
-											"documentation": "true if the Process got Successfully worked",
-											"type": "boolean",
-											"direction": "return"
-										}
-									]
-								}
-							]
-						},
-						{
 							"_type": "UMLClass",
 							"_id": "AAAAAAFkQX43yxvOCvk=",
 							"_parent": {
@@ -11763,95 +11001,6 @@
 											},
 											"documentation": "String with the error Message ",
 											"type": "String",
-											"direction": "return"
-										}
-									]
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAFkQYeyzR0jevc=",
-							"_parent": {
-								"$ref": "AAAAAAFkS5rfjnuFX3I="
-							},
-							"name": "SomeOtherProcessStrategy",
-							"ownedElements": [
-								{
-									"_type": "UMLGeneralization",
-									"_id": "AAAAAAFkS66XOVJOL94=",
-									"_parent": {
-										"$ref": "AAAAAAFkQYeyzR0jevc="
-									},
-									"source": {
-										"$ref": "AAAAAAFkQYeyzR0jevc="
-									},
-									"target": {
-										"$ref": "AAAAAAFkQUSKmRkLcAY="
-									}
-								}
-							],
-							"documentation": "This is a Example Class for some other Process Applications",
-							"operations": [
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAFkQYfpZh1Nhyw=",
-									"_parent": {
-										"$ref": "AAAAAAFkQYeyzR0jevc="
-									},
-									"name": "kafkaStreamStart",
-									"documentation": "This Method is used to explicitly start the Kafka Stream thread. So that theProcessing need to get started. ",
-									"parameters": [
-										{
-											"_type": "UMLParameter",
-											"_id": "AAAAAAFkQYfs9h1UCcA=",
-											"_parent": {
-												"$ref": "AAAAAAFkQYfpZh1Nhyw="
-											},
-											"documentation": "true if the Kafka Stream Started false otherwise\n",
-											"type": "boolean",
-											"direction": "return"
-										}
-									]
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAFkQYgOuh1We+k=",
-									"_parent": {
-										"$ref": "AAAAAAFkQYeyzR0jevc="
-									},
-									"name": "kafkaStreamClose",
-									"documentation": "This Method is used to explicitly close the Kafka Stream thread. So that the Processing stops. ",
-									"parameters": [
-										{
-											"_type": "UMLParameter",
-											"_id": "AAAAAAFkQYgSTh1dolg=",
-											"_parent": {
-												"$ref": "AAAAAAFkQYgOuh1We+k="
-											},
-											"documentation": "true if the Kafka Stream closed, false otherwise\n",
-											"type": "boolean",
-											"direction": "return"
-										}
-									]
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAFkQYgj+h1fqsA=",
-									"_parent": {
-										"$ref": "AAAAAAFkQYeyzR0jevc="
-									},
-									"name": "apply",
-									"documentation": "This Methode definite the Process of the Application. What Application does specificly. ",
-									"parameters": [
-										{
-											"_type": "UMLParameter",
-											"_id": "AAAAAAFkQYgoiB1mnH8=",
-											"_parent": {
-												"$ref": "AAAAAAFkQYgj+h1fqsA="
-											},
-											"documentation": "true if the Some Other Process got Successfully worked",
-											"type": "boolean",
 											"direction": "return"
 										}
 									]
@@ -12605,94 +11754,6 @@
 					"ownedElements": [
 						{
 							"_type": "UMLClass",
-							"_id": "AAAAAAFkQ0A5ZN2SN7E=",
-							"_parent": {
-								"$ref": "AAAAAAFkS9Pa+7be7v4="
-							},
-							"name": "OtherCommands...",
-							"ownedElements": [
-								{
-									"_type": "UMLGeneralization",
-									"_id": "AAAAAAFkS+H/NPIIs3A=",
-									"_parent": {
-										"$ref": "AAAAAAFkQ0A5ZN2SN7E="
-									},
-									"source": {
-										"$ref": "AAAAAAFkQ0A5ZN2SN7E="
-									},
-									"target": {
-										"$ref": "AAAAAAFkQa+dUSEBLCg="
-									}
-								}
-							],
-							"documentation": "This Command request some other Things in the System",
-							"operations": [
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAFkQ0GDnugFMgc=",
-									"_parent": {
-										"$ref": "AAAAAAFkQ0A5ZN2SN7E="
-									},
-									"name": "execute",
-									"documentation": "This is the Execution form the requested Command. "
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAFkQ0IX2u0lO8g=",
-									"_parent": {
-										"$ref": "AAAAAAFkQ0A5ZN2SN7E="
-									},
-									"name": "getObject",
-									"documentation": "This Method Return the Requested Object as a Object"
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAFkQ0AUiNzVFwo=",
-							"_parent": {
-								"$ref": "AAAAAAFkS9Pa+7be7v4="
-							},
-							"name": "GetClusterCommand",
-							"ownedElements": [
-								{
-									"_type": "UMLGeneralization",
-									"_id": "AAAAAAFkS98Cxd0+hbE=",
-									"_parent": {
-										"$ref": "AAAAAAFkQ0AUiNzVFwo="
-									},
-									"source": {
-										"$ref": "AAAAAAFkQ0AUiNzVFwo="
-									},
-									"target": {
-										"$ref": "AAAAAAFkQa+dUSEBLCg="
-									}
-								}
-							],
-							"documentation": "This Command request a Cluster in the System.\n",
-							"operations": [
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAFkQ0Fiy+auaXM=",
-									"_parent": {
-										"$ref": "AAAAAAFkQ0AUiNzVFwo="
-									},
-									"name": "execute",
-									"documentation": "This is the Execution form the requested Command. So it will search for the Cluster"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAFkQ0H7juxMKps=",
-									"_parent": {
-										"$ref": "AAAAAAFkQ0AUiNzVFwo="
-									},
-									"name": "getObject",
-									"documentation": "This Method Return the Requested Cluster as a KStream"
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
 							"_id": "AAAAAAFkQz/xjdwYik0=",
 							"_parent": {
 								"$ref": "AAAAAAFkS9Pa+7be7v4="
@@ -12805,201 +11866,6 @@
 									},
 									"name": "getObject",
 									"documentation": "This Method Return the Requested Object"
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAFkQ0LQevGCBlc=",
-							"_parent": {
-								"$ref": "AAAAAAFkS9Pa+7be7v4="
-							},
-							"name": "Replier",
-							"ownedElements": [
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAFkQ0Xvn/jfCLw=",
-									"_parent": {
-										"$ref": "AAAAAAFkQ0LQevGCBlc="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAFkQ0Xvn/jgEJk=",
-										"_parent": {
-											"$ref": "AAAAAAFkQ0Xvn/jfCLw="
-										},
-										"reference": {
-											"$ref": "AAAAAAFkQ0LQevGCBlc="
-										},
-										"multiplicity": "1"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAFkQ0Xvn/jhn0Y=",
-										"_parent": {
-											"$ref": "AAAAAAFkQ0Xvn/jfCLw="
-										},
-										"reference": {
-											"$ref": "AAAAAAFkQa+dUSEBLCg="
-										},
-										"aggregation": "composite",
-										"multiplicity": "1..*"
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAFkQ0dYOQHrIGM=",
-									"_parent": {
-										"$ref": "AAAAAAFkQ0LQevGCBlc="
-									},
-									"source": {
-										"$ref": "AAAAAAFkQ0LQevGCBlc="
-									},
-									"target": {
-										"$ref": "AAAAAAFkQcddCiITN3Q="
-									},
-									"stereotype": "import",
-									"visibility": "package"
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAFkUJnvNtDZ+iw=",
-									"_parent": {
-										"$ref": "AAAAAAFkQ0LQevGCBlc="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAFkUJnvNtDaWUw=",
-										"_parent": {
-											"$ref": "AAAAAAFkUJnvNtDZ+iw="
-										},
-										"reference": {
-											"$ref": "AAAAAAFkQ0LQevGCBlc="
-										},
-										"multiplicity": "1..*"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAFkUJnvNtDb4aQ=",
-										"_parent": {
-											"$ref": "AAAAAAFkUJnvNtDZ+iw="
-										},
-										"reference": {
-											"$ref": "AAAAAAFkQbmV+yFyMLk="
-										},
-										"aggregation": "composite",
-										"multiplicity": "1"
-									}
-								}
-							],
-							"documentation": "This Class handels the Requests and Replies to them",
-							"attributes": [
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAFkQ0M8tPMtBFU=",
-									"_parent": {
-										"$ref": "AAAAAAFkQ0LQevGCBlc="
-									},
-									"name": "session",
-									"documentation": "This is the Session Object, its used to store IP Informations\n",
-									"visibility": "private",
-									"type": "Session"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAFkQ0N4xfRsO2c=",
-									"_parent": {
-										"$ref": "AAAAAAFkQ0LQevGCBlc="
-									},
-									"name": "messageProducer",
-									"documentation": "This the message producer Object",
-									"visibility": "private",
-									"type": "MessageProducer"
-								}
-							],
-							"operations": [
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAFkQ0RTYvWrMhw=",
-									"_parent": {
-										"$ref": "AAAAAAFkQ0LQevGCBlc="
-									},
-									"name": "initialize",
-									"documentation": "This is the initialisation Method for the Replier to connect to different Requestors\n ",
-									"parameters": [
-										{
-											"_type": "UMLParameter",
-											"_id": "AAAAAAFkQ0RfQvYqPR4=",
-											"_parent": {
-												"$ref": "AAAAAAFkQ0RTYvWrMhw="
-											},
-											"name": "connection",
-											"documentation": "This is the Connection parameter, so taht the replier knows where he answers",
-											"type": "Connection "
-										},
-										{
-											"_type": "UMLParameter",
-											"_id": "AAAAAAFkQ0RfQvYrSv0=",
-											"_parent": {
-												"$ref": "AAAAAAFkQ0RTYvWrMhw="
-											},
-											"name": "requestQueueName",
-											"documentation": "This a Simple name for the request Queue",
-											"type": "String "
-										},
-										{
-											"_type": "UMLParameter",
-											"_id": "AAAAAAFkQ0RfQvYtIXU=",
-											"_parent": {
-												"$ref": "AAAAAAFkQ0RTYvWrMhw="
-											},
-											"type": "void",
-											"direction": "return"
-										}
-									]
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAFkQ0U2Bfeaw1Q=",
-									"_parent": {
-										"$ref": "AAAAAAFkQ0LQevGCBlc="
-									},
-									"name": "onMessage",
-									"documentation": "This Methode triggers something in the System waht has to be done",
-									"parameters": [
-										{
-											"_type": "UMLParameter",
-											"_id": "AAAAAAFkQ0Wcffhh8dE=",
-											"_parent": {
-												"$ref": "AAAAAAFkQ0U2Bfeaw1Q="
-											},
-											"name": "message",
-											"documentation": "This is a simple Message parameter",
-											"type": "Message"
-										},
-										{
-											"_type": "UMLParameter",
-											"_id": "AAAAAAFkQ0WcfvhiC+Q=",
-											"_parent": {
-												"$ref": "AAAAAAFkQ0U2Bfeaw1Q="
-											},
-											"name": "request",
-											"documentation": "This is the RequestCommand Object wich Contains the Real request.",
-											"type": {
-												"$ref": "AAAAAAFkQa+dUSEBLCg="
-											}
-										},
-										{
-											"_type": "UMLParameter",
-											"_id": "AAAAAAFkQ0WcfvhjLBg=",
-											"_parent": {
-												"$ref": "AAAAAAFkQ0U2Bfeaw1Q="
-											},
-											"documentation": "tr",
-											"type": "void",
-											"direction": "return"
-										}
-									]
 								}
 							]
 						},
@@ -13197,6 +12063,661 @@
 								"$ref": "AAAAAAFkS9Pa+7be7v4="
 							},
 							"name": "javax.jms.*"
+						},
+						{
+							"_type": "UMLClassDiagram",
+							"_id": "AAAAAAFkUbTSnntwDkg=",
+							"_parent": {
+								"$ref": "AAAAAAFkS9Pa+7be7v4="
+							},
+							"name": "ClassDiagram1",
+							"ownedViews": [
+								{
+									"_type": "UMLClassView",
+									"_id": "AAAAAAFkUbtbdY3uNPY=",
+									"_parent": {
+										"$ref": "AAAAAAFkUbTSnntwDkg="
+									},
+									"model": {
+										"$ref": "AAAAAAFkQcTx/iG8xgo="
+									},
+									"subViews": [
+										{
+											"_type": "UMLNameCompartmentView",
+											"_id": "AAAAAAFkUbtbdY3vUMg=",
+											"_parent": {
+												"$ref": "AAAAAAFkUbtbdY3uNPY="
+											},
+											"model": {
+												"$ref": "AAAAAAFkQcTx/iG8xgo="
+											},
+											"subViews": [
+												{
+													"_type": "LabelView",
+													"_id": "AAAAAAFkUbtbdY3whKk=",
+													"_parent": {
+														"$ref": "AAAAAAFkUbtbdY3vUMg="
+													},
+													"visible": false,
+													"font": "Arial;13;0",
+													"left": 229,
+													"top": -1041,
+													"height": 13
+												},
+												{
+													"_type": "LabelView",
+													"_id": "AAAAAAFkUbtbdY3xrqg=",
+													"_parent": {
+														"$ref": "AAAAAAFkUbtbdY3vUMg="
+													},
+													"font": "Arial;13;1",
+													"left": 786,
+													"top": 446,
+													"width": 760.55712890625,
+													"height": 13,
+													"text": "Requestor"
+												},
+												{
+													"_type": "LabelView",
+													"_id": "AAAAAAFkUbtbdY3yzSs=",
+													"_parent": {
+														"$ref": "AAAAAAFkUbtbdY3vUMg="
+													},
+													"visible": false,
+													"font": "Arial;13;0",
+													"left": 229,
+													"top": -1041,
+													"width": 188.56982421875,
+													"height": 13,
+													"text": "(from CommandRequestPattern)"
+												},
+												{
+													"_type": "LabelView",
+													"_id": "AAAAAAFkUbtbdY3zAIs=",
+													"_parent": {
+														"$ref": "AAAAAAFkUbtbdY3vUMg="
+													},
+													"visible": false,
+													"font": "Arial;13;0",
+													"left": 229,
+													"top": -1041,
+													"height": 13,
+													"horizontalAlignment": 1
+												}
+											],
+											"font": "Arial;13;0",
+											"left": 781,
+											"top": 439,
+											"width": 770.55712890625,
+											"height": 25,
+											"stereotypeLabel": {
+												"$ref": "AAAAAAFkUbtbdY3whKk="
+											},
+											"nameLabel": {
+												"$ref": "AAAAAAFkUbtbdY3xrqg="
+											},
+											"namespaceLabel": {
+												"$ref": "AAAAAAFkUbtbdY3yzSs="
+											},
+											"propertyLabel": {
+												"$ref": "AAAAAAFkUbtbdY3zAIs="
+											}
+										},
+										{
+											"_type": "UMLAttributeCompartmentView",
+											"_id": "AAAAAAFkUbtbdY30Fck=",
+											"_parent": {
+												"$ref": "AAAAAAFkUbtbdY3uNPY="
+											},
+											"model": {
+												"$ref": "AAAAAAFkQcTx/iG8xgo="
+											},
+											"subViews": [
+												{
+													"_type": "UMLAttributeView",
+													"_id": "AAAAAAFkUbtbdY31Y4k=",
+													"_parent": {
+														"$ref": "AAAAAAFkUbtbdY30Fck="
+													},
+													"model": {
+														"$ref": "AAAAAAFkQcUuJiHm9Jc="
+													},
+													"font": "Arial;13;0",
+													"left": 786,
+													"top": 469,
+													"width": 760.55712890625,
+													"height": 13,
+													"text": "-session: Session",
+													"horizontalAlignment": 0
+												},
+												{
+													"_type": "UMLAttributeView",
+													"_id": "AAAAAAFkUbtbdY32YXo=",
+													"_parent": {
+														"$ref": "AAAAAAFkUbtbdY30Fck="
+													},
+													"model": {
+														"$ref": "AAAAAAFkQcWSJyH4Wx0="
+													},
+													"font": "Arial;13;0",
+													"left": 786,
+													"top": 484,
+													"width": 760.55712890625,
+													"height": 13,
+													"text": "-requestProducer: MessageProducer",
+													"horizontalAlignment": 0
+												},
+												{
+													"_type": "UMLAttributeView",
+													"_id": "AAAAAAFkUbtbdY33c+Q=",
+													"_parent": {
+														"$ref": "AAAAAAFkUbtbdY30Fck="
+													},
+													"model": {
+														"$ref": "AAAAAAFkQcajcCIDVRU="
+													},
+													"font": "Arial;13;0",
+													"left": 786,
+													"top": 499,
+													"width": 760.55712890625,
+													"height": 13,
+													"text": "-replyConsumer: MessageConsumer",
+													"horizontalAlignment": 0
+												}
+											],
+											"font": "Arial;13;0",
+											"left": 781,
+											"top": 464,
+											"width": 770.55712890625,
+											"height": 53
+										},
+										{
+											"_type": "UMLOperationCompartmentView",
+											"_id": "AAAAAAFkUbtbdY34nck=",
+											"_parent": {
+												"$ref": "AAAAAAFkUbtbdY3uNPY="
+											},
+											"model": {
+												"$ref": "AAAAAAFkQcTx/iG8xgo="
+											},
+											"subViews": [
+												{
+													"_type": "UMLOperationView",
+													"_id": "AAAAAAFkUbtbdY35MAs=",
+													"_parent": {
+														"$ref": "AAAAAAFkUbtbdY34nck="
+													},
+													"model": {
+														"$ref": "AAAAAAFkQzw7FdJzb7U="
+													},
+													"font": "Arial;13;0",
+													"left": 786,
+													"top": 522,
+													"width": 760.55712890625,
+													"height": 13,
+													"text": "+initialize(connection: Connection): void",
+													"horizontalAlignment": 0
+												},
+												{
+													"_type": "UMLOperationView",
+													"_id": "AAAAAAFkUbtbdY3637Y=",
+													"_parent": {
+														"$ref": "AAAAAAFkUbtbdY34nck="
+													},
+													"model": {
+														"$ref": "AAAAAAFkQz1GtNP8WYw="
+													},
+													"font": "Arial;13;0",
+													"left": 786,
+													"top": 537,
+													"width": 760.55712890625,
+													"height": 13,
+													"text": "+send(request: RequestCommand): boolean",
+													"horizontalAlignment": 0
+												},
+												{
+													"_type": "UMLOperationView",
+													"_id": "AAAAAAFkUbtbdY376y0=",
+													"_parent": {
+														"$ref": "AAAAAAFkUbtbdY34nck="
+													},
+													"model": {
+														"$ref": "AAAAAAFkQz207NUrxcI="
+													},
+													"font": "Arial;13;0",
+													"left": 786,
+													"top": 552,
+													"width": 760.55712890625,
+													"height": 13,
+													"text": "+receiveSync(request: RequestCommand): RequestCommand",
+													"horizontalAlignment": 0
+												}
+											],
+											"font": "Arial;13;0",
+											"left": 781,
+											"top": 517,
+											"width": 770.55712890625,
+											"height": 53
+										},
+										{
+											"_type": "UMLReceptionCompartmentView",
+											"_id": "AAAAAAFkUbtbdY38tc4=",
+											"_parent": {
+												"$ref": "AAAAAAFkUbtbdY3uNPY="
+											},
+											"model": {
+												"$ref": "AAAAAAFkQcTx/iG8xgo="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -347,
+											"top": -801,
+											"width": 10,
+											"height": 10
+										},
+										{
+											"_type": "UMLTemplateParameterCompartmentView",
+											"_id": "AAAAAAFkUbtbdY39gSA=",
+											"_parent": {
+												"$ref": "AAAAAAFkUbtbdY3uNPY="
+											},
+											"model": {
+												"$ref": "AAAAAAFkQcTx/iG8xgo="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -347,
+											"top": -801,
+											"width": 10,
+											"height": 10
+										}
+									],
+									"containerView": {
+										"$ref": "AAAAAAFkS9Pa/Lbgblg="
+									},
+									"font": "Arial;13;0",
+									"containerChangeable": true,
+									"left": 781,
+									"top": 439,
+									"width": 770.55712890625,
+									"height": 161,
+									"nameCompartment": {
+										"$ref": "AAAAAAFkUbtbdY3vUMg="
+									},
+									"attributeCompartment": {
+										"$ref": "AAAAAAFkUbtbdY30Fck="
+									},
+									"operationCompartment": {
+										"$ref": "AAAAAAFkUbtbdY34nck="
+									},
+									"receptionCompartment": {
+										"$ref": "AAAAAAFkUbtbdY38tc4="
+									},
+									"templateParameterCompartment": {
+										"$ref": "AAAAAAFkUbtbdY39gSA="
+									}
+								}
+							]
+						},
+						{
+							"_type": "UMLInterface",
+							"_id": "AAAAAAFkQUSKmRkLcAY=",
+							"_parent": {
+								"$ref": "AAAAAAFkS9Pa+7be7v4="
+							},
+							"name": "StreamProcessingStrategy",
+							"ownedElements": [
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAFkQV51lxnR0xQ=",
+									"_parent": {
+										"$ref": "AAAAAAFkQUSKmRkLcAY="
+									},
+									"name": "<<throws>>",
+									"source": {
+										"$ref": "AAAAAAFkQUSKmRkLcAY="
+									},
+									"target": {
+										"$ref": "AAAAAAFkQU27fRlQPgg="
+									},
+									"visibility": "package"
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAFkQdFxzCKvSpQ=",
+									"_parent": {
+										"$ref": "AAAAAAFkQUSKmRkLcAY="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAFkQdFxzSKwi7Q=",
+										"_parent": {
+											"$ref": "AAAAAAFkQdFxzCKvSpQ="
+										},
+										"reference": {
+											"$ref": "AAAAAAFkQUSKmRkLcAY="
+										},
+										"multiplicity": "1"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAFkQdFxzSKxgOc=",
+										"_parent": {
+											"$ref": "AAAAAAFkQdFxzCKvSpQ="
+										},
+										"reference": {
+											"$ref": "AAAAAAFkQZLeQiBuMsc="
+										},
+										"aggregation": "shared",
+										"multiplicity": "1..*"
+									}
+								}
+							],
+							"documentation": "This Class is a Interface for the Stream Builder Applications which genereates an Output topic to provides data transformations. \nThe ProcessingApplication will use Kafka DSL API to process the data.",
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAFkQUe+iRlGCOE=",
+									"_parent": {
+										"$ref": "AAAAAAFkQUSKmRkLcAY="
+									},
+									"name": "kafkaStreamStart",
+									"documentation": "This Method is used to explicitly start the Kafka Stream thread. So that theProcessing need to get started. ",
+									"parameters": [
+										{
+											"_type": "UMLParameter",
+											"_id": "AAAAAAFkQUoOGBlNB1I=",
+											"_parent": {
+												"$ref": "AAAAAAFkQUe+iRlGCOE="
+											},
+											"documentation": "true if the Kafka Stream Started  false otherwise\n",
+											"type": "boolean",
+											"direction": "return"
+										}
+									]
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAFkQWFl+ho/hI0=",
+									"_parent": {
+										"$ref": "AAAAAAFkQUSKmRkLcAY="
+									},
+									"name": "kafkaStreamClose",
+									"documentation": "This Method is used to explicitly close the Kafka Stream thread. So that the Processing stops. ",
+									"parameters": [
+										{
+											"_type": "UMLParameter",
+											"_id": "AAAAAAFkQWF/3xpGoko=",
+											"_parent": {
+												"$ref": "AAAAAAFkQWFl+ho/hI0="
+											},
+											"documentation": "true if the Kafka Stream closed, false otherwise\n",
+											"type": "boolean",
+											"direction": "return"
+										}
+									]
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAFkQWiZExpLJJA=",
+									"_parent": {
+										"$ref": "AAAAAAFkQUSKmRkLcAY="
+									},
+									"name": "apply",
+									"documentation": "This Methode definite the Process of the Application. What Application does specificly. ",
+									"parameters": [
+										{
+											"_type": "UMLParameter",
+											"_id": "AAAAAAFkQWi9KBpT8rE=",
+											"_parent": {
+												"$ref": "AAAAAAFkQWiZExpLJJA="
+											},
+											"documentation": "true if the Process got Successfully worked",
+											"type": "boolean",
+											"direction": "return"
+										}
+									]
+								}
+							]
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAFkQ0AUiNzVFwo=",
+							"_parent": {
+								"$ref": "AAAAAAFkS9Pa+7be7v4="
+							},
+							"name": "GetClusterCommand",
+							"ownedElements": [
+								{
+									"_type": "UMLGeneralization",
+									"_id": "AAAAAAFkS98Cxd0+hbE=",
+									"_parent": {
+										"$ref": "AAAAAAFkQ0AUiNzVFwo="
+									},
+									"source": {
+										"$ref": "AAAAAAFkQ0AUiNzVFwo="
+									},
+									"target": {
+										"$ref": "AAAAAAFkQa+dUSEBLCg="
+									}
+								}
+							],
+							"documentation": "This Command request a Cluster in the System.\n",
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAFkQ0Fiy+auaXM=",
+									"_parent": {
+										"$ref": "AAAAAAFkQ0AUiNzVFwo="
+									},
+									"name": "execute",
+									"documentation": "This is the Execution form the requested Command. So it will search for the Cluster"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAFkQ0H7juxMKps=",
+									"_parent": {
+										"$ref": "AAAAAAFkQ0AUiNzVFwo="
+									},
+									"name": "getObject",
+									"documentation": "This Method Return the Requested Cluster as a KStream"
+								}
+							]
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAFkQ0LQevGCBlc=",
+							"_parent": {
+								"$ref": "AAAAAAFkS9Pa+7be7v4="
+							},
+							"name": "Replier",
+							"ownedElements": [
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAFkQ0Xvn/jfCLw=",
+									"_parent": {
+										"$ref": "AAAAAAFkQ0LQevGCBlc="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAFkQ0Xvn/jgEJk=",
+										"_parent": {
+											"$ref": "AAAAAAFkQ0Xvn/jfCLw="
+										},
+										"reference": {
+											"$ref": "AAAAAAFkQ0LQevGCBlc="
+										},
+										"multiplicity": "1"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAFkQ0Xvn/jhn0Y=",
+										"_parent": {
+											"$ref": "AAAAAAFkQ0Xvn/jfCLw="
+										},
+										"reference": {
+											"$ref": "AAAAAAFkQa+dUSEBLCg="
+										},
+										"aggregation": "composite",
+										"multiplicity": "1..*"
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAFkQ0dYOQHrIGM=",
+									"_parent": {
+										"$ref": "AAAAAAFkQ0LQevGCBlc="
+									},
+									"source": {
+										"$ref": "AAAAAAFkQ0LQevGCBlc="
+									},
+									"target": {
+										"$ref": "AAAAAAFkQcddCiITN3Q="
+									},
+									"stereotype": "import",
+									"visibility": "package"
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAFkUJnvNtDZ+iw=",
+									"_parent": {
+										"$ref": "AAAAAAFkQ0LQevGCBlc="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAFkUJnvNtDaWUw=",
+										"_parent": {
+											"$ref": "AAAAAAFkUJnvNtDZ+iw="
+										},
+										"reference": {
+											"$ref": "AAAAAAFkQ0LQevGCBlc="
+										},
+										"multiplicity": "1..*"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAFkUJnvNtDb4aQ=",
+										"_parent": {
+											"$ref": "AAAAAAFkUJnvNtDZ+iw="
+										},
+										"reference": {
+											"$ref": "AAAAAAFkQbmV+yFyMLk="
+										},
+										"aggregation": "composite",
+										"multiplicity": "1"
+									}
+								}
+							],
+							"documentation": "This Class handels the Requests and Replies to them",
+							"attributes": [
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAFkQ0M8tPMtBFU=",
+									"_parent": {
+										"$ref": "AAAAAAFkQ0LQevGCBlc="
+									},
+									"name": "session",
+									"documentation": "This is the Session Object, its used to store IP Informations\n",
+									"visibility": "private",
+									"type": "Session"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAFkQ0N4xfRsO2c=",
+									"_parent": {
+										"$ref": "AAAAAAFkQ0LQevGCBlc="
+									},
+									"name": "messageProducer",
+									"documentation": "This the message producer Object",
+									"visibility": "private",
+									"type": "MessageProducer"
+								}
+							],
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAFkQ0RTYvWrMhw=",
+									"_parent": {
+										"$ref": "AAAAAAFkQ0LQevGCBlc="
+									},
+									"name": "initialize",
+									"documentation": "This is the initialisation Method for the Replier to connect to different Requestors\n ",
+									"parameters": [
+										{
+											"_type": "UMLParameter",
+											"_id": "AAAAAAFkQ0RfQvYqPR4=",
+											"_parent": {
+												"$ref": "AAAAAAFkQ0RTYvWrMhw="
+											},
+											"name": "connection",
+											"documentation": "This is the Connection parameter, so taht the replier knows where he answers",
+											"type": "Connection "
+										},
+										{
+											"_type": "UMLParameter",
+											"_id": "AAAAAAFkQ0RfQvYrSv0=",
+											"_parent": {
+												"$ref": "AAAAAAFkQ0RTYvWrMhw="
+											},
+											"name": "requestQueueName",
+											"documentation": "This a Simple name for the request Queue",
+											"type": "String "
+										},
+										{
+											"_type": "UMLParameter",
+											"_id": "AAAAAAFkQ0RfQvYtIXU=",
+											"_parent": {
+												"$ref": "AAAAAAFkQ0RTYvWrMhw="
+											},
+											"type": "void",
+											"direction": "return"
+										}
+									]
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAFkQ0U2Bfeaw1Q=",
+									"_parent": {
+										"$ref": "AAAAAAFkQ0LQevGCBlc="
+									},
+									"name": "onMessage",
+									"documentation": "This Methode triggers something in the System waht has to be done",
+									"parameters": [
+										{
+											"_type": "UMLParameter",
+											"_id": "AAAAAAFkQ0Wcffhh8dE=",
+											"_parent": {
+												"$ref": "AAAAAAFkQ0U2Bfeaw1Q="
+											},
+											"name": "message",
+											"documentation": "This is a simple Message parameter",
+											"type": "Message"
+										},
+										{
+											"_type": "UMLParameter",
+											"_id": "AAAAAAFkQ0WcfvhiC+Q=",
+											"_parent": {
+												"$ref": "AAAAAAFkQ0U2Bfeaw1Q="
+											},
+											"name": "request",
+											"documentation": "This is the RequestCommand Object wich Contains the Real request.",
+											"type": {
+												"$ref": "AAAAAAFkQa+dUSEBLCg="
+											}
+										},
+										{
+											"_type": "UMLParameter",
+											"_id": "AAAAAAFkQ0WcfvhjLBg=",
+											"_parent": {
+												"$ref": "AAAAAAFkQ0U2Bfeaw1Q="
+											},
+											"documentation": "tr",
+											"type": "void",
+											"direction": "return"
+										}
+									]
+								}
+							]
 						}
 					]
 				}
