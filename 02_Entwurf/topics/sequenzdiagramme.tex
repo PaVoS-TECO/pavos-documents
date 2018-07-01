@@ -11,7 +11,7 @@ Die Bridge kann sich in einer von drei Phasen befinden:
 \end{enumerate}
 In der Aufbauphase (in diesem Diagramm Operationen 1-5) wird zunächst ein \texttt{JmkbKafkaProducer} erstellt, der intern einen \texttt{KafkaProducer} mit bestimmten Einstellungen initialisiert und eine Verbindung zum Kafka Broker aufbaut. Danach wird ein \texttt{JmkbMqttConsumer} erstellt, der intern einen \texttt{MqttClient} mit bestimmten Einstellungen initialisiert, welcher eine Verbindung zum MQTT-Server aufbaut und die Topics abonniert, die vom FROST-Server angeboten werden.\\\\
 Nun beginnt die Bereitschaftsphase. Sobald eine Nachricht beim MqttClient ankommt, wird die Methode \texttt{messageArrived} des \texttt{JmkbMqttConsumer}s aufgerufen. In dieser Methode wird aus der erhaltenen Nachricht die IOT-ID des Sensors gefiltert und die Nachricht wird in das Avro-Format konvertiert. Diese zwei Daten sind dann key und value für das Kafka \texttt{ProducerRecord} und werden über einen Aufruf der \texttt{send}-Methode des \texttt{JmkbKafkaProducer}s in ein solches Format gewandelt. Anschließend wird das Record durch den KafkaProducer an Kafka gesendet.\\\\
-In der Abbauphase werden die \texttt{disconnect}-Methoden von \texttt{JmkbMqttConsumer} und \texttt{JmkbKafkaProducer} aufgerufen, die jeweils die Verbindungen zu MQTT und Kafka sauber trennen und die Clients schließen. Die Abbauphase beginnt nur dann, wenn der Nutzer des Programms es willkürlich schließt oder das System es beendet.
+In der Abbauphase werden die \texttt{disconnect\texttt{-Methoden von \texttt{JmkbMqttConsumer} und \texttt{JmkbKafkaProducer} aufgerufen, die jeweils die Verbindungen zu MQTT und Kafka sauber trennen und die Clients schließen. Die Abbauphase beginnt nur dann, wenn der Nutzer des Programms es willkürlich schließt oder das System es beendet.
 \begin{figure}[!hbp]
 	\centering
 	\includegraphics[width=\textheight,angle=90]{images/bridge/BridgeSequenceDiagram.png}
@@ -20,11 +20,11 @@ In der Abbauphase werden die \texttt{disconnect}-Methoden von \texttt{JmkbMqttCo
 \newpage
 
 \section{Core}
-Beim Controller werden alle Topics welche von dem MQTT Producer generierten wurden subscribed (abonniert) in einer Schleife. Dann macht der Controller mit der generateOutputtopic einen neuen Output Topic für eine StreamProcessingStrategy, weil dieser einen Output Topic benötigt um die verarbeiteten Daten abzulagern.
-Der Controller macht ein TopolgyBuilder Objekt, weil mit diesem die StreamProcessingStrategy, ausgeführt werden können. Der Controller übergibt mit addSource dem TopolgyBuilder einen Input Topic wo sich die zu verarbeiteten Daten in einem Kafka Stream enthalten sind. 
-Der Controller macht eine neues StreamProcessingStrategy, welche die Methode ist wie die Inputdaten verarbeitet werden sollen. Der Controller übergibt den TopolgyBuilder mit addProcessor diese StreamProcessingStrategy.
-Der Controller übergibt den TopolgyBuilder mit addSink den vorhin generieten Output Topic, welcher dieser als Daten Sink für von dem StreamProcessingStrategy verarbeiteten Daten nutzt. 
-Der TopolgyBuilder startet dann mit kafkaStreamStart die StreamProcessingStrategy und dieser fängt mit apply aus dem Input Topic Daten in den Output Topic zu schreiben bis der TopolgyBuilder kafkaStreamclose aufruft und dann die Verarbeitung stoppt und der TopolgyBuilder und StreamProcessingStrategy zerstört werden.
+Beim \texttt{Controller} werden alle Topics, welche von dem MQTT-Producer generierten wurden, in einer Schleife subscribed (abonniert). Dann erzeugt der \texttt{Controller} mit der \texttt{generateOutputtopic} einen neuen Output Topic für eine \texttt{StreamProcessingStrategy}, da dieser ein Output Topic benötigt, um die verarbeiteten Daten abzulagern.
+Der \texttt{Controller} konstruiert einen \texttt{TopolgyBuilder}, um über diesen die \texttt{StreamProcessingStrategy} ausführen zu können. Mit \texttt{addSource übergibt der \texttt{Controller dem \texttt{TopolgyBuilder einen Input Topic, in dem die zu verarbeitenden Daten in einem Kafka Stream enthalten sind.
+Der \texttt{Controller} erstellt eine neue \texttt{StreamProcessingStrategy}, die zur Verarbeitung der Inputdaten dienen soll. Der \texttt{Controller} übergibt den \texttt{TopolgyBuilder}n mithilfe der \texttt{addProcessor}-Methode diese \texttt{StreamProcessingStrategy}.
+Der \texttt{Controller} übergibt den \texttt{TopolgyBuilder} mit \texttt{addSink} dem zuvor generieten Output Topic, welcher diesen als Daten-Sink für Daten nutzt, die von der \texttt{StreamProcessingStrategy} verarbeitetet wurden.
+Der \texttt{TopolgyBuilder} startet nun mit der \texttt{kafkaStreamStart}-Methode die \texttt{StreamProcessingStrategy} und diese beginnt damit durch das Ausführen von \texttt{apply}, aus den Input Topic Daten in den Output Topic zu schreiben, bis der \texttt{TopolgyBuilder} \texttt{kafkaStreamclose} aufruft und damit die Verarbeitung stoppt und der \texttt{TopolgyBuilder} und die \texttt{StreamProcessingStrategy} zerstört werden.
 \begin{figure}[!hbp]
 	\centering
 	\includegraphics[width=\linewidth]{images/core/CoreSequenceDiagram.png}
@@ -52,7 +52,7 @@ If we want to end the transferring of data, we have to call the wakeup method of
 	\caption{Sequenzdiagramm Graphite}
 \end{figure}
 \newpage
-Here the data that we want to send to Graphite is given to us directly. To do the job, the GraphiteSender gathers properties from the GraphiteConfig, that are needed for transferring data to Graphite. Afterwards, we start a loop. In this loop the GraphiteSender adds every observed property to the list of data to send to Graphite. The GraphiteSender does this by converting the data to metrics and then documenting the results. After adding all observed properties, we can finally sent the data to Graphite.
+Here the data that we want to send to Graphite is given to us directly. To do the job, the GraphiteSender gathers properties from the GraphiteConfig, that are needed for transferring data to Graphite. Afterwards, we start a loop. In this loop the GraphiteSender adds every observed property to the list of data to send to Graphite. The GraphiteSender does this by converting the data to metrics and then documenting the results. After adding all observed properties, we can finally send the data to Graphite.
 \begin{figure}[!hbp]
 	\centering
 	\includegraphics[width=\linewidth]{images/graphite/GraphiteSenderSequenceDiagram.png}
