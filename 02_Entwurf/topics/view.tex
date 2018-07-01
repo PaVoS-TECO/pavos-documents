@@ -2223,7 +2223,7 @@ Default constructor
 \hbox to \hsize{\textit{ Package Contents\hfil Page}}
 \vskip .13in
 \hbox{{\bf  Interfaces}}
-\entityintro{MapObserver}{View.Map.MapObserver}{}
+\entityintro{MapObserver}{View.Map.MapObserver}{An observer that is meant to observe changes in the Map.}
 \entityintro{MapOptionPanelObserver}{View.Map.MapOptionPanelObserver}{An observer that is meant to observe changes in the MapOptionPanel.}
 \vskip .13in
 \hbox{{\bf  Classes}}
@@ -2237,6 +2237,7 @@ Default constructor
 \vskip .1in
 \subsection{\label{View.Map.MapObserver}Interface MapObserver}{
 \hypertarget{View.Map.MapObserver}{}\vskip .1in 
+An observer that is meant to observe changes in the Map.\vskip .1in 
 \begin{figure}[!hbp]
 	\centering\includegraphics[width=0.5\linewidth]{images/view/classes/MapObserver}
 \end{figure} 
@@ -2246,7 +2247,7 @@ public interface MapObserver
 \end{lstlisting}
 \subsubsection{Method summary}{
 \begin{verse}
-\hyperlink{View.Map.MapObserver.mapUpdate()}{{\bf mapUpdate()}} \\
+\hyperlink{View.Map.MapObserver.mapUpdate()}{{\bf mapUpdate()}} Update the observer with the current Map state.\\
 \end{verse}
 }
 \subsubsection{Methods}{
@@ -2257,6 +2258,12 @@ public interface MapObserver
 \hypertarget{View.Map.MapObserver.mapUpdate()}{{\bf  mapUpdate}\\}
 \begin{lstlisting}[frame=none]
 void mapUpdate()\end{lstlisting} %end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Update the observer with the current Map state.
+}
 }%end item
 \end{itemize}
 }
