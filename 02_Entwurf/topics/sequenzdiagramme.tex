@@ -15,14 +15,20 @@ In der Abbauphase werden die \texttt{disconnect}-Methoden von \texttt{JmkbMqttCo
 \begin{figure}[!hbp]
 	\centering
 	\includegraphics[width=\textheight,angle=90]{images/bridge/BridgeSequenceDiagram.png}
+	\caption{Sequenzdiagramm Bridge}
 \end{figure}
 \newpage
 
 \section{Core}
-Core
+Beim Controller werden alle Topics welche von dem MQTT Producer generierten wurden subscribed (abonniert) in einer Schleife. Dann macht der Controller mit der generateOutputtopic einen neuen Output Topic für eine StreamProcessingStrategy, weil dieser einen Output Topic benötigt um die verarbeiteten Daten abzulagern.
+Der Controller macht ein TopolgyBuilder Objekt, weil mit diesem die StreamProcessingStrategy, ausgeführt werden können. Der Controller übergibt mit addSource dem TopolgyBuilder einen Input Topic wo sich die zu verarbeiteten Daten in einem Kafka Stream enthalten sind. 
+Der Controller macht eine neues StreamProcessingStrategy, welche die Methode ist wie die Inputdaten verarbeitet werden sollen. Der Controller übergibt den TopolgyBuilder mit addProcessor diese StreamProcessingStrategy.
+Der Controller übergibt den TopolgyBuilder mit addSink den vorhin generieten Output Topic, welcher dieser als Daten Sink für von dem StreamProcessingStrategy verarbeiteten Daten nutzt. 
+Der TopolgyBuilder startet dann mit kafkaStreamStart die StreamProcessingStrategy und dieser fängt mit apply aus dem Input Topic Daten in den Output Topic zu schreiben bis der TopolgyBuilder kafkaStreamclose aufruft und dann die Verarbeitung stoppt und der TopolgyBuilder und StreamProcessingStrategy zerstört werden.
 \begin{figure}[!hbp]
 	\centering
 	\includegraphics[width=\linewidth]{images/core/CoreSequenceDiagram.png}
+	\caption{Sequenzdiagramm Core}
 \end{figure}
 \newpage
 
@@ -32,21 +38,25 @@ Für jede Datei in dem Importordner wird nun ein \texttt{FrostSender} und einen 
 In diesem Fall wurde als Beispiel eine \texttt{CSVReaderStrategy} genommen. Diese übernimmt den tatsächlichen Import der Daten aus der Datei zum FROST-Server vor. Dazu werden nach und nach einzelne Datensätze aus der Datei ausgelesen und über den \texttt{FrostSender} an den Server gesendet.
 \begin{figure}[!hbp]
 	\centering
-	\includegraphics[width=\linewidth]{images/import/ImportSequenceDiagram.png}
+	\includegraphics[width=0.9\linewidth]{images/import/ImportSequenceDiagram.png}
+	\caption{Sequenzdiagramm Import}
 \end{figure}
 \newpage
 
 \section{Graphite}
-Graphite Main
+The user selects data to be requested through the use of the webinterface. Then the Servlet receives that request and tells us, what data we have to transfer. This information is passed on to the GraphDataTransferController, which in return passes it to a newly created KafkaToGraphiteConsumer. This also creates us a GraphiteSender automatically in the constructor. This KafkaToGraphiteConsumer is then run on the information. It gathers different properties that are needed for transfering data from Kafka from the GraphiteConfig and creates a KafkaConsumer to subscribe to Kafka. We then check whether we want to seek to the beginning . After that, we enter a loop. Here we start polling data from Kafka and storing them in a ConsumerRecords object. Finally, we check if there was any new information in the polled data. If there was, we send the data by using our GraphiteSender.
+If we want to end the transferring of data, we have to call the wakeup method of our KafkaToGraphiteConsumer.
 \begin{figure}[!hbp]
 	\centering
-	\includegraphics[width=\linewidth]{images/graphite/GraphiteMainSequenceDiagram.png}
+	\includegraphics[width=\linewidth]{images/graphite/graphiteMainSequenceDiagram_small.png}
+	\caption{Sequenzdiagramm Graphite}
 \end{figure}
 \newpage
-Graphite Sender
+Here the data that we want to send to Graphite is given to us directly. To do the job, the GraphiteSender gathers properties from the GraphiteConfig, that are needed for transferring data to Graphite. Afterwards, we start a loop. In this loop the GraphiteSender adds every observed property to the list of data to send to Graphite. The GraphiteSender does this by converting the data to metrics and then documenting the results. After adding all observed properties, we can finally sent the data to Graphite.
 \begin{figure}[!hbp]
 	\centering
 	\includegraphics[width=\linewidth]{images/graphite/GraphiteSenderSequenceDiagram.png}
+	\caption{Sequenzdiagramm GraphiteSender}
 \end{figure}
 \newpage
 
@@ -58,7 +68,8 @@ Im zweiten Teil findet dann der tatsächliche Export der Daten in eine Datei sta
 Nun wird ein passender neuer Pfad als \texttt{FilePath} erzeugt, um die Datei zu erzeugen. Dazu wird die Methode \texttt{saveToFile} eines \texttt{FileWriterStrategy} genutzt. In diesem Fall einer \texttt{CSVWriterStrategy}. Diese Methode benötigt den ZielPfad und den Stream der Daten und erzeugt daraus eine Datei. Ist dies beendet, wird der \texttt{AlterableDownloadState} dazu genutzt die nötigen Informationen abzuspeichern. Zuerst wird der Pfad der Datei eingegeben und anschließend, dass die Datei bereit für den Download ist. Zum Schluß wird noch mit \texttt{savePersistent} sichergestellt, dass andere Instanzen eines \texttt{DownloadState} diese Information abrufen können.
 \begin{figure}[!hbp]
 	\centering
-	\includegraphics[width=\linewidth]{images/export/ExportSequenceDiagram.png}
+	\includegraphics[width=1.25\linewidth,angle=90]{images/export/ExportSequenceDiagram.png}
+	\caption{Sequenzdiagramm Export}
 \end{figure}
 \newpage
 Ein Download wird grundsätzlich von einem Nutzer aus einem Browserfenster angefragt. Dazu wird das \texttt{DownloadServlet} benutzt. Diese wird vom Server erstellt sobald eine Anfrage des Nutzer einkommt. Dann wird \texttt{doGet} aufgerufen und das Servlet beginnt mit seiner Aufgabe, die in diesem Sequenzdiagram dargestellt wird.\\\\
@@ -67,4 +78,5 @@ Der Vorgang bei dem \texttt{StatusServlet} ist sehr Ähnlich. Dort geht es darum
 \begin{figure}[!hbp]
 	\centering
 	\includegraphics[width=\linewidth]{images/export/DownloadSequenceDiagram.png}
+	\caption{Sequenzdiagramm Download}
 \end{figure}
