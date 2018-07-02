@@ -24,7 +24,7 @@
 \usepackage{listings} % used for texdoclet
 \usepackage{shorttoc}
 \usepackage{geometry} % for page margins
-\usepackage{pdflscape}
+\usepackage{pdfpages} % for big diagram
 
 \geometry{left=2.2cm,right=2.2cm}
 
@@ -125,6 +125,7 @@ section]      %im Inhaltsverzeichnis auf section-Ebene erscheinen
 	\include{./topics/graphite}
 	\include{./topics/view}
 	\include{./topics/export}
-	\include{./topics/bigdiagram}
+	\addcontentsline{toc}{chapter}{Gesamtdiagramm}
+	\includepdf[landscape,fitpaper,addtotoc={224,chapter,0,Gesamtdiagramm,gesamtdiagramm}]{./topics/bigdiagram.pdf}
 
 \end{document}
