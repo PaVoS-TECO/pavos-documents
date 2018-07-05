@@ -1,22 +1,20 @@
 package DataTransferControl.SerializationDeserialization;
 
-import java.util.*;
-
 /**
  * A serializable object that contains the observed data from kafka
  */
 public class KafkaObservationData implements java.io.Serializable {
 
     /**
+	 * The unique identifier of this object
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
      * Default constructor
      */
     public KafkaObservationData() {
     }
-
-    /**
-     * The unique identifier of this object
-     */
-    private static long serialVersionUID;
 
     /**
      * The date of the observation
@@ -38,9 +36,11 @@ public class KafkaObservationData implements java.io.Serializable {
      */
     public String locationID;
 
+    // Attributes listed below here are observed properties //
+    
     /**
-     * The observed property
+     * The particulate matter (PM) value that was registered by the sensor.
      */
-    public String observedProperty;
+    public String particulateMatter;
 
 }
