@@ -1,5 +1,6 @@
 # PaVoS
 **PaVoS** (**P**rocessing **a**nd **V**isualization **o**f **S**ensordata Streams) is a program for processing sensordata supplied by an Apache Kafka Stream and simultaneous visualization of said data as a web service.
+Visit [PaVoS-Source](https://github.com/olivermliu/pavos-source) for our source code.
 
 The program and surrounding elements are written for the [TECO Research Group](teco.edu) as part of the SS2018 PSE project *"Visualizing & Mining of Geospatial Sensorstreams with Apache Kafka"*.
 
