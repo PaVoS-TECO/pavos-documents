@@ -1,1 +1,108 @@
 \chapter{Wöchentliche Arbeitsverteilung}
+Ursprünglich geplante Arbeitsaufteilung (alphabetisch nach Nachnamen sortiert):\\
+\newline
+\begin{tabular}{r|l}
+	\textbf{Name} & \textbf{Aufgabe}\\
+	\hline & \\[-1.0em]
+	Jean & Import und Export\\[0.25em]
+	Thomas & Webinterface\\[0.25em]
+	Oliver & Bridge und Datenbank\\[0.25em]
+	Patrick & Core\\[0.25em]
+	Erik & Transfer (Graphite und Grafana)
+\end{tabular}
+\newline\\\\
+\begin{tabular}{r|l}
+	\textbf{Woche} & \textbf{entsprechender Zeitraum}\\
+	\hline & \\[-1.0em]
+	1 & 02. Juli - 08. Juli\\[0.25em]
+	2 & 09. Juli - 15. Juli\\[0.25em]
+	3 & 16. Juli - 22. Juli\\[0.25em]
+	4 & 23. Juli - 29. Juli\\[0.25em]
+	5 & 30. Juli - 05. August\\[0.25em]
+	6 & 06. August - 12. August\\[0.25em]
+	7 & 13. August - 19. August\\[0.25em]
+	8 & 20. August - 26. August
+\end{tabular}
+\newpage
+\section{Jean}
+\paragraph{Woche 1}
+Einarbeitung ins Thema.
+\paragraph{Woche 2}
+Testdaten erzeugen durch DummyReaderStrategy.
+\paragraph{Woche 3}
+Implementierung der restliche Import-Klassen, ausgenommen anderer FileReaderStrategy.
+\paragraph{Woche 4}
+Download Implementierung und Teile des Exportes.
+\paragraph{Woche 5}
+Umbau der Exportservlets zu einem einzelnen Servlet.
+\paragraph{Woche 6}
+FrostStealer und CSVReaderStrategy.
+\paragraph{Woche 7}
+Abwesenheit durch Urlaub ohne Arbeitsgerät.
+\paragraph{Woche 8}
+Der Rest ohne NetCDF Implementierung.
+
+\section{Thomas}
+\paragraph{Woche 1}
+Einarbeitung ins Thema.
+\paragraph{Woche 2}
+Testdaten erzeugen durch DummyReaderStrategy.
+\paragraph{Woche 3}
+
+\paragraph{Woche 4}
+
+\paragraph{Woche 5}
+
+\paragraph{Woche 6}
+
+\paragraph{Woche 7}
+
+\paragraph{Woche 8}
+
+\newpage
+\section{Oliver}
+\paragraph{Woche 1}
+Einarbeitung ins Thema.
+\paragraph{Woche 2}
+Testdaten erzeugen durch DummyReaderStrategy.
+\paragraph{Woche 3}
+
+\paragraph{Woche 4}
+
+\paragraph{Woche 5}
+
+\paragraph{Woche 6}
+
+\paragraph{Woche 7}
+
+\paragraph{Woche 8}
+
+\section{Patrick}
+\paragraph{Woche 1}
+Einarbeitung ins Thema.
+\paragraph{Woche 2}
+Testdaten erzeugen durch DummyReaderStrategy.
+\paragraph{Woche 3}
+
+\paragraph{Woche 4}
+
+\paragraph{Woche 5}
+
+\paragraph{Woche 6}
+
+\paragraph{Woche 7}
+
+\paragraph{Woche 8}
+
+\newpage
+\section{Erik}
+\paragraph{Woche 1}
+Initialisierung - Code des Entwurfs wurde zu GitHub hinzugefügt und Maven wurde aufgesetzt.
+\paragraph{Wochen 2 bis 5}
+Transfer - Die Verbindung zu Graphite wurde aufgesetzt und nachträglich wurde Grafana noch ergänzt. Generell ist die Code-Struktur ähnlich zum Entwurf geblieben. Allerdings wurde die Struktur beim coden in weitere Sinnabschnitte unterteilt, sodass mehr Modularität gewährleistet ist. Nach dem ersten Erstellen wurde weiter optimiert.
+\paragraph{Woche 6}
+Transfer - Informationen wurden gesammelt \& Prüfungen geschrieben.
+\paragraph{Woche 7}
+Transfer - Performance und Stabilität verbessern.
+\paragraph{Woche 8}
+Core \& Transfer - Da bis zum jetzigen Zeitpunkt der Core nicht funktioniert hat, habe ich mich mit Hochdruck damit befasst. Ich habe selbstständig den kompletten Grid und die Cluster entwickelt, sowie die Verbindung zum Webinterface und zu Graphite \& Grafana etabliert. Da keinerlei funktionierende Strukturen für diese vorlagen, habe ich sämtliche Konstrukte neu entworfen. Vorschläge und Ideen habe ich versucht umzusetzen. Schlussendlich bietet der Grid nun eine einfache Schnittstelle, bei der man manuell im Code nur neue Einträge hinzufügen muss. Zeitliche Vorgänge und getaktete Abläufe wurden intern behandelt und vor dem Benutzer versteckt.
