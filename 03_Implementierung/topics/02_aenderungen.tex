@@ -1,0 +1,18 @@
+\chapter{Änderungen am Entwurf}
+\section{Bridge}
+\begin{itemize}
+	\item Um das Problem zu beheben, dass FROST in versendeten MQTT-Nachrichten nur \texttt{@iot.navigationLink}s für zusammenhängende Objekte angibt (statt einer Menge an \texttt{@iot.id}s), wurde eine neue Klasse \texttt{FrostIotIdConverter} erstellt, dessen Methoden genau diese Konvertierung bewerkstelligen.
+	\item Das Format, in dem konvertierte MQTT-Nachrichten zu Kafka geschickt werden, wurde geändert (von \texttt{byte[]} zu einem Avro-Objekt). Dies hat folgende Auswirkungen auf dieses Modul:
+	\begin{itemize}
+		\item Die \texttt{getSensorIdFromMessage}-Methode der Klasse \texttt{MqttMessageCon-\\verter} wurde entfernt.
+		\item Neun neue Klassen wurden hinzugefügt, die die zu versendenden Avro-Objekte repräsentieren.
+		\item Die Klasse \texttt{SchemaRegistryConnector} wurde entfernt, da die enthaltene Funktionalität nicht mehr benötigt wird.
+	\end{itemize}
+\end{itemize}
+\section{Database}
+\begin{itemize}
+	\item Im Laufe der zweiten Implementierungsphase ist klar geworden, dass die Datenbank näher an dem Core arbeiten muss. Dadurch entfallen alle von \texttt{HTTPServlet} erbenden Klassen, da Zugriffe auf die Datenbank nun direkt von dem Core aus durchgeführt werden. Dennoch bleibt die Klasse \texttt{Facade} erhalten, um eine Implementierung der Servlets, sollte dies in der Zukunft nötig sein, ohne große Umstände zu ermöglichen.
+	\item Alle Klassen, die für die Verwaltung von veralteten Daten zuständig sind, entfallen (also von \texttt{Maintainer} erbende Klassen und die Klasse \texttt{Mainte-\\nanceManager}). Memcached bietet die Möglichkeit, beim Hinzufügen eines Eintrags eine Zeit zu setzen, nach dem dieser Eintrag abläuft (d.h. gelöscht wird). Dies ist eine effizientere Lösung um alte Einträge zu entfernen als durch einen Maintainer.
+	\item Da einzelne Datenwerte nun durch ein \texttt{ObservationData}-Objekt dargestellt werden, entfallen die Klassen \texttt{ClusterID} und \texttt{ZoomLevel}.
+	\item Wegen obigem Grund wurde ebenfalls die Klasse \texttt{KafkaToStorageProcessor} in \texttt{ObservationDataToStorageProcessor} umbenannt. Diese bietet über die Fassade nun zwei Funktionen \texttt{add} und \texttt{get} für \texttt{ObservationData}-Objekte an.
+\end{itemize}
