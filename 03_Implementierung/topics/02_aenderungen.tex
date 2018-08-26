@@ -1,0 +1,85 @@
+\chapter{Änderungen am Entwurf}
+
+\section{Bridge}
+\begin{itemize}
+	\item Um das Problem zu beheben, dass FROST in versendeten MQTT-Nachrichten nur \texttt{@iot.navigationLink}s für zusammenhängende Objekte angibt (statt einer Menge an \texttt{@iot.id}s), wurde eine neue Klasse \texttt{FrostIotIdConverter} erstellt, dessen Methoden genau diese Konvertierung bewerkstelligen.
+	\item Das Format, in dem konvertierte MQTT-Nachrichten zu Kafka geschickt werden, wurde geändert (von \texttt{byte[]} zu einem Avro-Objekt). Dies hat folgende Auswirkungen auf dieses Modul:
+	\begin{itemize}
+		\item Die \texttt{getSensorIdFromMessage}-Methode der Klasse \texttt{MqttMessageCon-\\verter} wurde entfernt.
+		\item Neun neue Klassen wurden hinzugefügt, die die zu versendenden Avro-Objekte repräsentieren.
+		\item Die Klasse \texttt{SchemaRegistryConnector} wurde entfernt, da die enthaltene Funktionalität nicht mehr benötigt wird.
+	\end{itemize}
+\end{itemize}
+
+\section{Database}
+\begin{itemize}
+	\item Im Laufe der zweiten Implementierungsphase ist klar geworden, dass die Datenbank näher an dem Core arbeiten muss. Dadurch entfallen alle von \texttt{HTTPServlet} erbenden Klassen, da Zugriffe auf die Datenbank nun direkt von dem Core aus durchgeführt werden. Dennoch bleibt die Klasse \texttt{Facade} erhalten, um eine Implementierung der Servlets, sollte dies in der Zukunft nötig sein, ohne große Umstände zu ermöglichen.
+	\item Alle Klassen, die für die Verwaltung von veralteten Daten zuständig sind, entfallen (also von \texttt{Maintainer} erbende Klassen und die Klasse \texttt{Mainte-\\nanceManager}). Memcached bietet die Möglichkeit, beim Hinzufügen eines Eintrags eine Zeit zu setzen, nach dem dieser Eintrag abläuft (d.h. gelöscht wird). Dies ist eine effizientere Lösung um alte Einträge zu entfernen als durch einen Maintainer.
+	\item Da einzelne Datenwerte nun durch ein \texttt{ObservationData}-Objekt dargestellt werden, entfallen die Klassen \texttt{ClusterID} und \texttt{ZoomLevel}.
+	\item Wegen obigem Grund wurde ebenfalls die Klasse \texttt{KafkaToStorageProcessor} in \texttt{ObservationDataToStorageProcessor} umbenannt. Diese bietet über die Fassade nun zwei Funktionen \texttt{add} und \texttt{get} für \texttt{ObservationData}-Objekte an.
+\end{itemize}
+
+\section{Transfer}
+\begin{itemize}
+	\item Der Zugriff über das Servlet wurde entfernt und durch Kafka ersetzt
+	\item Da sie nicht nötig waren, wurden die UIDS aus dem TransferManager (ehemals GraphDataTransferController) entfernt
+	\item Die Arbeitsschritte der Übermittlung wurden noch stärker modular aufgebaut, sodass einzelne Komponenten bei Fehlern schnell überprüft und repariert werden können, ohne andere Teile zu beschädigen
+	\item Weiterhin wurde die Darstellung durch Verwendung von Grafana optimiert
+\end{itemize}
+
+\section{Core}
+\begin{itemize}
+	\item Die ConfigGUI wurde komplett verworfen weil unser Programm in einer Kommandozeile läuft und somit eine GUI überflüssig macht. Alle Einstellungen die man über die GUI hätte vornehmen können kann man nun über die .properties Dateien vornehmen. Zudem sollte man diese nicht während des laufenden Betriebs ändern.
+	\item Hier wurde die Idee übernommen die Properties extern zu speichern nur wurden weitere Methoden hinzugefügt um den einzelnen Kafka Consumern, Kafka Producern und Kafka Streams sofort ihre benötigten Properties bereitzustellen.
+\end{itemize}
+\subsection{Grid}
+\begin{itemize}
+	\item Aufgrund von extremen Komplikationen waren wir gezwungen diesen Teil neu zu implementieren
+	\item Es wurde bei der Verwaltung der Karte aus zeitlichen Gründen auf Objekte und Zustände gesetzt statt den Ablauf mit Kafka aufzuteilen
+	\item Die Verbindungen zu eng arbeitenden Komponenten wie der Datenbank und Grafana \& Graphite wurden direkt gekoppelt. Es wurde bei der Kooperation der Komponenten auf Modularität geachtet, sodass durch entfernen von Einträgen im Code bestimmte Funktionen gestoppt werden können
+\end{itemize}
+\subsection{Controller}
+\begin{itemize}
+	\item Im Core wurden im Grunde nur die ProcessStrategys beibehalten welche aber umbenannt wurden, weil es nicht mehr richtig dem Strategy Entwurfsmuster entspricht, weil man kann diese Prozesse als eigene Programme sehen und können auch unabhängig voneinander funktionieren. Das Interface wurde auch so implementiert wie es designt wurde. In der Nutzung stehen zurzeit 3 Prozesse:
+	\begin{itemize}
+		\item Einer welcher die Observations und FeaturesOfInterest zusammenfügt umso damit besser arbeiten können.
+		\item Ein Export Prozess welcher alle Topics zusammenfügt, so dass die Export Methodik nicht alle Daten einzelne abfragen muss, sondern nur noch eine Anfrage in Kafka machen muss.
+		\item Ein Grid Prozess welcher die Grid Methodik ausführt und sie mit Observations füttert.
+	\end{itemize}
+	Die Klasse TopologyBuilder wurde entfernt aus der Implementierung, weil diese Klasse nun ein Bestandteil vom StreamBuilder in Kafka 1.0.1 geworden und man sich darum nicht mehr selber kümmern muss.
+	Der Controller wurde auch entfernt bzw. durch eine einfache Main Klasse ersetzt, weil das Programm immer läuft, wie das auch in der Kappa Architektur vorgesehen ist.
+\end{itemize}
+
+\section{Import}
+\begin{itemize}
+	\item Durch das Wegfallen der Verwaltungs-GUI in die der Import eingebettet werden sollte, wurde eine neue Klasse mit dem Namen \texttt{ImportGUI} hinzugefügt. Diese dient dazu die GUI für den Import, welche in \texttt{DataImporter} enthalten ist, zu starten. Sie übernimmt die Aufgabe der Klasse mit der Main-Methode und kann, sollte eine Verwaltungs-GUI später noch entwickelt werden, einfach durch diese ersetzt werden.
+	\item Die \texttt{FileExtension}-Klasse ist bei der Implementierung weggefallen, da es sich hierbei nur um einen einfachen String handelt (bspw. "csv").
+	\item Erzeugen einer weiteren Implementierung der \texttt{FileReaderStrategy}: \texttt{Dummy-\\ReaderStrategy}, welche keine Daten ausliest, sondern stattdessen zufällig generierte Daten an den Server sendet. Dies dient dem Test verschiedener Komponenten.
+	\item Vorerst fällt die \texttt{NetCDFReaderStrategy} weg, da die Zeit nicht ausgereicht hat. Nach Möglichkeit soll diese während der Testphase noch nachimplementiert werden. Damit ist aber vorerst die Unterstützung für das NetCDF Format nicht gegeben.
+	\item Da er nur einen statische Klasse enthält wurde der \texttt{FrostSender} zu einer Hilfsklasse umfunktioniert, sodass dieser nicht mehr als Parameter übergeben werden muss.
+	\item Statt einem \texttt{FilePath} Objekt wird nun der \texttt{File} verwendet. Einige Parameter von Funktionen wurden verändert, entfernt oder hinzugefügt, bzw. in den Konstruktor verschoben.
+\end{itemize}
+
+\section{Export}
+\begin{itemize}
+	\item Zusammenfügen der verschiedenen Servlets zu einem einzelnen. Das \texttt{Export-\\Servlet} übernimmt alle Aufgaben, die mit dem Export zu tun haben. Daher wird ein weiterer Parameter bei der Anfrage aus dem Web nötig.
+	\item \texttt{DownloadID} wurde entfernt, da es sich hierbei nur um einen String handelt, der genutzt wird um einen Export eindeutig zu kennzeichnen. Dieser String wird nun von der Webansicht erzeugt und ist für eine spezielle Anfrage eindeutig, sodass zwei Personen mit derselben Anfrage zur selben Export-Datei geleitet werden. Soll doppelte Arbeit vermeiden.
+	\item \texttt{DownloadState} und \texttt{AlterableDownloadState} wurden angepasst, sodass nicht mehr nur die Zustände \textit{Richtig} und \textit{Falsch} für die Bereitschaft der Datei existieren, sondern ebenfalls einen Fehler angeben können, sowie die Info, dass ein derartiger Export nie angefragt wurde.
+	\item Die \texttt{ExportProperties} können nun nur noch Cluster und nicht mehr Sensorlisten enthalten. Hängt mit der Änderung der Anfrage in dem Webinterface zusammen.
+	\item \texttt{FileExtension} wurde durch einen String ersetzt, analog zum Import.
+	\item Ebenso analog zum Import ist aus denselben Gründen die \texttt{NetCDFWriter-\\Strategy} Klasse nicht dabei.
+	\item Der \texttt{ExportStreamGenerator} wurde als Klasse entfernt, aber dessen Funktionalität in die Implementierung der \texttt{FileWriterStrategy} eingebaut. Ziel ist es, diese wieder dort auszubauen, aber statt der Rückgabe eines Streams, diesen für sich zu behalten und immer nur neue Werte zu pollen, sobald alles bisherige bearbeitet wurde.
+	\item \texttt{FileExporter} verliert die Methode, die eine \texttt{DownloadID} erzeugt hätte, da diese Aufgabe nun vom Webinterface übernommen wird. Siehe Info zu \texttt{DownloadID}.
+	\item Auch hier wurden anlog zum Import an einigen Stellen veränderte Parameter und Rückgabewerte verwendet, ohne die Logik der Abläufe zu ändern.
+\end{itemize}
+\subsection{FrostStealer}
+\begin{itemize}
+	\item Sollte dazu dienen Testdaten von Sensorup zu erhalten.
+	\item Ermöglicht es von einem bestimmten Server jegliche relevante Daten in dem im Projekt genutzten CSV-Standard zu exportieren. Beispieldateien mit etwa 25000 Observations wurden erstellt.
+\end{itemize}
+
+\section{Webinterface}
+\begin{itemize}
+	\item Die Komponenten, aus denen sich das Webinterface / View zusammensetzt, wurden stark abstrahiert. Da für das Webinterface HTML, CSS und JavaScript verwendet wurden, ließ sich eine exakt gleiche und objektorientierte Klassenstruktur nicht vollständig implementieren.
+	\item Es gibt konkrete Gridtypen, die das Adressieren und Darstellen von Clustern kapseln. Der Tile-/Clustertyp ist an den Gridtyp angebunden.
+\end{itemize}
