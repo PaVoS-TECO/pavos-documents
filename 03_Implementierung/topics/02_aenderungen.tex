@@ -28,12 +28,28 @@
 \end{itemize}
 
 \section{Core}
+\begin{itemize}
+	\item Die ConfigGUI wurde komplett verworfen weil unser Programm in einer Kommandozeile läuft und somit eine GUI überflüssig macht. Alle Einstellungen die man über die GUI hätte vornehmen können kann man nun über die .properties Dateien vornehmen. Zudem sollte man diese nicht während des laufenden Betriebs ändern.
+	\item Hier wurde die Idee übernommen die Properties extern zu speichern nur wurden weitere Methoden hinzugefügt um den einzelnen Kafka Consumern, Kafka Producern und Kafka Streams sofort ihre benötigten Properties bereitzustellen.
+\end{itemize}
 \subsection{Grid}
 \begin{itemize}
 	\item Aufgrund von extremen Komplikationen waren wir gezwungen diesen Teil neu zu implementieren
 	\item Es wurde bei der Verwaltung der Karte aus zeitlichen Gründen auf Objekte und Zustände gesetzt statt den Ablauf mit Kafka aufzuteilen
 	\item Die Verbindungen zu eng arbeitenden Komponenten wie der Datenbank und Grafana \& Graphite wurden direkt gekoppelt. Es wurde bei der Kooperation der Komponenten auf Modularität geachtet, sodass durch entfernen von Einträgen im Code bestimmte Funktionen gestoppt werden können
 \end{itemize}
+\subsection{Controller}
+\begin{itemize}
+	\item Im Core wurden im Grunde nur die ProcessStrategys beibehalten welche aber umbenannt wurden, weil es nicht mehr richtig dem Strategy Entwurfsmuster entspricht, weil man kann diese Prozesse als eigene Programme sehen und können auch unabhängig voneinander funktionieren. Das Interface wurde auch so implementiert wie es designt wurde. In der Nutzung stehen zurzeit 3 Prozesse:
+	\begin{itemize}
+		\item Einer welcher die Observations und FeaturesOfInterest zusammenfügt umso damit besser arbeiten können.
+		\item Ein Export Prozess welcher alle Topics zusammenfügt, so dass die Export Methodik nicht alle Daten einzelne abfragen muss, sondern nur noch eine Anfrage in Kafka machen muss.
+		\item Ein Grid Prozess welcher die Grid Methodik ausführt und sie mit Observations füttert.
+	\end{itemize}
+	Die Klasse TopologyBuilder wurde entfernt aus der Implementierung, weil diese Klasse nun ein Bestandteil vom StreamBuilder in Kafka 1.0.1 geworden und man sich darum nicht mehr selber kümmern muss.
+	Der Controller wurde auch entfernt bzw. durch eine einfache Main Klasse ersetzt, weil das Programm immer läuft, wie das auch in der Kappa Architektur vorgesehen ist.
+\end{itemize}
+
 \section{Import}
 \begin{itemize}
 	\item Durch das Wegfallen der Verwaltungs-GUI in die der Import eingebettet werden sollte, wurde eine neue Klasse mit dem Namen \texttt{ImportGUI} hinzugefügt. Diese dient dazu die GUI für den Import, welche in \texttt{DataImporter} enthalten ist, zu starten. Sie übernimmt die Aufgabe der Klasse mit der Main-Methode und kann, sollte eine Verwaltungs-GUI später noch entwickelt werden, einfach durch diese ersetzt werden.
@@ -60,4 +76,10 @@
 \begin{itemize}
 	\item Sollte dazu dienen Testdaten von Sensorup zu erhalten.
 	\item Ermöglicht es von einem bestimmten Server jegliche relevante Daten in dem im Projekt genutzten CSV-Standard zu exportieren. Beispieldateien mit etwa 25000 Observations wurden erstellt.
+\end{itemize}
+
+\section{Webinterface}
+\begin{itemize}
+	\item Die Komponenten, aus denen sich das Webinterface / View zusammensetzt, wurden stark abstrahiert. Da für das Webinterface HTML, CSS und JavaScript verwendet wurden, ließ sich eine exakt gleiche und objektorientierte Klassenstruktur nicht vollständig implementieren.
+	\item Es gibt konkrete Gridtypen, die das Adressieren und Darstellen von Clustern kapseln. Der Tile-/Clustertyp ist an den Gridtyp angebunden.
 \end{itemize}

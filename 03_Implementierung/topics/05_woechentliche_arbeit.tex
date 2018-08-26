@@ -10,7 +10,9 @@ Ursprünglich geplante Arbeitsaufteilung (alphabetisch nach Nachnamen sortiert):
 	Patrick & Core\\[0.25em]
 	Erik & Transfer (Graphite und Grafana)
 \end{tabular}
-\newline\\\\
+\newline\\[0.5cm]
+Nachfolgend genannte Wochennummern sind folgende Zeiträume:\\
+\newline
 \begin{tabular}{r|l}
 	\textbf{Woche} & \textbf{entsprechender Zeitraum}\\
 	\hline & \\[-1.0em]
@@ -23,6 +25,23 @@ Ursprünglich geplante Arbeitsaufteilung (alphabetisch nach Nachnamen sortiert):
 	7 & 13. August - 19. August\\[0.25em]
 	8 & 20. August - 26. August
 \end{tabular}
+\newline\\[0.5cm]
+Insgesamt ergibt sich folgende Anzahl an Codezeilen (LOC):\\
+\newline
+\begin{tabular}{r|l}
+	\textbf{Name} & \textbf{LOC (Schätzung)}\\
+	\hline & \\[-1.0em]
+	Jean & 1400\\[0.25em]
+	Thomas & 3500\\[0.25em]
+	Oliver & 1000\\[0.25em]
+	Patrick & 1100\\[0.25em]
+	Erik & 5000
+\end{tabular}
+\newpage
+\begin{figure}[!htp]
+	\includegraphics[height=0.97\linewidth,angle=270]{images/loc}
+	\caption{Codezeilen pro Person pro Woche (Schätzung)}
+\end{figure}
 \newpage
 \section{Jean}
 \paragraph{Woche 1}
@@ -44,55 +63,47 @@ Der Rest ohne NetCDF Implementierung.
 
 \section{Thomas}
 \paragraph{Woche 1}
-Einarbeitung ins Thema.
-\paragraph{Woche 2}
-Testdaten erzeugen durch DummyReaderStrategy.
-\paragraph{Woche 3}
-
-\paragraph{Woche 4}
-
-\paragraph{Woche 5}
-
-\paragraph{Woche 6}
-
-\paragraph{Woche 7}
-
-\paragraph{Woche 8}
+Initialisierung des Codes.
+\paragraph{Wochen 2 bis 5}
+Implementierung der visuellen Komponenten des Webinterfaces, Struktur und Styling mit Bootstrap, Karte, Tabelle, Buttons, Modals
+\paragraph{Wochen 6 bis 8}
+Code-Umstrukturierung, vor allem Javascript Umstrukturierung,
+Implementierung von wichtigen Webinterface Funktionalitäten, Grid-Funktionalität, Listeners, Http-Requests, State für Favoritenspeicherung
 
 \newpage
 \section{Oliver}
+Ein Großteil der Arbeit zur Bridge fand bereits vor Beginn der Implementierungsphase statt, da die Funktionalität des Cores von einer funktionsfähigen Bridge abhängt. So war zu Beginn die Bridge bereits beschränkt einsatzbereit und konnte erfolgreich MQTT-Nachrichten als String an Kafka weiterleiten.
 \paragraph{Woche 1}
-Einarbeitung ins Thema.
-\paragraph{Woche 2}
-Testdaten erzeugen durch DummyReaderStrategy.
-\paragraph{Woche 3}
-
+Es wurde mit Testdaten experimentiert um die korrekte Funktionsweise der Bridge zu testen. Fehler in der Bridge wurden behoben.
+\paragraph{Wochen 2 bis 3}
+Einarbeitung in Avro-Schemas und Schema-Registries. Definieren von Avro-Schemas. Hierbei traten Schwierigkeiten wegen rekursiven Referenzen auf andere Objekte auf, die in der SensorThings API beschrieben sind. Behebung von Fehlern bzgl. der generierten Avro-Objekte. Umschreiben des KafkaProducers um Avro-Objekte an Kafka zu senden.
 \paragraph{Woche 4}
-
+Klausurvorbereitung.
 \paragraph{Woche 5}
-
+Fehlerbehebung in der Bridge, u.a. Konvertierung von iot.navigationLinks, einarbeiten in Memcached.
 \paragraph{Woche 6}
+Klausurvorbereitung.
+\paragraph{Wochen 7 bis 8}
+Implementierung der Klassen für die Datenbank, Dokumentation und Testfälle für Module Bridge und Datenbank.
 
-\paragraph{Woche 7}
-
-\paragraph{Woche 8}
-
+\newpage
 \section{Patrick}
 \paragraph{Woche 1}
-Einarbeitung ins Thema.
+Einarbeitung in Kafka und Kafka Streams.
 \paragraph{Woche 2}
-Testdaten erzeugen durch DummyReaderStrategy.
+Erste Kafka-Anwendungen für das Projekt, Daten können nun aus Kafka ausgelesen werden. Hier gab es Probleme mit dem Serializer.
 \paragraph{Woche 3}
-
+Klausurvorbereitung.
 \paragraph{Woche 4}
-
+Ich habe mein erster Prozess zu schreiben, zum Zusammenfügen von dem Topic Observation und FeatureOfInterests. Dabei ist mir aufgefallen, dass wir im Projekt mit Kafka 1.0.1 arbeiten und das wissen welches ich mir vorher angeeignet hatte auf Version 0.11 bzw 0.10 basiert war. Das hat zur Folge dass sich doch viele kleine Dinge geändert haben, wo ich anfangs den Fehler dafür nicht gefunden habe. Somit für die einfache Zusammenfüge Prozess doch recht viel Zeit in Anspruch genommen hat und viele verschiedene ansätze versuchen musste, weil ich zudem mit der Kafka Streams API noch nicht ganz klargekommen bin.
 \paragraph{Woche 5}
-
+Hier habe ich dann endlich mein zusammenfügt Prozess fertig bekommen und auch ausgiebig getestet. Es gab Schwierigkeiten mit dem Testen von Kafka Stream Applications. Zudem habe ich den PropertysManager eingebaut welcher sich um das beziehen der Properties der einzelne Kafka Stream/Consumer kümmert.
 \paragraph{Woche 6}
-
+Hier wurde neue Prozesse entwickelt welche im Weiteren Verlaufes des Projektes nicht mehr genutzt werden, weil die Probleme anders gelöst wurden und zudem war ich hier auch wieder etwas abwesend wegen einer Klausur.
 \paragraph{Woche 7}
-
+In der Zeit war ich in der Heimat und habe mich leider auch richtig erkältet wodurch ich leider nicht fähig war am Projekt weiter zu arbeiten.
 \paragraph{Woche 8}
+Jetzt habe ich meine letzten Prozesse fertig gestellt, den Export Prozess, welche alle Topic zusammenfügt und der Grid Prozess, welcher die Grid Methodik zum Laufen bringt.
 
 \newpage
 \section{Erik}

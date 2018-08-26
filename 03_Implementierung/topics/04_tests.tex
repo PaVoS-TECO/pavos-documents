@@ -1,15 +1,28 @@
 \chapter{Unit-Tests}
+
+\section{Database}
+\begin{itemize}
+	\item Die ObservationDataToStorageProcessor-Klasse ist gut getestet. Diese übernimmt im Moment alle Interaktionen mit der Datenbank.
+\end{itemize}
+
 \section{Transfer}
 \begin{itemize}
 	\item Die wichtigen Komponenten wie Konsument, Sender und Serialisierer wurden ausgiebig getestet
 	\item Alle weiteren Komponenten waren entweder in obigen Tests mit eingeschlossen, oder für Unit-Tests schlichtweg ungeeignet
 \end{itemize}
+
 \section{Core}
 \begin{itemize}
 	\item Die zentralen Komponenten wie GeoPolygon und GeoGrid wurden auf wichtige Funktionen getestet
 	\item Alle weiteren Komponenten waren entweder in obigen Tests mit eingeschlossen, für Unit-Tests schlichtweg ungeeignet, oder wurden aufgrund der geringen Relevanz zum Gesamtanteil und dem hohen Zeitdruck (vorerst) ausgelassen
 \end{itemize}
+
 \section{Import}
 \begin{itemize}
 	\item FrostSenderTest: Prüft ob das Senden an den FROST-Server erwartungsgemäß ausgeführt wird. Test an pavos-master.
+\end{itemize}
+
+\section{Webinterface}
+\begin{itemize}
+	\item Funktionen wurden getestet aber bisher ohne Unit-Tests. Javascript-Unit-Test Tool muss verwendet werden um auch Code-Überdeckung zu ermitteln.
 \end{itemize}
