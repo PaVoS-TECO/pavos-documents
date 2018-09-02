@@ -1,0 +1,253 @@
+\chapter{Bugfixes}
+
+\section{Jean}
+\paragraph{Servlet ging nicht}
+\begin{itemize}
+	\item Fehlersymptom: Servlet wird von Tomcat nicht gestartet.
+	\item Fehlerursache: Kafka und JSON dependency vertragen sich anscheinend nicht mit Tomcat.
+	\item Fehlerbehebung: Export-Funktionalität die Kafka benötigt wurde als separate jar ausgelagert.
+\end{itemize}
+
+\paragraph{usr.home Ordner}
+\begin{itemize}
+	\item Fehlersymptom: Servlet und Export jar benutzen nicht die selben Dateien zur persistenten Datenspeicherung.
+	\item Fehlerursache: User Home Ordner ist aus Sicht eines Servlets innerhalb des Tomcat Ordners, während eine jar einen anderen Ordner betrachtet.
+	\item Fehlerbehebung: Hardcoded Verzeichnisse innerhalb des Dockers.
+\end{itemize}
+
+\paragraph{Export geht nicht}
+\begin{itemize}
+	\item Fehlersymptom: Export bricht nach Start sofort ab und gibt leere Datei zurück.
+	\item Fehlerursache: Export wurde abgebrochen, wenn von Kafka angefragte Daten außerhalb des für den Export erwünschten Zeitraums liegen. Insbesondere auch wenn sie davor liegen.
+	\item Fehlerbehebung: Es wird nun nur beendet, wenn der Zeitraum der erhaltenen Daten nach den erwünschten Daten liegt.
+\end{itemize}
+
+\paragraph{Kafka Pollzeit}
+\begin{itemize}
+	\item Fehlersymptom: Es wird nur ein Bruchteil der Daten exportiert.
+	\item Fehlerursache: Poll Timeout Zeit an Kafka ist zu kurz.
+	\item Fehlerbehebung: Poll Timeout Zeit wird erhöht.
+\end{itemize}
+
+\paragraph{Millisekunden im TimeFrame}
+\begin{itemize}
+	\item Fehlersymptom: Exporter stürzt bei Ausführung mit manchen Daten ab.
+	\item Fehlerursache: Exporter kann nur Zeiten nach ISO 8601 ohne Millisekunden verarbeiten.
+	\item Fehlerbehebung: Exporter unterstützt nun auch Millisekunden.
+\end{itemize}
+
+\paragraph{@iot.id}
+\begin{itemize}
+	\item Fehlersymptom: Es sind keine \texttt{@iot.id}s für Observations im Export enthalten. Stattdessen steht überall \texttt{null}, wodurch der Import dieser Daten unmöglich ist.
+	\item Fehlerursache: Es wurde ein leeres Feld aus den Kafkadaten ausgelesen.
+	\item Fehlerbehebung: Wechsel auf das richtige Feld.
+\end{itemize}
+\newpage
+\section{Thomas}
+\paragraph{Bug 1}
+\begin{itemize}
+	\item Fehlersymptom: Blockieren von Http-Anfragen bei Webinterface-internem JavaScript Code
+	\item Fehlerursache: Cross-Origin Resource Sharing (CORS) zwischen Webinterface und Server nicht möglich
+	\item Fehlerbehebung: Konfigurieren der Server-lokalen Tomcat Konfigurationsdatei
+\end{itemize}
+
+\paragraph{Bug 2}
+\begin{itemize}
+	\item Fehlersymptom: Fehlerhafte Synchronisierung der Zustände bei Export-, Sensortyp-, Favoriten-, und Einstellungs-Modal-Fenstern
+	\item Fehlerursache: Veränderung der Auswahl/Parameter in einem Modal-Fenster werden nicht an anderes Modal-Fenster weitergegeben
+	\item Fehlerbehebung: Korrekte Beobachter Struktur zwischen den Komponenten aufbauen
+\end{itemize}
+
+\paragraph{Bug 3}
+\begin{itemize}
+	\item Fehlersymptom: Unresponsivität der Anpassung bei Veränderung der vertikalen Fenstergröße
+	\item Fehlerursache: Da der Container der Karte initial eine fest definierte Höhe braucht, kann man das nicht in CSS in Prozent, also dynamisch zur Fenstergröße festlegen
+	\item Fehlerbehebung: Dynamisches Styling der Höhe über JavaScript Beobachter
+\end{itemize}
+
+\newpage
+\section{Oliver}
+\subsection{Bridge}
+\paragraph{Main-Klasse}
+\begin{itemize}
+	\item Fehlersymptom: Main-Klasse mit main-Methode konnte nach kompilieren ins jar-Format bei der Ausführung nicht gefunden werden.
+	\item Fehlerursache: Einige Einträge in der pom.xml fehlten.
+	\item Fehlerbehebung: Hinzufügen einiger Einträge in der pom.xml.
+\end{itemize}
+
+\paragraph{Source-Ordner}
+\begin{itemize}
+	\item Fehlersymptom: src/main/java wurde anfangs nicht als Java Source-Ordner erkannt.
+	\item Fehlerursache: Eclipse wurde falsch eingestellt.
+	\item Fehlerbehebung: Eclipse wurde richtig eingestellt, Importe und Paketdefinitionen wurden entsprechend angepasst.
+\end{itemize}
+
+\paragraph{\texttt{null}-Checks}
+\begin{itemize}
+	\item Fehlersymptom: In einigen Methoden wurde nicht nach \texttt{null}-Objekten geprüft.
+	\item Fehlerursache: Fehlende Checks.
+	\item Fehlerbehebung: Checks wurden implementiert.
+\end{itemize}
+
+\paragraph{Logger}
+\begin{itemize}
+	\item Fehlersymptom: Konfigurationsprobleme beim Logger, nicht-einheitlicher Logger mit dem Rest von PaVoS.
+	\item Fehlerursache: \texttt{java.util.logging.Logger} wurde verwendet.
+	\item Fehlerbehebung: der Logger für Klassen der Bridge wurde von \texttt{java.util.logging.Logger} zu \texttt{org.slf4j.Logger} geändert.
+\end{itemize}
+
+\paragraph{\texttt{System.out} und \texttt{System.err}}
+\begin{itemize}
+	\item Fehlersymptom: Fehler- und Informationsnachrichten wurden über \texttt{System.out} oder \texttt{System.err} ausgegeben.
+	\item Fehlerursache: Fehler- und Informationsnachrichten wurden über \texttt{System.out} oder \texttt{System.err} ausgegeben.
+	\item Fehlerbehebung: Fehler- und Informationsnachrichten werden über den Logger ausgegeben.
+\end{itemize}
+
+\paragraph{MqttConsumer}
+\begin{itemize}
+	\item Fehlersymptom: Verbindung zu MQTT wird bei Verbindungsverlust nicht wiederaufgebaut.
+	\item Fehlerursache: Die \texttt{connectionLost()} Methode wurde falsch implementiert.
+	\item Fehlerbehebung: Der Verbindungsaufbau wurde nun in eine zusätzliche private Methode geschoben, die sowohl im Constructor als auch bei Verbindungsverlust ausgeführt wird.
+\end{itemize}
+
+\paragraph{Properties}
+\begin{itemize}
+	\item Fehlersymptom: Die Bridge startet auch bei fehlerhaften Properties, oder \texttt{PropertiesFileReader.init()} beendet die Bridge.
+	\item Fehlerursache: \texttt{PropertiesFileReader.init()} führt \texttt{System.exit(-1)} bei fehlerhaften Daten aus.
+	\item Fehlerbehebung: Die Main-Methode prüft ob die Initialisierung erfolgreich war und beendet dann dort die Bridge.
+\end{itemize}
+
+\paragraph{Sonarqube}
+\begin{itemize}
+	\item Nach der Analyse der Bridge mit Sonarqube wurden 35 von 54 Code Smells und 2 von 2 Vulnerabilities gefixed.
+\end{itemize}
+
+\subsection{Database}
+\begin{itemize}
+	\item Mehrere Code Smells wurden mit Sonarqube entdeckt und durch Erik gefixed.
+\end{itemize}
+\newpage
+\section{Patrick}
+\paragraph{Bug 1}
+\begin{itemize}
+	\item Fehlersymptom: Topics wurden in Kafka nicht erstellt, welches dann teilweise zu Fehlern in den einzelnen Nutzern der Kafka Stream Funktionalität führte.
+	\item Fehlerursache: Die Input Topics waren nicht in Kafka enthalten
+	\item Fehlerbehebung: Ich habe eine Klasse hinzugefügt welche alle Input Topic generiert und somit garantiert dass das Kafka System alle Topics die benötigt werden enthalten sind. 
+\end{itemize}
+
+\paragraph{Bug 2}
+\begin{itemize}
+	\item Fehlersymptom: Die Daten wurden nicht von Frost auf Kafka übertragen.
+	\item Fehlerursache: Es gab Null Values bei den Zeiten welche nicht erlaubt waren
+	\item Fehlerbehebung: Im Importer wurde einfach gefixt, dass die Zeit nicht null sein darf.
+\end{itemize}
+
+\paragraph{Bug 3}
+\begin{itemize}
+	\item Fehlersymptom: Die Kafka Topics von den Prozessen wurden nicht erstellt.
+	\item Fehlerursache: Ich ging davon aus, dass FeatureOfInterest und Observation eine bijektive Verbindung zu einander haben.
+	\item Fehlerbehebung: Ich habe das so gefixed, dass es eine surjektive Verbindung wird durch das Verwenden von einem leftJoin.
+\end{itemize}
+
+\paragraph{Bug 4}
+\begin{itemize}
+	\item Fehlersymptom: Der Export Prozess produzierte fehlerhafte Messages im Export Topic
+	\item Fehlerursache: Gleicher Fehler wie bei Bug 3.
+	\item Fehlerbehebung: Gleicher Fehler wie bei Bug 3.
+\end{itemize}
+\newpage
+\section{Erik}
+\paragraph{Bug 1}
+\begin{itemize}
+	\item Fehlersymptom: Maven auf Debian kann Pavos-Core nicht erstellen\\
+	\texttt{ClassNotFoundException: LoggerFactory.java}
+	\item Fehlerursache: Benötigte Dateien sind nicht im Classpath
+	\item Fehlerbehebung: Maven dependency plugin fügt dependencies zum Classpath hinzu
+\end{itemize}
+
+\paragraph{Bug 2}
+\begin{itemize}
+	\item Fehlersymptom: Maven auf Debian kann Pavos-Core nicht erstellen
+	Avro has no Manifest
+	\item Fehlerursache: Avro.jar enthält keine Manifest-Datei
+	\item Fehlerbehebung: Aus Maven dependency plugin ausschließen
+\end{itemize}
+
+\paragraph{Bug 3}
+\begin{itemize}
+	\item Fehlersymptom: Erstellter GeoGrid akzeptiert Sensordaten.
+	\item Fehlerursache: \texttt{PointNotOnMapException}
+	\item Fehlerbehebung: In der Erstellung wurde x und y als Breite und Höhe interpretiert, weshalb die Kartengröße nur 25\% der gewollten Größe betrug
+\end{itemize}
+
+\paragraph{Bug 4}
+\begin{itemize}
+	\item Fehlersymptom: MultiGradient toString() wirft eine \texttt{NullPointerException}
+	\item Fehlerursache: Farbwerte hatten einen Index-Shift um 1, weshalb der erste Farbwert übersprungen wurde und der letzte null war
+	\item Fehlerbehebung: Index-Shift korrigiert und Absicherung gegen NullPointerException in ColorUtil erstellt
+\end{itemize}
+
+\paragraph{Bug 5}
+\begin{itemize}
+	\item Fehlersymptom: Kafka-Tests schlagen bei mvn clean install fehl
+	\item Fehlerursache: JUnit tests reichen nicht aus, da Kafka zur Kommunikation benötigt wird.
+	\item Fehlerbehebung: Dependency für Kafka-Streams-Test-Util für Version 1.1.0 hinzugefügt, da 1.0.1 nicht existiert
+\end{itemize}
+
+\paragraph{Bug 6}
+\begin{itemize}
+	\item Fehlersymptom: WebServer soll immer nach den KafkaProzessen gestartet werden und trotzdem soll Webserver auch selbstständig gestartet werden können.
+	Beide haben main(String[] args)
+	\item Fehlerursache: Zwei main Methoden können nicht ausgeführt werden, da keine zwei Main klassen existieren können.
+	\item Fehlerbehebung: WebServer implementiert Runnable und ruft run() in seiner main Methode auf.
+	KafkaProzesse, die Main Klasse startet WebServer auf einem Thread.
+\end{itemize}
+
+\paragraph{Bug 7}
+\begin{itemize}
+	\item Fehlersymptom: WebServer wirft Fehlermeldungen und lässt die Verbindung abstürzen.
+	\item Fehlerursache: http-Anfrage ist falsch formuliert oder angefragte Komponenten existieren nicht.
+	\item Fehlerbehebung: Der http-Status des WebServer wird entsprechend geändert. Meistens auf Bad-Request und wird gesendet.
+\end{itemize}
+
+\paragraph{Bug 8}
+\begin{itemize}
+	\item Fehlersymptom: Die Datenbank kann bei der Übertragung nicht erreicht werden.
+	\item Fehlerursache: Die Verbindung zur VM wurde nicht eingestellt.
+	\item Fehlerbehebung: Host wurde von localhost zur VM-Host-Adresse geändert.
+\end{itemize}
+
+\paragraph{Bug 9}
+\begin{itemize}
+	\item Fehlersymptom: Daten zur Überprüfung konnten im Test nicht überprüft werden oder wurden falsch ausgewertet.
+	\item Fehlerursache: Die Überprüfung verwendete einen Regex-Ausdruck, der Zeichen enthielt, die falsch interpretiert wurden.
+	\item Fehlerbehebung: Zeichen wie \{ und [ wurden mit einem doppelten $\backslash$ versehen um sie erkenntlich zu machen.
+\end{itemize}
+
+\paragraph{Bug 10}
+\begin{itemize}
+	\item Fehlersymptom: Neuere Java Funktionalitäten können nicht verwendet werden
+	\item Fehlerursache: Es wurde die falsche Java-Version im Classpath verwendet
+	\item Fehlerbehebung: Update auf JavaSE-1.8 mit JDK
+\end{itemize}
+
+\paragraph{Bug 11}
+\begin{itemize}
+	\item Fehlersymptom: Verbindung des Graphite-Sender wird zu häufig geschlossen
+	\item Fehlerursache: Bei jeder Nachricht wird das Socket überschrieben
+	\item Fehlerbehebung: SocketManager Klasse wurde erstellt
+\end{itemize}
+
+\paragraph{Bug 12}
+\begin{itemize}
+	\item Fehlersymptom: Mehrere Einheiten einer Klasse werden erstellt obwohl sie die gleichen Daten beinhalten müssen
+	\item Fehlerursache: Offener Konstruktor und eigene Daten pro Instanz
+	\item Fehlerbehebung: Singleton
+\end{itemize}
+
+\paragraph{Bug 13}
+\begin{itemize}
+	\item Fehlersymptom: Schlecht möglich die Reihenfolge von Operationen eines Grids beim Updaten einheitlich zu ändern
+	\item Fehlerursache: update() wurde intern im Grid ausgeführt
+	\item Fehlerbehebung: GeoGridManager erstellt, der Update-Prozess zentralisiert
+\end{itemize}

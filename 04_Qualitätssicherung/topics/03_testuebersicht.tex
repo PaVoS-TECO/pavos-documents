@@ -1,0 +1,86 @@
+\chapter{Testübersicht}
+
+\section{Jean}
+Manuelle Tests:
+\begin{itemize}
+	\item Import von Daten und anschließendes prüfen, ob Daten in Frost angekommen sind.
+	\item Export von Daten und anschließendes prüfen, ob Daten in Datei angekommen sind.
+\end{itemize}
+Mit JUnit getestete Klassen:
+\begin{itemize}
+	\item Import
+	\begin{itemize}
+		\item CSVReaderStrategy
+		\item DataTable
+		\item FileImporter
+		\item FrostSender
+		\item ReaderType
+	\end{itemize}
+	\item Export
+	\begin{itemize}
+		\item CSVWriterStrategy
+		\item ExportProperties
+		\item FileType
+		\item TimeIntervall
+	\end{itemize}
+\end{itemize}
+
+\section{Thomas}
+Manuelle Tests:
+\begin{itemize}
+	\item Bedienen der Karte (Bewegen, Zoomen und Vollbild aktivieren)
+	\item Bedienen des Graphen (Datenquelle und Darstellung ändern)
+	\item Öffnen, Bedienen und Schließen der Modal-Fenster
+	\item Speichern und Aufrufen eines Favoriten
+	\item Melden eines Sensors
+\end{itemize}
+
+\section{Oliver}
+Mit JUnit getestete Klassen:
+\begin{itemize}
+	\item \texttt{server.database}
+	\begin{itemize}
+		\item \texttt{ObservationDataToStorageProcessor}
+	\end{itemize}
+	\item \texttt{bridge}
+	\begin{itemize}
+		\item \texttt{FrostIotIdConverter}
+		\item \texttt{JmkbKafkaProducer}
+		\item \texttt{JmkbMqttConsumer}
+		\item \texttt{Main}
+		\item \texttt{MqttMessageConverter}
+		\item \texttt{PropertiesFileReader}
+		\item z.T. auch alle Avro-generierten Klassen
+	\end{itemize}
+\end{itemize}
+
+\section{Patrick}
+\begin{itemize}
+	\item Test 1: Ich habe das ganze System Lokal ausführt und mit den Daten gefüttert welche wir von unseren Betreuern bekommen haben und dann alle Prozesse drauf gestartet. Zum weiteren Testen davon haben wir unseren Importeur genutzt, welcher die Daten von SensorUp einfach in unserem Frost pumpt. Dann wurden manuell die Topics kontrolliert und ob sie sinnvoll befüllt sind. Dadurch wird die Funktionalität der Bridge festgestellt.
+	\item Test 2: Ich habe dann wieder meine Prozesse auf diesen Daten ausgeführt und überprüft ob die Topics erstellt wurden und sinnvoll waren. Dieser Test wurde sehr oft ausgeführt.
+	\item Test 3: Wir haben die Bridge laufen gelassen und dabei Kafka neugestartet.
+	\item Test 4: Jetzt wurde ein größerer Integrationstest gemacht. Es wurden Sachen in Frost importiert und diese dann von den Prozessen verarbeitet und diese Daten dann aus dem System exportiert.
+	\item Test 4: Hier wurden alle Elemente vom Core und Importeur und Exporteur parallel ausgeführt um zu kontrollieren ob die Daten verarbeitet werden und auch richtig verarbeitet werden und zu anderen Modulen weiter geben werden. Dabei wurden die Schnittstellen getestet.
+\end{itemize}
+
+\section{Erik}
+Mit JUnit getestete Klassen:
+\begin{itemize}
+	\item Tuple2D \& Tuple3D
+	\item GeoJsonConverter \& GeoJsonBuilder
+	\item GeoPolygon \& GeoRectangle
+	\item TimeUtil
+	\item GraphiteConfig
+	\item GeoGrid \& GeoRecRectangleGrid
+	\item GeoGridManager
+	\item GraphiteConverter \& PythonMetricUtil
+	\item SocketManager
+	\item EnvironmentUtil
+	\item Sender \& GraphiteSender
+	\item ObservationType
+	\item ObservationData
+	\item ObservationDataDeserializer
+	\item Destination \& DirectUploadManager
+	\item Connector \& DirectGraphiteConnector
+	\item (Facade \& ObservationDataToStorageProcessor)
+\end{itemize}
