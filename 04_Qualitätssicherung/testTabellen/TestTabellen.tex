@@ -15,6 +15,10 @@
 \def\testOk{\cellcolor{yellow!25} \textcolor{orange}{(\checkmark)}}
 \def\testBad{\cellcolor{red!25} \textcolor{Maroon}{X}}
 
+\def\szenarioGood{\begin{table}[H] \centering \begin{tabular}{|c|} \hline \testGood \\ \hline \end{tabular} \end{table}}
+\def\szenarioOk{\begin{table}[H] \centering \begin{tabular}{|c|} \hline \testOk \\ \hline \end{tabular} \end{table}}
+\def\szenarioBad{\begin{table}[H] \centering \begin{tabular}{|c|} \hline \testBad \\ \hline \end{tabular} \end{table}}
+
 \renewcommand{\familydefault}{\sfdefault}
 
 \begin{document}
@@ -298,7 +302,7 @@ TI2050 & Dieses Szenario wurde mit einem anderen Szenario verschmolzen. & QS2050
 \item Zur genauen Prüfung werden die csv-Dateien geöffnet
 \item Jede in dem csv enthaltene Information muss auch in Frost vorhanden sein, wobei der erste Eintrag in jeder Zeile gibt immer an, um welchen Typ es sich handelt.
 \end{enumerate}
-
+\szenarioGood
 \subsection{TI2000 - Darstellung des berechneten Mittelwertes}
 
 \subsection{TI2010 - Darstellung von Clustern ohne Sensoren}
@@ -337,7 +341,7 @@ TI2050 & Dieses Szenario wurde mit einem anderen Szenario verschmolzen. & QS2050
 \item Die Exportierten Daten werden nach spätestens 5 Minuten heruntergeladen
 \end{itemize}
 \end{enumerate}
-
+\szenarioGood
 \subsection{TI2060 - Wiederholungen anzeigen}
 
 \subsection{TI2070 - Echtzeitdarstellung}
@@ -390,4 +394,5 @@ Wobei FORMAT gleich der ausgewählten Export-Dateiendung entspricht. DATES, wird
 Die Wartezeit skaliert mit der Größe der Anfrage und sollte bei kleinen Größen 10 Minuten betragen.
 \item Sobald "true" zurückgegeben wird, wird automatisch eine Datei namens "test.zip" heruntergeladen, die die exportierten Daten enthält.
 \end{enumerate}
+\szenarioGood
 \end{document}
