@@ -16,9 +16,11 @@
 \usepackage{color}
 \usepackage{wrapfig} % wrap text around figures
 \usepackage{subfig} % align two pics beside each other
-\usepackage[table,xcdraw]{xcolor}
+\usepackage[table,xcdraw,dvipsnames]{xcolor}
 \usepackage{enumitem} % für custom enumerations
 \usepackage{float} % for better graphics placement
+\usepackage{array}
+\usepackage{tikz}
 \usepackage{svg} % for scalable vector-graphics (see inkscape)
 \setsvg{inkscapeexe=inkscape, inkscapeopt=-z -D} % set inkscape options
 \svgpath{images/} % use dir 'images/' to search for svg files
@@ -70,6 +72,21 @@ section]      %im Inhaltsverzeichnis auf section-Ebene erscheinen
   		\color{mintgreen}\leaders\hrule height \headrulewidth\hfill}}				
 	\fancyfoot[LE,RO]{\thepage}
 
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+\def\testGood{\cellcolor{green!25} \textcolor{Green}{\checkmark}}
+\def\testOk{\cellcolor{yellow!25} \textcolor{orange}{(\checkmark)}}
+\def\testBad{\cellcolor{red!25} \textcolor{Maroon}{X}}
+
+\def\szenarioGood{\begin{table}[H] \centering \begin{tabular}{|c|} \hline \testGood \\ \hline \end{tabular} \end{table}}
+\def\szenarioOk{\begin{table}[H] \centering \begin{tabular}{|c|} \hline \testOk \\ \hline \end{tabular} \end{table}}
+\def\szenarioBad{\begin{table}[H] \centering \begin{tabular}{|c|} \hline \testBad \\ \hline \end{tabular} \end{table}}
+
+\renewcommand{\familydefault}{\sfdefault}
+
 \setcounter{tocdepth}{3}
 \makeglossaries
 \begin{document}
@@ -78,6 +95,6 @@ section]      %im Inhaltsverzeichnis auf section-Ebene erscheinen
 	\tableofcontents
 	\include{./topics/01_einleitung}
 	\include{./topics/02_bugfixes}
-	\include{./topics/03_testuebersicht}
+	\include{./testTabellen/testTabellen}
 
 \end{document}

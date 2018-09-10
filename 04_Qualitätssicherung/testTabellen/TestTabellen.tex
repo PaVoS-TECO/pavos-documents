@@ -1,29 +1,4 @@
-\documentclass{article}
-
-\usepackage[table, dvipsnames]{xcolor}
-\usepackage{tikz}
-\usepackage{float}
-\usepackage{array}
-\usepackage[utf8]{inputenc}
-
-\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-
-\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
-\def\testGood{\cellcolor{green!25} \textcolor{Green}{\checkmark}}
-\def\testOk{\cellcolor{yellow!25} \textcolor{orange}{(\checkmark)}}
-\def\testBad{\cellcolor{red!25} \textcolor{Maroon}{X}}
-
-\def\szenarioGood{\begin{table}[H] \centering \begin{tabular}{|c|} \hline \testGood \\ \hline \end{tabular} \end{table}}
-\def\szenarioOk{\begin{table}[H] \centering \begin{tabular}{|c|} \hline \testOk \\ \hline \end{tabular} \end{table}}
-\def\szenarioBad{\begin{table}[H] \centering \begin{tabular}{|c|} \hline \testBad \\ \hline \end{tabular} \end{table}}
-
-\renewcommand{\familydefault}{\sfdefault}
-
-\begin{document}
-
-\section{\"Ubersicht} 
+\chapter{\"Ubersicht} 
 
 Ein Test gilt als erfolgreich bestanden, wenn er alle \"Uberpr\"ufungen besteht, keine ungewollten Fehlermeldungen wirft und nicht vorzeitig abbricht.
 \newline
@@ -44,7 +19,7 @@ Der Test ist fehlgeschlagen & \testBad \\ \hline
 \renewcommand\arraystretch{1.1}
 \section{Unittests}
 
-F\"ur die Code-\"Uberdeckung der folgenden tests, wurden JUnit 4.8.2 und kafka-streams-test-utils 1.1.0 verwendet.
+F\"ur die Code-\"Uberdeckung der folgenden Tests wurden JUnit 4.8.2 und kafka-streams-test-utils 1.1.0 verwendet.
 \newline
 Die verwendete Kafka-Version weicht minimal von der vorgegeben Testumgebung ab, da f\"ur die f\"ur uns vorgegebene Version keine kafka-streams-test-utils version existierte. Es wird Kafka 1.0.1 mit der Testumgebung f\"ur 1.1.0 verwendet.
 \subsection{ObservationDataDeserializer}
@@ -152,7 +127,7 @@ das mehrfache Einfügen von korrekten Daten in die Datenbank (zu unterschiedlich
 den Versuch, fehlerhafte Daten (aus falschen Parametern) zur Datenbank hinzufügen, stoppen & \testOk \\ \hline
 den Versuch, korrekte Daten eines nicht existierenden GeoPolygons / Clusters zur Datenbank hinzufügen, stoppen & \testOk \\ \hline
 bei fehlerhafter Verbindung zur Datenbank den Prozess des Kerns nicht gef\"ahrden & \testOk \\ \hline
-\"Uberpr\"ufung vieler unterschiedlicher Zeitstempel auf Korrektheit und konvertierung in ein DateTime Objekt & \testGood \\ \hline
+\"Uberpr\"ufung vieler unterschiedlicher Zeitstempel auf Korrektheit und Konvertierung in ein DateTime Objekt & \testGood \\ \hline
 die Verbindung zur Datenbank kann neu aufgebaut werden & \testOk \\ \hline
 es kann ein weiterer Memcached Server hinzufügt werden & \testOk \\ \hline
 \end{tabular}
@@ -270,6 +245,18 @@ die Einstellungen für den Export werden korrekt ausgelesen & \testGood \\ \hlin
 für jede Dateiendung wird der richtige Dateischreiber benutzt & \testGood \\ \hline
 \end{tabular}
 \end{table}
+
+\newpage
+
+\begin{figure}
+	\centering\includegraphics[width=0.6\linewidth]{images/tests}
+\end{figure}
+
+\newpage
+
+\begin{figure}
+	\centering\includegraphics[width=0.84\linewidth]{images/coverage}
+\end{figure}
 
 \newpage
 \section{Testszenarien}
@@ -431,4 +418,3 @@ Die Wartezeit skaliert mit der Größe der Anfrage und sollte bei kleinen Größ
 \item Sobald "true" zurückgegeben wird, wird automatisch eine Datei namens "test.zip" heruntergeladen, die die exportierten Daten enthält.
 \end{enumerate}
 \szenarioGood
-\end{document}
