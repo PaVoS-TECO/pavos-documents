@@ -17,13 +17,13 @@ Der Test ist fehlgeschlagen & \testBad \\ \hline
 
 \newpage
 \renewcommand\arraystretch{1.1}
-\section{Unittests}
-
+\chapter{Unittests}
+\section{Core}
 F\"ur die Code-\"Uberdeckung der folgenden Tests wurden JUnit 4.8.2 und kafka-streams-test-utils 1.1.0 verwendet.
 \newline
 Die verwendete Kafka-Version weicht minimal von der vorgegeben Testumgebung ab, da f\"ur die f\"ur uns vorgegebene Version keine kafka-streams-test-utils version existierte. Es wird Kafka 1.0.1 mit der Testumgebung f\"ur 1.1.0 verwendet.
-\subsection{ObservationDataDeserializer}
 \begin{table}[H]
+\caption{ObservationDataDeserializer}
 \centering
 \begin{tabular}{|L{9cm}|c| }
 \hline
@@ -34,8 +34,8 @@ serialisiertes Objekt deserialisieren & \testGood \\
 \end{tabular}
 \end{table}
 
-\subsection{GeoRectangle}
 \begin{table}[H]
+\caption{GeoRectangle}
 \centering
 \begin{tabular}{|L{9cm}|c| }
 \hline
@@ -50,8 +50,8 @@ alle SensorIDs zur\"uckgeben lassen und \"uberpr\"ufen & \testGood \\ \hline
 \end{tabular}
 \end{table}
 
-\subsection{GeoRecRectangleGrid}
 \begin{table}[H]
+\caption{GeoRecRectangleGrid}
 \centering
 \begin{tabular}{|L{9cm}|c| }
 \hline
@@ -64,8 +64,8 @@ zwei Grids auf Equivalenz testen & \testGood \\ \hline
 \end{tabular}
 \end{table}
 
-\subsection{GridPropertiesFileManager}
 \begin{table}[H]
+\caption{GridPropertiesFileManager}
 \centering
 \begin{tabular}{|L{9cm}|c| }
 \hline
@@ -74,8 +74,8 @@ initialisierendes laden der Eigenschaften & \testGood \\ \hline
 \end{tabular}
 \end{table}
 
-\subsection{GradientPropertiesFileManager}
 \begin{table}[H]
+\caption{GradientPropertiesFileManager}
 \centering
 \begin{tabular}{|L{9cm}|c|}
 \hline
@@ -85,9 +85,9 @@ initialisierendes laden der Eigenschaften & \testGood \\ \hline
 \end{tabular}
 \end{table}
 
-\subsection{KafkaPropertiesFileManager}
-laden und \"uberpr\"ufen der..
 \begin{table}[H]
+\caption{KafkaPropertiesFileManager}
+\caption*{\footnotesize laden und \"uberpr\"ufen der..}
 \centering
 \begin{tabular}{|L{9cm}|c|}
 \hline
@@ -104,8 +104,8 @@ Export-Stream Eigenschaften & \testGood \\ \hline
 \end{tabular}
 \end{table}
 
-\subsection{WebServer}
 \begin{table}[H]
+\caption{WebServer}
 \centering
 \begin{tabular}{|L{9cm}|c|}
 \hline
@@ -116,8 +116,8 @@ Server starten, dann in den Prozess eingreifen und ihn schlie\ss en & \testGood 
 \end{tabular}
 \end{table}
 
-\subsection{ObservationDataToStorageProcessor}
 \begin{table}[H]
+\caption{ObservationDataToStorageProcessor}
 \centering
 \begin{tabular}{|L{9cm}|c|}
 \hline
@@ -134,9 +134,9 @@ es kann ein weiterer Memcached Server hinzufügt werden & \testOk \\ \hline
 \end{table}
 
 \newpage
-\subsection{WebWorker}
-Server starten, eine Anfrage senden und \"uberpr\"ufen ob der Client eine g\"ultige Antwort erh\"alt..
 \begin{table}[H]
+\caption{WebWorker}
+\caption*{\footnotesize Server starten, eine Anfrage senden und \"uberpr\"ufen ob der Client eine g\"ultige Antwort erh\"alt..}
 \centering
 \begin{tabular}{|L{9cm}|c|}
 \hline
@@ -156,8 +156,8 @@ alle bisher beobachteten Eigenschaften abfragen (z.B. temperature\textunderscore
 \end{tabular}
 \end{table}
 
-\subsection{GraphiteConnector}
 \begin{table}[H]
+\caption{GraphiteConnector}
 \centering
 \begin{tabular}{|L{9cm}|c|}
 \hline
@@ -168,8 +168,8 @@ Daten von der Quelle entgegennehmen, Vorkehrungen Treffen und an die Konsole sen
 \end{tabular}
 \end{table}
 
-\subsection{GraphiteSender}
 \begin{table}[H]
+\caption{GraphiteSender}
 \centering
 \begin{tabular}{|L{9cm}|c|}
 \hline
@@ -180,8 +180,8 @@ Daten vom Connector entgegennehmen, konvertieren und an Graphite senden & \testO
 \end{tabular}
 \end{table}
 
-\subsection{ObservationData}
 \begin{table}[H]
+\caption{ObservationData}
 \centering
 \begin{tabular}{|L{9cm}|c|}
 \hline
@@ -192,8 +192,8 @@ toString konvertierung zu einem Json Objekt & \testGood \\
 \end{tabular}
 \end{table}
 
-\subsection{MultiGradient}
 \begin{table}[H]
+\caption{MultiGradient}
 \centering
 \begin{tabular}{|L{9cm}|c|}
 \hline
@@ -210,7 +210,7 @@ einen SimpleGradient erstellen, hinzufügen, entfernen, ersetzen und in jedem Sc
 \end{tabular}
 \end{table}
 
-\subsection{Importer}
+\section{Importer}
 \begin{table}[H]
 \centering
 \begin{tabular}{|L{9cm}|c|}
@@ -231,7 +231,7 @@ die Bedienoberfläche des Importers zeigt den Fortschritt an und gibt die UI bei
 \end{tabular}
 \end{table}
 
-\subsection{Exporter}
+\section{Exporter}
 \begin{table}[H]
 \centering
 \begin{tabular}{|L{9cm}|c|}
@@ -246,10 +246,10 @@ für jede Dateiendung wird der richtige Dateischreiber benutzt & \testGood \\ \h
 \end{tabular}
 \end{table}
 
-\subsection{JavaScript}
+\section{Webinterface (JavaScript)}
 F\"ur die Code-\"Uberdeckung der folgenden Tests wurden Jasmine 3.2.1 und JSCover 2.0.6 verwendet.
-\subsubsection{AppState}
 \begin{table}[H]
+\caption{AppState}
 \centering
 \begin{tabular}{|L{9cm}|c|}
 \hline
@@ -270,8 +270,8 @@ Diese Instanz als JSON String zurückgeben & \testGood \\
 \end{tabular}
 \end{table}
 
-\subsubsection{Bounds}
 \begin{table}[H]
+\caption{Bounds}
 \centering
 \begin{tabular}{|L{9cm}|c|}
 \hline
@@ -294,8 +294,8 @@ Leaflet Bounds parsen und die Parameter dieser Instanz damit überschreiben & \t
 \end{tabular}
 \end{table}
 
-\subsubsection{Cluster}
 \begin{table}[H]
+\caption{Cluster}
 \centering
 \begin{tabular}{|L{9cm}|c|}
 \hline
@@ -306,8 +306,8 @@ Cluster Bezeichner aktualisieren und zurückgeben  & \testGood \\
 \end{tabular}
 \end{table}
 
-\subsubsection{Dimension}
 \begin{table}[H]
+\caption{Dimension}
 \centering
 \begin{tabular}{|L{9cm}|c|}
 \hline
@@ -320,8 +320,8 @@ Breite aktualisieren und zurückgeben & \testGood \\
 \end{tabular}
 \end{table}
 
-\subsubsection{Grid}
 \begin{table}[H]
+\caption{Grid}
 \centering
 \begin{tabular}{|L{9cm}|c|}
 \hline
@@ -332,8 +332,8 @@ Zu einer Koordinate die nächstgelegene Koordinate die sich in den Bounds dieser
 \end{tabular}
 \end{table}
 
-\subsubsection{RecursiveRectangleCluster}
 \begin{table}[H]
+\caption{RecursiveRectangleCluster}
 \centering
 \begin{tabular}{|L{9cm}|c|}
 \hline
@@ -348,8 +348,8 @@ Das Grid Level dieser Instanz anhand des Bezeichners zurückgeben & \testGood \\
 \end{tabular}
 \end{table}
 
-\subsubsection{RecursiveRectangleGrid}
 \begin{table}[H]
+\caption{RecursiveRectangleGrid}
 \centering
 \begin{tabular}{|L{9cm}|c|}
 \hline
@@ -364,8 +364,8 @@ Den Grid Bezeichner zurückgeben & \testGood \\
 \end{tabular}
 \end{table}
 
-\subsubsection{DateTime}
 \begin{table}[H]
+\caption{DateTime}
 \centering
 \begin{tabular}{|L{9cm}|c|}
 \hline
@@ -386,8 +386,8 @@ Sekunde aktualisieren und zurückgeben & \testGood \\
 \end{tabular}
 \end{table}
 
-\subsubsection{DynamicHtmlBuilder}
 \begin{table}[H]
+\caption{DynamicHtmlBuilder}
 \centering
 \begin{tabular}{|L{9cm}|c|}
 \hline
@@ -404,8 +404,8 @@ Listen Tabelle aus Array erzeugen & \testGood \\
 \end{tabular}
 \end{table}
 
-\subsubsection{GridUtil}
 \begin{table}[H]
+\caption{GridUtil}
 \centering
 \begin{tabular}{|L{9cm}|c|}
 \hline
@@ -424,8 +424,8 @@ Cluster Bezeichner berechnen und zurückgeben & \testGood \\
 \end{tabular}
 \end{table}
 
-\subsubsection{LeafletUtil}
 \begin{table}[H]
+\caption{LeafletUtil}
 \centering
 \begin{tabular}{|L{9cm}|c|}
 \hline
@@ -438,8 +438,8 @@ Leaflet Layer Styling erzeugen und zurückgeben & \testGood \\
 \end{tabular}
 \end{table}
 
-\subsubsection{MathUtil}
 \begin{table}[H]
+\caption{MathUtil}
 \centering
 \begin{tabular}{|L{9cm}|c|}
 \hline
@@ -452,8 +452,8 @@ Zu einem Wert in einem sortierten Array den Index des größten Wertes, der klei
 \end{tabular}
 \end{table}
 
-\subsubsection{Parser}
 \begin{table}[H]
+\caption{Parser}
 \centering
 \begin{tabular}{|L{9cm}|c|}
 \hline
@@ -476,8 +476,8 @@ Grid Bezeichner parsen und zurückgeben & \testGood \\
 \end{tabular}
 \end{table}
 
-\subsubsection{StorageUtil}
 \begin{table}[H]
+\caption{StorageUtil}
 \centering
 \begin{tabular}{|L{9cm}|c|}
 \hline
@@ -498,8 +498,8 @@ IdentifiersArray aus LocalStorage abrufen & \testGood \\
 \end{tabular}
 \end{table}
 
-\subsubsection{UTCDateTime}
 \begin{table}[H]
+\caption{UTCDateTime}
 \centering
 \begin{tabular}{|L{9cm}|c|}
 \hline
@@ -512,8 +512,8 @@ Wandle das Datum in ein String im UTC Format um & \testGood \\
 \end{tabular}
 \end{table}
 
-\subsubsection{Util}
 \begin{table}[H]
+\caption{Util}
 \centering
 \begin{tabular}{|L{9cm}|c|}
 \hline
@@ -537,25 +537,25 @@ HashCode von String erzeugen & \testGood \\
 \end{table}
 
 \newpage
-
-\begin{figure}
+\chapter{Testüberdeckung - Core}
+\begin{figure}[H]
 	\centering\includegraphics[width=0.6\linewidth]{images/tests}
 \end{figure}
 
 \newpage
 
-\begin{figure}
+\begin{figure}[H]
 	\centering\includegraphics[width=0.84\linewidth]{images/coverage}
 \end{figure}
 
 \newpage
-\section{Testszenarien}
+\chapter{Testszenarien}
 Hier werden sowohl alte als auch neue Szenarien getestet.
 Szenarien, die sich auf die im Pflichtenheft genannten Eintr\"age beziehen werden durch die entsprechende Kennzeichnung (z.B. TI1000) deutlich gemacht. \newline
 Die Werte 1000 - 1070 deuten an, dass es sich um Server seitige Tests handelt. \newline
 Die Werte 2000 - 2100 deuten an, dass es sich um Client seitige Tests handelt.
 
-\subsection{\"Uberarbeitete Szenarien}
+\section{\"Uberarbeitete Szenarien}
 \begin{table}[H]
 \centering
 \begin{tabular}{|L{1.3cm}|L{7cm}|L{2cm}|}
@@ -575,7 +575,7 @@ TI2050 & Dieses Szenario wurde mit einem anderen Szenario verschmolzen. & QS2050
 \end{table}
 
 \newpage
-
+\section{Angewendete Testszenarien}
 \subsection{QS1060 - Import von Daten mit dem Servlet}
 \paragraph{Voraussetzungen}
 \begin{itemize}
@@ -732,15 +732,15 @@ Es muss nur noch die Farbe der Darstellung zu Transparent eingestellt werden.
 \begin{enumerate}
 \item Das Webinterface wird im Browser geöffnet
 \item Auf der Karte wird ein Cluster ausgewählt, das Deutschland enthält
-\item Der Knopf mit der Aufschrift "Export"
+\item Der Knopf mit der Aufschrift ``Export''
 \item Es öffnet sich ein Overlay mit dem Titel Export in das folgendes eingetragen wird:
 \begin{itemize}
-\item Im Feld "From" wird das Datum von vor einem Monat eingetragen
-\item Im Feld "To" wird das aktuelle Datum eingetragen
-\item Im Menüpunkt  "Choose Clusters" wird "All Selected" ausgewählt
-\item In der Kategorie "Choose Sensortype" wird "temperature\textunderscore celsius" ausgewählt
-\item In der Kategorie "Choose Exportformat" wird "CSV" ausgewählt
-\item Es wird auf den Knopf mit der Aufschrift "Apply" geklickt
+\item Im Feld ``From'' wird das Datum von vor einem Monat eingetragen
+\item Im Feld ``To'' wird das aktuelle Datum eingetragen
+\item Im Menüpunkt  ``Choose Clusters" wird "All Selected'' ausgewählt
+\item In der Kategorie ``Choose Sensortype" wird "temperature\textunderscore celsius'' ausgewählt
+\item In der Kategorie ``Choose Exportformat" wird "CSV'' ausgewählt
+\item Es wird auf den Knopf mit der Aufschrift ``Apply'' geklickt
 \item Die Exportierten Daten werden nach spätestens 5 Minuten heruntergeladen
 \end{itemize}
 \end{enumerate}
@@ -758,18 +758,18 @@ Es muss nur noch die Farbe der Darstellung zu Transparent eingestellt werden.
 \item Das Webinterface wird im Browser geöffnet
 \item Das Webinterface wird in den automatisierten Historischen Modus überführt:
 \begin{enumerate}
-\item Falls nicht bereits im Historischen Modus, den Knopf mit dem Refresh Symbol rechts vom "Settings" Knopf anklicken und das Webinterface ist nun im Historischen Modus
-\item Falls nicht bereits im automatisierten Modus, den Knopf mit der Aufschrift "Settings" anklicken
+\item Falls nicht bereits im Historischen Modus, den Knopf mit dem Refresh Symbol rechts vom ``Settings'' Knopf anklicken und das Webinterface ist nun im Historischen Modus
+\item Falls nicht bereits im automatisierten Modus, den Knopf mit der Aufschrift ``Settings'' anklicken
 \item Es öffnet sich ein Overlay mit dem Titel ``Settings''
 \item Unter der Kategorie ``Automatic/Manual Refresh'' den Radiobutton ``Automatic'' auswählen
-\item Es wird auf den Knopf mit der Aufschrift "Apply" geklickt und das Webinterface ist nun im automatisierten Modus
+\item Es wird auf den Knopf mit der Aufschrift "Apply'' geklickt und das Webinterface ist nun im automatisierten Modus
 \end{enumerate}
-\item Der Knopf mit der Aufschrift ``Settings" wird geklickt
-\item Es öffnet sich ein Overlay mit dem Titel ``Settings"
-\item Im Feld ``From" wird das Datum von vor einem Monat eingetragen
-\item Im Feld ``To" wird das Datum von gestern eingetragen
-\item Es wird der Knopf ``Apply" geklickt und das Overlay schließt sich
-\item Es wird der Start Knopf links neben dem ``Settings" Knopf gedrückt
+\item Der Knopf mit der Aufschrift ``Settings'' wird geklickt
+\item Es öffnet sich ein Overlay mit dem Titel ``Settings''
+\item Im Feld ``From'' wird das Datum von vor einem Monat eingetragen
+\item Im Feld ``To'' wird das Datum von gestern eingetragen
+\item Es wird der Knopf ``Apply'' geklickt und das Overlay schließt sich
+\item Es wird der Start Knopf links neben dem ``Settings'' Knopf gedrückt
 \item Das Grid auf der Karte visualisiert nun die Iteration über eine festgelegte Anzahl an Zeitpunkten zwischen dem zuvor festgelegten From und To Zeitpunkten
 \end{enumerate}
 \szenarioGood
@@ -786,13 +786,13 @@ Es muss nur noch die Farbe der Darstellung zu Transparent eingestellt werden.
 \item Das Webinterface wird im Browser geöffnet
 \item Das Webinterface wird in den automatisierten Live-Modus überführt:
 \begin{enumerate}
-\item Falls nicht bereits im Live-Modus, den Knopf mit dem Sanduhr Symbol rechts vom "Settings" Knopf anklicken und das Webinterface ist nun im Live-Modus
-\item Falls nicht bereits im automatisierten Modus, den Knopf mit der Aufschrift "Settings" anklicken
-\item Es öffnet sich ein Overlay mit dem Titel ``Settings"
+\item Falls nicht bereits im Live-Modus, den Knopf mit dem Sanduhr Symbol rechts vom ``Settings'' Knopf anklicken und das Webinterface ist nun im Live-Modus
+\item Falls nicht bereits im automatisierten Modus, den Knopf mit der Aufschrift ``Settings'' anklicken
+\item Es öffnet sich ein Overlay mit dem Titel ``Settings''
 \item Unter der Kategorie ``Automatic/Manual Refresh'' den Radiobutton ``Automatic'' auswählen
-\item Es wird auf den Knopf mit der Aufschrift ``Apply" geklickt und das Webinterface ist nun im automatisierten Modus
+\item Es wird auf den Knopf mit der Aufschrift ``Apply'' geklickt und das Webinterface ist nun im automatisierten Modus
 \end{enumerate}
-\item Es wird der Start Knopf links neben dem ``Settings" Knopf gedrückt
+\item Es wird der Start Knopf links neben dem ``Settings'' Knopf gedrückt
 \item Das Grid auf der Karte wird nun regelmäßig in festen Intervallen mit Live-Daten aktualisiert
 \end{enumerate}
 \szenarioGood
@@ -809,11 +809,11 @@ Es muss nur noch die Farbe der Darstellung zu Transparent eingestellt werden.
 \item Das Webinterface wird im Browser geöffnet
 \item Das Webinterface wird in den automatisierten Live-Modus überführt:
 \begin{enumerate}
-\item Falls nicht bereits im Live-Modus, den Knopf mit dem Sanduhr Symbol rechts vom "Settings" Knopf anklicken und das Webinterface ist nun im Live-Modus
-\item Falls nicht bereits im automatisierten Modus, den Knopf mit der Aufschrift "Settings" anklicken
-\item Es öffnet sich ein Overlay mit dem Titel ``Settings"
+\item Falls nicht bereits im Live-Modus, den Knopf mit dem Sanduhr Symbol rechts vom ``Settings'' Knopf anklicken und das Webinterface ist nun im Live-Modus
+\item Falls nicht bereits im automatisierten Modus, den Knopf mit der Aufschrift ``Settings'' anklicken
+\item Es öffnet sich ein Overlay mit dem Titel ``Settings''
 \item Unter der Kategorie ``Automatic/Manual Refresh'' den Radiobutton ``Automatic'' auswählen
-\item Es wird auf den Knopf mit der Aufschrift ``Apply" geklickt und das Webinterface ist nun im automatisierten Modus
+\item Es wird auf den Knopf mit der Aufschrift ``Apply'' geklickt und das Webinterface ist nun im automatisierten Modus
 \end{enumerate} 
 \item Es wird der Start Knopf links neben dem ``Settings'' Knopf gedrückt
 \item Auf der Karte wird bis zum größten Grid Level gezoomt:
@@ -863,7 +863,7 @@ Es werden aktuelle Test-Daten benötigt, um dieses Szenario zu bestätigen.
 \end{enumerate}
 \szenarioBad
 Um den Test zu bestehen, fehlt die funktionalität im Webinterface.
-Per direktem Link: /reportSensor?sensorID=sensor54321&reason=blubb lässt sie der Test erfüllen.
+Per direktem Link: ``/reportSensor?sensorID=sensor54321&reason=blubb'' lässt sie der Test erfüllen.
 
 \subsection{QS2100 - Direktes Ansprechen des Servlets}
 \paragraph{Voraussetzungen}
@@ -873,7 +873,7 @@ Per direktem Link: /reportSensor?sensorID=sensor54321&reason=blubb lässt sie de
 \item Pavos-Bridge zwischen FROST und Kafka
 \item Pavos-Core mit Daten gefüttert
 \item Export-Docker
-\item Der Link zum Export-Servlet muss bekannt sein (endet auf ``/edms/get?'' vor der Angabe von Parametern). Dieser Link wird hier Beispielhaft als SERVLET? gekürzt.
+\item Der Link zum Export-Servlet muss bekannt sein (endet auf ``/edms/get?'' vor der Angabe von Parametern). Dieser Link wird hier Beispielhaft als ``SERVLET?'' gekürzt.
 \end{itemize}
 \paragraph{Ablauf}
 \subparagraph{Test 1 - Erlaubte Dateiendungen abfragen}

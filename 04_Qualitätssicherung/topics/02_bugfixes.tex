@@ -1,6 +1,6 @@
 \chapter{Bugfixes}
 
-\section{Jean}
+\section{Import und Export}
 \paragraph{Servlet ging nicht}
 \begin{itemize}
 	\item Fehlersymptom: Servlet wird von Tomcat nicht gestartet.
@@ -43,22 +43,22 @@
 	\item Fehlerbehebung: Wechsel auf das richtige Feld.
 \end{itemize}
 \newpage
-\section{Thomas}
-\paragraph{Bug 1}
+\section{Webinterface}
+\paragraph{CORS}
 \begin{itemize}
 	\item Fehlersymptom: Blockieren von Http-Anfragen bei Webinterface-internem JavaScript Code
 	\item Fehlerursache: Cross-Origin Resource Sharing (CORS) zwischen Webinterface und Server nicht möglich
 	\item Fehlerbehebung: Konfigurieren der Server-lokalen Tomcat Konfigurationsdatei
 \end{itemize}
 
-\paragraph{Bug 2}
+\paragraph{Synchronisierung der Zustände}
 \begin{itemize}
 	\item Fehlersymptom: Fehlerhafte Synchronisierung der Zustände bei Export-, Sensortyp-, Favoriten-, und Einstellungs-Modal-Fenstern
 	\item Fehlerursache: Veränderung der Auswahl/Parameter in einem Modal-Fenster werden nicht an anderes Modal-Fenster weitergegeben
 	\item Fehlerbehebung: Korrekte Beobachter Struktur zwischen den Komponenten aufbauen
 \end{itemize}
 
-\paragraph{Bug 3}
+\paragraph{Fenstergrößenanpassung}
 \begin{itemize}
 	\item Fehlersymptom: Unresponsivität der Anpassung bei Veränderung der vertikalen Fenstergröße
 	\item Fehlerursache: Da der Container der Karte initial eine fest definierte Höhe braucht, kann man das nicht in CSS in Prozent, also dynamisch zur Fenstergröße festlegen
@@ -66,8 +66,7 @@
 \end{itemize}
 
 \newpage
-\section{Oliver}
-\subsection{Bridge}
+\section{Bridge}
 \paragraph{Main-Klasse}
 \begin{itemize}
 	\item Fehlersymptom: Main-Klasse mit main-Methode konnte nach kompilieren ins jar-Format bei der Ausführung nicht gefunden werden.
@@ -122,42 +121,42 @@
 	\item Nach der Analyse der Bridge mit Sonarqube wurden 35 von 54 Code Smells und 2 von 2 Vulnerabilities gefixed.
 \end{itemize}
 
-\subsection{Database}
+\section{Database}
 \begin{itemize}
 	\item Mehrere Code Smells wurden mit Sonarqube entdeckt und durch Erik gefixed.
 \end{itemize}
 \newpage
-\section{Patrick}
-\paragraph{Bug 1}
+\section{Core - Verarbeitung der eingehenden Daten}
+\paragraph{Nicht existierende Kafka-Topics}
 \begin{itemize}
 	\item Fehlersymptom: Topics wurden in Kafka nicht erstellt, welches dann teilweise zu Fehlern in den einzelnen Nutzern der Kafka Stream Funktionalität führte.
 	\item Fehlerursache: Die Input Topics waren nicht in Kafka enthalten
 	\item Fehlerbehebung: Ich habe eine Klasse hinzugefügt welche alle Input Topic generiert und somit garantiert dass das Kafka System alle Topics die benötigt werden enthalten sind. 
 \end{itemize}
 
-\paragraph{Bug 2}
+\paragraph{Übertragung von FROST zu Kafka}
 \begin{itemize}
 	\item Fehlersymptom: Die Daten wurden nicht von Frost auf Kafka übertragen.
 	\item Fehlerursache: Es gab Null Values bei den Zeiten welche nicht erlaubt waren
 	\item Fehlerbehebung: Im Importer wurde einfach gefixt, dass die Zeit nicht null sein darf.
 \end{itemize}
 
-\paragraph{Bug 3}
+\paragraph{Nicht erstellte Kafka-Topics}
 \begin{itemize}
 	\item Fehlersymptom: Die Kafka Topics von den Prozessen wurden nicht erstellt.
 	\item Fehlerursache: Ich ging davon aus, dass FeatureOfInterest und Observation eine bijektive Verbindung zu einander haben.
 	\item Fehlerbehebung: Ich habe das so gefixed, dass es eine surjektive Verbindung wird durch das Verwenden von einem leftJoin.
 \end{itemize}
 
-\paragraph{Bug 4}
+\paragraph{Fehlerhafte Nachrichten beim Export-Prozess}
 \begin{itemize}
 	\item Fehlersymptom: Der Export Prozess produzierte fehlerhafte Messages im Export Topic
 	\item Fehlerursache: Gleicher Fehler wie bei Bug 3.
 	\item Fehlerbehebung: Gleicher Fehler wie bei Bug 3.
 \end{itemize}
 \newpage
-\section{Erik}
-\paragraph{Bug 1}
+\section{Core - Grid und Webserver}
+\paragraph{LoggerFactory - ClassNotFoundException}
 \begin{itemize}
 	\item Fehlersymptom: Maven auf Debian kann Pavos-Core nicht erstellen\\
 	\texttt{ClassNotFoundException: LoggerFactory.java}
@@ -165,7 +164,7 @@
 	\item Fehlerbehebung: Maven dependency plugin fügt dependencies zum Classpath hinzu
 \end{itemize}
 
-\paragraph{Bug 2}
+\paragraph{Avro Manifest}
 \begin{itemize}
 	\item Fehlersymptom: Maven auf Debian kann Pavos-Core nicht erstellen
 	Avro has no Manifest
@@ -173,28 +172,28 @@
 	\item Fehlerbehebung: Aus Maven dependency plugin ausschließen
 \end{itemize}
 
-\paragraph{Bug 3}
+\paragraph{Sensorposition}
 \begin{itemize}
-	\item Fehlersymptom: Erstellter GeoGrid akzeptiert Sensordaten.
+	\item Fehlersymptom: Erstellter GeoGrid akzeptiert korrekte Sensordaten nicht.
 	\item Fehlerursache: \texttt{PointNotOnMapException}
 	\item Fehlerbehebung: In der Erstellung wurde x und y als Breite und Höhe interpretiert, weshalb die Kartengröße nur 25\% der gewollten Größe betrug
 \end{itemize}
 
-\paragraph{Bug 4}
+\paragraph{Multigradient toString()}
 \begin{itemize}
 	\item Fehlersymptom: MultiGradient toString() wirft eine \texttt{NullPointerException}
 	\item Fehlerursache: Farbwerte hatten einen Index-Shift um 1, weshalb der erste Farbwert übersprungen wurde und der letzte null war
 	\item Fehlerbehebung: Index-Shift korrigiert und Absicherung gegen NullPointerException in ColorUtil erstellt
 \end{itemize}
 
-\paragraph{Bug 5}
+\paragraph{Tests mit Kafka}
 \begin{itemize}
 	\item Fehlersymptom: Kafka-Tests schlagen bei mvn clean install fehl
 	\item Fehlerursache: JUnit tests reichen nicht aus, da Kafka zur Kommunikation benötigt wird.
 	\item Fehlerbehebung: Dependency für Kafka-Streams-Test-Util für Version 1.1.0 hinzugefügt, da 1.0.1 nicht existiert
 \end{itemize}
 
-\paragraph{Bug 6}
+\paragraph{WebServer - automatischer Start}
 \begin{itemize}
 	\item Fehlersymptom: WebServer soll immer nach den KafkaProzessen gestartet werden und trotzdem soll Webserver auch selbstständig gestartet werden können.
 	Beide haben main(String[] args)
@@ -203,49 +202,49 @@
 	KafkaProzesse, die Main Klasse startet WebServer auf einem Thread.
 \end{itemize}
 
-\paragraph{Bug 7}
+\paragraph{WebServer - kein Antwort}
 \begin{itemize}
 	\item Fehlersymptom: WebServer wirft Fehlermeldungen und lässt die Verbindung abstürzen.
 	\item Fehlerursache: http-Anfrage ist falsch formuliert oder angefragte Komponenten existieren nicht.
 	\item Fehlerbehebung: Der http-Status des WebServer wird entsprechend geändert. Meistens auf Bad-Request und wird gesendet.
 \end{itemize}
 
-\paragraph{Bug 8}
+\paragraph{Verbindung zur Datenbank}
 \begin{itemize}
 	\item Fehlersymptom: Die Datenbank kann bei der Übertragung nicht erreicht werden.
 	\item Fehlerursache: Die Verbindung zur VM wurde nicht eingestellt.
 	\item Fehlerbehebung: Host wurde von localhost zur VM-Host-Adresse geändert.
 \end{itemize}
 
-\paragraph{Bug 9}
+\paragraph{Regex - Formatüberprüfung}
 \begin{itemize}
 	\item Fehlersymptom: Daten zur Überprüfung konnten im Test nicht überprüft werden oder wurden falsch ausgewertet.
 	\item Fehlerursache: Die Überprüfung verwendete einen Regex-Ausdruck, der Zeichen enthielt, die falsch interpretiert wurden.
 	\item Fehlerbehebung: Zeichen wie \{ und [ wurden mit einem doppelten $\backslash$ versehen um sie erkenntlich zu machen.
 \end{itemize}
 
-\paragraph{Bug 10}
+\paragraph{Java Version}
 \begin{itemize}
 	\item Fehlersymptom: Neuere Java Funktionalitäten können nicht verwendet werden
 	\item Fehlerursache: Es wurde die falsche Java-Version im Classpath verwendet
 	\item Fehlerbehebung: Update auf JavaSE-1.8 mit JDK
 \end{itemize}
 
-\paragraph{Bug 11}
+\paragraph{Sich wiederholender Verbindungsaufbau}
 \begin{itemize}
 	\item Fehlersymptom: Verbindung des Graphite-Sender wird zu häufig geschlossen
 	\item Fehlerursache: Bei jeder Nachricht wird das Socket überschrieben
 	\item Fehlerbehebung: SocketManager Klasse wurde erstellt
 \end{itemize}
 
-\paragraph{Bug 12}
+\paragraph{Mehrfache nicht synchronisierte Instanzen}
 \begin{itemize}
-	\item Fehlersymptom: Mehrere Einheiten einer Klasse werden erstellt obwohl sie die gleichen Daten beinhalten müssen
+	\item Fehlersymptom: Mehrere Einheiten einer Klasse werden erstellt obwohl sie die gleichen Daten beinhalten müssen (multithreading)
 	\item Fehlerursache: Offener Konstruktor und eigene Daten pro Instanz
-	\item Fehlerbehebung: Singleton
+	\item Fehlerbehebung: synchronisiertes Singleton
 \end{itemize}
 
-\paragraph{Bug 13}
+\paragraph{Grid Update-Prozess}
 \begin{itemize}
 	\item Fehlersymptom: Schlecht möglich die Reihenfolge von Operationen eines Grids beim Updaten einheitlich zu ändern
 	\item Fehlerursache: update() wurde intern im Grid ausgeführt
