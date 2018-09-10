@@ -235,6 +235,42 @@ einen SimpleGradient erstellen, hinzufügen, entfernen, ersetzen und in jedem Sc
 \end{tabular}
 \end{table}
 
+\subsection{Importer}
+\begin{table}[H]
+\centering
+\begin{tabular}{|L{9cm}|c|}
+\hline
+Funktion & \\
+\hline
+die ObservedProperties die an den FROST-Server gesendet werden sollen werden in json korrekt aufgebaut & \testGood \\ \hline
+die Sensors die an den FROST-Server gesendet werden sollen werden in json korrekt aufgebaut & \testGood \\ \hline
+die Locations die an den FROST-Server gesendet werden sollen werden in json korrekt aufgebaut & \testGood \\ \hline
+die FeaturesOfInterest die an den FROST-Server gesendet werden sollen werden in json korrekt aufgebaut & \testGood \\ \hline
+die Things die an den FROST-Server gesendet werden sollen werden in json korrekt aufgebaut & \testGood \\ \hline
+die Datastreams die an den FROST-Server gesendet werden sollen werden in json korrekt aufgebaut & \testGood \\ \hline
+die Observations die an den FROST-Server gesendet werden sollen werden in json korrekt aufgebaut & \testGood \\ \hline
+das senden von Daten an einen FROST-Server funktioniert (Daten kommen an und sind korrekt) & \testOk \\ \hline
+für jede vorhandene Datei wird die richtige Dateiendung erkannt & \testGood \\ \hline
+für jede vorhandene Datei wird die richtige Importstrategie gewählt, oder ein Fehler ausgeworfen, falls nicht vorhanden & \testGood \\ \hline
+die Bedienoberfläche des Importers zeigt den Fortschritt an und gibt die UI bei Beendigung wieder frei & \testGood \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Exporter}
+\begin{table}[H]
+\centering
+\begin{tabular}{|L{9cm}|c|}
+\hline
+Funktion & \\
+\hline
+die Clusterzugehörigkeit einer Observation wird korrekt erkannt & \testGood \\ \hline
+jede Datenzeile wird, bevor sie in die Datei geschrieben wird, korrekt erzeugt & \testGood \\ \hline
+für jede Zeit einer Observation wird erkannt, ob diese innerhalb des gewünschten Zeitrahmens liegt & \testGood \\ \hline
+die Einstellungen für den Export werden korrekt ausgelesen & \testGood \\ \hline
+für jede Dateiendung wird der richtige Dateischreiber benutzt & \testGood \\ \hline
+\end{tabular}
+\end{table}
+
 \newpage
 \section{Testszenarien}
 Hier werden sowohl alte als auch neue Szenarien getestet.
