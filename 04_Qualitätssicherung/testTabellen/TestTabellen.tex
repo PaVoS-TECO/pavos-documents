@@ -536,19 +536,16 @@ HashCode von String erzeugen & \testGood \\
 \end{tabular}
 \end{table}
 
-\newpage
 \chapter{Testüberdeckung - Core}
-\begin{figure}[H]
-	\centering\includegraphics[width=0.6\linewidth]{images/tests}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.49\linewidth]{images/tests1.png}
+	\includegraphics[width=0.49\linewidth]{images/tests2.png}
+\end{figure}
+\begin{figure}[h]
+	\centering\includegraphics[width=0.84\linewidth]{images/coverage.png}
 \end{figure}
 
-\newpage
-
-\begin{figure}[H]
-	\centering\includegraphics[width=0.84\linewidth]{images/coverage}
-\end{figure}
-
-\newpage
 \chapter{Testszenarien}
 Hier werden sowohl alte als auch neue Szenarien getestet.
 Szenarien, die sich auf die im Pflichtenheft genannten Eintr\"age beziehen werden durch die entsprechende Kennzeichnung (z.B. TI1000) deutlich gemacht. \newline
@@ -863,7 +860,7 @@ Es werden aktuelle Test-Daten benötigt, um dieses Szenario zu bestätigen.
 \end{enumerate}
 \szenarioBad
 Um den Test zu bestehen, fehlt die funktionalität im Webinterface.
-Per direktem Link: ``/reportSensor?sensorID=sensor54321&reason=blubb'' lässt sie der Test erfüllen.
+Per direktem Link: ``/reportSensor?sensorID=sensor54321\& reason=blubb'' lässt sie der Test erfüllen.
 
 \subsection{QS2100 - Direktes Ansprechen des Servlets}
 \paragraph{Voraussetzungen}
@@ -907,6 +904,6 @@ Wobei FORMAT gleich der ausgewählten Export-Dateiendung entspricht. DATES, wird
 \item Wird ``false'' zurückgegeben, muss solange gewartet oder neu geladen werden, bis ``true'' zurückgegeben wird. 
 \newline
 Die Wartezeit skaliert mit der Größe der Anfrage und sollte bei kleinen Größen 10 Minuten betragen.
-\item Sobald ``true'' zurückgegeben wird, wird automatisch eine Datei namens ``test.zip'' heruntergeladen, die die exportierten Daten enthält.
+\item Sobald ``true'' zurückgegeben wird, ruft man den Link ``Servlet?requestTyp e=getStatus\& downloadID=test'' auf. Jetzt wird automatisch die Datei namens ``test.zip'' heruntergeladen.
 \end{enumerate}
 \szenarioGood
