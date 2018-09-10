@@ -539,8 +539,11 @@ HashCode von String erzeugen & \testGood \\
 \chapter{Testüberdeckung - Core}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.49\linewidth]{images/tests1.png}
-	\includegraphics[width=0.49\linewidth]{images/tests2.png}
+	\includegraphics[width=0.79\linewidth]{images/tests1.png}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.79\linewidth]{images/tests2.png}
 \end{figure}
 \begin{figure}[h]
 	\centering\includegraphics[width=0.84\linewidth]{images/coverage.png}
@@ -904,6 +907,6 @@ Wobei FORMAT gleich der ausgewählten Export-Dateiendung entspricht. DATES, wird
 \item Wird ``false'' zurückgegeben, muss solange gewartet oder neu geladen werden, bis ``true'' zurückgegeben wird. 
 \newline
 Die Wartezeit skaliert mit der Größe der Anfrage und sollte bei kleinen Größen 10 Minuten betragen.
-\item Sobald ``true'' zurückgegeben wird, ruft man den Link ``Servlet?requestTyp e=getStatus\& downloadID=test'' auf. Jetzt wird automatisch die Datei namens ``test.zip'' heruntergeladen.
+\item Sobald ``true'' zurückgegeben wird, ruft man den Link ``Servlet?requestTyp e=tryDownload\& downloadID=test'' auf. Jetzt wird automatisch die Datei namens ``test.zip'' heruntergeladen.
 \end{enumerate}
 \szenarioGood
