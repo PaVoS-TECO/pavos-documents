@@ -580,7 +580,7 @@ TI2050 & Dieses Szenario wurde mit einem anderen Szenario verschmolzen. & QS2050
 \paragraph{Voraussetzungen}
 \begin{itemize}
 \item FROST-Server
-\item Die Adresse des FROST-Servers muss bekannt sein und auf "/v1.0/" enden
+\item Die Adresse des FROST-Servers muss bekannt sein und auf ``/v1.0/'' enden
 \item Importer (pim.jar) muss vorhanden sein
 \item Testdateien müssen vorhanden sein (test.csv, multi1test.csv und multi2test.csv)
 \end{itemize}
@@ -595,7 +595,7 @@ TI2050 & Dieses Szenario wurde mit einem anderen Szenario verschmolzen. & QS2050
 \end{itemize}
 \item Im oberen Textfeld mit dem Link wird der bekannte Link zum FROST-Server eingefügt werden
 \item Im unteren Textfeld wird der Zusatz f\"ur die IoT-IDs eingetragen, der die Daten dieses Imports eindeutig kennzeichnet
-\item Als n\"achstes wird der Knopf mit der Aufschrift "Choose Files" gedrückt
+\item Als n\"achstes wird der Knopf mit der Aufschrift ``Choose Files'' gedrückt
 \item Es \"offnet sich ein Auswahlfenster
 \item Nun werden die Testdaten ausgew\"ahlt
 \begin{itemize}
@@ -603,7 +603,7 @@ TI2050 & Dieses Szenario wurde mit einem anderen Szenario verschmolzen. & QS2050
 \item Variante 2: multi1test.csv und multi2test.csv
 \end{itemize}
 \item Alle ausgew\"ahlten Dateien werden in der Tabelle aufgelistet und der Fortschritt betr\"agt 0\%
-\item Nun wird der Knopf mit der Aufschrift "Import Files" gedr\"uckt
+\item Nun wird der Knopf mit der Aufschrift ``Import Files'' gedr\"uckt
 \item Anschlie\ss end startet der Import und es folgt keine Fehlermeldung
 \item Es wird bis zu 5 Minuten gewartet oder bis 100\% Fortschritt erreicht sind
 \item Ist der Fortschritt nach dieser Zeit noch nicht bei 100\%, so gilt der Test als nicht bestanden
@@ -622,6 +622,7 @@ TI2050 & Dieses Szenario wurde mit einem anderen Szenario verschmolzen. & QS2050
 \paragraph{Voraussetzungen}
 \begin{itemize}
 \item Pavos-Webinterface
+\item Pavos-Core
 \item Verbindung zum Webserver
 \end{itemize}
 \paragraph{Ablauf}
@@ -629,26 +630,29 @@ TI2050 & Dieses Szenario wurde mit einem anderen Szenario verschmolzen. & QS2050
 \item Das Webinterface wird im Browser geöffnet
 \item Das Webinterface wird in den manuellen Historischen Modus überführt:
 \begin{enumerate}
-\item Falls nicht bereits im Historischen Modus, den Knopf mit dem Refresh Symbol rechts vom "Settings" Knopf anklicken und das Webinterface ist nun im Historischen Modus
-\item Falls nicht bereits im manuellen Modus, den Knopf mit der Aufschrift "Settings" anklicken
-\item Es öffnet sich ein Overlay mit dem Titel "Settings"
-\item Unter der Kategorie "Automatic/Manual Refresh'' den Radiobutton "Manual'' auswählen
-\item Es wird auf den Knopf mit der Aufschrift "Apply" geklickt und das Webinterface ist nun im manuellen Modus
+\item Falls nicht bereits im Historischen Modus, den Knopf mit dem Refresh Symbol rechts vom ``Settings'' Knopf anklicken und das Webinterface ist nun im Historischen Modus
+\item Falls nicht bereits im manuellen Modus, den Knopf mit der Aufschrift ``Settings'' anklicken
+\item Es öffnet sich ein Overlay mit dem Titel ``Settings''
+\item Unter der Kategorie ``Automatic/Manual Refresh'' den Radiobutton ``Manual'' auswählen
+\item Es wird auf den Knopf mit der Aufschrift ``Apply'' geklickt und das Webinterface ist nun im manuellen Modus
 \end{enumerate}
-\item Den Knopf mit der Aufschrift "Settings" wird geklickt
-\item Es öffnet sich ein Overlay mit dem Titel "Settings"
-\item Im Feld "From" wird ein Datum ausgewählt an welchem keine Sensordaten zur Verfügung stehen
-\item Im Feld "To" wird ein späteres Datum eingetragen
-\item Es wird der Knopf "Apply" geklickt und das Overlay schließt sich
-\item Es wird der Refresh Knopf links neben dem "Settings" Knopf gedrückt
+\item Den Knopf mit der Aufschrift ``Settings'' wird geklickt
+\item Es öffnet sich ein Overlay mit dem Titel ``Settings''
+\item Im Feld ``From'' wird ein Datum ausgewählt an welchem keine Sensordaten zur Verfügung stehen
+\item Im Feld ``To'' wird ein späteres Datum eingetragen
+\item Es wird der Knopf ``Apply'' geklickt und das Overlay schließt sich
+\item Es wird der Refresh Knopf links neben dem ``Settings'' Knopf gedrückt
 \item Das Grid auf der Karte ist nun leer und nur die Karte an sich wird angezeigt
 \end{enumerate}
-\szenarioOk
+\szenarioBad
+
+Es muss nur noch die Farbe der Darstellung zu Transparent eingestellt werden.
 
 \subsection{TI2020 - Darstellung der Tabellarischen Ansicht}
 \paragraph{Voraussetzungen}
 \begin{itemize}
 \item Pavos-Webinterface
+\item Pavos-Core
 \item Verbindung zum Webserver
 \end{itemize}
 \paragraph{Ablauf}
@@ -676,6 +680,7 @@ TI2050 & Dieses Szenario wurde mit einem anderen Szenario verschmolzen. & QS2050
 \paragraph{Voraussetzungen}
 \begin{itemize}
 \item Pavos-Webinterface
+\item Pavos-Core
 \item Verbindung zum Webserver
 \end{itemize}
 \paragraph{Ablauf}
@@ -698,6 +703,7 @@ TI2050 & Dieses Szenario wurde mit einem anderen Szenario verschmolzen. & QS2050
 \paragraph{Voraussetzungen}
 \begin{itemize}
 \item Pavos-Webinterface
+\item Pavos-Core
 \item Verbindung zum Webserver
 \end{itemize}
 \paragraph{Ablauf}
@@ -744,6 +750,7 @@ TI2050 & Dieses Szenario wurde mit einem anderen Szenario verschmolzen. & QS2050
 \paragraph{Voraussetzungen}
 \begin{itemize}
 \item Pavos-Webinterface
+\item Pavos-Core
 \item Verbindung zum Webserver
 \end{itemize}
 \paragraph{Ablauf}
@@ -753,16 +760,16 @@ TI2050 & Dieses Szenario wurde mit einem anderen Szenario verschmolzen. & QS2050
 \begin{enumerate}
 \item Falls nicht bereits im Historischen Modus, den Knopf mit dem Refresh Symbol rechts vom "Settings" Knopf anklicken und das Webinterface ist nun im Historischen Modus
 \item Falls nicht bereits im automatisierten Modus, den Knopf mit der Aufschrift "Settings" anklicken
-\item Es öffnet sich ein Overlay mit dem Titel "Settings"
-\item Unter der Kategorie "Automatic/Manual Refresh'' den Radiobutton "Automatic'' auswählen
+\item Es öffnet sich ein Overlay mit dem Titel ``Settings''
+\item Unter der Kategorie ``Automatic/Manual Refresh'' den Radiobutton ``Automatic'' auswählen
 \item Es wird auf den Knopf mit der Aufschrift "Apply" geklickt und das Webinterface ist nun im automatisierten Modus
 \end{enumerate}
-\item Der Knopf mit der Aufschrift "Settings" wird geklickt
-\item Es öffnet sich ein Overlay mit dem Titel "Settings"
-\item Im Feld "From" wird das Datum von vor einem Monat eingetragen
-\item Im Feld "To" wird das Datum von gestern eingetragen
-\item Es wird der Knopf "Apply" geklickt und das Overlay schließt sich
-\item Es wird der Start Knopf links neben dem "Settings" Knopf gedrückt
+\item Der Knopf mit der Aufschrift ``Settings" wird geklickt
+\item Es öffnet sich ein Overlay mit dem Titel ``Settings"
+\item Im Feld ``From" wird das Datum von vor einem Monat eingetragen
+\item Im Feld ``To" wird das Datum von gestern eingetragen
+\item Es wird der Knopf ``Apply" geklickt und das Overlay schließt sich
+\item Es wird der Start Knopf links neben dem ``Settings" Knopf gedrückt
 \item Das Grid auf der Karte visualisiert nun die Iteration über eine festgelegte Anzahl an Zeitpunkten zwischen dem zuvor festgelegten From und To Zeitpunkten
 \end{enumerate}
 \szenarioGood
@@ -771,6 +778,7 @@ TI2050 & Dieses Szenario wurde mit einem anderen Szenario verschmolzen. & QS2050
 \paragraph{Voraussetzungen}
 \begin{itemize}
 \item Pavos-Webinterface
+\item Pavos-Core
 \item Verbindung zum Webserver
 \end{itemize}
 \paragraph{Ablauf}
@@ -780,11 +788,11 @@ TI2050 & Dieses Szenario wurde mit einem anderen Szenario verschmolzen. & QS2050
 \begin{enumerate}
 \item Falls nicht bereits im Live-Modus, den Knopf mit dem Sanduhr Symbol rechts vom "Settings" Knopf anklicken und das Webinterface ist nun im Live-Modus
 \item Falls nicht bereits im automatisierten Modus, den Knopf mit der Aufschrift "Settings" anklicken
-\item Es öffnet sich ein Overlay mit dem Titel "Settings"
-\item Unter der Kategorie "Automatic/Manual Refresh'' den Radiobutton "Automatic'' auswählen
-\item Es wird auf den Knopf mit der Aufschrift "Apply" geklickt und das Webinterface ist nun im automatisierten Modus
+\item Es öffnet sich ein Overlay mit dem Titel ``Settings"
+\item Unter der Kategorie ``Automatic/Manual Refresh'' den Radiobutton ``Automatic'' auswählen
+\item Es wird auf den Knopf mit der Aufschrift ``Apply" geklickt und das Webinterface ist nun im automatisierten Modus
 \end{enumerate}
-\item Es wird der Start Knopf links neben dem "Settings" Knopf gedrückt
+\item Es wird der Start Knopf links neben dem ``Settings" Knopf gedrückt
 \item Das Grid auf der Karte wird nun regelmäßig in festen Intervallen mit Live-Daten aktualisiert
 \end{enumerate}
 \szenarioGood
@@ -793,6 +801,7 @@ TI2050 & Dieses Szenario wurde mit einem anderen Szenario verschmolzen. & QS2050
 \paragraph{Voraussetzungen}
 \begin{itemize}
 \item Pavos-Webinterface
+\item Pavos-Core
 \item Verbindung zum Webserver
 \end{itemize}
 \paragraph{Ablauf}
@@ -802,11 +811,11 @@ TI2050 & Dieses Szenario wurde mit einem anderen Szenario verschmolzen. & QS2050
 \begin{enumerate}
 \item Falls nicht bereits im Live-Modus, den Knopf mit dem Sanduhr Symbol rechts vom "Settings" Knopf anklicken und das Webinterface ist nun im Live-Modus
 \item Falls nicht bereits im automatisierten Modus, den Knopf mit der Aufschrift "Settings" anklicken
-\item Es öffnet sich ein Overlay mit dem Titel "Settings"
-\item Unter der Kategorie "Automatic/Manual Refresh'' den Radiobutton "Automatic'' auswählen
-\item Es wird auf den Knopf mit der Aufschrift "Apply" geklickt und das Webinterface ist nun im automatisierten Modus
+\item Es öffnet sich ein Overlay mit dem Titel ``Settings"
+\item Unter der Kategorie ``Automatic/Manual Refresh'' den Radiobutton ``Automatic'' auswählen
+\item Es wird auf den Knopf mit der Aufschrift ``Apply" geklickt und das Webinterface ist nun im automatisierten Modus
 \end{enumerate} 
-\item Es wird der Start Knopf links neben dem "Settings" Knopf gedrückt
+\item Es wird der Start Knopf links neben dem ``Settings'' Knopf gedrückt
 \item Auf der Karte wird bis zum größten Grid Level gezoomt:
 \begin{enumerate}
 \item Es wird so lange gezoomt bis das Grid nicht mehr kleinteiliger wird
@@ -815,33 +824,31 @@ TI2050 & Dieses Szenario wurde mit einem anderen Szenario verschmolzen. & QS2050
 \item In der Tabelle werden die Bezeichner aller Sensoren dargestellt, die sich im selektierten Cluster befinden
 \item Klicke einen Eintrag in der Tabelle
 \item Es öffnet sich ein Overlay mit dem Sensor Bezeichner als Titel
-\item Es wird der Knopf "Show" geklickt und das Overlay schließt sich
+\item Es wird der Knopf ``Show'' geklickt und das Overlay schließt sich
 \item Der Verlauf des Sensors wird im Grafen angezeigt
 \end{enumerate}
-\szenarioGood
+\szenarioBad
+Es werden aktuelle Test-Daten benötigt, um dieses Szenario zu bestätigen.
 
 \subsection{TI2090 - Melden eines Sensors}
 \paragraph{Voraussetzungen}
 \begin{itemize}
 \item Pavos-Webinterface
+\item Pavos-Core
 \item Verbindung zum Webserver
-
-% Hier muss noch rein was man braucht um in den Logs nachzusehen dass ein Sensor reported wurde
-\item =========================================================
-
 \end{itemize}
 \paragraph{Ablauf}
 \begin{enumerate}
 \item Das Webinterface wird im Browser geöffnet
 \item Das Webinterface wird in den automatisierten Live-Modus überführt:
 \begin{enumerate}
-\item Falls nicht bereits im Live-Modus, den Knopf mit dem Sanduhr Symbol rechts vom "Settings" Knopf anklicken und das Webinterface ist nun im Live-Modus
-\item Falls nicht bereits im automatisierten Modus, den Knopf mit der Aufschrift "Settings" anklicken
-\item Es öffnet sich ein Overlay mit dem Titel "Settings"
-\item Unter der Kategorie "Automatic/Manual Refresh'' den Radiobutton "Automatic'' auswählen
-\item Es wird auf den Knopf mit der Aufschrift "Apply" geklickt und das Webinterface ist nun im automatisierten Modus
+\item Falls nicht bereits im Live-Modus, den Knopf mit dem Sanduhr Symbol rechts vom ``Settings'' Knopf anklicken und das Webinterface ist nun im Live-Modus
+\item Falls nicht bereits im automatisierten Modus, den Knopf mit der Aufschrift ``Settings'' anklicken
+\item Es öffnet sich ein Overlay mit dem Titel ``Settings''
+\item Unter der Kategorie ``Automatic/Manual Refresh'' den Radiobutton ``Automatic'' auswählen
+\item Es wird auf den Knopf mit der Aufschrift ``Apply'' geklickt und das Webinterface ist nun im automatisierten Modus
 \end{enumerate} 
-\item Es wird der Start Knopf links neben dem "Settings" Knopf gedrückt
+\item Es wird der Start Knopf links neben dem ``Settings'' Knopf gedrückt
 \item Auf der Karte wird bis zum größten Grid Level gezoomt:
 \begin{enumerate}
 \item Es wird so lange gezoomt bis das Grid nicht mehr kleinteiliger wird
@@ -850,15 +857,13 @@ TI2050 & Dieses Szenario wurde mit einem anderen Szenario verschmolzen. & QS2050
 \item In der Tabelle werden die Bezeichner aller Sensoren dargestellt, die sich im selektierten Cluster befinden
 \item Klicke einen Eintrag in der Tabelle
 \item Es öffnet sich ein Overlay mit dem Sensor Bezeichner als Titel
-\item Unter der Kategorie "Report Reason" wird "Report Test" im Textfeld eingetragen
-\item Der Knopf "Report" wird geklickt
-
-\item ========================================================
-
-% Hier muss rein was man tut um nachzugucken ob der Report erfolgreich war
-
+\item Unter der Kategorie ``Report Reason'' wird ``Report Test'' im Textfeld eingetragen
+\item Der Knopf ``Report'' wird geklickt
+\item Im log von Pavos-Core wird angezeigt, dass der Sensor mit dem angegebenen Grund von der IP-Adresse des Rechners des Testers gesendet wurde
 \end{enumerate}
-\szenarioOk
+\szenarioBad
+Um den Test zu bestehen, fehlt die funktionalität im Webinterface.
+Per direktem Link: /reportSensor?sensorID=sensor54321&reason=blubb lässt sie der Test erfüllen.
 
 \subsection{QS2100 - Direktes Ansprechen des Servlets}
 \paragraph{Voraussetzungen}
@@ -868,40 +873,40 @@ TI2050 & Dieses Szenario wurde mit einem anderen Szenario verschmolzen. & QS2050
 \item Pavos-Bridge zwischen FROST und Kafka
 \item Pavos-Core mit Daten gefüttert
 \item Export-Docker
-\item Der Link zum Export-Servlet muss bekannt sein (endet auf "/edms/get?" vor der Angabe von Parametern). Dieser Link wird hier Beispielhaft als SERVLET? gekürzt.
+\item Der Link zum Export-Servlet muss bekannt sein (endet auf ``/edms/get?'' vor der Angabe von Parametern). Dieser Link wird hier Beispielhaft als SERVLET? gekürzt.
 \end{itemize}
 \paragraph{Ablauf}
 \subparagraph{Test 1 - Erlaubte Dateiendungen abfragen}
 \begin{enumerate}
-\item Der Link "SERVLET?requestType=getExtensions" wird im Browser aufgerufen
+\item Der Link ``SERVLET?requestType=getExtensions'' wird im Browser aufgerufen
 \item Die Webseite enthält nur Text
 \item Dieser Text ist eine mit Komma separierte Liste aller erlaubter Dateiendungen für den Export der Daten
 \item Die Liste enthält mindestens einen Eintrag (normalerweise csv)
 \end{enumerate}
 \subparagraph{Test 2 - Nicht vorhandene Datei}
 \begin{enumerate}
-\item Der Link "SERVLET?requestType=getStatus\& downloadID=test" wird im Browser aufgerufen
+\item Der Link ``SERVLET?requestType=getStatus\& downloadID=test'' wird im Browser aufgerufen
 \item Die Webseite enthält nur Text
-\item Der Text ist "noID"
-\item Der Link "SERVLET?requestType=tryDownload\& downloadID=test" wird im Browser aufgerufen
+\item Der Text ist ``noID''
+\item Der Link ``SERVLET?requestType=tryDownload\& downloadID=test'' wird im Browser aufgerufen
 \item Es wird eine Http-Fehlermeldung zurückgegeben
 \end{enumerate}
 \subparagraph{Test 3 - Datei exportieren}
-Hier muss bekannt sein, welche Messgrößen (z.B. "temperature\textunderscore celsius"), welche erlaubten Export-Dateiendungen und welche Cluster (ID muss bekannt sein) existieren.
+Hier muss bekannt sein, welche Messgrößen (z.B. ``temperature\textunderscore celsius''), welche erlaubten Export-Dateiendungen und welche Cluster (ID muss bekannt sein) existieren.
 \begin{enumerate}
 \item Es wird aus den bekannten Messgrößen, Export-Dateiendungen und Clustern jeweils eins ausgewählt
-\item Der Link "SERVLET?requestType=newExport\& downloadID=test\& extension=FORMAT\& timeFrame= DATES:ssZ\& observedProperties=\newline OBSERVEDPROPERTIES\& clusters=CLUSTER"
+\item Der Link ``SERVLET?requestType=newExport\& downloadID=test\& extension=FORMAT\& timeFrame= DATES:ssZ\& observedProperties=\newline OBSERVEDPROPERTIES\& clusters=CLUSTER''
 \par
 Wobei FORMAT gleich der ausgewählten Export-Dateiendung entspricht. DATES, wird durch einen Datums-Bereich der zu importierenden Sensor-Werte im Format YYYY-MM-DDThh:mm:ssZ mit Komma getrennt (und mit maximal zwei Daten) ersetzt. OBSERVEDPROPERTIES entspricht der ausgesuchten Messgröße und CLUSTER dem ausgesuchten Cluster.
-\item Es wird "started" als Text zurückgegeben
+\item Es wird ``started'' als Text zurückgegeben
 \item Der Link wird ein zweites mal aufgerufen
-\item Es wird "duplicate" als Text zurückgegeben
-\item Der Link "Servlet?requestType=getStatus\& downloadID=test" wird im Browser aufgerufen
+\item Es wird ``duplicate'' als Text zurückgegeben
+\item Der Link ``Servlet?requestType=getStatus\& downloadID=test'' wird im Browser aufgerufen
 \item Die Webseite enthält nur Text
-\item Dieser Text ist entweder "false" oder "true"
-\item Wird "false" zurückgegeben, muss solange gewartet oder neu geladen werden, bis "true" zurückgegeben wird. 
+\item Dieser Text ist entweder ``false'' oder ``true''
+\item Wird ``false'' zurückgegeben, muss solange gewartet oder neu geladen werden, bis ``true'' zurückgegeben wird. 
 \newline
 Die Wartezeit skaliert mit der Größe der Anfrage und sollte bei kleinen Größen 10 Minuten betragen.
-\item Sobald "true" zurückgegeben wird, wird automatisch eine Datei namens "test.zip" heruntergeladen, die die exportierten Daten enthält.
+\item Sobald ``true'' zurückgegeben wird, wird automatisch eine Datei namens ``test.zip'' heruntergeladen, die die exportierten Daten enthält.
 \end{enumerate}
 \szenarioGood
